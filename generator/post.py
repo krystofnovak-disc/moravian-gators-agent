@@ -116,6 +116,7 @@ POKYNY PRO PSANÍ:
 - Na konec přidej: #discgolf #zijemeprodiscgolf #moraviangators
 - Nepiš žádný úvodní komentář, jen samotný text příspěvku.
 - DŮLEŽITÉ: Dej velký pozor na českou gramatiku – nevynechávej slova, kontroluj skloňování a shodu.
+- POČTY HRÁČŮ: U každého turnaje jsou uvedeny přesné hodnoty POČET NAŠICH HRÁČŮ NA TURNAJI a POČET MEDAILÍ. Tyto číselné údaje jsou 100% správné – PŘEPIŠ JE DOSLOVA do textu, NEPOČÍTEJ je sám. Nikdy nepiš jiné číslo, než které je uvedeno v datech.
 
 VZOROVÉ PŘÍSPĚVKY (pro inspiraci stylem, ne kopírování):
 {EXAMPLE_POSTS}
@@ -144,10 +145,15 @@ Napiš příspěvek:"""
 
         lines = []
         for t in tournament_results:
+            players = t.get("our_players", [])
+            total = len(players)
+            medalists = sum(1 for p in players if p.get("place") and p["place"] <= 3)
             lines.append(f"\nTURNAJ: {t['name']}")
             lines.append(f"  Datum: {t.get('date', 'neznámé')}")
             lines.append(f"  Odkaz: {t.get('url', '')}")
             lines.append(f"  Zdroj: {t.get('source', '')}")
+            lines.append(f"  POČET NAŠICH HRÁČŮ NA TURNAJI: {total}")
+            lines.append(f"  POČET MEDAILÍ (1.–3. místo): {medalists}")
             lines.append("  Naši hráči:")
 
             # Seskupíme podle divize
