@@ -80,7 +80,7 @@ class PDGAScraper:
             seen_ids.add(ev["id"])
             time.sleep(1.5)
             logger.info(f"  Kontroluji PDGA event #{ev['id']}: {ev['name']}")
-            our_players = self._get_our_players_in_event(ev["id"])
+            our_players, tier = self._get_our_players_in_event(ev["id"], ev["name"])
             if our_players:
                 results.append({
                     "name": ev["name"],
@@ -88,6 +88,7 @@ class PDGAScraper:
                     "id": ev["id"],
                     "url": f"{BASE_URL}/tour/event/{ev['id']}",
                     "our_players": our_players,
+                    "tier": tier,
                     "source": "pdga",
                 })
         return results
@@ -173,17 +174,19 @@ class PDGAScraper:
     # Parsování výsledků eventu
     # ------------------------------------------------------------------
 
-    def _get_our_players_in_event(self, event_id: int) -> list:
-        """Stáhne výsledky eventu a vrátí naše hráče."""
+    def _get_our_players_in_event(self, event_id: int, event_name: str = "") -> tuple:
+        """Stáhne výsledky eventu a vrátí (naše hráče, tier)."""
         url = f"{BASE_URL}/tour/event/{event_id}"
         try:
             resp = self.session.get(url, timeout=15)
             resp.raise_for_status()
             soup = BeautifulSoup(resp.text, "html.parser")
-            return self._parse_event_results(soup)
+            players = self._parse_event_results(soup)
+            tier = self._extract_tier(soup, event_name)
+            return players, tier
         except Exception as e:
             logger.error(f"Nepodařilo se načíst PDGA event #{event_id}: {e}")
-            return []
+            return [], "PDGA"
 
     def _parse_event_results(self, soup: BeautifulSoup) -> list:
         """
@@ -228,9 +231,42 @@ class PDGAScraper:
                             "place": self._extract_place(cells),
                             "division": current_div,
                             "score": self._extract_score(cells),
+                            "round_ratings": self._extract_round_ratings(cells),
                         })
 
         return our_players
+
+    def _extract_tier(self, soup: BeautifulSoup, event_name: str) -> str:
+        """Extrahuje PDGA tier z event stránky nebo názvu."""
+        # 1. Hledáme tier v metadatech stránky
+        page_text = soup.get_text(" ", strip=True)
+        tier_match = re.search(r"Tier:\s*([A-Z])", page_text)
+        if tier_match:
+            tier_letter = tier_match.group(1)
+            tier_map = {"A": "PDGA A-tier", "B": "PDGA B-tier", "C": "PDGA C-tier", "M": "PDGA Major"}
+            base_tier = tier_map.get(tier_letter, f"PDGA {tier_letter}-tier")
+        else:
+            base_tier = "PDGA"
+
+        # 2. Detekce z názvu (nadřazuje základní tier)
+        name_upper = event_name.upper()
+        if "DGPT" in name_upper and "EUROTOUR" in name_upper:
+            return "DGPT EuroTour"
+        if "DGPT" in name_upper:
+            return "DGPT"
+
+        return base_tier
+
+    @staticmethod
+    def _extract_round_ratings(cells) -> list:
+        """Pokusí se najít round ratings v buňkách řádku (typicky 3-4 místná čísla)."""
+        # Round ratings jsou obvykle ve sloupcích za skóre, hodnoty 600-1100
+        ratings = []
+        for cell in cells:
+            text = cell.get_text(strip=True)
+            if re.match(r"^[6-9]\d{2}$|^1[01]\d{2}$", text):
+                ratings.append(int(text))
+        return ratings
 
     # ------------------------------------------------------------------
     # Pomocné metody

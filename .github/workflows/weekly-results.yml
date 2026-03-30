@@ -20,6 +20,9 @@ on:
         required: false
         default: ""
 
+permissions:
+  contents: write
+
 jobs:
   send-results:
     runs-on: ubuntu-latest
@@ -49,6 +52,18 @@ jobs:
             python main.py --date "${{ github.event.inputs.date }}"
           else
             python main.py
+          fi
+
+      - name: Commit cumulative data
+        run: |
+          git config user.name "Gators Bot"
+          git config user.email "bot@moraviangators.cz"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "data: update results $(date +%Y-%m-%d)"
+            git push
           fi
 
       - name: Upload results artifact

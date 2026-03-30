@@ -82,7 +82,7 @@ class IDGScraper:
         for t in tournaments:
             time.sleep(1)  # netlačíme server
             logger.info(f"  Kontroluji turnaj #{t['id']}: {t['name']}")
-            our_players = self._get_our_players(t["id"])
+            our_players, tier = self._get_our_players(t["id"], t["name"])
             if our_players:
                 results.append({
                     "name": t["name"],
@@ -90,6 +90,7 @@ class IDGScraper:
                     "id": t["id"],
                     "url": f"{BASE_URL}/turnaje/{t['id']}",
                     "our_players": our_players,
+                    "tier": tier,
                     "source": "idiscgolf",
                 })
         return results
@@ -210,17 +211,60 @@ class IDGScraper:
     # Parsování výsledků konkrétního turnaje
     # ------------------------------------------------------------------
 
-    def _get_our_players(self, tid: int) -> list:
-        """Stáhne stránku turnaje a vrátí naše hráče s výsledky."""
+    def _get_our_players(self, tid: int, tournament_name: str = "") -> tuple[list, str]:
+        """Stáhne stránku turnaje a vrátí (naše hráče s výsledky, tier)."""
         url = f"{BASE_URL}/turnaje/{tid}"
         try:
             resp = self.session.get(url, timeout=15)
             resp.raise_for_status()
             soup = BeautifulSoup(resp.text, "html.parser")
-            return self._parse_results(soup)
+            players = self._parse_results(soup)
+            tier = self._extract_tier(soup, tournament_name)
+            return players, tier
         except Exception as e:
             logger.error(f"Nepodařilo se načíst turnaj #{tid}: {e}")
-            return []
+            return [], "local"
+
+    def _extract_tier(self, soup: BeautifulSoup, tournament_name: str) -> str:
+        """Extrahuje tier/ligu turnaje ze stránky nebo z názvu."""
+        # 1. Hledáme "Liga" v metadatech stránky (tabulka, label, span, dt/dd, ...)
+        for el in soup.find_all(["td", "th", "span", "label", "dt", "div", "strong", "b"]):
+            text = el.get_text(strip=True)
+            if text.lower() in ("liga", "liga:"):
+                # Zkusíme najít sousední element s hodnotou
+                nxt = el.find_next_sibling()
+                if nxt:
+                    val = nxt.get_text(strip=True)
+                    if val:
+                        return val
+                # Pro tabulky: další buňka ve stejném řádku
+                parent_tr = el.find_parent("tr")
+                if parent_tr:
+                    cells = parent_tr.find_all(["td", "th"])
+                    for i, cell in enumerate(cells):
+                        if cell == el and i + 1 < len(cells):
+                            val = cells[i + 1].get_text(strip=True)
+                            if val:
+                                return val
+                # Pro dt/dd páry
+                if el.name == "dt":
+                    dd = el.find_next_sibling("dd")
+                    if dd:
+                        val = dd.get_text(strip=True)
+                        if val:
+                            return val
+
+        # 2. Detekce z názvu turnaje
+        name_upper = tournament_name.upper()
+        if "MISTROVSTVÍ ČR" in name_upper or "MČR" in name_upper or "MISTROVSTVÍ ČESKÉ REPUBLIKY" in name_upper:
+            return "MČR"
+        for tag in ["CDGT", "NJDGT", "HDGT", "DGPT", "PvDGT"]:
+            if tag in name_upper:
+                return tag
+        if "ADGL" in name_upper or "ADL" in name_upper:
+            return "ADGL"
+
+        return "local"
 
     def _parse_results(self, soup: BeautifulSoup) -> list:
         """

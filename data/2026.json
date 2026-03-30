@@ -1,0 +1,116 @@
+{
+  "tournaments": [
+    {
+      "name": "Discgolf Tour Uničov presented by Discgolf-Shop.com",
+      "date": "2026-03-28",
+      "url_idg": "https://idiscgolf.cz/turnaje/2485",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "Green",
+          "place": 1,
+          "score": "-7",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "HDGT Frýdek-Místek powered by Discmania",
+      "date": "2026-03-28",
+      "url_idg": "https://idiscgolf.cz/turnaje/2571",
+      "url_pdga": null,
+      "tier": "HDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "Gold",
+          "place": 4,
+          "score": "-19",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jindřich Závodný",
+          "cadg": 5041,
+          "pdga": null,
+          "division": "Red",
+          "place": 4,
+          "score": "-2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "David Žeravík",
+          "cadg": 7985,
+          "pdga": null,
+          "division": "Red",
+          "place": 4,
+          "score": "-2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Filip Plíhal",
+          "cadg": 5493,
+          "pdga": 245751,
+          "division": "Red",
+          "place": 6,
+          "score": "-1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "Green",
+          "place": 2,
+          "score": "-3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 743,
+          "pdga": null,
+          "division": "Purple",
+          "place": 9,
+          "score": "+9",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "Purple",
+          "place": 12,
+          "score": "+13",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Discgolf Tour Raketa presented by Discgolf-Shop.com",
+      "date": "2026-03-29",
+      "url_idg": "https://idiscgolf.cz/turnaje/2456",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "Green",
+          "place": 1,
+          "score": "+3",
+          "round_ratings": []
+        }
+      ]
+    }
+  ],
+  "ratings": {}
+}

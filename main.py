@@ -36,6 +36,7 @@ from scrapers.idiscgolf import IDGScraper
 from scrapers.pdga import PDGAScraper
 from generator.post import PostGenerator
 from delivery.email import EmailSender
+from accumulator import Accumulator
 
 # ---------------------------------------------------------------------------
 # Logging
@@ -184,6 +185,16 @@ def run(saturday: date, sunday: date, dry_run: bool = False) -> None:
     except Exception as e:
         logger.error(f"Odeslání e-mailu selhalo: {e}", exc_info=True)
         logger.info("Příspěvek byl uložen lokálně v output/")
+
+    # 7. Kumulativní ukládání výsledků do data/{year}.json
+    logger.info("--- Akumulace výsledků ---")
+    try:
+        acc = Accumulator(year=saturday.year)
+        data = acc.load()
+        data = acc.add_tournaments(tournaments_with_us, data)
+        acc.save(data)
+    except Exception as e:
+        logger.error(f"Akumulace výsledků selhala: {e}", exc_info=True)
 
     logger.info("Agent dokončen.")
 
