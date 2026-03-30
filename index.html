@@ -150,18 +150,18 @@ a.t-link:hover { text-decoration: underline; }
 <body>
 
 <div class="header">
-  <h1>Moravian Gators Novy Jicin</h1>
-  <div class="subtitle">Statistiky turnajovych vysledku</div>
+  <h1>&#x1F40A; Moravian Gators Nov&#253; Ji&#269;&#237;n</h1>
+  <div class="subtitle">Statistiky turnajov&#253;ch v&#253;sledk&#367;</div>
   <div class="year-selector" id="yearSelector"></div>
 </div>
 
 <div class="stats-bar" id="statsBar"></div>
 
 <div class="filters">
-  <input type="text" id="search" placeholder="Hledat hrace nebo turnaj...">
+  <input type="text" id="search" placeholder="Hledat hr&#225;&#269;e nebo turnaj...">
   <select id="tierFilter">
-    <option value="">Vsechny serie</option>
-    <option value="MČR">MCR</option>
+    <option value="">V&#353;echny s&#233;rie</option>
+    <option value="MČR">M&#268;R</option>
     <option value="CDGT">CDGT</option>
     <option value="ADGL">ADGL</option>
     <option value="HDGT">HDGT</option>
@@ -169,18 +169,18 @@ a.t-link:hover { text-decoration: underline; }
     <option value="PvDGT">PvDGT</option>
     <option value="DGPT">DGPT</option>
     <option value="PDGA">PDGA</option>
-    <option value="local">Ostatni</option>
+    <option value="local">Ostatn&#237;</option>
   </select>
   <input type="date" id="dateFrom" title="Od">
   <input type="date" id="dateTo" title="Do">
-  <label><input type="checkbox" id="medalsOnly"> Jen medaile</label>
+  <label><input type="checkbox" id="medalsOnly"> Jen med&#225;ile</label>
   <button class="btn-reset" id="resetBtn">Resetovat</button>
 </div>
 
 <div class="table-wrap">
   <div class="loading" id="loading">
     <div class="spinner"></div>
-    <div>Nacitam data...</div>
+    <div>Na&#269;&#237;t&#225;m data...</div>
   </div>
   <table id="mainTable" style="display:none">
     <thead>
@@ -198,12 +198,12 @@ a.t-link:hover { text-decoration: underline; }
   </table>
   <div class="empty" id="emptyState" style="display:none">
     <div class="icon">&#128270;</div>
-    <div>Zadne vysledky neodpovidaji filtrum.</div>
+    <div>&#381;&#225;dn&#233; v&#253;sledky neodpov&#237;daj&#237; filtr&#367;m.</div>
   </div>
 </div>
 
 <div class="footer">
-  Moravian Gators Novy Jicin &middot; Data se aktualizuji automaticky kazde pondeli
+  Moravian Gators Nov&#253; Ji&#269;&#237;n &middot; Data se aktualizuj&#237; automaticky ka&#382;d&#233; pond&#283;l&#237;
 </div>
 
 <script>
@@ -229,10 +229,14 @@ a.t-link:hover { text-decoration: underline; }
 
   // --- Data loading ---
   function dataUrl(year) {
+    // Build base URL from current location
+    const loc = window.location;
+    const base = loc.href.replace(/\/[^\/]*$/, ''); // strip filename
     const paths = [
+      `${base}/data/${year}.json`,
       `./data/${year}.json`,
-      `../data/${year}.json`,
-      `/moravian-gators-agent/data/${year}.json`
+      `/moravian-gators-agent/data/${year}.json`,
+      `../data/${year}.json`
     ];
     return paths;
   }
@@ -253,8 +257,14 @@ a.t-link:hover { text-decoration: underline; }
     for (const url of urls) {
       try {
         const resp = await fetch(url);
-        if (resp.ok) { allData = await resp.json(); break; }
-      } catch(e) { /* try next */ }
+        if (resp.ok) {
+          const text = await resp.text();
+          if (text.trim().startsWith('{')) {
+            allData = JSON.parse(text);
+            break;
+          }
+        }
+      } catch(e) { console.log('Fetch failed:', url, e); }
     }
 
     document.getElementById('loading').style.display = 'none';
@@ -262,7 +272,7 @@ a.t-link:hover { text-decoration: underline; }
     if (!allData || !allData.tournaments || allData.tournaments.length === 0) {
       document.getElementById('emptyState').style.display = '';
       document.getElementById('emptyState').querySelector('div:last-child').textContent =
-        `Pro rok ${year} zatim nejsou zadna data.`;
+        `Pro rok ${year} zat\u00edm nejsou \u017e\u00e1dn\u00e1 data.`;
       updateStats([], {});
       return;
     }
@@ -318,10 +328,10 @@ a.t-link:hover { text-decoration: underline; }
 
     const bar = document.getElementById('statsBar');
     bar.innerHTML = `
-      <div class="stat-card"><div class="num">${tournaments.size}</div><div class="label">Turnaju</div></div>
-      <div class="stat-card"><div class="num">${rows.length}</div><div class="label">Startu</div></div>
+      <div class="stat-card"><div class="num">${tournaments.size}</div><div class="label">Turnaj\u016F</div></div>
+      <div class="stat-card"><div class="num">${rows.length}</div><div class="label">Start\u016F</div></div>
       <div class="stat-card"><div class="num">${gold}</div><div class="label">Zlato</div></div>
-      <div class="stat-card"><div class="num">${silver}</div><div class="label">Stribro</div></div>
+      <div class="stat-card"><div class="num">${silver}</div><div class="label">St\u0159\u00edbro</div></div>
       <div class="stat-card"><div class="num">${bronze}</div><div class="label">Bronz</div></div>
     `;
   }
@@ -355,7 +365,7 @@ a.t-link:hover { text-decoration: underline; }
     if (sorted.length === 0) {
       table.style.display = 'none';
       empty.style.display = '';
-      empty.querySelector('div:last-child').textContent = 'Zadne vysledky neodpovidaji filtrum.';
+      empty.querySelector('div:last-child').textContent = '\u017d\u00e1dn\u00e9 v\u00fdsledky neodpov\u00eddaj\u00ed filtr\u016Fm.';
       return;
     }
 
