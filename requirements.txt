@@ -1,0 +1,12 @@
+# Moravian Gators Agent – Python závislosti
+# Instalace: pip install -r requirements.txt
+
+anthropic>=0.40.0          # Claude API pro generování příspěvků
+requests>=2.31.0           # HTTP requesty pro scraping
+beautifulsoup4>=4.12.0     # Parsování HTML
+lxml>=5.0.0                # Rychlejší HTML parser pro BeautifulSoup
+python-dotenv>=1.0.0       # Načítání .env souboru
+
+# Volitelné – pokud idiscgolf.cz nebo pdga.com renderuje obsah přes JavaScript:
+# playwright>=1.40.0
+# Po instalaci spusť: playwright install chromium

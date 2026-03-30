@@ -1,0 +1,20 @@
+# Secrets
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Output & logs
+output/
+gators_agent.log
+cron.log
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
