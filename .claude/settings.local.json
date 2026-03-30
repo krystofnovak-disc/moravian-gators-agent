@@ -4,7 +4,9 @@
       "Bash(source venv/bin/activate)",
       "Bash(RECIPIENT_EMAIL=krystof.novak@gnj.cz python3 main.py --date 2026-03-28)",
       "Bash(gh auth:*)",
-      "Bash(brew install:*)"
+      "Bash(brew install:*)",
+      "Bash(gh repo:*)",
+      "Bash(gh secret:*)"
     ]
   }
 }
