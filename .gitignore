@@ -12,6 +12,9 @@ output/
 gators_agent.log
 cron.log
 
+# One-off scripts
+backfill.py
+
 # macOS
 .DS_Store
 
