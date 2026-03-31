@@ -18,11 +18,51 @@ logger = logging.getLogger(__name__)
 
 
 def _normalize_date(date_str: str) -> str:
-    """Convert Czech date format (DD.MM.YYYY) to ISO (YYYY-MM-DD) if needed."""
-    m = re.match(r"^(\d{1,2})\.(\d{1,2})\.(\d{4})$", date_str.strip())
+    """Convert various date formats to ISO (YYYY-MM-DD) if possible.
+
+    Supported inputs:
+      - Czech:  DD.MM.YYYY
+      - PDGA single:  08-Mar-2026
+      - PDGA range:  06-Mar to 08-Mar-2026  (uses start date)
+      - ISO:  YYYY-MM-DD  (returned as-is)
+    """
+    from datetime import datetime as _dt
+
+    s = date_str.strip()
+    if not s:
+        return s
+
+    # Already ISO?
+    if re.match(r"^\d{4}-\d{2}-\d{2}$", s):
+        return s
+
+    # Czech DD.MM.YYYY
+    m = re.match(r"^(\d{1,2})\.(\d{1,2})\.(\d{4})$", s)
     if m:
         return f"{m.group(3)}-{int(m.group(2)):02d}-{int(m.group(1)):02d}"
-    return date_str  # already ISO or unknown format
+
+    # PDGA range: "06-Mar to 08-Mar-2026" or "18-Jan to 22-Mar-2026"
+    m = re.match(r"(\d{1,2}-\w+)(?:-\d{4})?\s+to\s+(\d{1,2}-\w+-\d{4})", s)
+    if m:
+        end_str = m.group(2)
+        start_str = m.group(1)
+        try:
+            end_d = _dt.strptime(end_str, "%d-%b-%Y").date()
+            if not re.search(r"\d{4}", start_str):
+                start_str += f"-{end_d.year}"
+            start_d = _dt.strptime(start_str, "%d-%b-%Y").date()
+            return start_d.isoformat()
+        except ValueError:
+            pass
+
+    # PDGA single: "08-Mar-2026"
+    for fmt in ["%d-%b-%Y", "%d %b %Y", "%b %d, %Y"]:
+        try:
+            return _dt.strptime(s, fmt).date().isoformat()
+        except ValueError:
+            continue
+
+    return s  # unknown format, return as-is
 
 
 def _normalize_name(name: str) -> str:
