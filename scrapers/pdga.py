@@ -271,6 +271,48 @@ class PDGAScraper:
         return ratings
 
     # ------------------------------------------------------------------
+    # Ratings
+    # ------------------------------------------------------------------
+
+    def get_player_ratings(self) -> dict:
+        """
+        Stáhne aktuální PDGA rating pro všechny hráče s PDGA číslem.
+
+        Returns
+        -------
+        dict : ``{cadg_str: {"name": str, "pdga_rating": int|None, "idg_rating": None}}``
+        """
+        ratings = {}
+        pdga_players = [(p, p.get("pdga")) for p in self.players if p.get("pdga")]
+        logger.info("Stahuji PDGA ratingy pro %d hráčů...", len(pdga_players))
+
+        for p, pdga_num in pdga_players:
+            cadg = str(p.get("cadg", ""))
+            name = f"{p['first_name']} {p['last_name']}"
+            try:
+                url = f"{BASE_URL}/player/{pdga_num}"
+                resp = requests.get(url, timeout=15, headers={"User-Agent": "Mozilla/5.0"})
+                if resp.status_code != 200:
+                    continue
+                soup = BeautifulSoup(resp.text, "html.parser")
+                rating_el = soup.find(class_="current-rating")
+                if rating_el:
+                    m = re.search(r"(\d{3,4})", rating_el.get_text())
+                    if m:
+                        ratings[cadg] = {
+                            "name": name,
+                            "pdga_rating": int(m.group(1)),
+                            "idg_rating": None,
+                        }
+                        logger.debug("  %s: PDGA %s", name, m.group(1))
+            except Exception as e:
+                logger.warning("  Rating pro %s selhal: %s", name, e)
+            time.sleep(2)
+
+        logger.info("Staženo %d PDGA ratingů.", len(ratings))
+        return ratings
+
+    # ------------------------------------------------------------------
     # Pomocné metody
     # ------------------------------------------------------------------
 

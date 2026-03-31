@@ -1369,5 +1369,168 @@
       ]
     }
   ],
-  "ratings": {}
+  "ratings": {
+    "2026-03": {
+      "319": {
+        "name": "Kryštof Novák",
+        "pdga_rating": 989,
+        "idg_rating": null
+      },
+      "349": {
+        "name": "Michal Grepl",
+        "pdga_rating": 911,
+        "idg_rating": null
+      },
+      "692": {
+        "name": "Bohdan Bílek",
+        "pdga_rating": 1012,
+        "idg_rating": null
+      },
+      "696": {
+        "name": "František Trenz",
+        "pdga_rating": 957,
+        "idg_rating": null
+      },
+      "818": {
+        "name": "Petr Masník",
+        "pdga_rating": 941,
+        "idg_rating": null
+      },
+      "839": {
+        "name": "Jiří Šebek",
+        "pdga_rating": 867,
+        "idg_rating": null
+      },
+      "1808": {
+        "name": "Michal Sviták",
+        "pdga_rating": 673,
+        "idg_rating": null
+      },
+      "2293": {
+        "name": "Jakub Veselý",
+        "pdga_rating": 980,
+        "idg_rating": null
+      },
+      "3333": {
+        "name": "Petr Ryšánek",
+        "pdga_rating": 704,
+        "idg_rating": null
+      },
+      "3575": {
+        "name": "Jakub Dostál",
+        "pdga_rating": 984,
+        "idg_rating": null
+      },
+      "3608": {
+        "name": "Vladimír Kříž",
+        "pdga_rating": 839,
+        "idg_rating": null
+      },
+      "3685": {
+        "name": "Kristián Kvita",
+        "pdga_rating": 967,
+        "idg_rating": null
+      },
+      "3689": {
+        "name": "Jakub Knápek",
+        "pdga_rating": 1021,
+        "idg_rating": null
+      },
+      "3727": {
+        "name": "Radek Jurčík",
+        "pdga_rating": 827,
+        "idg_rating": null
+      },
+      "3772": {
+        "name": "Jakub Urbiš",
+        "pdga_rating": 923,
+        "idg_rating": null
+      },
+      "4292": {
+        "name": "Julius Nadberežný",
+        "pdga_rating": 839,
+        "idg_rating": null
+      },
+      "4358": {
+        "name": "Lukáš Novobilský",
+        "pdga_rating": 950,
+        "idg_rating": null
+      },
+      "4362": {
+        "name": "Kristýna Jurčíková",
+        "pdga_rating": 946,
+        "idg_rating": null
+      },
+      "4363": {
+        "name": "Karolína Jurčíková",
+        "pdga_rating": 888,
+        "idg_rating": null
+      },
+      "5484": {
+        "name": "Jakub Moj",
+        "pdga_rating": 826,
+        "idg_rating": null
+      },
+      "5493": {
+        "name": "Filip Plíhal",
+        "pdga_rating": 860,
+        "idg_rating": null
+      },
+      "5508": {
+        "name": "Tomáš Ráček",
+        "pdga_rating": 982,
+        "idg_rating": null
+      },
+      "5648": {
+        "name": "Barbara Maria",
+        "pdga_rating": 883,
+        "idg_rating": null
+      },
+      "6136": {
+        "name": "Maxmilián Jakeš",
+        "pdga_rating": 957,
+        "idg_rating": null
+      },
+      "6195": {
+        "name": "Lukáš Vyvial",
+        "pdga_rating": 944,
+        "idg_rating": null
+      },
+      "6222": {
+        "name": "Jana Vinklárková",
+        "pdga_rating": 712,
+        "idg_rating": null
+      },
+      "6260": {
+        "name": "Jaroslav Randus",
+        "pdga_rating": 820,
+        "idg_rating": null
+      },
+      "6694": {
+        "name": "Jan Šebek",
+        "pdga_rating": 934,
+        "idg_rating": null
+      },
+      "7810": {
+        "name": "Ondřej Mazoch",
+        "pdga_rating": 983,
+        "idg_rating": null
+      },
+      "8007": {
+        "name": "Dominik Janek",
+        "pdga_rating": 832,
+        "idg_rating": null
+      },
+      "8299": {
+        "name": "Martin Hollas",
+        "pdga_rating": 852,
+        "idg_rating": null
+      },
+      "8321": {
+        "name": "Lukáš Zacpal",
+        "pdga_rating": 808,
+        "idg_rating": null
+      }
+    }
+  }
 }

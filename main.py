@@ -192,6 +192,18 @@ def run(saturday: date, sunday: date, dry_run: bool = False) -> None:
         acc = Accumulator(year=saturday.year)
         data = acc.load()
         data = acc.add_tournaments(tournaments_with_us, data)
+
+        # 7b. Aktualizace PDGA ratingů (jednou za měsíc stačí, ale spouštíme vždy)
+        month_key = saturday.strftime("%Y-%m")
+        if month_key not in data.get("ratings", {}):
+            logger.info("--- Stahování PDGA ratingů pro %s ---", month_key)
+            try:
+                pdga_ratings = PDGAScraper(players).get_player_ratings()
+                if pdga_ratings:
+                    data = acc.update_ratings(pdga_ratings, month_key, data)
+            except Exception as e:
+                logger.error(f"Stažení ratingů selhalo: {e}", exc_info=True)
+
         acc.save(data)
     except Exception as e:
         logger.error(f"Akumulace výsledků selhala: {e}", exc_info=True)
