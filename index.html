@@ -6,10 +6,10 @@
 <title>Moravian Gators - Statistiky</title>
 <style>
 :root {
-  --green-dark: #192f6b;
-  --green-mid: #2a4a9e;
-  --green-light: #e8edf7;
-  --green-accent: #3565c0;
+  --primary: #192f6b;
+  --primary-mid: #2a4a9e;
+  --primary-light: #e8edf7;
+  --primary-accent: #3565c0;
   --gold: #ffd600;
   --silver: #b0bec5;
   --bronze: #bf8040;
@@ -18,15 +18,16 @@
   --text: #212121;
   --text-light: #757575;
   --border: #e0e0e0;
+  --pdga-color: #0d7377;
+  --cadg-color: #192f6b;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   background: var(--bg); color: var(--text); line-height: 1.5;
 }
-/* Header */
 .header {
-  background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+  background: linear-gradient(135deg, var(--primary), var(--primary-mid));
   color: #fff; padding: 24px 20px; text-align: center;
 }
 .header h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
@@ -40,6 +41,18 @@ body {
   border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600;
 }
 .year-btn.active { background: rgba(255,255,255,0.25); color: #fff; }
+/* Nav tabs */
+.nav-tabs {
+  display: flex; justify-content: center; gap: 0; background: var(--primary);
+  padding: 0 20px 0;
+}
+.nav-tab {
+  background: none; border: none; color: rgba(255,255,255,0.6); padding: 10px 24px;
+  font-size: 14px; font-weight: 600; cursor: pointer; border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+}
+.nav-tab:hover { color: rgba(255,255,255,0.9); }
+.nav-tab.active { color: #fff; border-bottom-color: #fff; }
 /* Stats bar */
 .stats-bar {
   display: flex; gap: 12px; padding: 16px 20px; max-width: 1200px;
@@ -50,7 +63,7 @@ body {
   text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   min-width: 120px; flex: 1; max-width: 180px;
 }
-.stat-card .num { font-size: 28px; font-weight: 700; color: var(--green-dark); }
+.stat-card .num { font-size: 28px; font-weight: 700; color: var(--primary); }
 .stat-card .label { font-size: 12px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
 /* Filters */
 .filters {
@@ -65,10 +78,10 @@ body {
 .filters input[type="date"] { width: 140px; }
 .filters label { font-size: 13px; display: flex; align-items: center; gap: 4px; cursor: pointer; white-space: nowrap; }
 .btn-reset {
-  background: var(--green-light); border: none; padding: 8px 14px;
-  border-radius: 8px; cursor: pointer; font-size: 13px; color: var(--green-dark); font-weight: 600;
+  background: var(--primary-light); border: none; padding: 8px 14px;
+  border-radius: 8px; cursor: pointer; font-size: 13px; color: var(--primary); font-weight: 600;
 }
-.btn-reset:hover { background: #c8e6c9; }
+.btn-reset:hover { background: #d0d8ef; }
 /* Table container */
 .table-wrap {
   max-width: 1200px; margin: 0 auto; padding: 0 20px 40px; overflow-x: auto;
@@ -78,16 +91,16 @@ table {
   border-radius: 10px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 thead th {
-  background: var(--green-dark); color: #fff; padding: 10px 12px;
+  background: var(--primary); color: #fff; padding: 10px 12px;
   font-size: 13px; font-weight: 600; text-align: left; cursor: pointer;
   user-select: none; white-space: nowrap; position: sticky; top: 0; z-index: 2;
 }
-thead th:hover { background: var(--green-mid); }
+thead th:hover { background: var(--primary-mid); }
 thead th .arrow { opacity: 0.5; margin-left: 4px; font-size: 10px; }
 thead th.sorted .arrow { opacity: 1; }
 tbody tr { border-bottom: 1px solid #f0f0f0; transition: background 0.15s; }
 tbody tr:nth-child(even) { background: #fafafa; }
-tbody tr:hover { background: var(--green-light); }
+tbody tr:hover { background: var(--primary-light); }
 tbody td { padding: 8px 12px; font-size: 14px; vertical-align: top; }
 /* Medal row highlights */
 tr.medal-1 { border-left: 4px solid var(--gold); }
@@ -106,16 +119,22 @@ tr.medal-3 { border-left: 4px solid var(--bronze); }
 .tier-njdgt { background: #2e7d32; }
 .tier-dgpt { background: #e65100; }
 .tier-pvdgt { background: #00838f; }
+.tier-pct { background: #ad1457; }
 .tier-pdga { background: #37474f; }
 .tier-local { background: #9e9e9e; }
 .tier-other { background: #9e9e9e; }
 /* Player info */
 .player-name { font-weight: 600; }
-.player-ratings { font-size: 11px; color: var(--text-light); margin-top: 1px; }
+.player-link { font-weight: 600; color: var(--primary); cursor: pointer; text-decoration: none; }
+.player-link:hover { text-decoration: underline; }
+.player-ratings { font-size: 11px; margin-top: 1px; display: flex; gap: 6px; flex-wrap: wrap; }
+.rating-badge { display: inline-block; padding: 0 6px; border-radius: 8px; font-size: 11px; font-weight: 600; }
+.rating-pdga { background: #e0f2f1; color: var(--pdga-color); }
+.rating-cadg { background: #e8edf7; color: var(--cadg-color); }
 /* Place */
 .place-medal { font-size: 16px; }
 /* Tournament link */
-a.t-link { color: var(--green-dark); text-decoration: none; font-weight: 500; }
+a.t-link { color: var(--primary); text-decoration: none; font-weight: 500; }
 a.t-link:hover { text-decoration: underline; }
 /* Round ratings badges */
 .rr { display: inline-block; background: #e3f2fd; color: #1565c0; padding: 1px 6px; border-radius: 8px; font-size: 11px; margin-right: 3px; }
@@ -131,10 +150,55 @@ a.t-link:hover { text-decoration: underline; }
 .loading { text-align: center; padding: 80px 20px; }
 .spinner {
   width: 36px; height: 36px; border: 3px solid var(--border);
-  border-top-color: var(--green-dark); border-radius: 50%;
+  border-top-color: var(--primary); border-radius: 50%;
   animation: spin 0.8s linear infinite; margin: 0 auto 12px;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
+/* Views */
+.view { display: none; }
+.view.active { display: block; }
+/* Player list table */
+.players-table .player-row { cursor: pointer; }
+.players-table .player-row:hover { background: var(--primary-light); }
+.medal-count { display: inline-flex; align-items: center; gap: 2px; margin-right: 8px; font-size: 13px; }
+/* Player detail modal */
+.modal-overlay {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5); z-index: 100; overflow-y: auto;
+  justify-content: center; padding: 40px 20px;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--card); border-radius: 14px; max-width: 900px; width: 100%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2); overflow: hidden; align-self: flex-start;
+}
+.modal-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+  color: #fff; padding: 20px 24px; display: flex; justify-content: space-between; align-items: flex-start;
+}
+.modal-header h2 { font-size: 20px; margin-bottom: 4px; }
+.modal-header .meta { opacity: 0.85; font-size: 13px; }
+.modal-header .meta a { color: #fff; }
+.modal-close {
+  background: rgba(255,255,255,0.2); border: none; color: #fff; width: 32px; height: 32px;
+  border-radius: 50%; font-size: 18px; cursor: pointer; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0;
+}
+.modal-close:hover { background: rgba(255,255,255,0.35); }
+.modal-stats {
+  display: flex; gap: 12px; padding: 16px 24px; flex-wrap: wrap; background: #f8f9fb;
+  border-bottom: 1px solid var(--border);
+}
+.modal-stat {
+  text-align: center; min-width: 80px;
+}
+.modal-stat .num { font-size: 22px; font-weight: 700; color: var(--primary); }
+.modal-stat .label { font-size: 11px; color: var(--text-light); text-transform: uppercase; }
+.modal-body { padding: 0 24px 24px; }
+.modal-body h3 { font-size: 15px; color: var(--primary); margin: 16px 0 8px; }
+.modal-body table { font-size: 13px; }
+.modal-body thead th { font-size: 12px; padding: 8px 10px; }
+.modal-body tbody td { padding: 6px 10px; font-size: 13px; }
 /* Responsive */
 @media (max-width: 768px) {
   .header h1 { font-size: 20px; }
@@ -144,6 +208,10 @@ a.t-link:hover { text-decoration: underline; }
   .filters { flex-direction: column; }
   .filters input[type="text"] { min-width: 100%; }
   thead th, tbody td { padding: 6px 8px; font-size: 12px; }
+  .nav-tab { padding: 10px 16px; font-size: 13px; }
+  .modal { margin: 10px; border-radius: 10px; }
+  .modal-header { padding: 16px; }
+  .modal-body { padding: 0 16px 16px; }
 }
 </style>
 </head>
@@ -155,50 +223,99 @@ a.t-link:hover { text-decoration: underline; }
   <div class="year-selector" id="yearSelector"></div>
 </div>
 
-<div class="stats-bar" id="statsBar"></div>
-
-<div class="filters">
-  <input type="text" id="search" placeholder="Hledat hr&#225;&#269;e nebo turnaj...">
-  <select id="tierFilter">
-    <option value="">V&#353;echny s&#233;rie</option>
-    <option value="MČR">M&#268;R</option>
-    <option value="CDGT">CDGT</option>
-    <option value="ADGL">ADGL</option>
-    <option value="HDGT">HDGT</option>
-    <option value="NJDGT">NJDGT</option>
-    <option value="PvDGT">PvDGT</option>
-    <option value="DGPT">DGPT</option>
-    <option value="PDGA">PDGA</option>
-    <option value="local">Ostatn&#237;</option>
-  </select>
-  <input type="date" id="dateFrom" title="Od">
-  <input type="date" id="dateTo" title="Do">
-  <label><input type="checkbox" id="medalsOnly"> Jen med&#225;ile</label>
-  <button class="btn-reset" id="resetBtn">Resetovat</button>
+<div class="nav-tabs">
+  <button class="nav-tab active" data-view="results">V&#253;sledky</button>
+  <button class="nav-tab" data-view="players">Hr&#225;&#269;i</button>
 </div>
 
-<div class="table-wrap">
-  <div class="loading" id="loading">
-    <div class="spinner"></div>
-    <div>Na&#269;&#237;t&#225;m data...</div>
+<div class="stats-bar" id="statsBar"></div>
+
+<!-- Results view -->
+<div class="view active" id="view-results">
+  <div class="filters">
+    <input type="text" id="search" placeholder="Hledat hr&#225;&#269;e nebo turnaj...">
+    <select id="tierFilter">
+      <option value="">V&#353;echny s&#233;rie</option>
+      <option value="MČR">M&#268;R</option>
+      <option value="CDGT">CDGT</option>
+      <option value="ADGL">ADGL</option>
+      <option value="HDGT">HDGT</option>
+      <option value="NJDGT">NJDGT</option>
+      <option value="PCT">PCT</option>
+      <option value="PvDGT">PvDGT</option>
+      <option value="DGPT">DGPT</option>
+      <option value="PDGA">PDGA</option>
+      <option value="local">Ostatn&#237;</option>
+    </select>
+    <input type="date" id="dateFrom" title="Od">
+    <input type="date" id="dateTo" title="Do">
+    <label><input type="checkbox" id="medalsOnly"> Jen med&#225;ile</label>
+    <button class="btn-reset" id="resetBtn">Resetovat</button>
   </div>
-  <table id="mainTable" style="display:none">
-    <thead>
-      <tr>
-        <th data-col="date">Datum <span class="arrow">&#9650;</span></th>
-        <th data-col="tournament">Turnaj <span class="arrow">&#9650;</span></th>
-        <th data-col="player">Hrac <span class="arrow">&#9650;</span></th>
-        <th data-col="division">Kategorie <span class="arrow">&#9650;</span></th>
-        <th data-col="place">Umisteni <span class="arrow">&#9650;</span></th>
-        <th data-col="score">Skore <span class="arrow">&#9650;</span></th>
-        <th data-col="rr">Round Ratings <span class="arrow">&#9650;</span></th>
-      </tr>
-    </thead>
-    <tbody id="tbody"></tbody>
-  </table>
-  <div class="empty" id="emptyState" style="display:none">
-    <div class="icon">&#128270;</div>
-    <div>&#381;&#225;dn&#233; v&#253;sledky neodpov&#237;daj&#237; filtr&#367;m.</div>
+
+  <div class="table-wrap">
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <div>Na&#269;&#237;t&#225;m data...</div>
+    </div>
+    <table id="mainTable" style="display:none">
+      <thead>
+        <tr>
+          <th data-col="date">Datum <span class="arrow">&#9650;</span></th>
+          <th data-col="tournament">Turnaj <span class="arrow">&#9650;</span></th>
+          <th data-col="player">Hr&#225;&#269; <span class="arrow">&#9650;</span></th>
+          <th data-col="division">Kategorie <span class="arrow">&#9650;</span></th>
+          <th data-col="place">Um&#237;st&#283;n&#237; <span class="arrow">&#9650;</span></th>
+          <th data-col="score">Sk&#243;re <span class="arrow">&#9650;</span></th>
+          <th data-col="rr">Round Ratings <span class="arrow">&#9650;</span></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div class="empty" id="emptyState" style="display:none">
+      <div class="icon">&#128270;</div>
+      <div>&#381;&#225;dn&#233; v&#253;sledky neodpov&#237;daj&#237; filtr&#367;m.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Players view -->
+<div class="view" id="view-players">
+  <div class="filters">
+    <input type="text" id="playerSearch" placeholder="Hledat hr&#225;&#269;e...">
+  </div>
+  <div class="table-wrap">
+    <table id="playersTable" class="players-table">
+      <thead>
+        <tr>
+          <th data-pcol="name">Hr&#225;&#269; <span class="arrow">&#9650;</span></th>
+          <th data-pcol="tournaments">Turnaj&#367; <span class="arrow">&#9650;</span></th>
+          <th data-pcol="gold">&#129351; <span class="arrow">&#9650;</span></th>
+          <th data-pcol="silver">&#129352; <span class="arrow">&#9650;</span></th>
+          <th data-pcol="bronze">&#129353; <span class="arrow">&#9650;</span></th>
+          <th data-pcol="top10">Top 10 <span class="arrow">&#9650;</span></th>
+          <th data-pcol="avgPlace">&#216; Um&#237;st&#283;n&#237; <span class="arrow">&#9650;</span></th>
+          <th data-pcol="pdga_rating">PDGA <span class="arrow">&#9650;</span></th>
+          <th data-pcol="cadg_rating">&#268;ADG <span class="arrow">&#9650;</span></th>
+        </tr>
+      </thead>
+      <tbody id="playersTbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Player detail modal -->
+<div class="modal-overlay" id="playerModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <h2 id="modalPlayerName"></h2>
+        <div class="meta" id="modalPlayerMeta"></div>
+      </div>
+      <button class="modal-close" id="modalClose">&#10005;</button>
+    </div>
+    <div class="modal-stats" id="modalStats"></div>
+    <div class="modal-body" id="modalBody"></div>
   </div>
 </div>
 
@@ -213,9 +330,27 @@ a.t-link:hover { text-decoration: underline; }
   let activeYear = currentYear;
   let allData = null;
   let rows = [];
+  let playerStats = [];
   let sortCol = 'date';
   let sortAsc = false;
+  let pSortCol = 'tournaments';
+  let pSortAsc = false;
   let latestRatings = {};
+  let playersConfig = [];
+
+  // --- Load players config ---
+  async function loadPlayersConfig() {
+    const paths = [
+      './config/players.json',
+      '/moravian-gators-agent/config/players.json'
+    ];
+    for (const url of paths) {
+      try {
+        const r = await fetch(url);
+        if (r.ok) { playersConfig = await r.json(); return; }
+      } catch(e) {}
+    }
+  }
 
   // --- Year selector ---
   const ys = document.getElementById('yearSelector');
@@ -227,18 +362,26 @@ a.t-link:hover { text-decoration: underline; }
     ys.appendChild(b);
   }
 
+  // --- Nav tabs ---
+  document.querySelectorAll('.nav-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      document.getElementById('view-' + tab.dataset.view).classList.add('active');
+    });
+  });
+
   // --- Data loading ---
   function dataUrl(year) {
-    // Build base URL from current location
     const loc = window.location;
-    const base = loc.href.replace(/\/[^\/]*$/, ''); // strip filename
-    const paths = [
+    const base = loc.href.replace(/\/[^\/]*$/, '');
+    return [
       `${base}/data/${year}.json`,
       `./data/${year}.json`,
       `/moravian-gators-agent/data/${year}.json`,
       `../data/${year}.json`
     ];
-    return paths;
   }
 
   async function loadYear(year) {
@@ -259,12 +402,9 @@ a.t-link:hover { text-decoration: underline; }
         const resp = await fetch(url);
         if (resp.ok) {
           const text = await resp.text();
-          if (text.trim().startsWith('{')) {
-            allData = JSON.parse(text);
-            break;
-          }
+          if (text.trim().startsWith('{')) { allData = JSON.parse(text); break; }
         }
-      } catch(e) { console.log('Fetch failed:', url, e); }
+      } catch(e) {}
     }
 
     document.getElementById('loading').style.display = 'none';
@@ -277,20 +417,12 @@ a.t-link:hover { text-decoration: underline; }
       return;
     }
 
-    // Determine ratings to show
     latestRatings = {};
     const ratings = allData.ratings || {};
     const months = Object.keys(ratings).sort();
     if (months.length > 0) {
-      // For past years use December, for current year use latest
-      const isCurrentYear = (year === currentYear);
-      let ratingMonth;
-      if (isCurrentYear) {
-        ratingMonth = months[months.length - 1];
-      } else {
-        const dec = `${year}-12`;
-        ratingMonth = months.includes(dec) ? dec : months[months.length - 1];
-      }
+      const ratingMonth = (year === currentYear) ? months[months.length - 1] :
+        (months.includes(`${year}-12`) ? `${year}-12` : months[months.length - 1]);
       latestRatings = ratings[ratingMonth] || {};
     }
 
@@ -304,6 +436,7 @@ a.t-link:hover { text-decoration: underline; }
           url_idg: t.url_idg,
           url_pdga: t.url_pdga,
           tier: t.tier || 'local',
+          source: t.source || '',
           player: r.player_name || '',
           cadg: r.cadg,
           pdga: r.pdga,
@@ -315,37 +448,81 @@ a.t-link:hover { text-decoration: underline; }
       });
     });
 
+    buildPlayerStats();
     updateStats(rows, latestRatings);
     renderTable();
+    renderPlayersTable();
+  }
+
+  // --- Build player stats ---
+  function buildPlayerStats() {
+    const map = {};
+    rows.forEach(r => {
+      const key = r.cadg || r.player;
+      if (!map[key]) {
+        map[key] = {
+          name: r.player, cadg: r.cadg, pdga: r.pdga,
+          tournaments: new Set(), gold: 0, silver: 0, bronze: 0, top10: 0,
+          places: [], results: []
+        };
+      }
+      const p = map[key];
+      p.tournaments.add(r.date + '|' + r.tournament);
+      if (r.place === 1) p.gold++;
+      if (r.place === 2) p.silver++;
+      if (r.place === 3) p.bronze++;
+      if (r.place && r.place <= 10) p.top10++;
+      if (r.place) p.places.push(r.place);
+      p.results.push(r);
+    });
+
+    playerStats = Object.values(map).map(p => {
+      const lr = latestRatings[String(p.cadg)] || {};
+      return {
+        name: p.name,
+        cadg: p.cadg,
+        pdga: p.pdga,
+        tournaments: p.tournaments.size,
+        gold: p.gold,
+        silver: p.silver,
+        bronze: p.bronze,
+        top10: p.top10,
+        avgPlace: p.places.length ? Math.round(p.places.reduce((a,b)=>a+b,0) / p.places.length * 10) / 10 : null,
+        pdga_rating: lr.pdga_rating || null,
+        cadg_rating: lr.idg_rating || null,
+        results: p.results
+      };
+    });
   }
 
   // --- Stats ---
-  function updateStats(rows, ratings) {
+  function updateStats(rows) {
     const tournaments = new Set(rows.map(r => r.date + r.tournament));
+    const players = new Set(rows.map(r => r.cadg || r.player));
     const gold = rows.filter(r => r.place === 1).length;
     const silver = rows.filter(r => r.place === 2).length;
     const bronze = rows.filter(r => r.place === 3).length;
 
-    const bar = document.getElementById('statsBar');
-    bar.innerHTML = `
-      <div class="stat-card"><div class="num">${tournaments.size}</div><div class="label">Turnaj\u016F</div></div>
-      <div class="stat-card"><div class="num">${rows.length}</div><div class="label">Start\u016F</div></div>
-      <div class="stat-card"><div class="num">${gold}</div><div class="label">Zlato</div></div>
-      <div class="stat-card"><div class="num">${silver}</div><div class="label">St\u0159\u00edbro</div></div>
-      <div class="stat-card"><div class="num">${bronze}</div><div class="label">Bronz</div></div>
+    document.getElementById('statsBar').innerHTML = `
+      <div class="stat-card"><div class="num">${tournaments.size}</div><div class="label">Turnaj\u016f</div></div>
+      <div class="stat-card"><div class="num">${players.size}</div><div class="label">Hr\u00e1\u010d\u016f</div></div>
+      <div class="stat-card"><div class="num">${rows.length}</div><div class="label">Start\u016f</div></div>
+      <div class="stat-card"><div class="num">${gold}</div><div class="label">&#129351;</div></div>
+      <div class="stat-card"><div class="num">${silver}</div><div class="label">&#129352;</div></div>
+      <div class="stat-card"><div class="num">${bronze}</div><div class="label">&#129353;</div></div>
     `;
   }
 
   // --- Tier badge ---
   function tierBadge(tier) {
     const t = (tier || 'local').toLowerCase();
-    let cls = 'tier-local';
-    let label = tier || 'local';
-    if (t.includes('mcr') || t === 'mčr') { cls = 'tier-mcr'; label = 'MCR'; }
+    let cls = 'tier-local', label = tier || 'local';
+    if (t.includes('mcr') || t === 'm\u010dr') { cls = 'tier-mcr'; label = 'MCR'; }
     else if (t === 'cdgt') cls = 'tier-cdgt';
     else if (t === 'adgl') cls = 'tier-adgl';
     else if (t === 'hdgt') cls = 'tier-hdgt';
     else if (t === 'njdgt') cls = 'tier-njdgt';
+    else if (t === 'pct') cls = 'tier-pct';
     else if (t.includes('dgpt')) { cls = 'tier-dgpt'; label = 'DGPT'; }
     else if (t === 'pvdgt') cls = 'tier-pvdgt';
     else if (t.includes('pdga')) { cls = 'tier-pdga'; label = tier; }
@@ -353,11 +530,29 @@ a.t-link:hover { text-decoration: underline; }
     return `<span class="tier ${cls}">${label}</span>`;
   }
 
-  // --- Render ---
+  // --- Rating badges for player ---
+  function playerRatingHtml(r) {
+    const cadgStr = String(r.cadg || '');
+    const lr = latestRatings[cadgStr] || {};
+    const src = r.source || '';
+    const parts = [];
+
+    // Show PDGA rating on PDGA-sourced tournaments, CADG on idiscgolf, both if available
+    if (src === 'pdga') {
+      if (lr.pdga_rating) parts.push(`<span class="rating-badge rating-pdga">PDGA ${lr.pdga_rating}</span>`);
+      if (lr.idg_rating) parts.push(`<span class="rating-badge rating-cadg">\u010cADG ${lr.idg_rating}</span>`);
+    } else {
+      if (lr.idg_rating) parts.push(`<span class="rating-badge rating-cadg">\u010cADG ${lr.idg_rating}</span>`);
+      if (lr.pdga_rating) parts.push(`<span class="rating-badge rating-pdga">PDGA ${lr.pdga_rating}</span>`);
+    }
+
+    return parts.length ? `<div class="player-ratings">${parts.join('')}</div>` : '';
+  }
+
+  // --- Render results table ---
   function renderTable() {
     const filtered = getFiltered();
     const sorted = getSorted(filtered);
-
     const tbody = document.getElementById('tbody');
     const table = document.getElementById('mainTable');
     const empty = document.getElementById('emptyState');
@@ -365,14 +560,14 @@ a.t-link:hover { text-decoration: underline; }
     if (sorted.length === 0) {
       table.style.display = 'none';
       empty.style.display = '';
-      empty.querySelector('div:last-child').textContent = '\u017d\u00e1dn\u00e9 v\u00fdsledky neodpov\u00eddaj\u00ed filtr\u016Fm.';
+      empty.querySelector('div:last-child').textContent = '\u017d\u00e1dn\u00e9 v\u00fdsledky neodpov\u00eddaj\u00ed filtr\u016fm.';
       return;
     }
 
     table.style.display = '';
     empty.style.display = 'none';
 
-    const html = sorted.map(r => {
+    tbody.innerHTML = sorted.map(r => {
       const mc = r.place >= 1 && r.place <= 3 ? ` medal-${r.place}` : '';
       const url = r.url_idg || r.url_pdga || '';
       const tLink = url ? `<a class="t-link" href="${url}" target="_blank">${esc(r.tournament)}</a>` : esc(r.tournament);
@@ -382,21 +577,13 @@ a.t-link:hover { text-decoration: underline; }
       else if (r.place === 2) placeStr = '<span class="place-medal">&#129352;</span> 2.';
       else if (r.place === 3) placeStr = '<span class="place-medal">&#129353;</span> 3.';
 
-      // Ratings
-      const cadgStr = String(r.cadg || '');
-      const pr = latestRatings[cadgStr] || {};
-      let ratingLine = '';
-      const parts = [];
-      if (pr.pdga_rating) parts.push(`PDGA: ${pr.pdga_rating}`);
-      if (pr.idg_rating) parts.push(`iDG: ${pr.idg_rating}`);
-      if (parts.length) ratingLine = `<div class="player-ratings">${parts.join(' &middot; ')}</div>`;
-
+      const ratingHtml = playerRatingHtml(r);
       const rrHtml = (r.round_ratings || []).map(v => `<span class="rr">${v}</span>`).join('');
 
       return `<tr class="${mc}">
         <td>${esc(r.date)}</td>
         <td>${tLink}${tierBadge(r.tier)}</td>
-        <td><div class="player-name">${esc(r.player)}</div>${ratingLine}</td>
+        <td><a class="player-link" data-cadg="${r.cadg || ''}" data-name="${esc(r.player)}">${esc(r.player)}</a>${ratingHtml}</td>
         <td>${esc(r.division)}</td>
         <td>${placeStr}</td>
         <td>${esc(r.score)}</td>
@@ -404,11 +591,10 @@ a.t-link:hover { text-decoration: underline; }
       </tr>`;
     }).join('');
 
-    tbody.innerHTML = html;
-
     // Update sort arrows
-    document.querySelectorAll('thead th').forEach(th => {
+    document.querySelectorAll('#mainTable thead th').forEach(th => {
       const col = th.dataset.col;
+      if (!col) return;
       th.classList.toggle('sorted', col === sortCol);
       th.querySelector('.arrow').innerHTML = col === sortCol ? (sortAsc ? '&#9650;' : '&#9660;') : '&#9650;';
     });
@@ -416,7 +602,7 @@ a.t-link:hover { text-decoration: underline; }
 
   function esc(s) {
     if (!s) return '';
-    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
   // --- Filtering ---
@@ -432,15 +618,10 @@ a.t-link:hover { text-decoration: underline; }
       if (tier) {
         const rt = (r.tier || '').toLowerCase();
         const ft = tier.toLowerCase();
-        if (ft === 'local') {
-          if (rt !== 'local') return false;
-        } else if (ft === 'pdga') {
-          if (!rt.includes('pdga')) return false;
-        } else if (ft === 'dgpt') {
-          if (!rt.includes('dgpt')) return false;
-        } else {
-          if (rt !== ft && !rt.includes(ft.toLowerCase())) return false;
-        }
+        if (ft === 'local') { if (rt !== 'local') return false; }
+        else if (ft === 'pdga') { if (!rt.includes('pdga')) return false; }
+        else if (ft === 'dgpt') { if (!rt.includes('dgpt')) return false; }
+        else { if (rt !== ft && !rt.includes(ft)) return false; }
       }
       if (from && r.date < from) return false;
       if (to && r.date > to) return false;
@@ -453,25 +634,150 @@ a.t-link:hover { text-decoration: underline; }
   function getSorted(arr) {
     return [...arr].sort((a, b) => {
       let va = a[sortCol], vb = b[sortCol];
-      if (sortCol === 'place') {
-        va = va || 9999; vb = vb || 9999;
-      }
-      if (sortCol === 'score') {
-        va = parseFloat(va) || 0; vb = parseFloat(vb) || 0;
-      }
+      if (sortCol === 'place') { va = va || 9999; vb = vb || 9999; }
+      if (sortCol === 'score') { va = parseFloat(va) || 0; vb = parseFloat(vb) || 0; }
       if (va < vb) return sortAsc ? -1 : 1;
       if (va > vb) return sortAsc ? 1 : -1;
       return 0;
     });
   }
 
-  // --- Events ---
-  document.querySelectorAll('thead th').forEach(th => {
+  // --- Players table ---
+  function renderPlayersTable() {
+    const q = document.getElementById('playerSearch').value.toLowerCase();
+    let filtered = playerStats;
+    if (q) filtered = filtered.filter(p => p.name.toLowerCase().includes(q));
+
+    const sorted = [...filtered].sort((a, b) => {
+      let va = a[pSortCol], vb = b[pSortCol];
+      if (va === null || va === undefined) va = pSortCol === 'avgPlace' ? 9999 : -1;
+      if (vb === null || vb === undefined) vb = pSortCol === 'avgPlace' ? 9999 : -1;
+      if (pSortCol === 'name') {
+        va = String(va).toLowerCase(); vb = String(vb).toLowerCase();
+      }
+      if (va < vb) return pSortAsc ? -1 : 1;
+      if (va > vb) return pSortAsc ? 1 : -1;
+      return 0;
+    });
+
+    document.getElementById('playersTbody').innerHTML = sorted.map(p => {
+      const pdgaR = p.pdga_rating ? `<span class="rating-badge rating-pdga">${p.pdga_rating}</span>` : '-';
+      const cadgR = p.cadg_rating ? `<span class="rating-badge rating-cadg">${p.cadg_rating}</span>` : '-';
+      return `<tr class="player-row" data-cadg="${p.cadg || ''}" data-name="${esc(p.name)}">
+        <td><span class="player-link">${esc(p.name)}</span></td>
+        <td>${p.tournaments}</td>
+        <td>${p.gold || '-'}</td>
+        <td>${p.silver || '-'}</td>
+        <td>${p.bronze || '-'}</td>
+        <td>${p.top10 || '-'}</td>
+        <td>${p.avgPlace !== null ? p.avgPlace : '-'}</td>
+        <td>${pdgaR}</td>
+        <td>${cadgR}</td>
+      </tr>`;
+    }).join('');
+
+    // Update sort arrows
+    document.querySelectorAll('#playersTable thead th').forEach(th => {
+      const col = th.dataset.pcol;
+      if (!col) return;
+      th.classList.toggle('sorted', col === pSortCol);
+      const arrow = th.querySelector('.arrow');
+      if (arrow) arrow.innerHTML = col === pSortCol ? (pSortAsc ? '&#9650;' : '&#9660;') : '&#9650;';
+    });
+  }
+
+  // --- Player detail modal ---
+  function openPlayerModal(cadg, name) {
+    const p = playerStats.find(p =>
+      (cadg && String(p.cadg) === String(cadg)) || p.name === name
+    );
+    if (!p) return;
+
+    // Find player config for PDGA link
+    const pc = playersConfig.find(c => c.cadg === p.cadg) || {};
+    const pdgaNum = p.pdga || pc.pdga;
+    const lr = latestRatings[String(p.cadg)] || {};
+
+    // Header
+    document.getElementById('modalPlayerName').textContent = p.name;
+    let meta = [];
+    if (pdgaNum) meta.push(`<a href="https://www.pdga.com/player/${pdgaNum}" target="_blank">PDGA #${pdgaNum}</a>`);
+    if (p.cadg) meta.push(`\u010cADG #${p.cadg}`);
+    if (lr.pdga_rating) meta.push(`<span class="rating-badge rating-pdga" style="font-size:12px">PDGA ${lr.pdga_rating}</span>`);
+    if (lr.idg_rating) meta.push(`<span class="rating-badge rating-cadg" style="font-size:12px">\u010cADG ${lr.idg_rating}</span>`);
+    document.getElementById('modalPlayerMeta').innerHTML = meta.join(' &middot; ');
+
+    // Stats
+    document.getElementById('modalStats').innerHTML = `
+      <div class="modal-stat"><div class="num">${p.tournaments}</div><div class="label">Turnaj\u016f</div></div>
+      <div class="modal-stat"><div class="num">${p.gold}</div><div class="label">&#129351;</div></div>
+      <div class="modal-stat"><div class="num">${p.silver}</div><div class="label">&#129352;</div></div>
+      <div class="modal-stat"><div class="num">${p.bronze}</div><div class="label">&#129353;</div></div>
+      <div class="modal-stat"><div class="num">${p.top10}</div><div class="label">Top 10</div></div>
+      <div class="modal-stat"><div class="num">${p.avgPlace !== null ? p.avgPlace : '-'}</div><div class="label">\u00d8 Um\u00edst\u011bn\u00ed</div></div>
+    `;
+
+    // Results table sorted by date desc
+    const results = [...p.results].sort((a, b) => b.date.localeCompare(a.date));
+    let bodyHtml = '<h3>V\u00fdsledky na turnaj\u00edch</h3>';
+    bodyHtml += '<table><thead><tr><th>Datum</th><th>Turnaj</th><th>Kategorie</th><th>Um\u00edst\u011bn\u00ed</th><th>Sk\u00f3re</th><th>Round Ratings</th></tr></thead><tbody>';
+    results.forEach(r => {
+      let placeStr = r.place ? `${r.place}.` : '-';
+      if (r.place === 1) placeStr = '&#129351; 1.';
+      else if (r.place === 2) placeStr = '&#129352; 2.';
+      else if (r.place === 3) placeStr = '&#129353; 3.';
+      const url = r.url_idg || r.url_pdga || '';
+      const tLink = url ? `<a class="t-link" href="${url}" target="_blank">${esc(r.tournament)}</a>` : esc(r.tournament);
+      const rrHtml = (r.round_ratings || []).map(v => `<span class="rr">${v}</span>`).join('') || '-';
+      const mc = r.place >= 1 && r.place <= 3 ? ` medal-${r.place}` : '';
+      bodyHtml += `<tr class="${mc}"><td>${esc(r.date)}</td><td>${tLink}${tierBadge(r.tier)}</td><td>${esc(r.division)}</td><td>${placeStr}</td><td>${esc(r.score)}</td><td>${rrHtml}</td></tr>`;
+    });
+    bodyHtml += '</tbody></table>';
+
+    document.getElementById('modalBody').innerHTML = bodyHtml;
+    document.getElementById('playerModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('playerModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  document.getElementById('playerModal').addEventListener('click', e => {
+    if (e.target === document.getElementById('playerModal')) closeModal();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // --- Event delegation for player clicks ---
+  document.addEventListener('click', e => {
+    const link = e.target.closest('.player-link, .player-row');
+    if (!link) return;
+    e.preventDefault();
+    const cadg = link.dataset.cadg;
+    const name = link.dataset.name || link.querySelector('.player-link')?.textContent || '';
+    openPlayerModal(cadg, name);
+  });
+
+  // --- Table sort events ---
+  document.querySelectorAll('#mainTable thead th').forEach(th => {
     th.addEventListener('click', () => {
       const col = th.dataset.col;
+      if (!col) return;
       if (sortCol === col) { sortAsc = !sortAsc; }
       else { sortCol = col; sortAsc = true; }
       renderTable();
+    });
+  });
+
+  document.querySelectorAll('#playersTable thead th').forEach(th => {
+    th.addEventListener('click', () => {
+      const col = th.dataset.pcol;
+      if (!col) return;
+      if (pSortCol === col) { pSortAsc = !pSortAsc; }
+      else { pSortCol = col; pSortAsc = col === 'name'; }
+      renderPlayersTable();
     });
   });
 
@@ -479,6 +785,8 @@ a.t-link:hover { text-decoration: underline; }
     const el = document.getElementById(id);
     el.addEventListener(el.type === 'checkbox' ? 'change' : 'input', renderTable);
   });
+
+  document.getElementById('playerSearch').addEventListener('input', renderPlayersTable);
 
   document.getElementById('resetBtn').addEventListener('click', () => {
     document.getElementById('search').value = '';
@@ -492,7 +800,7 @@ a.t-link:hover { text-decoration: underline; }
   // --- Init ---
   const hashYear = parseInt(window.location.hash.replace('#', ''));
   if (hashYear >= startYear && hashYear <= currentYear) activeYear = hashYear;
-  loadYear(activeYear);
+  loadPlayersConfig().then(() => loadYear(activeYear));
 })();
 </script>
 </body>

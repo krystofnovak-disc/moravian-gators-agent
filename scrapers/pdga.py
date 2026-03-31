@@ -254,6 +254,8 @@ class PDGAScraper:
             return "DGPT EuroTour"
         if "DGPT" in name_upper:
             return "DGPT"
+        if "PCT" in name_upper:
+            return "PCT"
 
         return base_tier
 

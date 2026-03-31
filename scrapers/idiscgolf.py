@@ -258,7 +258,7 @@ class IDGScraper:
         name_upper = tournament_name.upper()
         if "MISTROVSTVÍ ČR" in name_upper or "MČR" in name_upper or "MISTROVSTVÍ ČESKÉ REPUBLIKY" in name_upper:
             return "MČR"
-        for tag in ["CDGT", "NJDGT", "HDGT", "DGPT", "PvDGT"]:
+        for tag in ["CDGT", "NJDGT", "HDGT", "DGPT", "PvDGT", "PCT"]:
             if tag in name_upper:
                 return tag
         if "ADGL" in name_upper or "ADL" in name_upper:
