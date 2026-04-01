@@ -202,6 +202,12 @@ class EmailSender:
 {body_html}
   </div>
 
+  <div style="background: #e8edf7; padding: 12px 16px; border-radius: 6px; margin-top: 16px; text-align: center;">
+    <a href="https://krystofnovak-disc.github.io/moravian-gators-agent/" style="color: #192f6b; font-weight: bold; font-size: 14px; text-decoration: none;">
+      📊 Online databáze výsledků
+    </a>
+  </div>
+
   <hr style="margin: 24px 0; border: none; border-top: 1px solid #eee;">
   <p style="color: #aaa; font-size: 12px; margin: 0;">
     Vygeneroval Moravian Gators Agent · každé pondělí v 8:00
