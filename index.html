@@ -146,6 +146,31 @@ a.t-link:hover { text-decoration: underline; }
   text-align: center; padding: 20px; font-size: 12px; color: var(--text-light);
   border-top: 1px solid var(--border); margin-top: 20px;
 }
+/* Records */
+.records-section {
+  max-width: 1200px; margin: 0 auto; padding: 0 20px 16px;
+}
+.records-title {
+  font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 6px;
+}
+.records-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+}
+.record-card {
+  background: var(--card); border-radius: 10px; padding: 12px 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 2px;
+}
+.record-card .record-label { font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.3px; }
+.record-card .record-name { font-size: 14px; font-weight: 700; color: var(--primary); cursor: pointer; }
+.record-card .record-name:hover { text-decoration: underline; }
+.record-card .record-value { font-size: 13px; color: var(--text); }
+@media (max-width: 900px) {
+  .records-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .records-grid { grid-template-columns: 1fr; }
+}
 /* Loading */
 .loading { text-align: center; padding: 80px 20px; }
 .spinner {
@@ -229,6 +254,11 @@ a.t-link:hover { text-decoration: underline; }
 </div>
 
 <div class="stats-bar" id="statsBar"></div>
+
+<div class="records-section" id="recordsSection" style="display:none">
+  <div class="records-title">&#127942; Rekordmani sez&#243;ny</div>
+  <div class="records-grid" id="recordsGrid"></div>
+</div>
 
 <!-- Results view -->
 <div class="view active" id="view-results">
@@ -336,6 +366,7 @@ a.t-link:hover { text-decoration: underline; }
   let pSortCol = 'tournaments';
   let pSortAsc = false;
   let latestRatings = {};
+  let prevYearRatings = {};
   let playersConfig = [];
 
   // --- Load players config ---
@@ -350,6 +381,45 @@ a.t-link:hover { text-decoration: underline; }
         if (r.ok) { playersConfig = await r.json(); return; }
       } catch(e) {}
     }
+  }
+
+  // --- Load previous year ratings for comparison ---
+  async function loadPrevYearRatings(year) {
+    prevYearRatings = {};
+    const urls = dataUrl(year - 1);
+    for (const url of urls) {
+      try {
+        const r = await fetch(url);
+        if (r.ok) {
+          const d = JSON.parse(await r.text());
+          const rats = d.ratings || {};
+          const months = Object.keys(rats).sort();
+          if (months.length) {
+            const dec = `${year-1}-12`;
+            const m = months.includes(dec) ? dec : months[months.length - 1];
+            prevYearRatings = rats[m] || {};
+          }
+          return;
+        }
+      } catch(e) {}
+    }
+  }
+
+  // --- Gender detection ---
+  function isWoman(cadg, divisions) {
+    // Check divisions first (F* = female)
+    if (divisions && divisions.some(d => /^F/.test(d))) return true;
+    // Fallback: Czech female last names end in -ová or -á
+    const pc = playersConfig.find(p => p.cadg === cadg);
+    if (pc) {
+      const ln = pc.last_name || '';
+      if (/ov\u00e1$|kov\u00e1$|sk\u00e1$|ck\u00e1$|n\u00e1$/.test(ln)) return true;
+      const fn = pc.first_name || '';
+      const femaleNames = ['Petra','Eli\u0161ka','Karol\u00edna','Krist\u00fdna','Jana',
+        'Vanessa','Kate\u0159ina','Am\u00e9lie','Barbora','Gabriela'];
+      if (femaleNames.includes(fn)) return true;
+    }
+    return false;
   }
 
   // --- Year selector ---
@@ -448,8 +518,10 @@ a.t-link:hover { text-decoration: underline; }
       });
     });
 
+    await loadPrevYearRatings(year);
     buildPlayerStats();
     updateStats(rows, latestRatings);
+    renderRecords();
     renderTable();
     renderPlayersTable();
   }
@@ -463,7 +535,7 @@ a.t-link:hover { text-decoration: underline; }
         map[key] = {
           name: r.player, cadg: r.cadg, pdga: r.pdga,
           tournaments: new Set(), gold: 0, silver: 0, bronze: 0, top10: 0,
-          places: [], results: []
+          places: [], results: [], divisions: new Set(), bestRoundRating: 0
         };
       }
       const p = map[key];
@@ -473,11 +545,16 @@ a.t-link:hover { text-decoration: underline; }
       if (r.place === 3) p.bronze++;
       if (r.place && r.place <= 10) p.top10++;
       if (r.place) p.places.push(r.place);
+      if (r.division) p.divisions.add(r.division);
+      (r.round_ratings || []).forEach(rr => { if (rr > p.bestRoundRating) p.bestRoundRating = rr; });
       p.results.push(r);
     });
 
     playerStats = Object.values(map).map(p => {
       const lr = latestRatings[String(p.cadg)] || {};
+      const pr = prevYearRatings[String(p.cadg)] || {};
+      const curRating = lr.pdga_rating || null;
+      const prevRating = pr.pdga_rating || null;
       return {
         name: p.name,
         cadg: p.cadg,
@@ -486,12 +563,63 @@ a.t-link:hover { text-decoration: underline; }
         gold: p.gold,
         silver: p.silver,
         bronze: p.bronze,
+        medals: p.gold + p.silver + p.bronze,
         top10: p.top10,
         avgPlace: p.places.length ? Math.round(p.places.reduce((a,b)=>a+b,0) / p.places.length * 10) / 10 : null,
-        pdga_rating: lr.pdga_rating || null,
+        pdga_rating: curRating,
         cadg_rating: lr.idg_rating || null,
+        ratingImprovement: (curRating && prevRating) ? curRating - prevRating : null,
+        bestRoundRating: p.bestRoundRating || null,
+        female: isWoman(p.cadg, [...p.divisions]),
         results: p.results
       };
+    });
+  }
+
+  // --- Records ---
+  function renderRecords() {
+    const section = document.getElementById('recordsSection');
+    const grid = document.getElementById('recordsGrid');
+    if (!playerStats.length) { section.style.display = 'none'; return; }
+
+    const men = playerStats.filter(p => !p.female);
+    const women = playerStats.filter(p => p.female);
+
+    function best(arr, key, higherBetter) {
+      const valid = arr.filter(p => p[key] !== null && p[key] !== 0);
+      if (!valid.length) return null;
+      valid.sort((a,b) => higherBetter ? b[key] - a[key] : a[key] - b[key]);
+      return valid[0];
+    }
+
+    const records = [
+      { emoji: '\ud83c\udfc3', label: 'Turnaj\u016f (mu\u017e)', player: best(men, 'tournaments', true), val: p => `${p.tournaments} turnaj\u016f` },
+      { emoji: '\ud83c\udfc3\u200d\u2640\ufe0f', label: 'Turnaj\u016f (\u017eena)', player: best(women, 'tournaments', true), val: p => `${p.tournaments} turnaj\u016f` },
+      { emoji: '\ud83c\udfc5', label: 'Medail\u00ed (mu\u017e)', player: best(men, 'medals', true), val: p => `${p.medals} (${p.gold}\ud83e\udd47${p.silver}\ud83e\udd48${p.bronze}\ud83e\udd49)` },
+      { emoji: '\ud83c\udfc5', label: 'Medail\u00ed (\u017eena)', player: best(women, 'medals', true), val: p => `${p.medals} (${p.gold}\ud83e\udd47${p.silver}\ud83e\udd48${p.bronze}\ud83e\udd49)` },
+      { emoji: '\ud83d\udcaa', label: 'Nejlep\u0161\u00ed kolo (mu\u017e)', player: best(men, 'bestRoundRating', true), val: p => `${p.bestRoundRating} rated` },
+      { emoji: '\ud83d\udcaa', label: 'Nejlep\u0161\u00ed kolo (\u017eena)', player: best(women, 'bestRoundRating', true), val: p => `${p.bestRoundRating} rated` },
+      { emoji: '\ud83d\udcc8', label: 'Rating \u2191 (mu\u017e)', player: best(men, 'ratingImprovement', true), val: p => `+${p.ratingImprovement} (${p.pdga_rating})` },
+      { emoji: '\ud83d\udcc8', label: 'Rating \u2191 (\u017eena)', player: best(women, 'ratingImprovement', true), val: p => `+${p.ratingImprovement} (${p.pdga_rating})` },
+    ];
+
+    const hasAny = records.some(r => r.player);
+    if (!hasAny) { section.style.display = 'none'; return; }
+
+    grid.innerHTML = records.map(r => {
+      if (!r.player) return `<div class="record-card"><div class="record-label">${r.emoji} ${r.label}</div><div class="record-value" style="color:var(--text-light)">Nedostatek dat</div></div>`;
+      return `<div class="record-card">
+        <div class="record-label">${r.emoji} ${r.label}</div>
+        <div class="record-name" data-cadg="${r.player.cadg || ''}" data-name="${esc(r.player.name)}">${esc(r.player.name)}</div>
+        <div class="record-value">${r.val(r.player)}</div>
+      </div>`;
+    }).join('');
+
+    section.style.display = '';
+
+    // Click handlers for record names
+    grid.querySelectorAll('.record-name').forEach(el => {
+      el.addEventListener('click', () => openPlayerModal(el.dataset.cadg, el.dataset.name));
     });
   }
 
