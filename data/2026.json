@@ -1369,6 +1369,205 @@
       ]
     },
     {
+      "name": "CDGT: FALCON open 2026",
+      "date": "2026-04-03",
+      "url_idg": "https://idiscgolf.cz/turnaje/2531",
+      "url_pdga": null,
+      "tier": "CDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
+          "division": "MPO",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "MPO",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Tomáš Ráček",
+          "cadg": 5508,
+          "pdga": 233423,
+          "division": "MPO",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Španihel",
+          "cadg": 5723,
+          "pdga": 247601,
+          "division": "MPO",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jan Šebek",
+          "cadg": 6694,
+          "pdga": 281439,
+          "division": "MPO",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Barbara Maria",
+          "cadg": 5648,
+          "pdga": 233444,
+          "division": "MP40",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Moj",
+          "cadg": 5484,
+          "pdga": 208119,
+          "division": "MP40",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Novobilský",
+          "cadg": 4358,
+          "pdga": 285107,
+          "division": "MJ18",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "MJ18",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Vyvial",
+          "cadg": 6195,
+          "pdga": 283489,
+          "division": "MJ18",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "MA3",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Julius Nadberežný",
+          "cadg": 4292,
+          "pdga": 240173,
+          "division": "MA3",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Filip Plíhal",
+          "cadg": 5493,
+          "pdga": 245751,
+          "division": "MA3",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Dominik Janek",
+          "cadg": 8007,
+          "pdga": 290093,
+          "division": "MA3",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Martin Hollas",
+          "cadg": 8299,
+          "pdga": 310651,
+          "division": "MA3",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "FA3",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
       "name": "MMMASO! JDL 2026 - Konopišťský medvěd",
       "date": "2026-04-04",
       "url_idg": "https://idiscgolf.cz/turnaje/2354",
