@@ -1372,198 +1372,302 @@
       "name": "CDGT: FALCON open 2026",
       "date": "2026-04-03",
       "url_idg": "https://idiscgolf.cz/turnaje/2531",
-      "url_pdga": null,
+      "url_pdga": "https://www.pdga.com/tour/event/100362",
       "tier": "CDGT",
-      "source": "idiscgolf",
+      "source": "pdga",
       "results": [
         {
-          "player_name": "Kristián Kvita",
-          "cadg": 3685,
-          "pdga": 116574,
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
           "division": "MPO",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
-        },
-        {
-          "player_name": "Kryštof Novák",
-          "cadg": 319,
-          "pdga": 55426,
-          "division": "MPO",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
-        },
-        {
-          "player_name": "František Trenz",
-          "cadg": 696,
-          "pdga": 75176,
-          "division": "MPO",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
+          "place": 1,
+          "score": "164",
+          "round_ratings": [
+            1021,
+            1031,
+            1033,
+            1030
+          ]
         },
         {
           "player_name": "Bohdan Bílek",
           "cadg": 692,
           "pdga": 80134,
           "division": "MPO",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
+          "place": 3,
+          "score": "172",
+          "round_ratings": [
+            1012,
+            1023,
+            983,
+            1022
+          ]
         },
         {
-          "player_name": "Jakub Knápek",
-          "cadg": 3689,
-          "pdga": 68237,
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
           "division": "MPO",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
+          "place": 8,
+          "score": "181",
+          "round_ratings": [
+            957,
+            956,
+            1000,
+            999
+          ]
+        },
+        {
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
+          "division": "MPO",
+          "place": 9,
+          "score": "184",
+          "round_ratings": [
+            967,
+            956,
+            983,
+            991
+          ]
         },
         {
           "player_name": "Tomáš Ráček",
           "cadg": 5508,
           "pdga": 233423,
           "division": "MPO",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
+          "place": 15,
+          "score": "186",
+          "round_ratings": [
+            982,
+            947,
+            1016,
+            951
+          ]
         },
         {
-          "player_name": "Lukáš Španihel",
-          "cadg": 5723,
-          "pdga": 247601,
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
           "division": "MPO",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
+          "place": 15,
+          "score": "186",
+          "round_ratings": [
+            989,
+            1006,
+            958,
+            951
+          ]
         },
         {
           "player_name": "Jan Šebek",
           "cadg": 6694,
           "pdga": 281439,
           "division": "MPO",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
+          "place": 35,
+          "score": "205",
+          "round_ratings": [
+            934,
+            905,
+            967,
+            888
+          ]
         },
         {
-          "player_name": "Karolína Jurčíková",
-          "cadg": 4363,
-          "pdga": 285033,
-          "division": "FPO",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
+          "player_name": "Lukáš Španihel",
+          "cadg": 5723,
+          "pdga": 247601,
+          "division": "MPO",
+          "place": 44,
+          "score": "221",
+          "round_ratings": [
+            805,
+            933,
+            888
+          ]
         },
         {
           "player_name": "Kristýna Jurčíková",
           "cadg": 4362,
           "pdga": 210972,
           "division": "FPO",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
+          "place": 1,
+          "score": "182",
+          "round_ratings": [
+            946,
+            929,
+            965,
+            944
+          ]
         },
         {
           "player_name": "Barbara Maria",
           "cadg": 5648,
           "pdga": 233444,
-          "division": "MP40",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
+          "division": "FPO",
+          "place": 2,
+          "score": "190",
+          "round_ratings": [
+            883,
+            920,
+            928,
+            917
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 3,
+          "score": "200",
+          "round_ratings": [
+            888,
+            874,
+            901,
+            899
+          ]
         },
         {
           "player_name": "Jakub Moj",
           "cadg": 5484,
           "pdga": 208119,
           "division": "MP40",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
-        },
-        {
-          "player_name": "Lukáš Novobilský",
-          "cadg": 4358,
-          "pdga": 285107,
-          "division": "MJ18",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
-        },
-        {
-          "player_name": "Lukáš Zacpal",
-          "cadg": 8321,
-          "pdga": 303287,
-          "division": "MJ18",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
-        },
-        {
-          "player_name": "Lukáš Vyvial",
-          "cadg": 6195,
-          "pdga": 283489,
-          "division": "MJ18",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
-        },
-        {
-          "player_name": "Jaroslav Randus",
-          "cadg": 6260,
-          "pdga": 269133,
-          "division": "MA3",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
+          "place": 14,
+          "score": "237",
+          "round_ratings": [
+            826,
+            813,
+            859,
+            825
+          ]
         },
         {
           "player_name": "Julius Nadberežný",
           "cadg": 4292,
           "pdga": 240173,
           "division": "MA3",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
+          "place": 4,
+          "score": "197",
+          "round_ratings": [
+            839,
+            901,
+            882,
+            917
+          ]
         },
         {
           "player_name": "Filip Plíhal",
           "cadg": 5493,
           "pdga": 245751,
           "division": "MA3",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
+          "place": 24,
+          "score": "217",
+          "round_ratings": [
+            860,
+            846,
+            882,
+            793
+          ]
         },
         {
-          "player_name": "Dominik Janek",
-          "cadg": 8007,
-          "pdga": 290093,
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
           "division": "MA3",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
+          "place": 25,
+          "score": "220",
+          "round_ratings": [
+            820,
+            801,
+            873,
+            820
+          ]
         },
         {
           "player_name": "Martin Hollas",
           "cadg": 8299,
           "pdga": 310651,
           "division": "MA3",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
+          "place": 26,
+          "score": "222",
+          "round_ratings": [
+            852,
+            819,
+            763,
+            891
+          ]
+        },
+        {
+          "player_name": "Dominik Janek",
+          "cadg": 8007,
+          "pdga": 290093,
+          "division": "MA3",
+          "place": 30,
+          "score": "227",
+          "round_ratings": [
+            832,
+            819,
+            800,
+            811
+          ]
         },
         {
           "player_name": "Jana Vinklárková",
           "cadg": 6222,
           "pdga": 265707,
           "division": "FA3",
-          "place": 0,
-          "score": "0",
-          "round_ratings": []
+          "place": 3,
+          "score": "254",
+          "round_ratings": [
+            712,
+            737,
+            745,
+            705
+          ]
+        },
+        {
+          "player_name": "Lukáš Vyvial",
+          "cadg": 6195,
+          "pdga": 283489,
+          "division": "MJ18",
+          "place": 3,
+          "score": "187",
+          "round_ratings": [
+            944,
+            1023,
+            942,
+            944
+          ]
+        },
+        {
+          "player_name": "Lukáš Novobilský",
+          "cadg": 4358,
+          "pdga": 285107,
+          "division": "MJ18",
+          "place": 4,
+          "score": "188",
+          "round_ratings": [
+            950,
+            989,
+            983,
+            928
+          ]
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "MJ18",
+          "place": 10,
+          "score": "219",
+          "round_ratings": [
+            808,
+            813,
+            900,
+            928
+          ]
         }
       ]
     },
