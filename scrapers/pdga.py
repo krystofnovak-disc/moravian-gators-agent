@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import requests
 from bs4 import BeautifulSoup
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 import logging
 import time
 import re
@@ -347,15 +347,18 @@ class PDGAScraper:
     def _dates_overlap_weekend(cls, dates_raw: str, saturday: date, sunday: date) -> bool:
         """
         Kontroluje zda se PDGA datum/rozsah překrývá s víkendem.
+        Zahrnuje i pátek – vícedenní turnaje často začínají v pátek.
         Formáty: '08-Mar-2026', '26-Feb to 28-Feb-2026', '28-Feb to 01-Mar-2026'
         """
         if not dates_raw:
             return False
 
+        friday = saturday - timedelta(days=1)
+
         # Jednoduchý datum
         single = cls._parse_pdga_date(dates_raw)
         if single:
-            return saturday <= single <= sunday
+            return friday <= single <= sunday
 
         # Rozsah: "26-Feb to 28-Feb-2026"
         m = re.match(r"(\d{1,2}-\w+)(?:-\d{4})?\s+to\s+(\d{1,2}-\w+-\d{4})", dates_raw)
@@ -369,7 +372,7 @@ class PDGAScraper:
                     start_str += f"-{year}"
                 start_date = cls._parse_pdga_date(start_str)
                 if start_date and end_date:
-                    # Překryv: turnaj probíhá v rozsahu, víkend je sobota–neděle
-                    return start_date <= sunday and end_date >= saturday
+                    # Překryv: turnaj probíhá v rozsahu, víkend je pá–ne
+                    return start_date <= sunday and end_date >= friday
 
         return False

@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import requests
 from bs4 import BeautifulSoup
-from datetime import date
+from datetime import date, timedelta
 import logging
 import time
 import re
@@ -116,19 +116,22 @@ class IDGScraper:
         return self._probe_recent_ids(saturday, sunday)
 
     def _parse_tournament_list(self, html: str, saturday: date, sunday: date) -> list:
-        """Parsuje HTML stránky s přehledem turnajů a filtruje víkendové."""
+        """Parsuje HTML stránky s přehledem turnajů a filtruje víkendové.
+
+        Hledá i pátek před víkendem – vícedenní turnaje (CDGT, PCT, MČR)
+        často začínají v pátek.
+        """
         soup = BeautifulSoup(html, "html.parser")
         tournaments = []
 
-        # Datum formáty, které hledáme
-        date_patterns = [
-            saturday.strftime("%d.%m.%Y"),
-            sunday.strftime("%d.%m.%Y"),
-            saturday.strftime("%-d.%-m.%Y"),   # bez leading zeros
-            sunday.strftime("%-d.%-m.%Y"),
-            saturday.strftime("%Y-%m-%d"),
-            sunday.strftime("%Y-%m-%d"),
-        ]
+        friday = saturday - timedelta(days=1)
+
+        # Datum formáty, které hledáme (pátek + sobota + neděle)
+        date_patterns = []
+        for d in [friday, saturday, sunday]:
+            date_patterns.append(d.strftime("%d.%m.%Y"))
+            date_patterns.append(d.strftime("%-d.%-m.%Y"))   # bez leading zeros
+            date_patterns.append(d.strftime("%Y-%m-%d"))
 
         # Hledáme linky na konkrétní turnaje (datum bývá v jiné buňce řádku)
         for link in soup.find_all("a", href=re.compile(r"/turnaje/\d+")):
@@ -573,9 +576,11 @@ class IDGScraper:
 
     @staticmethod
     def _is_weekend_date(date_str: str, saturday: date, sunday: date) -> bool:
+        """Check if date matches Friday, Saturday, or Sunday of the weekend."""
         if not date_str:
             return False
-        for d in [saturday, sunday]:
+        friday = saturday - timedelta(days=1)
+        for d in [friday, saturday, sunday]:
             for fmt in ["%d.%m.%Y", "%-d.%-m.%Y"]:
                 try:
                     if date_str == d.strftime(fmt):
