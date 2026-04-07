@@ -51,9 +51,8 @@
           "pdga": 240173,
           "division": "MA3",
           "place": 40,
-          "score": "808",
+          "score": "",
           "round_ratings": [
-            839,
             771,
             808
           ]
@@ -240,9 +239,8 @@
           "pdga": 240173,
           "division": "MA4",
           "place": 2,
-          "score": "201",
+          "score": "+24",
           "round_ratings": [
-            834,
             846,
             868,
             833
@@ -563,9 +561,8 @@
           "pdga": 80134,
           "division": "MPO",
           "place": 2,
-          "score": "181",
+          "score": "-11",
           "round_ratings": [
-            1012,
             1049,
             981,
             1001
@@ -577,9 +574,8 @@
           "pdga": 286033,
           "division": "MPO",
           "place": 5,
-          "score": "183",
+          "score": "-9",
           "round_ratings": [
-            983,
             981,
             1042,
             994
@@ -591,9 +587,8 @@
           "pdga": 78064,
           "division": "MPO",
           "place": 15,
-          "score": "198",
+          "score": "+6",
           "round_ratings": [
-            984,
             958,
             974,
             972
@@ -605,9 +600,8 @@
           "pdga": 116574,
           "division": "MPO",
           "place": 20,
-          "score": "203",
+          "score": "+11",
           "round_ratings": [
-            967,
             973,
             951,
             942
@@ -619,9 +613,8 @@
           "pdga": 281439,
           "division": "MPO",
           "place": 24,
-          "score": "205",
+          "score": "+13",
           "round_ratings": [
-            934,
             951,
             951,
             950
@@ -633,9 +626,8 @@
           "pdga": 210972,
           "division": "FPO",
           "place": 1,
-          "score": "178",
+          "score": "-20",
           "round_ratings": [
-            946,
             1001,
             925,
             976
@@ -647,9 +639,8 @@
           "pdga": 285033,
           "division": "FPO",
           "place": 2,
-          "score": "193",
+          "score": "-5",
           "round_ratings": [
-            888,
             931,
             925,
             914
@@ -661,9 +652,8 @@
           "pdga": 265707,
           "division": "FPO",
           "place": 16,
-          "score": "270",
+          "score": "+72",
           "round_ratings": [
-            712,
             687,
             695,
             709
@@ -675,9 +665,8 @@
           "pdga": 303287,
           "division": "MA3",
           "place": 9,
-          "score": "211",
+          "score": "+13",
           "round_ratings": [
-            808,
             905,
             828,
             878
@@ -689,9 +678,8 @@
           "pdga": 310651,
           "division": "MA3",
           "place": 16,
-          "score": "218",
+          "score": "+20",
           "round_ratings": [
-            852,
             879,
             846,
             825
@@ -703,9 +691,8 @@
           "pdga": 285107,
           "division": "MJ18",
           "place": 1,
-          "score": "193",
+          "score": "+1",
           "round_ratings": [
-            950,
             921,
             1004,
             1016
@@ -746,9 +733,8 @@
           "pdga": 240173,
           "division": "MPO",
           "place": 1,
-          "score": "134",
+          "score": "+14",
           "round_ratings": [
-            834,
             831,
             952
           ]
@@ -1382,9 +1368,8 @@
           "pdga": 68237,
           "division": "MPO",
           "place": 1,
-          "score": "164",
+          "score": "-28",
           "round_ratings": [
-            1021,
             1031,
             1033,
             1030
@@ -1396,9 +1381,8 @@
           "pdga": 80134,
           "division": "MPO",
           "place": 3,
-          "score": "172",
+          "score": "-20",
           "round_ratings": [
-            1012,
             1023,
             983,
             1022
@@ -1410,9 +1394,8 @@
           "pdga": 75176,
           "division": "MPO",
           "place": 8,
-          "score": "181",
+          "score": "-11",
           "round_ratings": [
-            957,
             956,
             1000,
             999
@@ -1424,9 +1407,8 @@
           "pdga": 116574,
           "division": "MPO",
           "place": 9,
-          "score": "184",
+          "score": "-8",
           "round_ratings": [
-            967,
             956,
             983,
             991
@@ -1438,9 +1420,8 @@
           "pdga": 233423,
           "division": "MPO",
           "place": 15,
-          "score": "186",
+          "score": "-6",
           "round_ratings": [
-            982,
             947,
             1016,
             951
@@ -1452,9 +1433,8 @@
           "pdga": 55426,
           "division": "MPO",
           "place": 15,
-          "score": "186",
+          "score": "-6",
           "round_ratings": [
-            989,
             1006,
             958,
             951
@@ -1466,9 +1446,8 @@
           "pdga": 281439,
           "division": "MPO",
           "place": 35,
-          "score": "205",
+          "score": "+13",
           "round_ratings": [
-            934,
             905,
             967,
             888
@@ -1480,7 +1459,7 @@
           "pdga": 247601,
           "division": "MPO",
           "place": 44,
-          "score": "221",
+          "score": "+29",
           "round_ratings": [
             805,
             933,
@@ -1493,9 +1472,8 @@
           "pdga": 210972,
           "division": "FPO",
           "place": 1,
-          "score": "182",
+          "score": "-10",
           "round_ratings": [
-            946,
             929,
             965,
             944
@@ -1507,9 +1485,8 @@
           "pdga": 233444,
           "division": "FPO",
           "place": 2,
-          "score": "190",
+          "score": "-2",
           "round_ratings": [
-            883,
             920,
             928,
             917
@@ -1521,9 +1498,8 @@
           "pdga": 285033,
           "division": "FPO",
           "place": 3,
-          "score": "200",
+          "score": "+8",
           "round_ratings": [
-            888,
             874,
             901,
             899
@@ -1535,9 +1511,8 @@
           "pdga": 208119,
           "division": "MP40",
           "place": 14,
-          "score": "237",
+          "score": "+45",
           "round_ratings": [
-            826,
             813,
             859,
             825
@@ -1549,9 +1524,8 @@
           "pdga": 240173,
           "division": "MA3",
           "place": 4,
-          "score": "197",
+          "score": "+5",
           "round_ratings": [
-            839,
             901,
             882,
             917
@@ -1563,9 +1537,8 @@
           "pdga": 245751,
           "division": "MA3",
           "place": 24,
-          "score": "217",
+          "score": "+25",
           "round_ratings": [
-            860,
             846,
             882,
             793
@@ -1577,9 +1550,8 @@
           "pdga": 269133,
           "division": "MA3",
           "place": 25,
-          "score": "220",
+          "score": "+28",
           "round_ratings": [
-            820,
             801,
             873,
             820
@@ -1591,9 +1563,8 @@
           "pdga": 310651,
           "division": "MA3",
           "place": 26,
-          "score": "222",
+          "score": "+30",
           "round_ratings": [
-            852,
             819,
             763,
             891
@@ -1605,9 +1576,8 @@
           "pdga": 290093,
           "division": "MA3",
           "place": 30,
-          "score": "227",
+          "score": "+35",
           "round_ratings": [
-            832,
             819,
             800,
             811
@@ -1619,9 +1589,8 @@
           "pdga": 265707,
           "division": "FA3",
           "place": 3,
-          "score": "254",
+          "score": "+62",
           "round_ratings": [
-            712,
             737,
             745,
             705
@@ -1633,9 +1602,8 @@
           "pdga": 283489,
           "division": "MJ18",
           "place": 3,
-          "score": "187",
+          "score": "-5",
           "round_ratings": [
-            944,
             1023,
             942,
             944
@@ -1647,9 +1615,8 @@
           "pdga": 285107,
           "division": "MJ18",
           "place": 4,
-          "score": "188",
+          "score": "-4",
           "round_ratings": [
-            950,
             989,
             983,
             928
@@ -1661,9 +1628,8 @@
           "pdga": 303287,
           "division": "MJ18",
           "place": 10,
-          "score": "219",
+          "score": "+27",
           "round_ratings": [
-            808,
             813,
             900,
             928

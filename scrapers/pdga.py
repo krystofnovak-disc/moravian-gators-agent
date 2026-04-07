@@ -191,11 +191,15 @@ class PDGAScraper:
     def _parse_event_results(self, soup: BeautifulSoup) -> list:
         """
         Parsuje stránku výsledků PDGA eventu.
-        PDGA stránky mají výsledky po divizích – sekce označené H2/H3.
+        PDGA stránky mají výsledky po divizích v tabulkách.
         Každý hráč má odkaz na profil /player/{pdga_number}.
+
+        Typická hlavička:
+        Place | Name | PDGA# | Rating | Par | Rd1 | (rr) | Rd2 | (rr) | ... | Total
         """
         our_players = []
         current_div = None
+        current_header = []
 
         for element in soup.find_all(True):
             tag = element.name.lower()
@@ -213,14 +217,22 @@ class PDGAScraper:
                     if m:
                         current_div = m.group(1)
 
-            # Řádky tabulky
+            # Parsování hlavičky tabulky
             if tag == "tr":
+                cells = element.find_all(["td", "th"])
+                texts = [c.get_text(strip=True).lower() for c in cells]
+                if "place" in texts and "name" in texts:
+                    current_header = texts
+                    continue
+
                 # Hledáme odkaz na hráčský profil
                 for link in element.find_all("a", href=re.compile(r"/player/\d+")):
                     m = re.search(r"/player/(\d+)", link.get("href", ""))
                     if m and m.group(1) in self.pdga_set:
                         p = self.pdga_to_player[m.group(1)]
-                        cells = element.find_all(["td", "th"])
+                        score, round_ratings = self._extract_score_and_ratings(
+                            cells, current_header
+                        )
                         our_players.append({
                             "first_name": p["first_name"],
                             "last_name": p["last_name"],
@@ -230,8 +242,8 @@ class PDGAScraper:
                             "note": p.get("note", ""),
                             "place": self._extract_place(cells),
                             "division": current_div,
-                            "score": self._extract_score(cells),
-                            "round_ratings": self._extract_round_ratings(cells),
+                            "score": score,
+                            "round_ratings": round_ratings,
                         })
 
         return our_players
@@ -254,21 +266,57 @@ class PDGAScraper:
             return "DGPT EuroTour"
         if "DGPT" in name_upper:
             return "DGPT"
-        if "PCT" in name_upper:
-            return "PCT"
+        for tag in ["CDGT", "NJDGT", "HDGT", "ADGL", "PCT", "PvDGT"]:
+            if tag in name_upper:
+                return tag
 
         return base_tier
 
     @staticmethod
-    def _extract_round_ratings(cells) -> list:
-        """Pokusí se najít round ratings v buňkách řádku (typicky 3-4 místná čísla)."""
-        # Round ratings jsou obvykle ve sloupcích za skóre, hodnoty 600-1100
-        ratings = []
-        for cell in cells:
-            text = cell.get_text(strip=True)
+    def _extract_score_and_ratings(cells, header: list) -> tuple:
+        """
+        Extract par-relative score and round ratings from a PDGA result row.
+
+        Uses header column names to identify:
+        - "par" column → score (e.g. "-28")
+        - columns after "par" with round rating values (600-1100) → round_ratings
+        Skips the "rating" column (player's PDGA rating) and "total" column.
+
+        Returns
+        -------
+        tuple : (score: str, round_ratings: list[int])
+        """
+        score = ""
+        round_ratings = []
+
+        # Find key column indices from header
+        par_idx = None
+        rating_idx = None
+        total_idx = None
+        for i, h in enumerate(header):
+            if h == "par":
+                par_idx = i
+            elif h == "rating":
+                rating_idx = i
+            elif h == "total":
+                total_idx = i
+
+        if par_idx is not None and par_idx < len(cells):
+            score = cells[par_idx].get_text(strip=True)
+
+        # Round ratings: cells after "par", skip "rating" and "total" columns
+        # PDGA layout: ... Par | Rd1 score | Rd1 rating | Rd2 score | Rd2 rating | ... | Total
+        # Round ratings are 600-1100 range values in odd-offset columns after Par
+        skip = {rating_idx, total_idx, par_idx}
+        start = (par_idx or 4) + 1
+        for i in range(start, len(cells)):
+            if i in skip:
+                continue
+            text = cells[i].get_text(strip=True)
             if re.match(r"^[6-9]\d{2}$|^1[01]\d{2}$", text):
-                ratings.append(int(text))
-        return ratings
+                round_ratings.append(int(text))
+
+        return score, round_ratings
 
     # ------------------------------------------------------------------
     # Ratings
@@ -325,13 +373,6 @@ class PDGAScraper:
                 return int(m.group(1))
         return None
 
-    @staticmethod
-    def _extract_score(cells) -> str:
-        for cell in reversed(cells):
-            text = cell.get_text(strip=True)
-            if re.match(r"^[+-]?\d+$", text):
-                return text
-        return ""
 
     @staticmethod
     def _parse_pdga_date(date_str: str) -> date | None:
