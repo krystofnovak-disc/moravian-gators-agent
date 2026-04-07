@@ -81,15 +81,14 @@ def load_players() -> list:
 def merge_results(idg: list, pdga: list) -> list:
     """
     Sloučí výsledky z obou zdrojů.
-    Pokud stejný turnaj existuje v obou (PDGA turnaj v ČR se zobrazí
-    i na idiscgolf), upřednostní idiscgolf verzi (má česky psaný název
-    a ČADG-based výsledky).
+    Pokud stejný turnaj existuje v obou, upřednostní PDGA verzi
+    (má round ratingy, přesnější výsledky).
     """
-    merged = list(idg)  # idiscgolf jako základ
-    idg_names_norm = {t["name"].lower().strip() for t in idg}
+    merged = list(pdga)  # PDGA jako základ
+    pdga_names_norm = {t["name"].lower().strip() for t in pdga}
 
-    for t in pdga:
-        if t["name"].lower().strip() not in idg_names_norm:
+    for t in idg:
+        if t["name"].lower().strip() not in pdga_names_norm:
             merged.append(t)
 
     return merged
