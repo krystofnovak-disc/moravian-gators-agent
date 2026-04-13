@@ -1701,6 +1701,204 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "Hustopečská 12",
+      "date": "2026-04-11",
+      "url_idg": "https://idiscgolf.cz/turnaje/2443",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Barbara Maria",
+          "cadg": 5648,
+          "pdga": 233444,
+          "division": null,
+          "place": 4,
+          "score": "-5",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "HDGT Týn nad Bečvou powered by Discmania",
+      "date": "2026-04-11",
+      "url_idg": "https://idiscgolf.cz/turnaje/2572",
+      "url_pdga": null,
+      "tier": "HDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "Gold",
+          "place": 0,
+          "score": "-3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
+          "division": "Gold",
+          "place": 0,
+          "score": "-7",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "Green",
+          "place": 0,
+          "score": "+6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Martin Hollas",
+          "cadg": 8299,
+          "pdga": 310651,
+          "division": "Green",
+          "place": 0,
+          "score": "-1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Janíček",
+          "cadg": 6281,
+          "pdga": null,
+          "division": "Green",
+          "place": 0,
+          "score": "+8",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 743,
+          "pdga": null,
+          "division": "Purple",
+          "place": 0,
+          "score": "+13",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Vanessa Kočí",
+          "cadg": 8898,
+          "pdga": null,
+          "division": "Purple",
+          "place": 0,
+          "score": "+51",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Štěpán Jančík",
+          "cadg": 8880,
+          "pdga": null,
+          "division": null,
+          "place": 0,
+          "score": "+19",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Jarní Šumperský KOTEL",
+      "date": "2026-04-11",
+      "url_idg": "https://idiscgolf.cz/turnaje/2625",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": null,
+          "place": null,
+          "score": "",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "PDGL 2026 #2 - Veltrusy",
+      "date": "2026-04-12",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/103430",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Vladimír Kříž",
+          "cadg": 3608,
+          "pdga": 78165,
+          "division": "RPA",
+          "place": 22,
+          "score": "+12",
+          "round_ratings": [
+            870,
+            790
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5. Hloučela Open by Tailors Prostějov",
+      "date": "2026-04-12",
+      "url_idg": "https://idiscgolf.cz/turnaje/2361",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "MPO",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Tomáš Ráček",
+          "cadg": 5508,
+          "pdga": 233423,
+          "division": "MPO",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Discgolf Tour Horní datyně presented by Discgolf-Shop.com",
+      "date": "2026-04-12",
+      "url_idg": "https://idiscgolf.cz/turnaje/2477",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "Green",
+          "place": 2,
+          "score": "-7",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Moj",
+          "cadg": 5484,
+          "pdga": 208119,
+          "division": "Green",
+          "place": 8,
+          "score": "+6",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
