@@ -135,7 +135,8 @@ def check_results_completeness(results: list) -> list:
     for t in results:
         missing = [
             p for p in t.get("our_players", [])
-            if p.get("place") is None and not p.get("_fulltext")
+            if (p.get("place") is None or p.get("place") == 0)
+            and not p.get("_fulltext")
         ]
         if missing:
             incomplete.append({

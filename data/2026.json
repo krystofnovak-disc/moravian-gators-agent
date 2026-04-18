@@ -309,7 +309,7 @@
           "round_ratings": []
         },
         {
-          "player_name": "Barbara Maria",
+          "player_name": "Barbara Ráčková",
           "cadg": 5648,
           "pdga": 233444,
           "division": "MPO",
@@ -1386,7 +1386,7 @@
           ]
         },
         {
-          "player_name": "Barbara Maria",
+          "player_name": "Barbara Ráčková",
           "cadg": 5648,
           "pdga": 233444,
           "division": "FPO",
@@ -1617,7 +1617,7 @@
       "source": "idiscgolf",
       "results": [
         {
-          "player_name": "Barbara Maria",
+          "player_name": "Barbara Ráčková",
           "cadg": 5648,
           "pdga": 233444,
           "division": null,
@@ -1640,8 +1640,8 @@
           "cadg": 696,
           "pdga": 75176,
           "division": "Gold",
-          "place": 0,
-          "score": "-3",
+          "place": 4,
+          "score": "-2",
           "round_ratings": []
         },
         {
@@ -1649,8 +1649,8 @@
           "cadg": 3685,
           "pdga": 116574,
           "division": "Gold",
-          "place": 0,
-          "score": "-7",
+          "place": 1,
+          "score": "-11",
           "round_ratings": []
         },
         {
@@ -1658,8 +1658,8 @@
           "cadg": 6260,
           "pdga": 269133,
           "division": "Green",
-          "place": 0,
-          "score": "+6",
+          "place": 2,
+          "score": "+7",
           "round_ratings": []
         },
         {
@@ -1667,8 +1667,8 @@
           "cadg": 8299,
           "pdga": 310651,
           "division": "Green",
-          "place": 0,
-          "score": "-1",
+          "place": 1,
+          "score": "+1",
           "round_ratings": []
         },
         {
@@ -1676,8 +1676,8 @@
           "cadg": 6281,
           "pdga": null,
           "division": "Green",
-          "place": 0,
-          "score": "+8",
+          "place": 3,
+          "score": "+9",
           "round_ratings": []
         },
         {
@@ -1685,8 +1685,8 @@
           "cadg": 743,
           "pdga": null,
           "division": "Purple",
-          "place": 0,
-          "score": "+13",
+          "place": 6,
+          "score": "+24",
           "round_ratings": []
         },
         {
@@ -1694,8 +1694,8 @@
           "cadg": 8898,
           "pdga": null,
           "division": "Purple",
-          "place": 0,
-          "score": "+51",
+          "place": 15,
+          "score": "+78",
           "round_ratings": []
         },
         {
@@ -1703,8 +1703,8 @@
           "cadg": 8880,
           "pdga": null,
           "division": null,
-          "place": 0,
-          "score": "+19",
+          "place": 9,
+          "score": "+29",
           "round_ratings": []
         }
       ]
@@ -1744,8 +1744,8 @@
           "cadg": 6260,
           "pdga": 269133,
           "division": "MPO",
-          "place": 0,
-          "score": "0",
+          "place": 13,
+          "score": "+13",
           "round_ratings": []
         },
         {
@@ -1753,8 +1753,8 @@
           "cadg": 5508,
           "pdga": 233423,
           "division": "MPO",
-          "place": 0,
-          "score": "0",
+          "place": 1,
+          "score": "-17",
           "round_ratings": []
         }
       ]
@@ -1773,7 +1773,7 @@
           "pdga": 303287,
           "division": "Green",
           "place": 2,
-          "score": "-7",
+          "score": "-6",
           "round_ratings": []
         },
         {

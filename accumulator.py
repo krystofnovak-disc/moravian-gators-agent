@@ -292,6 +292,10 @@ class Accumulator:
 
         results = []
         for p in t.get("our_players", []):
+            # Normalizace: place=0 je nevalidní (umístění začíná od 1) → None
+            place = p.get("place")
+            if place == 0:
+                place = None
             results.append({
                 "player_name": " ".join(
                     filter(None, [p.get("first_name", ""), p.get("last_name", "")])
@@ -299,7 +303,7 @@ class Accumulator:
                 "cadg": p.get("cadg"),
                 "pdga": p.get("pdga"),
                 "division": p.get("division"),
-                "place": p.get("place"),
+                "place": place,
                 "score": p.get("score", ""),
                 "round_ratings": p.get("round_ratings", []),
             })
