@@ -118,6 +118,37 @@ def save_post_txt(post: str, saturday: date, sunday: date) -> None:
 # Hlavní logika
 # ---------------------------------------------------------------------------
 
+class IncompleteResultsError(Exception):
+    """Výjimka: některé turnaje nemají finalizované výsledky (chybí umístění)."""
+    pass
+
+
+def check_results_completeness(results: list) -> list:
+    """
+    Zkontroluje, zda všechny turnaje mají kompletní výsledky (umístění).
+    Vrátí seznam turnajů s chybějícími umístěními.
+
+    Fulltext matches (_fulltext=True) jsou nespolehlivé – ignorujeme je
+    pro kontrolu úplnosti (mohlo by jít o zmínku v sponzor textu apod.).
+    """
+    incomplete = []
+    for t in results:
+        missing = [
+            p for p in t.get("our_players", [])
+            if p.get("place") is None and not p.get("_fulltext")
+        ]
+        if missing:
+            incomplete.append({
+                "name": t["name"],
+                "missing_count": len(missing),
+                "total_count": len(t["our_players"]),
+                "missing_players": [
+                    f"{p['first_name']} {p['last_name']}" for p in missing
+                ],
+            })
+    return incomplete
+
+
 def run(saturday: date, sunday: date, dry_run: bool = False) -> None:
     logger.info("=" * 60)
     logger.info("Moravian Gators Agent – start")
@@ -157,6 +188,19 @@ def run(saturday: date, sunday: date, dry_run: bool = False) -> None:
     if not tournaments_with_us:
         logger.info("Žádní naši hráči na žádném turnaji. Příspěvek se negeneruje.")
         return
+
+    # 4b. Kontrola kompletnosti výsledků
+    incomplete = check_results_completeness(tournaments_with_us)
+    if incomplete:
+        for t in incomplete:
+            logger.warning(
+                f"Turnaj '{t['name']}': {t['missing_count']}/{t['total_count']} "
+                f"hráčů nemá umístění: {', '.join(t['missing_players'])}"
+            )
+        raise IncompleteResultsError(
+            f"{len(incomplete)} turnaj(ů) nemá finalizované výsledky. "
+            f"Spusťte workflow znovu později."
+        )
 
     if dry_run:
         logger.info("--dry-run: přeskakuji generování a odeslání e-mailu.")
@@ -244,4 +288,8 @@ if __name__ == "__main__":
     else:
         saturday, sunday = get_last_weekend()
 
-    run(saturday, sunday, dry_run=args.dry_run)
+    try:
+        run(saturday, sunday, dry_run=args.dry_run)
+    except IncompleteResultsError as e:
+        logger.error(f"NEÚPLNÉ VÝSLEDKY: {e}")
+        sys.exit(75)  # EX_TEMPFAIL – spustit znovu později

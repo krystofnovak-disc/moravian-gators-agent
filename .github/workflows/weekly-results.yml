@@ -3,8 +3,9 @@
 #
 # POZN.: GitHub Actions používá UTC. Střední Evropa je UTC+2 v létě (CEST)
 # a UTC+1 v zimě (CET). Cron `0 6 * * 1` = 8:00 CEST / 7:00 CET.
-# Pokud chceš přesně 8:00 i v zimě, musel bys mít dva cron joby
-# a přepínat je, ale 7:00 vs 8:00 v zimě je přijatelný kompromis.
+#
+# Retry logika: pokud výsledky nejsou finalizovány (exit code 75),
+# workflow se spustí znovu za 3 hodiny (max 2 pokusy navíc).
 
 name: Weekly Results
 
@@ -12,6 +13,10 @@ on:
   schedule:
     # Každé pondělí v 6:00 UTC (= 8:00 CEST letní čas)
     - cron: "0 6 * * 1"
+    # Retry #1: pondělí 9:00 UTC (= 11:00 CEST)
+    - cron: "0 9 * * 1"
+    # Retry #2: pondělí 12:00 UTC (= 14:00 CEST)
+    - cron: "0 12 * * 1"
   workflow_dispatch:
     # Ruční spuštění z GitHub webu (pro testování)
     inputs:
@@ -32,29 +37,56 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Check if already sent today
+        id: check-sent
+        # Přeskočí retry běhy, pokud už dnes úspěšně proběhl (existuje marker soubor)
+        run: |
+          git log --oneline --since="$(date -u +%Y-%m-%dT00:00:00Z)" --grep="data: update results" | head -1
+          if git log --oneline --since="$(date -u +%Y-%m-%dT00:00:00Z)" --grep="data: update results" | grep -q .; then
+            echo "already_sent=true" >> "$GITHUB_OUTPUT"
+            echo "Výsledky už byly dnes odeslány, přeskakuji."
+          else
+            echo "already_sent=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Setup Python
+        if: steps.check-sent.outputs.already_sent == 'false'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: "pip"
 
       - name: Install dependencies
+        if: steps.check-sent.outputs.already_sent == 'false'
         run: pip install -r requirements.txt
 
       - name: Run agent
+        if: steps.check-sent.outputs.already_sent == 'false'
+        id: run-agent
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
         run: |
+          set +e
           if [ -n "${{ github.event.inputs.date }}" ]; then
             python main.py --date "${{ github.event.inputs.date }}"
           else
             python main.py
           fi
+          EXIT_CODE=$?
+          if [ $EXIT_CODE -eq 75 ]; then
+            echo "⏳ Výsledky nejsou finalizovány. Další pokus proběhne automaticky."
+            echo "incomplete=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          elif [ $EXIT_CODE -ne 0 ]; then
+            exit $EXIT_CODE
+          fi
+          echo "incomplete=false" >> "$GITHUB_OUTPUT"
 
       - name: Commit cumulative data
+        if: steps.check-sent.outputs.already_sent == 'false' && steps.run-agent.outputs.incomplete != 'true'
         run: |
           git config user.name "Gators Bot"
           git config user.email "bot@moraviangators.cz"
@@ -67,7 +99,7 @@ jobs:
           fi
 
       - name: Upload results artifact
-        if: always()
+        if: always() && steps.check-sent.outputs.already_sent == 'false'
         uses: actions/upload-artifact@v4
         with:
           name: results-${{ github.run_id }}

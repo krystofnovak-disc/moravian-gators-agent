@@ -215,18 +215,46 @@ class IDGScraper:
     # ------------------------------------------------------------------
 
     def _get_our_players(self, tid: int, tournament_name: str = "") -> tuple[list, str]:
-        """Stáhne stránku turnaje a vrátí (naše hráče s výsledky, tier)."""
+        """Stáhne stránku turnaje a vrátí (naše hráče s výsledky, tier).
+
+        Pokud normální výsledky nemají umístění (výsledky nebyly finalizovány),
+        zkusí live-scoring jako fallback.
+        """
         url = f"{BASE_URL}/turnaje/{tid}"
+        tier = "local"
         try:
             resp = self.session.get(url, timeout=15)
             resp.raise_for_status()
             soup = BeautifulSoup(resp.text, "html.parser")
             players = self._parse_results(soup)
             tier = self._extract_tier(soup, tournament_name)
-            return players, tier
         except Exception as e:
             logger.error(f"Nepodařilo se načíst turnaj #{tid}: {e}")
-            return [], "local"
+            players = []
+
+        # Kontrola: mají všichni hráči umístění?
+        missing_place = [p for p in players if p.get("place") is None]
+        if players and missing_place:
+            logger.warning(
+                f"Turnaj #{tid}: {len(missing_place)}/{len(players)} hráčů "
+                f"nemá umístění – výsledky zřejmě nejsou finalizovány. "
+                f"Zkouším live-scoring…"
+            )
+            live_players = self._parse_live_scoring(tid)
+            if live_players:
+                # Nahradíme výsledky z live-scoringu
+                players = live_players
+                logger.info(
+                    f"Turnaj #{tid}: live-scoring úspěšný, "
+                    f"načteno {len(players)} hráčů"
+                )
+            else:
+                logger.warning(
+                    f"Turnaj #{tid}: live-scoring selhal, "
+                    f"ponecháváme neúplné výsledky"
+                )
+
+        return players, tier
 
     def _extract_tier(self, soup: BeautifulSoup, tournament_name: str) -> str:
         """Extrahuje tier/ligu turnaje ze stránky nebo z názvu."""
@@ -349,6 +377,16 @@ class IDGScraper:
                         elif "starší" in note:
                             reg_info = reg_map.get(f"{player_key} st.")
 
+                    if not reg_info:
+                        # Fuzzy: reg_map může obsahovat prostřední jméno
+                        # (např. "barbara maria ráčková" vs "barbara ráčková")
+                        first = entry["first_name"].lower()
+                        last = entry["last_name"].lower()
+                        for rk, rv in reg_map.items():
+                            if rk.startswith(first) and rk.endswith(last) and rk != player_key:
+                                reg_info = rv
+                                break
+
                     if reg_info:
                         klub = reg_info.get("klub", "")
                         reg_cadg = reg_info.get("cadg", "")
@@ -403,6 +441,8 @@ class IDGScraper:
         our_players = list(seen.values())
 
         # --- Krok 3: full-text fallback ---
+        # Pouze pokud úplně nic nenašel hlavní parser (vrací markery
+        # _fulltext=True, které se vyfiltrují při kontrole úplnosti)
         if not our_players:
             our_players = self._fulltext_fallback(soup)
 
@@ -444,6 +484,130 @@ class IDGScraper:
                     "klub": klub.upper(),
                 }
         return reg_map
+
+    # ------------------------------------------------------------------
+    # Live-scoring fallback
+    # ------------------------------------------------------------------
+
+    def _parse_live_scoring(self, tid: int) -> list:
+        """
+        Parsuje výsledky z live-scoringu jako fallback, když normální
+        výsledky nejsou finalizovány (chybí umístění).
+
+        URL: https://www.idiscgolf.cz/live-scoring/{tid}/
+        Divize: https://www.idiscgolf.cz/live-scoring/{tid}/{round_id}/{div_code}
+
+        Tabulka obsahuje: #, Jméno (s odkazem /profil/{cadg}), holes,
+        Kolo, +/-, Celkem, +/-
+        """
+        live_url = f"{BASE_URL}/live-scoring/{tid}/"
+        try:
+            resp = self.session.get(live_url, timeout=15)
+            resp.raise_for_status()
+        except Exception as e:
+            logger.warning(f"Live-scoring #{tid} nedostupný: {e}")
+            return []
+
+        soup = BeautifulSoup(resp.text, "html.parser")
+
+        # Najdi odkazy na divize: /live-scoring/{tid}/{round_id}/{div_code}
+        div_links = []
+        for a in soup.find_all("a", href=re.compile(rf"/live-scoring/{tid}/\d+/\d+")):
+            href = a.get("href", "")
+            text = a.get_text(strip=True).upper()
+            if text in [d.upper() for d in DIVISIONS]:
+                div_links.append((text, href))
+
+        if not div_links:
+            logger.warning(f"Live-scoring #{tid}: žádné divize nenalezeny")
+            return []
+
+        our_players = []
+        for div_name, div_href in div_links:
+            time.sleep(0.5)
+            div_url = f"{BASE_URL}{div_href}" if div_href.startswith("/") else div_href
+            try:
+                resp = self.session.get(div_url, timeout=15)
+                resp.raise_for_status()
+                div_soup = BeautifulSoup(resp.text, "html.parser")
+                found = self._parse_live_scoring_table(div_soup, div_name)
+                our_players.extend(found)
+            except Exception as e:
+                logger.warning(f"Live-scoring #{tid} divize {div_name}: {e}")
+
+        # Deduplikace
+        seen = {}
+        for entry in our_players:
+            key = entry.get("cadg") or f"{entry['first_name']}_{entry['last_name']}"
+            if key not in seen:
+                seen[key] = entry
+        return list(seen.values())
+
+    def _parse_live_scoring_table(self, soup: BeautifulSoup, division: str) -> list:
+        """Parsuje tabulku výsledků z live-scoring stránky pro jednu divizi."""
+        our_players = []
+
+        for table in soup.find_all("table"):
+            rows = table.find_all("tr")
+            if not rows:
+                continue
+
+            # Ověříme, že je to výsledková tabulka (má sloupec # a Jméno/Celkem)
+            header_cells = rows[0].find_all(["td", "th"])
+            headers = [c.get_text(strip=True) for c in header_cells]
+            headers_upper = [h.upper() for h in headers]
+
+            if "#" not in headers_upper:
+                continue
+
+            # Najdi indexy důležitých sloupců
+            place_idx = headers_upper.index("#")
+            celkem_indices = [i for i, h in enumerate(headers) if h == "+/-"]
+            # Poslední +/- je celkové skóre oproti paru
+            score_idx = celkem_indices[-1] if celkem_indices else None
+
+            for row in rows[1:]:
+                cells = row.find_all(["td", "th"])
+                if len(cells) < 3:
+                    continue
+
+                # Hledáme odkaz na profil: /profil/{cadg}
+                profile_link = row.find("a", href=re.compile(r"/profil/\d+"))
+                if not profile_link:
+                    continue
+
+                m = re.search(r"/profil/(\d+)", profile_link["href"])
+                if not m:
+                    continue
+
+                cadg_val = m.group(1)
+
+                # Je to náš hráč?
+                if cadg_val not in self.cadg_set:
+                    continue
+
+                player = self.cadg_to_player[cadg_val]
+
+                # Umístění
+                place = None
+                if place_idx < len(cells):
+                    place_text = cells[place_idx].get_text(strip=True)
+                    pm = re.match(r"^(\d+)\.?$", place_text)
+                    if pm:
+                        place = int(pm.group(1))
+
+                # Skóre (poslední +/- sloupec = celkový par-relative)
+                score = ""
+                if score_idx is not None and score_idx < len(cells):
+                    score = cells[score_idx].get_text(strip=True)
+
+                entry = self._player_result_base(player)
+                entry["place"] = place
+                entry["division"] = division
+                entry["score"] = score
+                our_players.append(entry)
+
+        return our_players
 
     def _match_player_in_cells(self, cells, cadg_col_idx=None, pdga_col_idx=None) -> dict | None:
         """Pokusí se v buňkách řádku najít shodu s naším hráčem."""
@@ -488,20 +652,86 @@ class IDGScraper:
         return None
 
     def _fulltext_fallback(self, soup: BeautifulSoup) -> list:
-        """Prohledá celý text stránky pro naše hráče (word boundaries)."""
-        page_text = soup.get_text(" ")
-        page_norm = normalize(page_text)
+        """Prohledá celý text stránky pro naše hráče (word boundaries).
+
+        Pouze v kontextu výsledkových tabulek – mimo ně jsou jména často
+        v popisu sponzorů/organizátorů (false positive).
+
+        Zároveň ověřuje identitu přes registrační mapu – pokud stránka
+        obsahuje jmenovce z jiného klubu, náš hráč se nepřidá (pokud
+        nemáme potvrzení přes ČADG/PDGA číslo).
+        """
         found = []
         seen_cadg = set()
 
+        # Prohledáváme jen text z výsledkových tabulek
+        result_tables_text = []
+        for table in soup.find_all("table"):
+            rows = table.find_all("tr")
+            if not rows:
+                continue
+            headers = [c.get_text(strip=True).upper() for c in rows[0].find_all(["td", "th"])]
+            # Výsledková tabulka má Celkem / +/- / Place
+            if "CELKEM" in headers or "+/-" in headers:
+                result_tables_text.append(table.get_text(" "))
+
+        if not result_tables_text:
+            return []
+
+        combined_text = " ".join(result_tables_text)
+        combined_norm = normalize(combined_text)
+
+        # Registrační mapa pro ověření identity (jmenovci z jiných klubů)
+        reg_map = self._build_registration_map(soup)
+
         for norm_name, players_list in self.norm_name_to_players.items():
-            if not re.search(rf"\b{re.escape(norm_name)}\b", page_norm):
+            if not re.search(rf"\b{re.escape(norm_name)}\b", combined_norm):
                 continue
             for p in players_list:
                 cadg_key = p.get("cadg")
                 if cadg_key in seen_cadg:
                     continue
-                found.append(self._player_result_base(p))
+
+                # Ověření identity: existuje v registraci někdo s tímto
+                # jménem a NENÍ z MGNJ a ČADG neodpovídá našemu?
+                player_key = f"{p['first_name']} {p['last_name']}".lower()
+                reg_info = reg_map.get(player_key)
+                if not reg_info:
+                    # Fuzzy (prostřední jméno, např. "barbara maria ráčková")
+                    first = p['first_name'].lower()
+                    last = p['last_name'].lower()
+                    for rk, rv in reg_map.items():
+                        if rk.startswith(first) and rk.endswith(last) and rk != player_key:
+                            reg_info = rv
+                            break
+
+                if reg_info:
+                    klub = reg_info.get("klub", "")
+                    reg_cadg = reg_info.get("cadg", "")
+                    our_cadg = str(cadg_key or "")
+                    is_mgnj = "MGNJ" in klub
+
+                    # Jmenovec z jiného klubu s odlišným ČADG → skip
+                    if not is_mgnj and reg_cadg and our_cadg and reg_cadg != our_cadg:
+                        logger.debug(
+                            f"Fulltext: přeskakuji {player_key}, "
+                            f"jmenovec z klubu {klub}"
+                        )
+                        continue
+
+                    # Jmenovec z jiného klubu bez ČADG v registraci
+                    # → nelze ověřit, radši skip
+                    if not is_mgnj and not reg_cadg:
+                        logger.debug(
+                            f"Fulltext: přeskakuji {player_key}, "
+                            f"registrace v klubu {klub} bez ČADG – "
+                            f"nelze ověřit identitu"
+                        )
+                        continue
+
+                entry = self._player_result_base(p)
+                entry["_fulltext"] = True  # Marker pro méně spolehlivý match
+                found.append(entry)
                 seen_cadg.add(cadg_key)
 
         return found

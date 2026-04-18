@@ -1,43 +1,6 @@
 {
   "tournaments": [
     {
-      "name": "Tříkrálový turnaj Brno - 12. ročník",
-      "date": "2026-01-10",
-      "url_idg": "https://idiscgolf.cz/turnaje/2376",
-      "url_pdga": null,
-      "tier": "local",
-      "source": "idiscgolf",
-      "results": [
-        {
-          "player_name": "Eliška Bártková",
-          "cadg": 1737,
-          "pdga": 86224,
-          "division": null,
-          "place": null,
-          "score": "",
-          "round_ratings": []
-        },
-        {
-          "player_name": "Michal Sviták",
-          "cadg": 1808,
-          "pdga": 122508,
-          "division": null,
-          "place": null,
-          "score": "",
-          "round_ratings": []
-        },
-        {
-          "player_name": "Tomáš Ráček",
-          "cadg": 5508,
-          "pdga": 233423,
-          "division": null,
-          "place": null,
-          "score": "",
-          "round_ratings": []
-        }
-      ]
-    },
-    {
       "name": "Mijas Winter League 2026 (Flex Start)",
       "date": "2026-01-18",
       "url_idg": null,
@@ -53,28 +16,9 @@
           "place": 40,
           "score": "",
           "round_ratings": [
-            771,
-            808
+            776,
+            803
           ]
-        }
-      ]
-    },
-    {
-      "name": "Zimní Hunters liga Břasy 2026",
-      "date": "2026-01-24",
-      "url_idg": "https://idiscgolf.cz/turnaje/2299",
-      "url_pdga": null,
-      "tier": "local",
-      "source": "idiscgolf",
-      "results": [
-        {
-          "player_name": "Vladimír Kříž",
-          "cadg": 3608,
-          "pdga": 78165,
-          "division": null,
-          "place": null,
-          "score": "",
-          "round_ratings": []
         }
       ]
     },
@@ -202,25 +146,6 @@
           "division": "MP50",
           "place": 1,
           "score": "-1",
-          "round_ratings": []
-        }
-      ]
-    },
-    {
-      "name": "IceCup 2026",
-      "date": "2026-02-21",
-      "url_idg": "https://idiscgolf.cz/turnaje/2555",
-      "url_pdga": null,
-      "tier": "local",
-      "source": "idiscgolf",
-      "results": [
-        {
-          "player_name": "Vladimír Kříž",
-          "cadg": 3608,
-          "pdga": 78165,
-          "division": null,
-          "place": null,
-          "score": "",
           "round_ratings": []
         }
       ]
@@ -384,10 +309,10 @@
           "round_ratings": []
         },
         {
-          "player_name": "Barbara Maria",
+          "player_name": "Barbara Ráčková",
           "cadg": 5648,
           "pdga": 233444,
-          "division": "MPO",
+          "division": "FPO",
           "place": 1,
           "score": "-20",
           "round_ratings": []
@@ -563,9 +488,9 @@
           "place": 2,
           "score": "-11",
           "round_ratings": [
-            1049,
-            981,
-            1001
+            1050,
+            983,
+            998
           ]
         },
         {
@@ -576,9 +501,9 @@
           "place": 5,
           "score": "-9",
           "round_ratings": [
-            981,
-            1042,
-            994
+            983,
+            1043,
+            990
           ]
         },
         {
@@ -589,9 +514,9 @@
           "place": 15,
           "score": "+6",
           "round_ratings": [
-            958,
-            974,
-            972
+            961,
+            976,
+            968
           ]
         },
         {
@@ -602,9 +527,9 @@
           "place": 20,
           "score": "+11",
           "round_ratings": [
-            973,
-            951,
-            942
+            976,
+            953,
+            938
           ]
         },
         {
@@ -615,9 +540,9 @@
           "place": 24,
           "score": "+13",
           "round_ratings": [
-            951,
-            951,
-            950
+            953,
+            953,
+            946
           ]
         },
         {
@@ -628,9 +553,9 @@
           "place": 1,
           "score": "-20",
           "round_ratings": [
-            1001,
-            925,
-            976
+            997,
+            926,
+            979
           ]
         },
         {
@@ -641,9 +566,9 @@
           "place": 2,
           "score": "-5",
           "round_ratings": [
-            931,
-            925,
-            914
+            926,
+            926,
+            917
           ]
         },
         {
@@ -654,9 +579,9 @@
           "place": 16,
           "score": "+72",
           "round_ratings": [
-            687,
-            695,
-            709
+            679,
+            697,
+            714
           ]
         },
         {
@@ -667,9 +592,9 @@
           "place": 9,
           "score": "+13",
           "round_ratings": [
-            905,
-            828,
-            878
+            900,
+            829,
+            882
           ]
         },
         {
@@ -680,9 +605,9 @@
           "place": 16,
           "score": "+20",
           "round_ratings": [
-            879,
-            846,
-            825
+            873,
+            847,
+            829
           ]
         },
         {
@@ -693,9 +618,9 @@
           "place": 1,
           "score": "+1",
           "round_ratings": [
-            921,
-            1004,
-            1016
+            923,
+            1005,
+            1013
           ]
         }
       ]
@@ -735,8 +660,8 @@
           "place": 1,
           "score": "+14",
           "round_ratings": [
-            831,
-            952
+            828,
+            954
           ]
         }
       ]
@@ -928,25 +853,6 @@
           "division": "MJ18",
           "place": 1,
           "score": "+2",
-          "round_ratings": []
-        }
-      ]
-    },
-    {
-      "name": "Pražská Doubles Liga #1 - Ladronka",
-      "date": "2026-03-15",
-      "url_idg": "https://idiscgolf.cz/turnaje/2362",
-      "url_pdga": null,
-      "tier": "local",
-      "source": "idiscgolf",
-      "results": [
-        {
-          "player_name": "Vladimír Kříž",
-          "cadg": 3608,
-          "pdga": 78165,
-          "division": null,
-          "place": null,
-          "score": "",
           "round_ratings": []
         }
       ]
@@ -1480,7 +1386,7 @@
           ]
         },
         {
-          "player_name": "Barbara Maria",
+          "player_name": "Barbara Ráčková",
           "cadg": 5648,
           "pdga": 233444,
           "division": "FPO",
@@ -1640,10 +1546,10 @@
     {
       "name": "MMMASO! JDL 2026 - Konopišťský medvěd",
       "date": "2026-04-04",
-      "url_idg": "https://idiscgolf.cz/turnaje/2354",
-      "url_pdga": null,
-      "tier": "local",
-      "source": "idiscgolf",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/102669",
+      "tier": "PDGA",
+      "source": "pdga",
       "results": [
         {
           "player_name": "Šimon Galia",
@@ -1652,7 +1558,10 @@
           "division": "MPO",
           "place": 10,
           "score": "+4",
-          "round_ratings": []
+          "round_ratings": [
+            911,
+            929
+          ]
         }
       ]
     },
@@ -1698,6 +1607,185 @@
           "division": "MJ18",
           "place": 2,
           "score": "+59",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Hustopečská 12",
+      "date": "2026-04-11",
+      "url_idg": "https://idiscgolf.cz/turnaje/2443",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Barbara Ráčková",
+          "cadg": 5648,
+          "pdga": 233444,
+          "division": "Red",
+          "place": 4,
+          "score": "-5",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "HDGT Týn nad Bečvou powered by Discmania",
+      "date": "2026-04-11",
+      "url_idg": "https://idiscgolf.cz/turnaje/2572",
+      "url_pdga": null,
+      "tier": "HDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "Gold",
+          "place": 4,
+          "score": "-2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
+          "division": "Gold",
+          "place": 1,
+          "score": "-11",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Martin Hollas",
+          "cadg": 8299,
+          "pdga": 310651,
+          "division": "Green",
+          "place": 1,
+          "score": "+1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "Green",
+          "place": 2,
+          "score": "+7",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Janíček",
+          "cadg": 6281,
+          "pdga": null,
+          "division": "Green",
+          "place": 3,
+          "score": "+9",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 743,
+          "pdga": null,
+          "division": "Purple",
+          "place": 6,
+          "score": "+24",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Štěpán Jančík",
+          "cadg": 8880,
+          "pdga": null,
+          "division": null,
+          "place": 9,
+          "score": "+29",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Vanessa Kočí",
+          "cadg": 8898,
+          "pdga": null,
+          "division": "Purple",
+          "place": 15,
+          "score": "+78",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "PDGL 2026 #2 - Veltrusy",
+      "date": "2026-04-12",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/103430",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Vladimír Kříž",
+          "cadg": 3608,
+          "pdga": 78165,
+          "division": "RPA",
+          "place": 22,
+          "score": "+12",
+          "round_ratings": [
+            871,
+            790
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5. Hloučela Open by Tailors Prostějov",
+      "date": "2026-04-12",
+      "url_idg": "https://idiscgolf.cz/turnaje/2361",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Tomáš Ráček",
+          "cadg": 5508,
+          "pdga": 233423,
+          "division": "MPO",
+          "place": 1,
+          "score": "-17",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "MPO",
+          "place": 13,
+          "score": "+13",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Discgolf Tour Horní datyně presented by Discgolf-Shop.com",
+      "date": "2026-04-12",
+      "url_idg": "https://idiscgolf.cz/turnaje/2477",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "Green",
+          "place": 3,
+          "score": "-6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Moj",
+          "cadg": 5484,
+          "pdga": 208119,
+          "division": "Green",
+          "place": 9,
+          "score": "+6",
           "round_ratings": []
         }
       ]
@@ -1816,7 +1904,7 @@
         "idg_rating": null
       },
       "5648": {
-        "name": "Barbara Maria",
+        "name": "Barbara Ráčková",
         "pdga_rating": 883,
         "idg_rating": null
       },
@@ -1869,7 +1957,7 @@
     "2026-04": {
       "319": {
         "name": "Kryštof Novák",
-        "pdga_rating": 989,
+        "pdga_rating": 986,
         "idg_rating": null
       },
       "349": {
@@ -1879,12 +1967,12 @@
       },
       "692": {
         "name": "Bohdan Bílek",
-        "pdga_rating": 1012,
+        "pdga_rating": 1010,
         "idg_rating": null
       },
       "696": {
         "name": "František Trenz",
-        "pdga_rating": 957,
+        "pdga_rating": 964,
         "idg_rating": null
       },
       "818": {
@@ -1899,7 +1987,7 @@
       },
       "1055": {
         "name": "Šimon Galia",
-        "pdga_rating": 929,
+        "pdga_rating": 927,
         "idg_rating": null
       },
       "1808": {
@@ -1919,22 +2007,22 @@
       },
       "3575": {
         "name": "Jakub Dostál",
-        "pdga_rating": 984,
+        "pdga_rating": 981,
         "idg_rating": null
       },
       "3608": {
         "name": "Vladimír Kříž",
-        "pdga_rating": 839,
+        "pdga_rating": 837,
         "idg_rating": null
       },
       "3685": {
         "name": "Kristián Kvita",
-        "pdga_rating": 967,
+        "pdga_rating": 966,
         "idg_rating": null
       },
       "3689": {
         "name": "Jakub Knápek",
-        "pdga_rating": 1021,
+        "pdga_rating": 1026,
         "idg_rating": null
       },
       "3727": {
@@ -1949,42 +2037,42 @@
       },
       "4292": {
         "name": "Julius Nadberežný",
-        "pdga_rating": 839,
+        "pdga_rating": 845,
         "idg_rating": null
       },
       "4358": {
         "name": "Lukáš Novobilský",
-        "pdga_rating": 950,
+        "pdga_rating": 956,
         "idg_rating": null
       },
       "4362": {
         "name": "Kristýna Jurčíková",
-        "pdga_rating": 946,
+        "pdga_rating": 947,
         "idg_rating": null
       },
       "4363": {
         "name": "Karolína Jurčíková",
-        "pdga_rating": 888,
+        "pdga_rating": 893,
         "idg_rating": null
       },
       "5484": {
         "name": "Jakub Moj",
-        "pdga_rating": 826,
+        "pdga_rating": 828,
         "idg_rating": null
       },
       "5493": {
         "name": "Filip Plíhal",
-        "pdga_rating": 860,
+        "pdga_rating": 855,
         "idg_rating": null
       },
       "5508": {
         "name": "Tomáš Ráček",
-        "pdga_rating": 982,
+        "pdga_rating": 980,
         "idg_rating": null
       },
       "5648": {
-        "name": "Barbara Maria",
-        "pdga_rating": 883,
+        "name": "Barbara Ráčková",
+        "pdga_rating": 888,
         "idg_rating": null
       },
       "6136": {
@@ -1994,27 +2082,27 @@
       },
       "6195": {
         "name": "Lukáš Vyvial",
-        "pdga_rating": 944,
+        "pdga_rating": 948,
         "idg_rating": null
       },
       "6222": {
         "name": "Jana Vinklárková",
-        "pdga_rating": 712,
+        "pdga_rating": 727,
         "idg_rating": null
       },
       "6260": {
         "name": "Jaroslav Randus",
-        "pdga_rating": 820,
+        "pdga_rating": 830,
         "idg_rating": null
       },
       "6694": {
         "name": "Jan Šebek",
-        "pdga_rating": 934,
+        "pdga_rating": 940,
         "idg_rating": null
       },
       "7810": {
         "name": "Ondřej Mazoch",
-        "pdga_rating": 983,
+        "pdga_rating": 985,
         "idg_rating": null
       },
       "8007": {
@@ -2024,12 +2112,17 @@
       },
       "8299": {
         "name": "Martin Hollas",
-        "pdga_rating": 852,
+        "pdga_rating": 840,
         "idg_rating": null
       },
       "8321": {
         "name": "Lukáš Zacpal",
-        "pdga_rating": 808,
+        "pdga_rating": 840,
+        "idg_rating": null
+      },
+      "7983": {
+        "name": "Richard Kurečka",
+        "pdga_rating": 842,
         "idg_rating": null
       }
     }

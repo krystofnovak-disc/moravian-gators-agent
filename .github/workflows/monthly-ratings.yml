@@ -1,0 +1,90 @@
+# Moravian Gators – měsíční aktualizace PDGA ratingů
+#
+# PDGA ratingy se finalizují každé 2. úterý v měsíci.
+# Tento workflow běží každou středu a skriptem kontroluje,
+# zda jde o 2. středu v měsíci (tedy den po finalizaci).
+#
+# Aktualizuje:
+#   1) round_ratings u všech PDGA turnajů v data/{year}.json
+#   2) PDGA ratingy jednotlivých hráčů pro aktuální měsíc
+
+name: Monthly PDGA Ratings Update
+
+on:
+  schedule:
+    # Každou středu 6:00 UTC (= 8:00 CEST / 7:00 CET)
+    - cron: "0 6 * * 3"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Spustit i mimo 2. středu v měsíci"
+        required: false
+        default: "false"
+      year:
+        description: "Rok k aktualizaci (prázdné = aktuální)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  update-ratings:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check if 2nd Wednesday of month
+        id: check-day
+        run: |
+          DAY=$(date -u +%d)
+          FORCE="${{ github.event.inputs.force }}"
+          # 2. středa měsíce je vždy mezi 8. a 14. dnem
+          if [ "$FORCE" = "true" ]; then
+            echo "force=true → spouštím bez ohledu na datum"
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          elif [ "$DAY" -ge 8 ] && [ "$DAY" -le 14 ]; then
+            echo "Dnes je $DAY. den v měsíci – 2. středa, pokračuji."
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Dnes je $DAY. den v měsíci – NENÍ 2. středa, přeskakuji."
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Setup Python
+        if: steps.check-day.outputs.should_run == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        if: steps.check-day.outputs.should_run == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Update ratings
+        if: steps.check-day.outputs.should_run == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -n "${{ github.event.inputs.year }}" ]; then
+            python update_ratings.py --year "${{ github.event.inputs.year }}"
+          else
+            python update_ratings.py
+          fi
+
+      - name: Commit updated data
+        if: steps.check-day.outputs.should_run == 'true'
+        run: |
+          git config user.name "Gators Bot"
+          git config user.email "bot@moraviangators.cz"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "Žádné změny k commitnutí."
+          else
+            git commit -m "data: monthly PDGA ratings update $(date +%Y-%m-%d)"
+            git push
+          fi

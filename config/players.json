@@ -45,7 +45,7 @@
   {"first_name": "Jakub",     "last_name": "Moj",           "cadg": 5484, "pdga": 208119},
   {"first_name": "Filip",     "last_name": "Plíhal",        "cadg": 5493, "pdga": 245751},
   {"first_name": "Tomáš",     "last_name": "Ráček",         "cadg": 5508, "pdga": 233423},
-  {"first_name": "Barbara",   "last_name": "Maria",         "cadg": 5648, "pdga": 233444},
+  {"first_name": "Barbara",   "last_name": "Ráčková",       "cadg": 5648, "pdga": 233444, "note": "Maria"},
   {"first_name": "Lukáš",     "last_name": "Španihel",      "cadg": 5723, "pdga": 247601},
   {"first_name": "Robert",    "last_name": "Novobilský",    "cadg": 5781, "pdga": null},
   {"first_name": "Filip",     "last_name": "Košťal",        "cadg": 5823, "pdga": 286177},
@@ -85,5 +85,6 @@
   {"first_name": "Dominik",   "last_name": "Chrustawczuk",  "cadg": 8869, "pdga": null},
   {"first_name": "Štěpán",    "last_name": "Jančík",        "cadg": 8880, "pdga": null},
   {"first_name": "Vanessa",   "last_name": "Kočí",          "cadg": 8898, "pdga": null},
-  {"first_name": "David",     "last_name": "Šamaj",         "cadg": 9180, "pdga": null}
+  {"first_name": "David",     "last_name": "Šamaj",         "cadg": 9180, "pdga": null},
+  {"first_name": "Kryštof",   "last_name": "Mikulenka",     "cadg": 9515, "pdga": null}
 ]
