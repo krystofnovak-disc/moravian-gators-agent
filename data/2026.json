@@ -16,8 +16,8 @@
           "place": 40,
           "score": "",
           "round_ratings": [
-            776,
-            803
+            771,
+            808
           ]
         }
       ]
@@ -309,10 +309,10 @@
           "round_ratings": []
         },
         {
-          "player_name": "Barbara Ráčková",
+          "player_name": "Barbara Maria",
           "cadg": 5648,
           "pdga": 233444,
-          "division": "FPO",
+          "division": "MPO",
           "place": 1,
           "score": "-20",
           "round_ratings": []
@@ -488,9 +488,9 @@
           "place": 2,
           "score": "-11",
           "round_ratings": [
-            1050,
-            983,
-            998
+            1049,
+            981,
+            1001
           ]
         },
         {
@@ -501,9 +501,9 @@
           "place": 5,
           "score": "-9",
           "round_ratings": [
-            983,
-            1043,
-            990
+            981,
+            1042,
+            994
           ]
         },
         {
@@ -514,9 +514,9 @@
           "place": 15,
           "score": "+6",
           "round_ratings": [
-            961,
-            976,
-            968
+            958,
+            974,
+            972
           ]
         },
         {
@@ -527,9 +527,9 @@
           "place": 20,
           "score": "+11",
           "round_ratings": [
-            976,
-            953,
-            938
+            973,
+            951,
+            942
           ]
         },
         {
@@ -540,9 +540,9 @@
           "place": 24,
           "score": "+13",
           "round_ratings": [
-            953,
-            953,
-            946
+            951,
+            951,
+            950
           ]
         },
         {
@@ -553,9 +553,9 @@
           "place": 1,
           "score": "-20",
           "round_ratings": [
-            997,
-            926,
-            979
+            1001,
+            925,
+            976
           ]
         },
         {
@@ -566,9 +566,9 @@
           "place": 2,
           "score": "-5",
           "round_ratings": [
-            926,
-            926,
-            917
+            931,
+            925,
+            914
           ]
         },
         {
@@ -579,9 +579,9 @@
           "place": 16,
           "score": "+72",
           "round_ratings": [
-            679,
-            697,
-            714
+            687,
+            695,
+            709
           ]
         },
         {
@@ -592,9 +592,9 @@
           "place": 9,
           "score": "+13",
           "round_ratings": [
-            900,
-            829,
-            882
+            905,
+            828,
+            878
           ]
         },
         {
@@ -605,9 +605,9 @@
           "place": 16,
           "score": "+20",
           "round_ratings": [
-            873,
-            847,
-            829
+            879,
+            846,
+            825
           ]
         },
         {
@@ -618,9 +618,9 @@
           "place": 1,
           "score": "+1",
           "round_ratings": [
-            923,
-            1005,
-            1013
+            921,
+            1004,
+            1016
           ]
         }
       ]
@@ -660,8 +660,8 @@
           "place": 1,
           "score": "+14",
           "round_ratings": [
-            828,
-            954
+            831,
+            952
           ]
         }
       ]
@@ -1386,7 +1386,7 @@
           ]
         },
         {
-          "player_name": "Barbara Ráčková",
+          "player_name": "Barbara Maria",
           "cadg": 5648,
           "pdga": 233444,
           "division": "FPO",
@@ -1546,10 +1546,10 @@
     {
       "name": "MMMASO! JDL 2026 - Konopišťský medvěd",
       "date": "2026-04-04",
-      "url_idg": null,
-      "url_pdga": "https://www.pdga.com/tour/event/102669",
-      "tier": "PDGA",
-      "source": "pdga",
+      "url_idg": "https://idiscgolf.cz/turnaje/2354",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
       "results": [
         {
           "player_name": "Šimon Galia",
@@ -1558,10 +1558,7 @@
           "division": "MPO",
           "place": 10,
           "score": "+4",
-          "round_ratings": [
-            911,
-            929
-          ]
+          "round_ratings": []
         }
       ]
     },
@@ -1620,10 +1617,10 @@
       "source": "idiscgolf",
       "results": [
         {
-          "player_name": "Barbara Ráčková",
+          "player_name": "Barbara Maria",
           "cadg": 5648,
           "pdga": 233444,
-          "division": "Red",
+          "division": null,
           "place": 4,
           "score": "-5",
           "round_ratings": []
@@ -1643,8 +1640,8 @@
           "cadg": 696,
           "pdga": 75176,
           "division": "Gold",
-          "place": 4,
-          "score": "-2",
+          "place": 0,
+          "score": "-3",
           "round_ratings": []
         },
         {
@@ -1652,17 +1649,8 @@
           "cadg": 3685,
           "pdga": 116574,
           "division": "Gold",
-          "place": 1,
-          "score": "-11",
-          "round_ratings": []
-        },
-        {
-          "player_name": "Martin Hollas",
-          "cadg": 8299,
-          "pdga": 310651,
-          "division": "Green",
-          "place": 1,
-          "score": "+1",
+          "place": 0,
+          "score": "-7",
           "round_ratings": []
         },
         {
@@ -1670,8 +1658,17 @@
           "cadg": 6260,
           "pdga": 269133,
           "division": "Green",
-          "place": 2,
-          "score": "+7",
+          "place": 0,
+          "score": "+6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Martin Hollas",
+          "cadg": 8299,
+          "pdga": 310651,
+          "division": "Green",
+          "place": 0,
+          "score": "-1",
           "round_ratings": []
         },
         {
@@ -1679,8 +1676,8 @@
           "cadg": 6281,
           "pdga": null,
           "division": "Green",
-          "place": 3,
-          "score": "+9",
+          "place": 0,
+          "score": "+8",
           "round_ratings": []
         },
         {
@@ -1688,17 +1685,8 @@
           "cadg": 743,
           "pdga": null,
           "division": "Purple",
-          "place": 6,
-          "score": "+24",
-          "round_ratings": []
-        },
-        {
-          "player_name": "Štěpán Jančík",
-          "cadg": 8880,
-          "pdga": null,
-          "division": null,
-          "place": 9,
-          "score": "+29",
+          "place": 0,
+          "score": "+13",
           "round_ratings": []
         },
         {
@@ -1706,8 +1694,17 @@
           "cadg": 8898,
           "pdga": null,
           "division": "Purple",
-          "place": 15,
-          "score": "+78",
+          "place": 0,
+          "score": "+51",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Štěpán Jančík",
+          "cadg": 8880,
+          "pdga": null,
+          "division": null,
+          "place": 0,
+          "score": "+19",
           "round_ratings": []
         }
       ]
@@ -1728,7 +1725,7 @@
           "place": 22,
           "score": "+12",
           "round_ratings": [
-            871,
+            870,
             790
           ]
         }
@@ -1743,21 +1740,21 @@
       "source": "idiscgolf",
       "results": [
         {
-          "player_name": "Tomáš Ráček",
-          "cadg": 5508,
-          "pdga": 233423,
-          "division": "MPO",
-          "place": 1,
-          "score": "-17",
-          "round_ratings": []
-        },
-        {
           "player_name": "Jaroslav Randus",
           "cadg": 6260,
           "pdga": 269133,
           "division": "MPO",
-          "place": 13,
-          "score": "+13",
+          "place": 0,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Tomáš Ráček",
+          "cadg": 5508,
+          "pdga": 233423,
+          "division": "MPO",
+          "place": 0,
+          "score": "0",
           "round_ratings": []
         }
       ]
@@ -1775,8 +1772,8 @@
           "cadg": 8321,
           "pdga": 303287,
           "division": "Green",
-          "place": 3,
-          "score": "-6",
+          "place": 2,
+          "score": "-7",
           "round_ratings": []
         },
         {
@@ -1784,7 +1781,7 @@
           "cadg": 5484,
           "pdga": 208119,
           "division": "Green",
-          "place": 9,
+          "place": 8,
           "score": "+6",
           "round_ratings": []
         }
@@ -1957,7 +1954,7 @@
     "2026-04": {
       "319": {
         "name": "Kryštof Novák",
-        "pdga_rating": 986,
+        "pdga_rating": 989,
         "idg_rating": null
       },
       "349": {
@@ -1967,12 +1964,12 @@
       },
       "692": {
         "name": "Bohdan Bílek",
-        "pdga_rating": 1010,
+        "pdga_rating": 1012,
         "idg_rating": null
       },
       "696": {
         "name": "František Trenz",
-        "pdga_rating": 964,
+        "pdga_rating": 957,
         "idg_rating": null
       },
       "818": {
@@ -1987,7 +1984,7 @@
       },
       "1055": {
         "name": "Šimon Galia",
-        "pdga_rating": 927,
+        "pdga_rating": 929,
         "idg_rating": null
       },
       "1808": {
@@ -2007,22 +2004,22 @@
       },
       "3575": {
         "name": "Jakub Dostál",
-        "pdga_rating": 981,
+        "pdga_rating": 984,
         "idg_rating": null
       },
       "3608": {
         "name": "Vladimír Kříž",
-        "pdga_rating": 837,
+        "pdga_rating": 839,
         "idg_rating": null
       },
       "3685": {
         "name": "Kristián Kvita",
-        "pdga_rating": 966,
+        "pdga_rating": 967,
         "idg_rating": null
       },
       "3689": {
         "name": "Jakub Knápek",
-        "pdga_rating": 1026,
+        "pdga_rating": 1021,
         "idg_rating": null
       },
       "3727": {
@@ -2037,42 +2034,42 @@
       },
       "4292": {
         "name": "Julius Nadberežný",
-        "pdga_rating": 845,
+        "pdga_rating": 839,
         "idg_rating": null
       },
       "4358": {
         "name": "Lukáš Novobilský",
-        "pdga_rating": 956,
+        "pdga_rating": 950,
         "idg_rating": null
       },
       "4362": {
         "name": "Kristýna Jurčíková",
-        "pdga_rating": 947,
+        "pdga_rating": 946,
         "idg_rating": null
       },
       "4363": {
         "name": "Karolína Jurčíková",
-        "pdga_rating": 893,
+        "pdga_rating": 888,
         "idg_rating": null
       },
       "5484": {
         "name": "Jakub Moj",
-        "pdga_rating": 828,
+        "pdga_rating": 826,
         "idg_rating": null
       },
       "5493": {
         "name": "Filip Plíhal",
-        "pdga_rating": 855,
+        "pdga_rating": 860,
         "idg_rating": null
       },
       "5508": {
         "name": "Tomáš Ráček",
-        "pdga_rating": 980,
+        "pdga_rating": 982,
         "idg_rating": null
       },
       "5648": {
         "name": "Barbara Ráčková",
-        "pdga_rating": 888,
+        "pdga_rating": 883,
         "idg_rating": null
       },
       "6136": {
@@ -2082,27 +2079,27 @@
       },
       "6195": {
         "name": "Lukáš Vyvial",
-        "pdga_rating": 948,
+        "pdga_rating": 944,
         "idg_rating": null
       },
       "6222": {
         "name": "Jana Vinklárková",
-        "pdga_rating": 727,
+        "pdga_rating": 712,
         "idg_rating": null
       },
       "6260": {
         "name": "Jaroslav Randus",
-        "pdga_rating": 830,
+        "pdga_rating": 820,
         "idg_rating": null
       },
       "6694": {
         "name": "Jan Šebek",
-        "pdga_rating": 940,
+        "pdga_rating": 934,
         "idg_rating": null
       },
       "7810": {
         "name": "Ondřej Mazoch",
-        "pdga_rating": 985,
+        "pdga_rating": 983,
         "idg_rating": null
       },
       "8007": {
@@ -2112,17 +2109,12 @@
       },
       "8299": {
         "name": "Martin Hollas",
-        "pdga_rating": 840,
+        "pdga_rating": 852,
         "idg_rating": null
       },
       "8321": {
         "name": "Lukáš Zacpal",
-        "pdga_rating": 840,
-        "idg_rating": null
-      },
-      "7983": {
-        "name": "Richard Kurečka",
-        "pdga_rating": 842,
+        "pdga_rating": 808,
         "idg_rating": null
       }
     }
