@@ -1786,6 +1786,40 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "Jarní Kobří Open",
+      "date": "2026-04-18",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/102731",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Barbara Ráčková",
+          "cadg": 5648,
+          "pdga": 233444,
+          "division": "RPA",
+          "place": 1,
+          "score": "-16",
+          "round_ratings": [
+            914,
+            980
+          ]
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "RPA",
+          "place": 14,
+          "score": "+11",
+          "round_ratings": [
+            797,
+            836
+          ]
+        }
+      ]
     }
   ],
   "ratings": {
