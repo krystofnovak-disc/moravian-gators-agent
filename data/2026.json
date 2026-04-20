@@ -1820,6 +1820,223 @@
           ]
         }
       ]
+    },
+    {
+      "name": "NJDGT #2: Kacabaja Open",
+      "date": "2026-04-18",
+      "url_idg": "https://idiscgolf.cz/turnaje/2475",
+      "url_pdga": null,
+      "tier": "NJDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Filip Knápek",
+          "cadg": 6748,
+          "pdga": null,
+          "division": "Vrabec",
+          "place": 5,
+          "score": "+26",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Robert Novobilský",
+          "cadg": 5781,
+          "pdga": null,
+          "division": "Vrabec",
+          "place": 6,
+          "score": "+30",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Matyáš Janíček",
+          "cadg": 6287,
+          "pdga": null,
+          "division": "Vrabec",
+          "place": 7,
+          "score": "+34",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Štěpán Jančík",
+          "cadg": 8880,
+          "pdga": null,
+          "division": null,
+          "place": 9,
+          "score": "+40",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 743,
+          "pdga": null,
+          "division": "Vrabec",
+          "place": 10,
+          "score": "+45",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Martin Michálek",
+          "cadg": 8445,
+          "pdga": null,
+          "division": "Vrabec",
+          "place": 11,
+          "score": "+53",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Rostislav Hegar",
+          "cadg": 8754,
+          "pdga": null,
+          "division": "Vrabec",
+          "place": 12,
+          "score": "+57",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Michal Sviták",
+          "cadg": 1808,
+          "pdga": 122508,
+          "division": "Vrabec",
+          "place": 13,
+          "score": "+62",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Dominik Janek",
+          "cadg": 8007,
+          "pdga": 290093,
+          "division": "Poštolka",
+          "place": 2,
+          "score": "+3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Richard Kurečka",
+          "cadg": 7983,
+          "pdga": 300253,
+          "division": "Poštolka",
+          "place": 3,
+          "score": "+5",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Martin Hollas",
+          "cadg": 8299,
+          "pdga": 310651,
+          "division": "Poštolka",
+          "place": 5,
+          "score": "+8",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Tomáš Novobilský",
+          "cadg": 3653,
+          "pdga": 137574,
+          "division": "Poštolka",
+          "place": 5,
+          "score": "+8",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Filip Košťal",
+          "cadg": 5823,
+          "pdga": 286177,
+          "division": "Poštolka",
+          "place": 7,
+          "score": "+14",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Janíček",
+          "cadg": 6281,
+          "pdga": null,
+          "division": "Poštolka",
+          "place": 9,
+          "score": "+18",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Březina",
+          "cadg": 1217,
+          "pdga": 92091,
+          "division": "Poštolka",
+          "place": 12,
+          "score": "+28",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karel Dostál",
+          "cadg": 3536,
+          "pdga": 78066,
+          "division": "Jestřáb",
+          "place": 2,
+          "score": "+1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Radek Jurčík",
+          "cadg": 3727,
+          "pdga": 137576,
+          "division": "Jestřáb",
+          "place": 4,
+          "score": "+8",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jiří Šebek",
+          "cadg": 839,
+          "pdga": 77760,
+          "division": "Jestřáb",
+          "place": 6,
+          "score": "+12",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jindřich Závodný",
+          "cadg": 5041,
+          "pdga": null,
+          "division": "Jestřáb",
+          "place": 8,
+          "score": "+16",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jan Šajnar",
+          "cadg": 6345,
+          "pdga": null,
+          "division": "Jestřáb",
+          "place": 11,
+          "score": "+22",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Pavel Žeravík",
+          "cadg": 6268,
+          "pdga": null,
+          "division": "Orel",
+          "place": 3,
+          "score": "-9",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Radek Dostál",
+          "cadg": 3672,
+          "pdga": 78063,
+          "division": "Orel",
+          "place": 4,
+          "score": "-5",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "Orel",
+          "place": 5,
+          "score": "+3",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
