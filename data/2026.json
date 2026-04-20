@@ -2037,6 +2037,52 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "Stromovka Open 2026",
+      "date": "2026-04-18",
+      "url_idg": "https://idiscgolf.cz/turnaje/2371",
+      "url_pdga": "https://www.pdga.com/tour/event/103461",
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jakub Veselý",
+          "cadg": 2293,
+          "pdga": 102611,
+          "division": "MPO",
+          "place": 3,
+          "score": "-25",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Masník",
+          "cadg": 818,
+          "pdga": 89187,
+          "division": "MPO",
+          "place": 6,
+          "score": "-15",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Julius Nadberežný",
+          "cadg": 4292,
+          "pdga": 240173,
+          "division": "MJ15",
+          "place": 23,
+          "score": "+21",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Urbiš",
+          "cadg": 3772,
+          "pdga": 122423,
+          "division": "MA1",
+          "place": 12,
+          "score": "-4",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
