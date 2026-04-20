@@ -313,6 +313,24 @@ class IDGScraper:
         pdga_col_idx = None
         is_registration_table = False
 
+        # Cache: která tabulka je validní "výsledková/registrační"
+        # (první řádek obsahuje # a HRÁČ). Ostatní tabulky (info o turnaji,
+        # ředitelé, sponzoři…) jsou tímto vyloučené.
+        table_is_result = {}
+
+        def _is_result_table(table) -> bool:
+            tid = id(table)
+            if tid in table_is_result:
+                return table_is_result[tid]
+            result = False
+            for row in table.find_all("tr")[:3]:
+                hdr = [c.get_text(strip=True).upper() for c in row.find_all(["td", "th"])]
+                if "#" in hdr and ("HRÁČ" in hdr or "HRAC" in hdr):
+                    result = True
+                    break
+            table_is_result[tid] = result
+            return result
+
         # --- Krok 2: procházení DOM stromem ---
         for element in soup.find_all(True):
             tag = element.name.lower()
@@ -329,6 +347,12 @@ class IDGScraper:
             if tag == "tr":
                 cells = element.find_all(["td", "th"])
                 if len(cells) < 2:
+                    continue
+
+                # Zpracovávej jen řádky uvnitř tabulek s hlavičkou #/HRÁČ
+                # (vylučuje info tabulky typu "Pomocný ředitel | Petr Masník")
+                parent_table = element.find_parent("table")
+                if parent_table is None or not _is_result_table(parent_table):
                     continue
 
                 # Detekce hlavičkového řádku
