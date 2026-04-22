@@ -1788,6 +1788,185 @@
       ]
     },
     {
+      "name": "PCT: Świerklaniec Open 2026",
+      "date": "2026-04-17",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/102777",
+      "tier": "PCT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 1,
+          "score": "-20",
+          "round_ratings": [
+            984,
+            1047,
+            1056
+          ]
+        },
+        {
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
+          "division": "MPO",
+          "place": 2,
+          "score": "-13",
+          "round_ratings": [
+            1007,
+            1031,
+            991
+          ]
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 3,
+          "score": "-10",
+          "round_ratings": [
+            992,
+            984,
+            1031
+          ]
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 5,
+          "score": "-7",
+          "round_ratings": [
+            1007,
+            984,
+            991
+          ]
+        },
+        {
+          "player_name": "Lukáš Vyvial",
+          "cadg": 6195,
+          "pdga": 283489,
+          "division": "MPO",
+          "place": 14,
+          "score": "+4",
+          "round_ratings": [
+            923,
+            1000,
+            975
+          ]
+        },
+        {
+          "player_name": "Jakub Dostál",
+          "cadg": 3575,
+          "pdga": 78064,
+          "division": "MPO",
+          "place": 15,
+          "score": "+5",
+          "round_ratings": [
+            923,
+            992,
+            975
+          ]
+        },
+        {
+          "player_name": "Jan Šebek",
+          "cadg": 6694,
+          "pdga": 281439,
+          "division": "MPO",
+          "place": 16,
+          "score": "+7",
+          "round_ratings": [
+            984,
+            960,
+            926
+          ]
+        },
+        {
+          "player_name": "Maxmilián Jakeš",
+          "cadg": 6136,
+          "pdga": 273516,
+          "division": "MPO",
+          "place": 17,
+          "score": "+8",
+          "round_ratings": [
+            976,
+            937,
+            950
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 1,
+          "score": "-18",
+          "round_ratings": [
+            992,
+            968,
+            988
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 2,
+          "score": "+3",
+          "round_ratings": [
+            940,
+            925,
+            899
+          ]
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "MA3",
+          "place": 29,
+          "score": "+30",
+          "round_ratings": [
+            853,
+            882,
+            794
+          ]
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "FA3",
+          "place": 3,
+          "score": "+81",
+          "round_ratings": [
+            670,
+            657,
+            758
+          ]
+        },
+        {
+          "player_name": "Lukáš Novobilský",
+          "cadg": 4358,
+          "pdga": 285107,
+          "division": "MJ18",
+          "place": 1,
+          "score": "E",
+          "round_ratings": [
+            984,
+            976,
+            967
+          ]
+        }
+      ]
+    },
+    {
       "name": "Jarní Kobří Open",
       "date": "2026-04-18",
       "url_idg": null,
@@ -2043,7 +2222,7 @@
       "date": "2026-04-18",
       "url_idg": "https://idiscgolf.cz/turnaje/2371",
       "url_pdga": "https://www.pdga.com/tour/event/103461",
-      "tier": "local",
+      "tier": "ADGL",
       "source": "idiscgolf",
       "results": [
         {
@@ -2069,8 +2248,8 @@
           "cadg": 4292,
           "pdga": 240173,
           "division": "MJ15",
-          "place": 23,
-          "score": "+21",
+          "place": 1,
+          "score": "-7",
           "round_ratings": []
         },
         {
