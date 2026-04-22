@@ -1,7 +1,7 @@
 #!/bin/bash
 # ============================================================
 # Nastavení cron jobu – Moravian Gators Agent
-# Spouštěj každé pondělí v 8:00
+# Spouštěj každé pondělí v 18:00 (místní čas – Europe/Prague)
 # ============================================================
 # Spuštění: chmod +x setup_cron.sh && ./setup_cron.sh
 
@@ -9,8 +9,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PYTHON_BIN="$(which python3)"
 CRON_LOG="$SCRIPT_DIR/cron.log"
 
-# Cron výraz: 0 8 * * 1 = každé pondělí v 8:00
-CRON_JOB="0 8 * * 1 cd \"$SCRIPT_DIR\" && \"$PYTHON_BIN\" main.py >> \"$CRON_LOG\" 2>&1"
+# Cron výraz: 0 18 * * 1 = každé pondělí v 18:00 místního času
+CRON_JOB="0 18 * * 1 cd \"$SCRIPT_DIR\" && \"$PYTHON_BIN\" main.py >> \"$CRON_LOG\" 2>&1"
 
 echo "📋 Instaluji cron job..."
 echo "   Skript: $SCRIPT_DIR/main.py"

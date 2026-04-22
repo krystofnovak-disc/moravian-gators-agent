@@ -1,22 +1,25 @@
 # Moravian Gators – týdenní výsledky
-# Každé pondělí v 6:00 UTC = 8:00 CEST (7:00 CET v zimě)
+# Každé pondělí v 18:00 Europe/Prague (českého času).
 #
-# POZN.: GitHub Actions používá UTC. Střední Evropa je UTC+2 v létě (CEST)
-# a UTC+1 v zimě (CET). Cron `0 6 * * 1` = 8:00 CEST / 7:00 CET.
+# POZN.: GitHub Actions používá UTC, a Evropa má DST.
+#   - Letní čas (CEST, UTC+2): 18:00 Praha = 16:00 UTC → cron "0 16 * * 1"
+#   - Zimní čas (CET,  UTC+1): 18:00 Praha = 17:00 UTC → cron "0 17 * * 1"
+# Obě crony jsou naplánované a krok "Skip if not 18:00 Prague time"
+# propustí dál jen tu, která odpovídá aktuálnímu DST.
 #
 # Retry logika: pokud výsledky nejsou finalizovány (exit code 75),
-# workflow se spustí znovu za 3 hodiny (max 2 pokusy navíc).
+# workflow se spustí znovu za 3 hodiny (21:00 Praha).
 
 name: Weekly Results
 
 on:
   schedule:
-    # Každé pondělí v 6:00 UTC (= 8:00 CEST letní čas)
-    - cron: "0 6 * * 1"
-    # Retry #1: pondělí 9:00 UTC (= 11:00 CEST)
-    - cron: "0 9 * * 1"
-    # Retry #2: pondělí 12:00 UTC (= 14:00 CEST)
-    - cron: "0 12 * * 1"
+    # 18:00 Praha (primární běh)
+    - cron: "0 16 * * 1"  # CEST (letní čas)
+    - cron: "0 17 * * 1"  # CET  (zimní čas)
+    # 21:00 Praha (retry #1, pokud PDGA ještě neindexovala)
+    - cron: "0 19 * * 1"  # CEST
+    - cron: "0 20 * * 1"  # CET
   workflow_dispatch:
     # Ruční spuštění z GitHub webu (pro testování)
     inputs:
@@ -34,12 +37,32 @@ jobs:
     timeout-minutes: 15
 
     steps:
+      - name: Skip if not target Prague time
+        id: tz-check
+        # Primární běh propustí v 18:00 Praha, retry v 21:00 Praha.
+        # Ruční spuštění (workflow_dispatch) projde vždy.
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "Manual run – proceeding."
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          PRAGUE_HOUR=$(TZ="Europe/Prague" date +%H)
+          echo "Prague hour now: $PRAGUE_HOUR"
+          case "$PRAGUE_HOUR" in
+            18|21) echo "skip=false" >> "$GITHUB_OUTPUT" ;;
+            *)     echo "skip=true"  >> "$GITHUB_OUTPUT"
+                   echo "Cron spuštěn mimo cílovou hodinu ($PRAGUE_HOUR Praha) – konec." ;;
+          esac
+
       - name: Checkout
+        if: steps.tz-check.outputs.skip == 'false'
         uses: actions/checkout@v4
 
       - name: Check if already sent today
         id: check-sent
-        # Přeskočí retry běhy, pokud už dnes úspěšně proběhl (existuje marker soubor)
+        if: steps.tz-check.outputs.skip == 'false'
+        # Přeskočí retry běhy, pokud už dnes úspěšně proběhl
         run: |
           git log --oneline --since="$(date -u +%Y-%m-%dT00:00:00Z)" --grep="data: update results" | head -1
           if git log --oneline --since="$(date -u +%Y-%m-%dT00:00:00Z)" --grep="data: update results" | grep -q .; then
@@ -50,18 +73,18 @@ jobs:
           fi
 
       - name: Setup Python
-        if: steps.check-sent.outputs.already_sent == 'false'
+        if: steps.tz-check.outputs.skip == 'false' && steps.check-sent.outputs.already_sent == 'false'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: "pip"
 
       - name: Install dependencies
-        if: steps.check-sent.outputs.already_sent == 'false'
+        if: steps.tz-check.outputs.skip == 'false' && steps.check-sent.outputs.already_sent == 'false'
         run: pip install -r requirements.txt
 
       - name: Run agent
-        if: steps.check-sent.outputs.already_sent == 'false'
+        if: steps.tz-check.outputs.skip == 'false' && steps.check-sent.outputs.already_sent == 'false'
         id: run-agent
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -86,7 +109,7 @@ jobs:
           echo "incomplete=false" >> "$GITHUB_OUTPUT"
 
       - name: Commit cumulative data
-        if: steps.check-sent.outputs.already_sent == 'false' && steps.run-agent.outputs.incomplete != 'true'
+        if: steps.tz-check.outputs.skip == 'false' && steps.check-sent.outputs.already_sent == 'false' && steps.run-agent.outputs.incomplete != 'true'
         run: |
           git config user.name "Gators Bot"
           git config user.email "bot@moraviangators.cz"
@@ -99,7 +122,7 @@ jobs:
           fi
 
       - name: Upload results artifact
-        if: always() && steps.check-sent.outputs.already_sent == 'false'
+        if: always() && steps.tz-check.outputs.skip == 'false' && steps.check-sent.outputs.already_sent == 'false'
         uses: actions/upload-artifact@v4
         with:
           name: results-${{ github.run_id }}
