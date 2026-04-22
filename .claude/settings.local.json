@@ -6,7 +6,8 @@
       "Bash(gh auth:*)",
       "Bash(brew install:*)",
       "Bash(gh repo:*)",
-      "Bash(gh secret:*)"
+      "Bash(gh secret:*)",
+      "Bash(gh run:*)"
     ]
   }
 }
