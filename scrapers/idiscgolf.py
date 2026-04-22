@@ -295,6 +295,14 @@ class IDGScraper:
         if "ADGL" in name_upper or "ADL" in name_upper:
             return "ADGL"
 
+        # 3. Detekce ADGL z textu stránky (např. "Amatérská discgolfová liga")
+        page_text_upper = soup.get_text(" ", strip=True).upper()
+        if "AMATÉRSKÁ DISCGOLFOVÁ LIGA" in page_text_upper or "AMATERSKA DISCGOLFOVA LIGA" in page_text_upper:
+            return "ADGL"
+        # Tag ČADG (Česká asociace disc golfu) v hlavičce/breadcrumbech → ADGL
+        if "ČADG" in page_text_upper and "LIGA" in page_text_upper:
+            return "ADGL"
+
         return "local"
 
     def _parse_results(self, soup: BeautifulSoup) -> list:
@@ -639,23 +647,36 @@ class IDGScraper:
         row_text = " ".join(c.get_text(" ", strip=True) for c in cells)
         row_norm = normalize(row_text)
 
-        # Priorita 1: ČADG číslo – jen ve sloupci ČADG (pokud známe index)
+        # Hodnoty v ID sloupcích – potřebujeme je i pro negativní kontrolu jmenovců
+        cadg_val = ""
         if cadg_col_idx is not None and cadg_col_idx < len(cell_texts):
             cadg_val = cell_texts[cadg_col_idx].strip()
-            if cadg_val and cadg_val in self.cadg_set:
-                p = self.cadg_to_player[cadg_val]
-                result = self._player_result_base(p)
-                result["_matched_via"] = "cadg"
-                return result
-
-        # Priorita 1b: PDGA číslo – jen ve sloupci PDGA# (pokud známe index)
+        pdga_val = ""
         if pdga_col_idx is not None and pdga_col_idx < len(cell_texts):
             pdga_val = cell_texts[pdga_col_idx].strip()
-            if pdga_val and pdga_val in self.pdga_set:
-                p = self.pdga_to_player[pdga_val]
-                result = self._player_result_base(p)
-                result["_matched_via"] = "pdga"
-                return result
+
+        # Priorita 1: ČADG číslo – jen ve sloupci ČADG (pokud známe index)
+        if cadg_val and cadg_val in self.cadg_set:
+            p = self.cadg_to_player[cadg_val]
+            result = self._player_result_base(p)
+            result["_matched_via"] = "cadg"
+            return result
+
+        # Priorita 1b: PDGA číslo – jen ve sloupci PDGA# (pokud známe index)
+        if pdga_val and pdga_val in self.pdga_set:
+            p = self.pdga_to_player[pdga_val]
+            result = self._player_result_base(p)
+            result["_matched_via"] = "pdga"
+            return result
+
+        # Pokud má řádek vyplněný ID sloupec, ale hodnota není naše → jmenovec
+        # z jiného klubu. Přeskočit, neprocházet jmenné matche.
+        # (Chrání před chybou typu: Julius Nadberežný z BudweisDC PDGA 69023
+        # matched v MA3 tabulce jako náš Julius PDGA 240173.)
+        cadg_numeric = cadg_val.isdigit() and cadg_val != "0"
+        pdga_numeric = pdga_val.isdigit() and pdga_val != "0"
+        if cadg_numeric or pdga_numeric:
+            return None
 
         # Priorita 2: plné jméno (s diakritikou) – word boundaries
         for name, players_list in self.name_to_players.items():

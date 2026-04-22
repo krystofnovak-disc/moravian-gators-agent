@@ -98,8 +98,28 @@ class PDGAScraper:
     # ------------------------------------------------------------------
 
     def _find_weekend_events(self, saturday: date, sunday: date) -> list:
-        """Najde PDGA eventy z víkendu přes profily hráčů."""
+        """Najde PDGA eventy z víkendu dvěma cestami:
+
+        1) Přes PDGA tour calendar – zachytí i "Live" eventy, které ještě
+           nejsou finalizované v profilech hráčů (PDGA přidává event do
+           profilu až s propočteným tier ratingem, typicky v 2. úterý měsíce).
+        2) Přes profily hráčů – záchyt nedávných turnajů, kde byl alespoň
+           jeden z našich hráčů s PDGA číslem.
+
+        Obě cesty se slučují přes event ID.
+        """
         found = {}
+
+        # 1) PDGA tour calendar – rychlá cesta, najde i Live eventy
+        try:
+            for ev in self._tour_calendar_events(saturday, sunday):
+                if ev["id"] not in found:
+                    found[ev["id"]] = ev
+                    logger.info(f"  PDGA tour calendar: {ev['name']} (#{ev['id']})")
+        except Exception as e:
+            logger.warning(f"PDGA tour calendar selhal: {e}", exc_info=True)
+
+        # 2) Profily hráčů – záložní cesta + potvrzení účasti
         checked = 0
         for p in self.players_with_pdga:
             try:
@@ -114,8 +134,124 @@ class PDGAScraper:
             except Exception as e:
                 logger.warning(f"Profil PDGA #{p['pdga']}: {e}")
 
-        logger.info(f"Zkontrolováno {checked} PDGA profilů, nalezeno {len(found)} eventů")
+        logger.info(f"Zkontrolováno {checked} PDGA profilů, celkem eventů: {len(found)}")
         return list(found.values())
+
+    # Země, odkud naši členové pravidelně vyjíždí na PDGA turnaje.
+    # Pokud by v budoucnu startovali jinde, stačí seznam rozšířit.
+    _TARGET_COUNTRIES = ("Czech Republic", "Slovakia", "Poland", "Austria", "Germany", "Hungary")
+
+    def _tour_calendar_events(self, saturday: date, sunday: date) -> list:
+        """Najde PDGA eventy přes tour calendar (/tour?year=YYYY).
+
+        Důvod existence: hráčské profily (``_player_recent_events``) obsahují
+        jen **finalizované** turnaje – PDGA je do profilu zapíše až
+        s propočteným tier ratingem (typicky 2. úterý následujícího měsíce).
+        Eventy ve stavu "Live" těsně po víkendu ještě v profilech nejsou.
+
+        Postup:
+          1) Stáhneme `/tour?year={YYYY}` – vrátí eventy za celý rok pro
+             všechny země (cca 1100 řádků).
+          2) Filtr v Pythonu: datum (pátek–neděle daného víkendu) + země
+             ze seznamu ``_TARGET_COUNTRIES``.
+          3) Vrátí seznam kandidátů; účast našich hráčů se ověří později
+             v ``_get_our_players_in_event``.
+        """
+        friday = saturday - timedelta(days=1)
+        weekend_days = {friday, saturday, sunday}
+        year = saturday.year
+
+        url = f"{BASE_URL}/tour?year={year}"
+        try:
+            resp = self.session.get(url, timeout=30)
+            resp.raise_for_status()
+        except Exception as e:
+            logger.warning(f"PDGA tour calendar nedostupný: {e}")
+            return []
+
+        soup = BeautifulSoup(resp.text, "html.parser")
+        events = []
+
+        for tr in soup.select("table tr"):
+            link = tr.find("a", href=re.compile(r"/tour/event/\d+"))
+            if not link:
+                continue
+            m = re.search(r"/tour/event/(\d+)", link["href"])
+            if not m:
+                continue
+            event_id = int(m.group(1))
+
+            # Strukturované buňky: OfficialName | DateRange | StatusIcons | Classification | Tier | Location
+            name_cell = tr.select_one(".views-field-OfficialName")
+            date_cell = tr.select_one(".views-field-DateRange")
+            loc_cell = tr.select_one(".views-field-Location")
+            if not (name_cell and date_cell and loc_cell):
+                continue
+
+            name = name_cell.get_text(" ", strip=True)
+            date_text = date_cell.get_text(" ", strip=True)
+            location = loc_cell.get_text(" ", strip=True)
+
+            # Filtr podle země (rychlá cesta – odfiltruje ~95 % řádků)
+            if not any(c in location for c in self._TARGET_COUNTRIES):
+                continue
+
+            event_dates = self._parse_calendar_dates(date_text, year)
+            if not event_dates:
+                continue
+
+            # Pá–Ne víkend musí překrývat datum konání eventu
+            if weekend_days.intersection(event_dates):
+                events.append({
+                    "id": event_id,
+                    "name": name,
+                    "date": min(event_dates).isoformat(),
+                    "dates_raw": date_text,
+                })
+
+        return events
+
+    @staticmethod
+    def _parse_calendar_dates(date_text: str, year: int) -> set:
+        """Parsuje PDGA tour calendar datumové texty (např. "Apr 17-19 Fri-Sun"
+        nebo "Mar 29-Apr 2 Sun-Thu") a vrátí set ``date`` objektů pokrývajících
+        všechny dny konání.
+        """
+        from datetime import datetime as _dt
+
+        if not date_text:
+            return set()
+
+        # Samostatný den: "Apr 18"
+        m = re.match(r"([A-Za-z]{3})\s+(\d{1,2})\s*(?:[A-Za-z]{3})?$", date_text.strip())
+        if m:
+            try:
+                d = _dt.strptime(f"{m.group(1)} {m.group(2)} {year}", "%b %d %Y").date()
+                return {d}
+            except ValueError:
+                return set()
+
+        # Rozsah ve stejném měsíci: "Apr 17-19 Fri-Sun"
+        m = re.match(r"([A-Za-z]{3})\s+(\d{1,2})-(\d{1,2})\b", date_text.strip())
+        if m:
+            try:
+                start = _dt.strptime(f"{m.group(1)} {m.group(2)} {year}", "%b %d %Y").date()
+                end = _dt.strptime(f"{m.group(1)} {m.group(3)} {year}", "%b %d %Y").date()
+                return {start + timedelta(days=i) for i in range((end - start).days + 1)}
+            except ValueError:
+                return set()
+
+        # Rozsah přes měsíce: "Mar 29-Apr 2 Sun-Thu"
+        m = re.match(r"([A-Za-z]{3})\s+(\d{1,2})-([A-Za-z]{3})\s+(\d{1,2})\b", date_text.strip())
+        if m:
+            try:
+                start = _dt.strptime(f"{m.group(1)} {m.group(2)} {year}", "%b %d %Y").date()
+                end = _dt.strptime(f"{m.group(3)} {m.group(4)} {year}", "%b %d %Y").date()
+                return {start + timedelta(days=i) for i in range((end - start).days + 1)}
+            except ValueError:
+                return set()
+
+        return set()
 
     def _player_recent_events(self, pdga_number: int) -> list:
         """Stáhne hlavní profil hráče a vrátí seznam turnajů z aktuální sezóny."""
