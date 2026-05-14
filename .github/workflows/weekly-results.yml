@@ -1,27 +1,28 @@
 # Moravian Gators – týdenní výsledky
-# Každé pondělí v 18:00 Europe/Prague (českého času).
+# Každé pondělí ve večerním okně Europe/Prague (cíl ~18:00).
 #
-# POZN.: GitHub Actions používá UTC, a Evropa má DST.
-#   - Letní čas (CEST, UTC+2): 18:00 Praha = 16:00 UTC → cron "0 16 * * 1"
-#   - Zimní čas (CET,  UTC+1): 18:00 Praha = 17:00 UTC → cron "0 17 * * 1"
-# Obě crony jsou naplánované a krok "Skip if not 18:00 Prague time"
-# propustí dál jen tu, která odpovídá aktuálnímu DST.
+# Schedule pokrývá obě DST varianty + retry. GitHub Actions cron má
+# tolerance až ~30 min, proto se NEspoléháme na přesnou hodinu –
+# duplicitu řeší "already_sent today" guard níže (první úspěšný běh
+# pushne commit `data: update results YYYY-MM-DD`, zbylé crony skipnou).
 #
-# Retry logika: pokud výsledky nejsou finalizovány (exit code 75),
-# workflow se spustí znovu za 3 hodiny (21:00 Praha).
+# CEST (letní čas, UTC+2):  16 UTC = 18 Praha (primary), 19 UTC = 21 Praha (retry)
+# CET  (zimní čas, UTC+1):  17 UTC = 18 Praha (primary), 20 UTC = 21 Praha (retry)
+#
+# V přechodných měsících (3. a 10.) může být první primární běh o ±1 h
+# vedle 18:00 – to je akceptovatelné, PDGA je už indexovaná.
 
 name: Weekly Results
 
 on:
   schedule:
-    # 18:00 Praha (primární běh)
-    - cron: "0 16 * * 1"  # CEST (letní čas)
-    - cron: "0 17 * * 1"  # CET  (zimní čas)
-    # 21:00 Praha (retry #1, pokud PDGA ještě neindexovala)
+    # Primary – 18:00 Praha
+    - cron: "0 16 * * 1"  # CEST
+    - cron: "0 17 * * 1"  # CET
+    # Retry – 21:00 Praha (pro případ že PDGA ještě neindexovala nebo síť padla)
     - cron: "0 19 * * 1"  # CEST
     - cron: "0 20 * * 1"  # CET
   workflow_dispatch:
-    # Ruční spuštění z GitHub webu (pro testování)
     inputs:
       date:
         description: "Datum soboty víkendu (YYYY-MM-DD), prázdné = minulý víkend"
@@ -37,54 +38,39 @@ jobs:
     timeout-minutes: 15
 
     steps:
-      - name: Skip if not target Prague time
-        id: tz-check
-        # Primární běh propustí v 18:00 Praha, retry v 21:00 Praha.
-        # Ruční spuštění (workflow_dispatch) projde vždy.
-        run: |
-          if [ "${{ github.event_name }}" != "schedule" ]; then
-            echo "Manual run – proceeding."
-            echo "skip=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          PRAGUE_HOUR=$(TZ="Europe/Prague" date +%H)
-          echo "Prague hour now: $PRAGUE_HOUR"
-          case "$PRAGUE_HOUR" in
-            18|21) echo "skip=false" >> "$GITHUB_OUTPUT" ;;
-            *)     echo "skip=true"  >> "$GITHUB_OUTPUT"
-                   echo "Cron spuštěn mimo cílovou hodinu ($PRAGUE_HOUR Praha) – konec." ;;
-          esac
-
       - name: Checkout
-        if: steps.tz-check.outputs.skip == 'false'
         uses: actions/checkout@v4
 
       - name: Check if already sent today
         id: check-sent
-        if: steps.tz-check.outputs.skip == 'false'
-        # Přeskočí retry běhy, pokud už dnes úspěšně proběhl
+        # Pokud už dnes existuje commit `data: update results …`, druhý běh skipne.
+        # Manuální spuštění (workflow_dispatch) běží vždycky.
         run: |
-          git log --oneline --since="$(date -u +%Y-%m-%dT00:00:00Z)" --grep="data: update results" | head -1
-          if git log --oneline --since="$(date -u +%Y-%m-%dT00:00:00Z)" --grep="data: update results" | grep -q .; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Manual run – proceeding."
+            echo "already_sent=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if git log --oneline --since="$(TZ=Europe/Prague date +%Y-%m-%dT00:00:00)" --grep="data: update results" | grep -q .; then
             echo "already_sent=true" >> "$GITHUB_OUTPUT"
-            echo "Výsledky už byly dnes odeslány, přeskakuji."
+            echo "Výsledky už byly dnes (Praha čas) odeslány, přeskakuji."
           else
             echo "already_sent=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Setup Python
-        if: steps.tz-check.outputs.skip == 'false' && steps.check-sent.outputs.already_sent == 'false'
+        if: steps.check-sent.outputs.already_sent == 'false'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: "pip"
 
       - name: Install dependencies
-        if: steps.tz-check.outputs.skip == 'false' && steps.check-sent.outputs.already_sent == 'false'
+        if: steps.check-sent.outputs.already_sent == 'false'
         run: pip install -r requirements.txt
 
       - name: Run agent
-        if: steps.tz-check.outputs.skip == 'false' && steps.check-sent.outputs.already_sent == 'false'
+        if: steps.check-sent.outputs.already_sent == 'false'
         id: run-agent
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -109,7 +95,7 @@ jobs:
           echo "incomplete=false" >> "$GITHUB_OUTPUT"
 
       - name: Commit cumulative data
-        if: steps.tz-check.outputs.skip == 'false' && steps.check-sent.outputs.already_sent == 'false' && steps.run-agent.outputs.incomplete != 'true'
+        if: steps.check-sent.outputs.already_sent == 'false' && steps.run-agent.outputs.incomplete != 'true'
         run: |
           git config user.name "Gators Bot"
           git config user.email "bot@moraviangators.cz"
@@ -117,12 +103,12 @@ jobs:
           if git diff --staged --quiet; then
             echo "No data changes to commit."
           else
-            git commit -m "data: update results $(date +%Y-%m-%d)"
+            git commit -m "data: update results $(TZ=Europe/Prague date +%Y-%m-%d)"
             git push
           fi
 
       - name: Upload results artifact
-        if: always() && steps.tz-check.outputs.skip == 'false' && steps.check-sent.outputs.already_sent == 'false'
+        if: always() && steps.check-sent.outputs.already_sent == 'false'
         uses: actions/upload-artifact@v4
         with:
           name: results-${{ github.run_id }}
