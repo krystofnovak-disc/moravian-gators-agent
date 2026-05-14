@@ -133,6 +133,10 @@ def check_results_completeness(results: list) -> list:
     """
     incomplete = []
     for t in results:
+        # Zrušené turnaje nemají umístění z principu – přeskakujeme.
+        name_upper = (t.get("name") or "").upper()
+        if "ZRUŠEN" in name_upper or "ZRUSEN" in name_upper or "CANCEL" in name_upper:
+            continue
         missing = [
             p for p in t.get("our_players", [])
             if (p.get("place") is None or p.get("place") == 0)
@@ -180,10 +184,20 @@ def run(saturday: date, sunday: date, dry_run: bool = False) -> None:
     results = merge_results(idg, pdga)
     save_results_json(results, saturday, sunday)
 
-    tournaments_with_us = [t for t in results if t.get("our_players")]
+    def _is_canceled(t):
+        n = (t.get("name") or "").upper()
+        return "ZRUŠEN" in n or "ZRUSEN" in n or "CANCEL" in n
+
+    tournaments_with_us = [
+        t for t in results if t.get("our_players") and not _is_canceled(t)
+    ]
+    canceled = [t for t in results if t.get("our_players") and _is_canceled(t)]
+    for t in canceled:
+        logger.info(f"Přeskakuji zrušený turnaj: {t['name']}")
     logger.info(
         f"Celkem nalezeno turnajů: {len(results)}, "
         f"z toho s našimi hráči: {len(tournaments_with_us)}"
+        + (f" ({len(canceled)} zrušených přeskočeno)" if canceled else "")
     )
 
     if not tournaments_with_us:
