@@ -2963,6 +2963,25 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "HDGT Lovosice powered by Discmania",
+      "date": "2026-05-17",
+      "url_idg": "https://idiscgolf.cz/turnaje/2604",
+      "url_pdga": null,
+      "tier": "HDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Vladimír Kříž",
+          "cadg": 3608,
+          "pdga": 78165,
+          "division": "Green",
+          "place": 2,
+          "score": "+4",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
