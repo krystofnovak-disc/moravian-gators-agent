@@ -1,27 +1,33 @@
 # Moravian Gators – týdenní výsledky
-# Každé pondělí ve večerním okně Europe/Prague (cíl ~18:00).
+# Každé pondělí 4 pokusy: 9:00, 12:00, 15:00, 18:00 Europe/Prague.
 #
-# Schedule pokrývá obě DST varianty + retry. GitHub Actions cron má
-# tolerance až ~30 min, proto se NEspoléháme na přesnou hodinu –
-# duplicitu řeší "already_sent today" guard níže (první úspěšný běh
-# pushne commit `data: update results YYYY-MM-DD`, zbylé crony skipnou).
+# První úspěšný běh pushne commit `data: update results YYYY-MM-DD`
+# (i empty commit, pokud žádné nové turnaje). Všechny pozdější pokusy
+# téhož dne tento marker vidí a skipnou. Tím se ošetří:
+#   – předčasný běh, kdy PDGA ještě nezindexovala (selhání → další pokus)
+#   – víkend bez turnajů (empty commit zachytí marker, e-mail se pošle 1x)
+#   – GHA cron lag (~30 min) bez křehkého TZ-checku
 #
-# CEST (letní čas, UTC+2):  16 UTC = 18 Praha (primary), 19 UTC = 21 Praha (retry)
-# CET  (zimní čas, UTC+1):  17 UTC = 18 Praha (primary), 20 UTC = 21 Praha (retry)
-#
-# V přechodných měsících (3. a 10.) může být první primární běh o ±1 h
-# vedle 18:00 – to je akceptovatelné, PDGA je už indexovaná.
+# Schedule pokrývá obě DST varianty každého času:
+#   CEST (letní, UTC+2):  9 / 12 / 15 / 18 Praha = 7 / 10 / 13 / 16 UTC
+#   CET  (zimní, UTC+1):  9 / 12 / 15 / 18 Praha = 8 / 11 / 14 / 17 UTC
 
 name: Weekly Results
 
 on:
   schedule:
-    # Primary – 18:00 Praha
+    # 09:00 Praha
+    - cron: "0 7 * * 1"   # CEST
+    - cron: "0 8 * * 1"   # CET
+    # 12:00 Praha
+    - cron: "0 10 * * 1"  # CEST
+    - cron: "0 11 * * 1"  # CET
+    # 15:00 Praha
+    - cron: "0 13 * * 1"  # CEST
+    - cron: "0 14 * * 1"  # CET
+    # 18:00 Praha
     - cron: "0 16 * * 1"  # CEST
     - cron: "0 17 * * 1"  # CET
-    # Retry – 21:00 Praha (pro případ že PDGA ještě neindexovala nebo síť padla)
-    - cron: "0 19 * * 1"  # CEST
-    - cron: "0 20 * * 1"  # CET
   workflow_dispatch:
     inputs:
       date:
@@ -43,8 +49,9 @@ jobs:
 
       - name: Check if already sent today
         id: check-sent
-        # Pokud už dnes existuje commit `data: update results …`, druhý běh skipne.
-        # Manuální spuštění (workflow_dispatch) běží vždycky.
+        # Pokud už dnes (Praha čas) existuje commit `data: update results …`,
+        # další pokus tohoto dne skipne. Manuální spuštění (workflow_dispatch)
+        # běží vždy.
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "Manual run – proceeding."
@@ -52,8 +59,8 @@ jobs:
             exit 0
           fi
           if git log --oneline --since="$(TZ=Europe/Prague date +%Y-%m-%dT00:00:00)" --grep="data: update results" | grep -q .; then
-            echo "already_sent=true" >> "$GITHUB_OUTPUT"
             echo "Výsledky už byly dnes (Praha čas) odeslány, přeskakuji."
+            echo "already_sent=true" >> "$GITHUB_OUTPUT"
           else
             echo "already_sent=false" >> "$GITHUB_OUTPUT"
           fi
@@ -86,7 +93,7 @@ jobs:
           fi
           EXIT_CODE=$?
           if [ $EXIT_CODE -eq 75 ]; then
-            echo "⏳ Výsledky nejsou finalizovány. Další pokus proběhne automaticky."
+            echo "⏳ Výsledky nejsou finalizovány (PDGA ještě neindexovala?). Další pokus proběhne automaticky."
             echo "incomplete=true" >> "$GITHUB_OUTPUT"
             exit 0
           elif [ $EXIT_CODE -ne 0 ]; then
@@ -94,18 +101,21 @@ jobs:
           fi
           echo "incomplete=false" >> "$GITHUB_OUTPUT"
 
-      - name: Commit cumulative data
+      - name: Commit results marker
         if: steps.check-sent.outputs.already_sent == 'false' && steps.run-agent.outputs.incomplete != 'true'
+        # Vždy vytvoříme commit (i prázdný), aby `already_sent` guard
+        # zachytil i víkendy bez turnajů a další cron toho dne skipnul.
         run: |
           git config user.name "Gators Bot"
           git config user.email "bot@moraviangators.cz"
+          DATE_TAG="$(TZ=Europe/Prague date +%Y-%m-%d)"
           git add data/
           if git diff --staged --quiet; then
-            echo "No data changes to commit."
+            git commit --allow-empty -m "data: update results $DATE_TAG (no new data)"
           else
-            git commit -m "data: update results $(TZ=Europe/Prague date +%Y-%m-%d)"
-            git push
+            git commit -m "data: update results $DATE_TAG"
           fi
+          git push
 
       - name: Upload results artifact
         if: always() && steps.check-sent.outputs.already_sent == 'false'
