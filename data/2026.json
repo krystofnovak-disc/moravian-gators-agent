@@ -2965,6 +2965,70 @@
       ]
     },
     {
+      "name": "ADGL 11. Kobylí Open",
+      "date": "2026-05-16",
+      "url_idg": "https://idiscgolf.cz/turnaje/2321",
+      "url_pdga": null,
+      "tier": "ADGL",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Tomáš Ráček",
+          "cadg": 5508,
+          "pdga": 233423,
+          "division": "MPO",
+          "place": 6,
+          "score": "-10",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Barbara Ráčková",
+          "cadg": 5648,
+          "pdga": 233444,
+          "division": "FPO",
+          "place": 1,
+          "score": "-16",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Julius Nadberežný",
+          "cadg": 4292,
+          "pdga": 240173,
+          "division": "MJ15",
+          "place": 1,
+          "score": "-12",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "MA3",
+          "place": 4,
+          "score": "+3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "MA4",
+          "place": 5,
+          "score": "+3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "FA3",
+          "place": 2,
+          "score": "+37",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
       "name": "HDGT Lovosice powered by Discmania",
       "date": "2026-05-17",
       "url_idg": "https://idiscgolf.cz/turnaje/2604",

@@ -67,6 +67,25 @@ class IDGScraper:
         })
 
     # ------------------------------------------------------------------
+    # HTTP helper – pomalý idg server občas timeoutuje na 15 s. Dáme
+    # delší timeout a jeden retry, jinak turnaj propadne sítem (Stromovka,
+    # Kobylí Open). Volá session.get s našimi default headery.
+    # ------------------------------------------------------------------
+    def _get(self, url: str, *, timeout: int = 60, retries: int = 1, **kwargs):
+        last_exc = None
+        for attempt in range(retries + 1):
+            try:
+                return self.session.get(url, timeout=timeout, **kwargs)
+            except requests.exceptions.RequestException as e:
+                last_exc = e
+                if attempt < retries:
+                    logger.warning(
+                        f"  Pokus {attempt + 1}/{retries + 1} selhal pro {url} ({e}), zkouším znovu…"
+                    )
+                    time.sleep(2)
+        raise last_exc  # type: ignore[misc]
+
+    # ------------------------------------------------------------------
     # Veřejné API
     # ------------------------------------------------------------------
 
@@ -103,7 +122,7 @@ class IDGScraper:
         """Pokusí se najít turnaje z daného víkendu na stránce přehledu."""
         for url in [f"{BASE_URL}/turnaje", f"{BASE_URL}/prehled-turnaju"]:
             try:
-                resp = self.session.get(url, timeout=15)
+                resp = self._get(url)
                 resp.raise_for_status()
                 tournaments = self._parse_tournament_list(resp.text, saturday, sunday)
                 if tournaments:
@@ -183,7 +202,7 @@ class IDGScraper:
     def _get_latest_tournament_id(self) -> int | None:
         """Zjistí ID posledního turnaje z přehledové stránky."""
         try:
-            resp = self.session.get(f"{BASE_URL}/turnaje", timeout=15)
+            resp = self._get(f"{BASE_URL}/turnaje")
             soup = BeautifulSoup(resp.text, "html.parser")
             ids = []
             for link in soup.find_all("a", href=re.compile(r"/turnaje/\d+")):
@@ -198,7 +217,7 @@ class IDGScraper:
     def _get_tournament_meta(self, tid: int) -> dict | None:
         """Načte stránku turnaje a vrátí základní metadata (bez parsování výsledků)."""
         try:
-            resp = self.session.get(f"{BASE_URL}/turnaje/{tid}", timeout=15)
+            resp = self._get(f"{BASE_URL}/turnaje/{tid}")
             if resp.status_code == 404:
                 return None
             soup = BeautifulSoup(resp.text, "html.parser")
@@ -223,7 +242,7 @@ class IDGScraper:
         url = f"{BASE_URL}/turnaje/{tid}"
         tier = "local"
         try:
-            resp = self.session.get(url, timeout=15)
+            resp = self._get(url)
             resp.raise_for_status()
             soup = BeautifulSoup(resp.text, "html.parser")
             players = self._parse_results(soup)
@@ -534,7 +553,7 @@ class IDGScraper:
         """
         live_url = f"{BASE_URL}/live-scoring/{tid}/"
         try:
-            resp = self.session.get(live_url, timeout=15)
+            resp = self._get(live_url)
             resp.raise_for_status()
         except Exception as e:
             logger.warning(f"Live-scoring #{tid} nedostupný: {e}")
@@ -559,7 +578,7 @@ class IDGScraper:
             time.sleep(0.5)
             div_url = f"{BASE_URL}{div_href}" if div_href.startswith("/") else div_href
             try:
-                resp = self.session.get(div_url, timeout=15)
+                resp = self._get(div_url)
                 resp.raise_for_status()
                 div_soup = BeautifulSoup(resp.text, "html.parser")
                 found = self._parse_live_scoring_table(div_soup, div_name)
