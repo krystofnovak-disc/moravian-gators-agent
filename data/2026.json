@@ -3046,6 +3046,166 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "LADIES FIRST vol. 4 - WGE",
+      "date": "2026-05-22",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/104127",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "FA3",
+          "place": 5,
+          "score": "+17",
+          "round_ratings": [
+            740,
+            795,
+            743
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Uničov powered by Discmania",
+      "date": "2026-05-23",
+      "url_idg": "https://idiscgolf.cz/turnaje/2576",
+      "url_pdga": null,
+      "tier": "HDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
+          "division": "Gold",
+          "place": 3,
+          "score": "-19",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "Gold",
+          "place": 7,
+          "score": "-13",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Masník",
+          "cadg": 818,
+          "pdga": 89187,
+          "division": "Gold",
+          "place": 10,
+          "score": "-12",
+          "round_ratings": []
+        },
+        {
+          "player_name": "David Žeravík",
+          "cadg": 7985,
+          "pdga": null,
+          "division": "Red",
+          "place": 10,
+          "score": "-8",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "Green",
+          "place": 1,
+          "score": "-10",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Martin Hollas",
+          "cadg": 8299,
+          "pdga": 310651,
+          "division": "Green",
+          "place": 2,
+          "score": "-3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "Green",
+          "place": 5,
+          "score": "-1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Moj",
+          "cadg": 5484,
+          "pdga": 208119,
+          "division": "Green",
+          "place": 5,
+          "score": "-1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jan Šajnar",
+          "cadg": 6345,
+          "pdga": null,
+          "division": "Green",
+          "place": 10,
+          "score": "+1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 743,
+          "pdga": null,
+          "division": "Purple",
+          "place": 16,
+          "score": "+20",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Dětské Nový Jičín Open 2026",
+      "date": "2026-05-23",
+      "url_idg": "https://idiscgolf.cz/turnaje/2602",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Tomáš Březina",
+          "cadg": 8780,
+          "pdga": null,
+          "division": "MJ12",
+          "place": 6,
+          "score": "+28",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kryštof Mikulenka",
+          "cadg": 9515,
+          "pdga": null,
+          "division": "MJ12",
+          "place": 7,
+          "score": "+32",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Filip Knápek",
+          "cadg": 6748,
+          "pdga": null,
+          "division": "MJ15",
+          "place": 1,
+          "score": "-7",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
