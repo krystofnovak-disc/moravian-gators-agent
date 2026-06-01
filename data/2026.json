@@ -3206,6 +3206,328 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "PCT: Budišov Open 2026",
+      "date": "2026-05-29",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/104647",
+      "tier": "PCT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 1,
+          "score": "-22",
+          "round_ratings": [
+            1024,
+            1028,
+            1028
+          ]
+        },
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 2,
+          "score": "-19",
+          "round_ratings": [
+            1024,
+            1028,
+            1001
+          ]
+        },
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 3,
+          "score": "-17",
+          "round_ratings": [
+            1015,
+            1019,
+            1001
+          ]
+        },
+        {
+          "player_name": "Jakub Dostál",
+          "cadg": 3575,
+          "pdga": 78064,
+          "division": "MPO",
+          "place": 4,
+          "score": "-16",
+          "round_ratings": [
+            980,
+            1045,
+            1001
+          ]
+        },
+        {
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
+          "division": "MPO",
+          "place": 7,
+          "score": "-10",
+          "round_ratings": [
+            1006,
+            984,
+            983
+          ]
+        },
+        {
+          "player_name": "Lukáš Novobilský",
+          "cadg": 4358,
+          "pdga": 285107,
+          "division": "MPO",
+          "place": 9,
+          "score": "-8",
+          "round_ratings": [
+            1015,
+            967,
+            974
+          ]
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "MPO",
+          "place": 9,
+          "score": "-8",
+          "round_ratings": [
+            1006,
+            984,
+            965
+          ]
+        },
+        {
+          "player_name": "Tomáš Ráček",
+          "cadg": 5508,
+          "pdga": 233423,
+          "division": "MPO",
+          "place": 13,
+          "score": "-5",
+          "round_ratings": [
+            962,
+            993,
+            974
+          ]
+        },
+        {
+          "player_name": "Radek Dostál",
+          "cadg": 3672,
+          "pdga": 78063,
+          "division": "MPO",
+          "place": 17,
+          "score": "-2",
+          "round_ratings": [
+            971,
+            967,
+            965
+          ]
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 18,
+          "score": "E",
+          "round_ratings": [
+            980,
+            950,
+            956
+          ]
+        },
+        {
+          "player_name": "Lukáš Vyvial",
+          "cadg": 6195,
+          "pdga": 283489,
+          "division": "MPO",
+          "place": 39,
+          "score": "+19",
+          "round_ratings": [
+            927,
+            854,
+            938
+          ]
+        },
+        {
+          "player_name": "Jan Šebek",
+          "cadg": 6694,
+          "pdga": 281439,
+          "division": "MPO",
+          "place": 47,
+          "score": "",
+          "round_ratings": [
+            883,
+            999
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 1,
+          "score": "-22",
+          "round_ratings": [
+            1019,
+            975,
+            943
+          ]
+        },
+        {
+          "player_name": "Barbara Ráčková",
+          "cadg": 5648,
+          "pdga": 233444,
+          "division": "FPO",
+          "place": 3,
+          "score": "-5",
+          "round_ratings": [
+            940,
+            925,
+            903
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 5,
+          "score": "+18",
+          "round_ratings": [
+            852,
+            765,
+            923
+          ]
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "MA3",
+          "place": 11,
+          "score": "+5",
+          "round_ratings": [
+            842,
+            905,
+            923
+          ]
+        },
+        {
+          "player_name": "Richard Kurečka",
+          "cadg": 7983,
+          "pdga": 300253,
+          "division": "MA3",
+          "place": 17,
+          "score": "+11",
+          "round_ratings": [
+            861,
+            915,
+            833
+          ]
+        },
+        {
+          "player_name": "Filip Plíhal",
+          "cadg": 5493,
+          "pdga": 245751,
+          "division": "MA3",
+          "place": 22,
+          "score": "+15",
+          "round_ratings": [
+            871,
+            835,
+            863
+          ]
+        },
+        {
+          "player_name": "Jakub Moj",
+          "cadg": 5484,
+          "pdga": 208119,
+          "division": "MA3",
+          "place": 34,
+          "score": "+34",
+          "round_ratings": [
+            773,
+            835,
+            773
+          ]
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "FA3",
+          "place": 1,
+          "score": "+48",
+          "round_ratings": [
+            763,
+            735,
+            743
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MMMASO! JDL 2026 - Kubova Huť",
+      "date": "2026-05-30",
+      "url_idg": "https://idiscgolf.cz/turnaje/2356",
+      "url_pdga": null,
+      "tier": "ADGL",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Julius Nadberežný",
+          "cadg": 4292,
+          "pdga": 240173,
+          "division": "MA3",
+          "place": 8,
+          "score": "+6",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "PDGL 2026 #3 - Běchovice",
+      "date": "2026-05-31",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/104840",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Šimon Galia",
+          "cadg": 1055,
+          "pdga": 77483,
+          "division": "RPA",
+          "place": 11,
+          "score": "+15",
+          "round_ratings": [
+            996,
+            862
+          ]
+        },
+        {
+          "player_name": "Vladimír Kříž",
+          "cadg": 3608,
+          "pdga": 78165,
+          "division": "RPA",
+          "place": 8,
+          "score": "+17",
+          "round_ratings": [
+            820,
+            833
+          ]
+        }
+      ]
     }
   ],
   "ratings": {
