@@ -80,16 +80,27 @@ def _name_similarity(a: str, b: str) -> float:
 
 def _names_match(name_a: str, name_b: str) -> bool:
     """
-    Two tournament names match if their normalized forms have >80% similarity
-    or one contains the other.
+    Two tournament names match if:
+      a) Normalized forms are equal, or
+      b) One is a PREFIX of the other (handles "HDGT Kobylí" vs
+         "HDGT Kobylí powered by Discmania"), or
+      c) Sdílí první slovo A jejich celková podobnost je >85 %.
+
+    Bez kontroly prvního slova by se "PCT Budišov" falešně schodlo
+    s "GLOW PCT Budišov" (jiný turnaj – GLOW noční varianta).
     """
     na = _normalize_name(name_a)
     nb = _normalize_name(name_b)
     if not na or not nb:
         return False
-    if na in nb or nb in na:
+    if na == nb:
         return True
-    return _name_similarity(na, nb) > 0.80
+    if na.startswith(nb) or nb.startswith(na):
+        return True
+    # Jiné první slovo → jiný turnaj
+    if na.split(" ", 1)[0] != nb.split(" ", 1)[0]:
+        return False
+    return _name_similarity(na, nb) > 0.85
 
 
 def _empty_data() -> dict:

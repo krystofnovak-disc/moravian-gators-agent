@@ -3477,6 +3477,79 @@
       ]
     },
     {
+      "name": "GLOW PCT: Budišov Open 2026",
+      "date": "2026-05-29",
+      "url_idg": "https://idiscgolf.cz/turnaje/2662",
+      "url_pdga": null,
+      "tier": "PCT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 2,
+          "score": "-4",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "MPO",
+          "place": 9,
+          "score": "-1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Moj",
+          "cadg": 5484,
+          "pdga": 208119,
+          "division": "MPO",
+          "place": 14,
+          "score": "+2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jindřich Závodný",
+          "cadg": 5041,
+          "pdga": null,
+          "division": "MPO",
+          "place": 21,
+          "score": "+9",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Filip Plíhal",
+          "cadg": 5493,
+          "pdga": 245751,
+          "division": "MPO",
+          "place": 22,
+          "score": "+11",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Tomáš Ráček",
+          "cadg": 5508,
+          "pdga": 233423,
+          "division": "MPO",
+          "place": 23,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Barbara Ráčková",
+          "cadg": 5648,
+          "pdga": 233444,
+          "division": "FPO",
+          "place": 1,
+          "score": "+3",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
       "name": "MMMASO! JDL 2026 - Kubova Huť",
       "date": "2026-05-30",
       "url_idg": "https://idiscgolf.cz/turnaje/2356",

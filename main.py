@@ -78,20 +78,71 @@ def load_players() -> list:
         return json.load(f)
 
 
+def _norm_name(name: str) -> str:
+    """Normalizuje jméno turnaje pro porovnání: lowercase + bez diakritiky + bez bílých znaků navíc."""
+    import unicodedata
+    s = unicodedata.normalize("NFD", name or "").encode("ascii", "ignore").decode().lower()
+    return " ".join(s.split())
+
+
+# Tier značky, které znamenají "tohle je PDGA-sanctioned turnaj"
+# – pokud idg jen registruje, výsledky doindexuje PDGA. Můžeme ho z idg
+# ignorovat, dokud ho PDGA scraper nepřinese kompletní.
+_PDGA_TIERS = {"PCT", "PDGA", "MČR", "MCR", "A-TIER", "B-TIER", "C-TIER", "MAJOR", "ELITE"}
+
+
 def merge_results(idg: list, pdga: list) -> list:
     """
-    Sloučí výsledky z obou zdrojů.
-    Pokud stejný turnaj existuje v obou, upřednostní PDGA verzi
-    (má round ratingy, přesnější výsledky).
+    Sloučí výsledky z obou zdrojů. PDGA je primární – pokud má stejný
+    turnaj, jeho verze vítězí (má round ratingy, přesnější výsledky,
+    spolehlivé indexování).
+
+    idg verze se použije jen pokud:
+      a) turnaj NENÍ v PDGA výstupu (typicky lokální ADGL/NJDGT/HDGT/atd.)
+      b) NEBO (PDGA-tier turnaj, ale PDGA ho ještě neindexoval) – v tom
+         případě filtrujeme níž, viz vyřazení incomplete PDGA-tier turnajů.
+
+    Porovnání jmen: lowercase + bez diakritiky (aby "PCT: Budišov" matchlo
+    "PCT: Budisov" pokud by se zápis lišil).
     """
     merged = list(pdga)  # PDGA jako základ
-    pdga_names_norm = {t["name"].lower().strip() for t in pdga}
+    pdga_names = {_norm_name(t["name"]) for t in pdga}
 
     for t in idg:
-        if t["name"].lower().strip() not in pdga_names_norm:
+        if _norm_name(t["name"]) not in pdga_names:
             merged.append(t)
 
     return merged
+
+
+def filter_pending_pdga(results: list) -> list:
+    """Vyhodí z idg výstupu turnaje, které jsou PDGA-tier a *nezfinalizované*.
+
+    Důvod: u PCT/A-tier/PDGA turnajů idg často jen vystaví seznam registrovaných
+    bez výsledků (PDGA je doplní za den-dva po). PDGA scraper je odtamtud
+    spolehlivě doindexuje. Necháváme ten záznam vypadnout, místo aby blokoval
+    odeslání e-mailu kvůli "incomplete results".
+    """
+    keep = []
+    dropped = []
+    for t in results:
+        is_pdga_tier = (t.get("tier") or "").upper() in _PDGA_TIERS
+        if t.get("source") == "idiscgolf" and is_pdga_tier:
+            players = t.get("our_players", [])
+            missing = sum(
+                1 for p in players
+                if (p.get("place") is None or p.get("place") == 0) and not p.get("_fulltext")
+            )
+            if players and missing == len(players):
+                dropped.append(t)
+                continue
+        keep.append(t)
+    for t in dropped:
+        logger.info(
+            f"Vyřazuji PDGA-tier turnaj '{t['name']}' z idg (jen registrace, "
+            f"PDGA ho doindexuje): {len(t.get('our_players', []))} hráčů bez umístění."
+        )
+    return keep
 
 
 def save_results_json(results: list, saturday: date, sunday: date) -> None:
@@ -164,15 +215,7 @@ def run(saturday: date, sunday: date, dry_run: bool = False) -> None:
     players = load_players()
     logger.info(f"Načteno {len(players)} členů klubu")
 
-    # 2. Scraping idiscgolf.cz
-    logger.info("--- idiscgolf.cz ---")
-    try:
-        idg = IDGScraper(players).get_weekend_results(saturday, sunday)
-    except Exception as e:
-        logger.error(f"idiscgolf scraper selhal: {e}", exc_info=True)
-        idg = []
-
-    # 3. Scraping pdga.com
+    # 2. Scraping pdga.com (PRIMÁRNÍ – spolehlivější, má round ratingy)
     logger.info("--- pdga.com ---")
     try:
         pdga = PDGAScraper(players).get_weekend_results(saturday, sunday)
@@ -180,8 +223,17 @@ def run(saturday: date, sunday: date, dry_run: bool = False) -> None:
         logger.error(f"PDGA scraper selhal: {e}", exc_info=True)
         pdga = []
 
-    # 4. Merge
+    # 3. Scraping idiscgolf.cz (DOPLŇUJÍCÍ – jen co PDGA nemá)
+    logger.info("--- idiscgolf.cz ---")
+    try:
+        idg = IDGScraper(players).get_weekend_results(saturday, sunday)
+    except Exception as e:
+        logger.error(f"idiscgolf scraper selhal: {e}", exc_info=True)
+        idg = []
+
+    # 4. Merge + filtr PDGA-tier registrací
     results = merge_results(idg, pdga)
+    results = filter_pending_pdga(results)
     save_results_json(results, saturday, sunday)
 
     def _is_canceled(t):
@@ -205,6 +257,10 @@ def run(saturday: date, sunday: date, dry_run: bool = False) -> None:
         return
 
     # 4b. Kontrola kompletnosti výsledků
+    # Incomplete turnaj = víc-denní PCT/Major který ještě dobíhá, nebo idg
+    # nestihl nahrát výsledky. Pokud aspoň 1 turnaj kompletní, pošleme e-mail
+    # s ním a neúplné vyřadíme z postu (warning). Pouze pokud VŠECHNY jsou
+    # neúplné, vyhodíme exit 75 → workflow ho v dalším cron slotu zkusí znovu.
     incomplete = check_results_completeness(tournaments_with_us)
     if incomplete:
         for t in incomplete:
@@ -212,10 +268,22 @@ def run(saturday: date, sunday: date, dry_run: bool = False) -> None:
                 f"Turnaj '{t['name']}': {t['missing_count']}/{t['total_count']} "
                 f"hráčů nemá umístění: {', '.join(t['missing_players'])}"
             )
-        raise IncompleteResultsError(
-            f"{len(incomplete)} turnaj(ů) nemá finalizované výsledky. "
-            f"Spusťte workflow znovu později."
+
+        incomplete_names = {t["name"] for t in incomplete}
+        complete = [t for t in tournaments_with_us if t["name"] not in incomplete_names]
+
+        if not complete:
+            raise IncompleteResultsError(
+                f"{len(incomplete)} turnaj(ů) nemá finalizované výsledky a žádný jiný "
+                f"není kompletní. Spusťte workflow znovu později."
+            )
+
+        logger.warning(
+            f"Pokračuji s {len(complete)} kompletními turnaji; "
+            f"{len(incomplete)} neúplných vyřazeno z postu "
+            f"(dotáhnete ručně, až idg/PDGA nahraje výsledky)."
         )
+        tournaments_with_us = complete
 
     if dry_run:
         logger.info("--dry-run: přeskakuji generování a odeslání e-mailu.")
