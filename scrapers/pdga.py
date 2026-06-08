@@ -100,17 +100,32 @@ class PDGAScraper:
     def _find_weekend_events(self, saturday: date, sunday: date) -> list:
         """Najde PDGA eventy z víkendu přes Recent events v profilech našich hráčů.
 
-        Bez zeměpisného filtru – pokud některý náš člen startoval na PDGA
-        turnaji kdekoli na světě, má ho PDGA ve svém profilu, a my ho odtud
-        převezmeme.
+        Dva zdroje:
+          1) **Tabulky výsledků v profilu** – obsahují finalizované turnaje
+             (Place, Points, Tournament, Tier, Dates). Spolehlivé, ale PDGA
+             je tam dopisuje s několikadenním zpožděním u větších eventů
+             (CDGT/PCT/A-tier vícekolových).
+          2) **"Recent Events" sidebar** – jednoduchý odkaz na nedávný event
+             BEZ data. Objevuje se rychleji než tabulky. Pro tyhle eventy
+             si datum dotáhneme přímo ze stránky eventu.
         """
         found = {}
+        # ID → datum z eventu (pro sidebar eventy bez data v profilu)
+        sidebar_event_ids = set()
         checked = 0
+
         for p in self.players_with_pdga:
             try:
                 time.sleep(3)  # PDGA rate limit – max ~20 req/min
                 events = self._player_recent_events(p["pdga"])
                 for ev in events:
+                    # Zdroj "table": filtruj víkend přes dates_raw
+                    # Zdroj "sidebar": dates_raw prázdné, řešíme dál
+                    if ev.get("_source") == "sidebar":
+                        sidebar_event_ids.add(ev["id"])
+                        # Zapamatuj si i name + odkaz na hráče pro hezký log
+                        ev["_via_player"] = f"{p['first_name']} {p['last_name']}"
+                        continue
                     if self._dates_overlap_weekend(ev.get("dates_raw", ""), saturday, sunday):
                         if ev["id"] not in found:
                             found[ev["id"]] = ev
@@ -119,8 +134,66 @@ class PDGAScraper:
             except Exception as e:
                 logger.warning(f"Profil PDGA #{p['pdga']}: {e}")
 
+        # Sidebar: stáhni datum z event page a filtruj víkend
+        for ev_id in sidebar_event_ids:
+            if ev_id in found:
+                continue
+            try:
+                time.sleep(2)
+                event_date_raw = self._fetch_event_date(ev_id)
+                if not event_date_raw:
+                    logger.debug(f"  Sidebar event #{ev_id}: nepodařilo se získat datum, přeskakuji")
+                    continue
+                if self._dates_overlap_weekend(event_date_raw, saturday, sunday):
+                    # Stáhneme name z event page
+                    event_name = self._fetch_event_name(ev_id) or f"PDGA event #{ev_id}"
+                    found[ev_id] = {
+                        "id": ev_id,
+                        "name": event_name,
+                        "date": event_date_raw,
+                        "dates_raw": event_date_raw,
+                    }
+                    logger.info(f"  PDGA event nalezen ze sidebaru: {event_name} (#{ev_id})")
+            except Exception as e:
+                logger.warning(f"Sidebar event #{ev_id}: {e}")
+
         logger.info(f"Zkontrolováno {checked} PDGA profilů, nalezeno {len(found)} eventů")
         return list(found.values())
+
+    def _fetch_event_date(self, event_id: int) -> str:
+        """Stáhne PDGA event page a vrátí datum jako 'DD-Mon-YYYY' nebo 'DD-Mon to DD-Mon-YYYY'."""
+        url = f"{BASE_URL}/tour/event/{event_id}"
+        try:
+            resp = self.session.get(url, timeout=30)
+            resp.raise_for_status()
+            soup = BeautifulSoup(resp.text, "html.parser")
+            # PDGA event page má v info-listu <li><strong>Date(s) :</strong> ...
+            # Pozor: PDGA má "Date :" s mezerou před dvojtečkou.
+            for li in soup.find_all("li"):
+                text = li.get_text(" ", strip=True)
+                m = re.match(r"^Dates?\s*:\s*(.+)$", text, re.IGNORECASE)
+                if m:
+                    return m.group(1).strip()
+            return ""
+        except Exception:
+            return ""
+
+    def _fetch_event_name(self, event_id: int) -> str:
+        """Stáhne PDGA event page a vrátí název eventu (z <h1> nebo title)."""
+        url = f"{BASE_URL}/tour/event/{event_id}"
+        try:
+            resp = self.session.get(url, timeout=30)
+            resp.raise_for_status()
+            soup = BeautifulSoup(resp.text, "html.parser")
+            h1 = soup.find("h1")
+            if h1:
+                return h1.get_text(strip=True)
+            t = soup.find("title")
+            if t:
+                return t.get_text(strip=True).split("|", 1)[0].strip()
+            return ""
+        except Exception:
+            return ""
 
     def _player_recent_events(self, pdga_number: int) -> list:
         """Stáhne hlavní profil hráče a vrátí seznam turnajů z aktuální sezóny."""
@@ -168,6 +241,31 @@ class PDGAScraper:
                         "name": link.get_text(strip=True),
                         "date": dates_raw,
                         "dates_raw": dates_raw,
+                        "_source": "table",
+                    })
+
+            # Sidebar "Recent Events": objevuje se rychleji než tabulky,
+            # ale nemá Dates. Vícekolové CDGT/PCT/A-tier turnaje PDGA
+            # do tabulek zapisuje s několikadenním zpožděním – sidebar
+            # je v pondělí ráno často jediná stopa.
+            # Příklad: <li class="recent-events">
+            #            <a href="/tour/event/102640">Grabštejn Open 2026</a>
+            #          </li>
+            table_event_ids = {e["id"] for e in events}
+            for li in soup.select("li.recent-events"):
+                for a in li.find_all("a", href=re.compile(r"/tour/event/\d+")):
+                    m = re.search(r"/tour/event/(\d+)", a["href"])
+                    if not m:
+                        continue
+                    eid = int(m.group(1))
+                    if eid in table_event_ids:
+                        continue
+                    events.append({
+                        "id": eid,
+                        "name": a.get_text(strip=True),
+                        "date": "",
+                        "dates_raw": "",
+                        "_source": "sidebar",
                     })
 
             return events

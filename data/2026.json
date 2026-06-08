@@ -3603,84 +3603,116 @@
       ]
     },
     {
-      "name": "CDGT: Grabštejn Open 2026",
+      "name": "Grabštejn Open 2026",
       "date": "2026-06-05",
-      "url_idg": "https://idiscgolf.cz/turnaje/2638",
-      "url_pdga": null,
-      "tier": "CDGT",
-      "source": "idiscgolf",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/102640",
+      "tier": "PDGA",
+      "source": "pdga",
       "results": [
         {
-          "player_name": "Ondřej Mazoch",
-          "cadg": 7810,
-          "pdga": 286033,
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
           "division": "MPO",
-          "place": 3,
-          "score": "-12",
-          "round_ratings": []
+          "place": 4,
+          "score": "-16",
+          "round_ratings": [
+            990,
+            990,
+            1017
+          ]
         },
         {
           "player_name": "Tomáš Ráček",
           "cadg": 5508,
           "pdga": 233423,
           "division": "MPO",
-          "place": 3,
-          "score": "-12",
-          "round_ratings": []
+          "place": 4,
+          "score": "-16",
+          "round_ratings": [
+            990,
+            1017,
+            991
+          ]
         },
         {
-          "player_name": "Kristián Kvita",
-          "cadg": 3685,
-          "pdga": 116574,
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
           "division": "MPO",
           "place": 8,
-          "score": "-8",
-          "round_ratings": []
+          "score": "-15",
+          "round_ratings": [
+            1008,
+            997,
+            985
+          ]
         },
         {
           "player_name": "Kryštof Novák",
           "cadg": 319,
           "pdga": 55426,
           "division": "MPO",
-          "place": 14,
-          "score": "-5",
-          "round_ratings": []
+          "place": 10,
+          "score": "-11",
+          "round_ratings": [
+            983,
+            977,
+            1004
+          ]
         },
         {
           "player_name": "Lukáš Vyvial",
           "cadg": 6195,
           "pdga": 283489,
           "division": "MPO",
-          "place": 17,
-          "score": "0",
-          "round_ratings": []
+          "place": 13,
+          "score": "-8",
+          "round_ratings": [
+            946,
+            984,
+            1017
+          ]
         },
         {
           "player_name": "Maxmilián Jakeš",
           "cadg": 6136,
           "pdga": 273516,
           "division": "MPO",
-          "place": 23,
-          "score": "+2",
-          "round_ratings": []
+          "place": 19,
+          "score": "+1",
+          "round_ratings": [
+            940,
+            977,
+            972
+          ]
         },
         {
           "player_name": "František Trenz",
           "cadg": 696,
           "pdga": 75176,
           "division": "MPO",
-          "place": 25,
-          "score": "+3",
-          "round_ratings": []
+          "place": 23,
+          "score": "+5",
+          "round_ratings": [
+            940,
+            970,
+            953
+          ]
         },
         {
           "player_name": "Jakub Urbiš",
           "cadg": 3772,
           "pdga": 122423,
           "division": "MPO",
-          "place": 39,
+          "place": 35,
           "score": "+13",
-          "round_ratings": []
+          "round_ratings": [
+            934,
+            911,
+            966
+          ]
         },
         {
           "player_name": "Kristýna Jurčíková",
@@ -3688,26 +3720,51 @@
           "pdga": 210972,
           "division": "FPO",
           "place": 1,
-          "score": "-20",
-          "round_ratings": []
+          "score": "-31",
+          "round_ratings": [
+            990,
+            961,
+            986
+          ]
         },
         {
           "player_name": "Barbara Ráčková",
           "cadg": 5648,
           "pdga": 233444,
           "division": "FPO",
-          "place": 3,
-          "score": "-1",
-          "round_ratings": []
+          "place": 4,
+          "score": "-2",
+          "round_ratings": [
+            920,
+            881,
+            908
+          ]
         },
         {
           "player_name": "Karolína Jurčíková",
           "cadg": 4363,
           "pdga": 285033,
           "division": "FPO",
-          "place": 4,
-          "score": "0",
-          "round_ratings": []
+          "place": 5,
+          "score": "+6",
+          "round_ratings": [
+            882,
+            913,
+            853
+          ]
+        },
+        {
+          "player_name": "Julius Nadberežný",
+          "cadg": 4292,
+          "pdga": 240173,
+          "division": "MA3",
+          "place": 12,
+          "score": "+21",
+          "round_ratings": [
+            882,
+            873,
+            775
+          ]
         },
         {
           "player_name": "Lukáš Novobilský",
@@ -3715,17 +3772,12 @@
           "pdga": 285107,
           "division": "MJ18",
           "place": 2,
-          "score": "+8",
-          "round_ratings": []
-        },
-        {
-          "player_name": "Julius Nadberežný",
-          "cadg": 4292,
-          "pdga": 240173,
-          "division": "MA3",
-          "place": 6,
-          "score": "+5",
-          "round_ratings": []
+          "score": "+11",
+          "round_ratings": [
+            946,
+            931,
+            947
+          ]
         }
       ]
     },

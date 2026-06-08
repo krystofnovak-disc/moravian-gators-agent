@@ -65,9 +65,19 @@ def _normalize_date(date_str: str) -> str:
     return s  # unknown format, return as-is
 
 
+# Tier prefixy odstraňované před porovnáním názvů – aby "Grabštejn Open 2026"
+# (PDGA) matchlo s "CDGT: Grabštejn Open 2026" (idg).
+_TIER_PREFIX_RE = re.compile(
+    r"^(CDGT|PCT|ADGL|NJDGT|HDGT|PvDGT|DGPT|UDGL|JMDGL|SZDL|PADL|PDGL|"
+    r"OPDK|JDL|TUTA|MMMASO|VAKAVA|BBDL|MCR|M[CČ]R)\s*:?\s*",
+    re.IGNORECASE,
+)
+
+
 def _normalize_name(name: str) -> str:
-    """Strip diacritics, lowercase, remove non-alphanumeric chars (except spaces)."""
-    nfkd = unicodedata.normalize("NFD", name)
+    """Strip tier prefix + diacritics + lowercase + jen alfanumerika a mezery."""
+    stripped = _TIER_PREFIX_RE.sub("", name or "").strip()
+    nfkd = unicodedata.normalize("NFD", stripped)
     ascii_only = nfkd.encode("ascii", "ignore").decode("ascii")
     cleaned = re.sub(r"[^a-z0-9 ]", "", ascii_only.lower())
     return re.sub(r"\s+", " ", cleaned).strip()

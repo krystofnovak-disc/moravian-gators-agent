@@ -78,10 +78,23 @@ def load_players() -> list:
         return json.load(f)
 
 
+import re as _re_norm
+# Tier prefixy které se občas přidávají před název ("CDGT: Grabštejn" vs "Grabštejn").
+# Pro porovnání v merge_results je strip-neme, aby PDGA verze "Grabštejn Open 2026"
+# matchla idg verzi "CDGT: Grabštejn Open 2026".
+_TIER_PREFIX_RE = _re_norm.compile(
+    r"^(CDGT|PCT|ADGL|NJDGT|HDGT|PvDGT|DGPT|UDGL|JMDGL|SZDL|PADL|PDGL|"
+    r"OPDK|JDL|TUTA|MMMASO|VAKAVA|BBDL|MCR|M[CČ]R)\s*:?\s*",
+    _re_norm.IGNORECASE,
+)
+
+
 def _norm_name(name: str) -> str:
-    """Normalizuje jméno turnaje pro porovnání: lowercase + bez diakritiky + bez bílých znaků navíc."""
+    """Normalizuje jméno turnaje pro porovnání: strip tier prefix + lowercase
+    + bez diakritiky + bez bílých znaků navíc."""
     import unicodedata
-    s = unicodedata.normalize("NFD", name or "").encode("ascii", "ignore").decode().lower()
+    s = _TIER_PREFIX_RE.sub("", name or "").strip()
+    s = unicodedata.normalize("NFD", s).encode("ascii", "ignore").decode().lower()
     return " ".join(s.split())
 
 
