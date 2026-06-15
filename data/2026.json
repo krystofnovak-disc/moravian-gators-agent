@@ -3935,6 +3935,130 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "DGPT EuroTour - Pärnu Open presented by Latitude 64",
+      "date": "2026-06-12",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/101074",
+      "tier": "DGPT EuroTour",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 21,
+          "score": "-22",
+          "round_ratings": [
+            1026,
+            1014,
+            1007
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2026 Moravský Krumlov Open",
+      "date": "2026-06-13",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/104361",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Tomáš Ráček",
+          "cadg": 5508,
+          "pdga": 233423,
+          "division": "MPO",
+          "place": 3,
+          "score": "-16",
+          "round_ratings": [
+            1030,
+            972,
+            979
+          ]
+        },
+        {
+          "player_name": "Barbara Ráčková",
+          "cadg": 5648,
+          "pdga": 233444,
+          "division": "FPO",
+          "place": 1,
+          "score": "-11",
+          "round_ratings": [
+            897,
+            927,
+            901
+          ]
+        },
+        {
+          "player_name": "Jakub Urbiš",
+          "cadg": 3772,
+          "pdga": 122423,
+          "division": "MA1",
+          "place": 6,
+          "score": "+5",
+          "round_ratings": [
+            944,
+            924,
+            911
+          ]
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "MA3",
+          "place": 2,
+          "score": "+9",
+          "round_ratings": [
+            886,
+            886,
+            969
+          ]
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "FA3",
+          "place": 3,
+          "score": "+29",
+          "round_ratings": [
+            739,
+            783,
+            756
+          ]
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "MA4",
+          "place": 2,
+          "score": "+7",
+          "round_ratings": [
+            830,
+            872,
+            823
+          ]
+        },
+        {
+          "player_name": "Julius Nadberežný",
+          "cadg": 4292,
+          "pdga": 240173,
+          "division": "MJ15",
+          "place": 2,
+          "score": "+6",
+          "round_ratings": [
+            875,
+            827,
+            834
+          ]
+        }
+      ]
     }
   ],
   "ratings": {
