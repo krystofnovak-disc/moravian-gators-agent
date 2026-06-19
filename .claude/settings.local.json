@@ -7,7 +7,9 @@
       "Bash(brew install:*)",
       "Bash(gh repo:*)",
       "Bash(gh secret:*)",
-      "Bash(gh run:*)"
+      "Bash(gh run:*)",
+      "mcp__f5ab889f-aacc-4367-a91d-f5b014a4ecf9__search_files",
+      "mcp__f5ab889f-aacc-4367-a91d-f5b014a4ecf9__read_file_content"
     ]
   }
 }
