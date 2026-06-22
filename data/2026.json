@@ -4059,6 +4059,245 @@
           ]
         }
       ]
+    },
+    {
+      "name": "2026 PDGA European Open",
+      "date": "2026-06-18",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/97339",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 79,
+          "score": "+11",
+          "round_ratings": [
+            1036,
+            956,
+            1002
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 3,
+          "score": "-14",
+          "round_ratings": [
+            1007,
+            991,
+            996,
+            977
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Konopiště",
+      "date": "2026-06-20",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/105518",
+      "tier": "HDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Vladimír Kříž",
+          "cadg": 3608,
+          "pdga": 78165,
+          "division": "RPA",
+          "place": 13,
+          "score": "+24",
+          "round_ratings": [
+            816,
+            754
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MČR juniorů 2026",
+      "date": "2026-06-20",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/105306",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Lukáš Novobilský",
+          "cadg": 4358,
+          "pdga": 285107,
+          "division": "MJ18",
+          "place": 1,
+          "score": "-11",
+          "round_ratings": [
+            955,
+            946,
+            1000
+          ]
+        },
+        {
+          "player_name": "Maxmilián Jakeš",
+          "cadg": 6136,
+          "pdga": 273516,
+          "division": "MJ18",
+          "place": 3,
+          "score": "-8",
+          "round_ratings": [
+            909,
+            1019,
+            944
+          ]
+        },
+        {
+          "player_name": "Lukáš Vyvial",
+          "cadg": 6195,
+          "pdga": 283489,
+          "division": "MJ18",
+          "place": 5,
+          "score": "-3",
+          "round_ratings": [
+            964,
+            955,
+            906
+          ]
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "MJ18",
+          "place": 9,
+          "score": "+7",
+          "round_ratings": [
+            872,
+            927,
+            934
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FJ18",
+          "place": 3,
+          "score": "+4",
+          "round_ratings": [
+            877,
+            843,
+            811
+          ]
+        },
+        {
+          "player_name": "Julius Nadberežný",
+          "cadg": 4292,
+          "pdga": 240173,
+          "division": "MJ15",
+          "place": 7,
+          "score": "-10",
+          "round_ratings": [
+            925,
+            913,
+            831
+          ]
+        }
+      ]
+    },
+    {
+      "name": "O Puttovní Floppy Disk 2026",
+      "date": "2026-06-20",
+      "url_idg": "https://idiscgolf.cz/turnaje/2327",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jakub Veselý",
+          "cadg": 2293,
+          "pdga": 102611,
+          "division": "MPO",
+          "place": 2,
+          "score": "-17",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Masník",
+          "cadg": 818,
+          "pdga": 89187,
+          "division": "MPO",
+          "place": 11,
+          "score": "-9",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Urbiš",
+          "cadg": 3772,
+          "pdga": 122423,
+          "division": "MPO",
+          "place": 28,
+          "score": "+2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "MPO",
+          "place": 51,
+          "score": "+18",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jan Šajnar",
+          "cadg": 6345,
+          "pdga": null,
+          "division": "MP40",
+          "place": 29,
+          "score": "+41",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "HDGT Velké Opatovice powered by Discmania",
+      "date": "2026-06-21",
+      "url_idg": "https://idiscgolf.cz/turnaje/2578",
+      "url_pdga": null,
+      "tier": "HDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "Gold",
+          "place": 1,
+          "score": "-18",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Ryšánek",
+          "cadg": 3333,
+          "pdga": 117293,
+          "division": "Purple",
+          "place": 7,
+          "score": "+5",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 743,
+          "pdga": null,
+          "division": "Purple",
+          "place": 9,
+          "score": "+7",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
