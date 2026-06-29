@@ -4298,6 +4298,339 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "DGPT - Swedish Open presented by Kastaplast",
+      "date": "2026-06-26",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/96411",
+      "tier": "DGPT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 10,
+          "score": "-19",
+          "round_ratings": [
+            1070,
+            1018,
+            1046
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 4,
+          "score": "-10",
+          "round_ratings": [
+            1011,
+            964,
+            962
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Vacenovice powered by Discmania",
+      "date": "2026-06-27",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/105564",
+      "tier": "HDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "RPA",
+          "place": 11,
+          "score": "-9",
+          "round_ratings": [
+            907,
+            930
+          ]
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "RPA",
+          "place": 6,
+          "score": "-6",
+          "round_ratings": [
+            856,
+            951
+          ]
+        },
+        {
+          "player_name": "Filip Plíhal",
+          "cadg": 5493,
+          "pdga": 245751,
+          "division": "RPA",
+          "place": 24,
+          "score": "+6",
+          "round_ratings": [
+            815,
+            866
+          ]
+        },
+        {
+          "player_name": "Jakub Moj",
+          "cadg": 5484,
+          "pdga": 208119,
+          "division": "RPA",
+          "place": 12,
+          "score": "+12",
+          "round_ratings": [
+            815,
+            803
+          ]
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "RPA",
+          "place": 14,
+          "score": "+15",
+          "round_ratings": [
+            805,
+            782
+          ]
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "RPA",
+          "place": 20,
+          "score": "+26",
+          "round_ratings": [
+            692,
+            782
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Choltice presented by Discmania",
+      "date": "2026-06-28",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/105682",
+      "tier": "HDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "RPA",
+          "place": 20,
+          "score": "+19",
+          "round_ratings": [
+            807,
+            850
+          ]
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "RPA",
+          "place": 11,
+          "score": "+29",
+          "round_ratings": [
+            782,
+            792
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NJDGT #3: Skalky Open",
+      "date": "2026-06-28",
+      "url_idg": "https://idiscgolf.cz/turnaje/2474",
+      "url_pdga": null,
+      "tier": "NJDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Petr Ryšánek",
+          "cadg": 3333,
+          "pdga": 117293,
+          "division": "Vrabec",
+          "place": 1,
+          "score": "+17",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Tomáš Březina",
+          "cadg": 8780,
+          "pdga": null,
+          "division": "Vrabec",
+          "place": 10,
+          "score": "+48",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jan Šajnar",
+          "cadg": 6345,
+          "pdga": null,
+          "division": "Poštolka",
+          "place": 3,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jindřich Závodný",
+          "cadg": 5041,
+          "pdga": null,
+          "division": "Poštolka",
+          "place": 4,
+          "score": "+1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "Poštolka",
+          "place": 6,
+          "score": "+8",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Březina",
+          "cadg": 1217,
+          "pdga": 92091,
+          "division": "Poštolka",
+          "place": 7,
+          "score": "+9",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Václav Valentík",
+          "cadg": 8453,
+          "pdga": null,
+          "division": "Poštolka",
+          "place": 7,
+          "score": "+9",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Dominik Janek",
+          "cadg": 8007,
+          "pdga": 290093,
+          "division": "Poštolka",
+          "place": 12,
+          "score": "+16",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Tomáš Novobilský",
+          "cadg": 3653,
+          "pdga": 137574,
+          "division": "Jestřáb",
+          "place": 2,
+          "score": "+1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Radek Knápek",
+          "cadg": 3671,
+          "pdga": null,
+          "division": "Jestřáb",
+          "place": 3,
+          "score": "+2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Martin Hollas",
+          "cadg": 8299,
+          "pdga": 310651,
+          "division": "Jestřáb",
+          "place": 6,
+          "score": "+7",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "Jestřáb",
+          "place": 7,
+          "score": "+10",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Radek Jurčík",
+          "cadg": 3727,
+          "pdga": 137576,
+          "division": "Jestřáb",
+          "place": 8,
+          "score": "+11",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "Orel",
+          "place": 1,
+          "score": "-17",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
+          "division": "Orel",
+          "place": 4,
+          "score": "-7",
+          "round_ratings": []
+        },
+        {
+          "player_name": "David Žeravík",
+          "cadg": 7985,
+          "pdga": null,
+          "division": "Orel",
+          "place": 10,
+          "score": "-4",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Novobilský",
+          "cadg": 4358,
+          "pdga": 285107,
+          "division": "Orel",
+          "place": 12,
+          "score": "-1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Masník",
+          "cadg": 818,
+          "pdga": 89187,
+          "division": "Orel",
+          "place": 13,
+          "score": "0",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Pavel Žeravík",
+          "cadg": 6268,
+          "pdga": null,
+          "division": "Orel",
+          "place": 16,
+          "score": "+11",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
