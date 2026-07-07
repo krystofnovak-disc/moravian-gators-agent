@@ -4658,64 +4658,74 @@
     {
       "name": "MČR Masters 2026 presented by MVP Disc Sports",
       "date": "2026-07-04",
-      "url_idg": "https://idiscgolf.cz/turnaje/2345",
-      "url_pdga": null,
-      "tier": "MČR",
-      "source": "idiscgolf",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/105098",
+      "tier": "PDGA",
+      "source": "pdga",
       "results": [
         {
           "player_name": "Michal Grepl",
           "cadg": 349,
           "pdga": 59727,
           "division": "MP40",
-          "place": 7,
-          "score": "-3",
-          "round_ratings": []
+          "place": 20,
+          "score": "-6",
+          "round_ratings": [
+            941,
+            900,
+            940
+          ]
         },
         {
           "player_name": "Jiří Kvita",
           "cadg": 3683,
           "pdga": 116573,
           "division": "MP40",
-          "place": 49,
-          "score": "+3",
-          "round_ratings": []
+          "place": 44,
+          "score": "+2",
+          "round_ratings": [
+            888,
+            918
+          ]
         },
         {
           "player_name": "Jiří Šebek",
           "cadg": 839,
           "pdga": 77760,
           "division": "MP40",
-          "place": 52,
-          "score": "+4",
-          "round_ratings": []
+          "place": 57,
+          "score": "+15",
+          "round_ratings": [
+            879,
+            882,
+            831
+          ]
         },
         {
           "player_name": "Jaroslav Randus",
           "cadg": 6260,
           "pdga": 269133,
           "division": "MP40",
-          "place": 61,
-          "score": "+6",
-          "round_ratings": []
+          "place": 64,
+          "score": "+20",
+          "round_ratings": [
+            861,
+            828,
+            858
+          ]
         },
         {
           "player_name": "Radek Jurčík",
           "cadg": 3727,
           "pdga": 137576,
           "division": "MP50",
-          "place": 11,
-          "score": "+5",
-          "round_ratings": []
-        },
-        {
-          "player_name": "Robert Novobilský",
-          "cadg": 5781,
-          "pdga": null,
-          "division": "MP50",
-          "place": 39,
-          "score": "+18",
-          "round_ratings": []
+          "place": 10,
+          "score": "+13",
+          "round_ratings": [
+            870,
+            846,
+            894
+          ]
         },
         {
           "player_name": "Michal Sviták",
@@ -4723,26 +4733,24 @@
           "pdga": 122508,
           "division": "MP50",
           "place": 43,
-          "score": "+28",
-          "round_ratings": []
+          "score": "+87",
+          "round_ratings": [
+            665,
+            693
+          ]
         },
         {
           "player_name": "Petr Ryšánek",
           "cadg": 3333,
           "pdga": 117293,
           "division": "MP60",
-          "place": 17,
-          "score": "+14",
-          "round_ratings": []
-        },
-        {
-          "player_name": "František Trenz",
-          "cadg": 743,
-          "pdga": null,
-          "division": "MP60",
-          "place": 18,
-          "score": "+28",
-          "round_ratings": []
+          "place": 16,
+          "score": "+46",
+          "round_ratings": [
+            739,
+            746,
+            713
+          ]
         }
       ]
     },
