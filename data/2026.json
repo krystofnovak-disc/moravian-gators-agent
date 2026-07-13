@@ -4800,6 +4800,91 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "DGPT - Heinola Open presented by MVP",
+      "date": "2026-07-10",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/96413",
+      "tier": "DGPT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 18,
+          "score": "-15",
+          "round_ratings": [
+            1053,
+            999,
+            1036
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 4,
+          "score": "-3",
+          "round_ratings": [
+            984,
+            953,
+            925
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 18,
+          "score": "+17",
+          "round_ratings": [
+            913,
+            904,
+            886
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Majstrovstvá Slovenskej republiky v discgolfe 2026 – Smolenice",
+      "date": "2026-07-11",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/105288",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
+          "division": "MPO",
+          "place": 2,
+          "score": "-7",
+          "round_ratings": [
+            1003,
+            959,
+            984
+          ]
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 4,
+          "score": "-5",
+          "round_ratings": [
+            974,
+            995,
+            963
+          ]
+        }
+      ]
     }
   ],
   "ratings": {
