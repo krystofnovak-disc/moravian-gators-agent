@@ -4885,6 +4885,111 @@
           ]
         }
       ]
+    },
+    {
+      "name": "SFL Powergrip Pro Tour - #3 Turku",
+      "date": "2026-07-17",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/101035",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 30,
+          "score": "-4",
+          "round_ratings": [
+            987,
+            1021,
+            999
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Ostrava - Šporovnice powered by Discmania",
+      "date": "2026-07-18",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/106141",
+      "tier": "HDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
+          "division": "RPA",
+          "place": 2,
+          "score": "-15",
+          "round_ratings": [
+            962,
+            1026
+          ]
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "RPA",
+          "place": 6,
+          "score": "-8",
+          "round_ratings": [
+            962,
+            949
+          ]
+        },
+        {
+          "player_name": "Lukáš Novobilský",
+          "cadg": 4358,
+          "pdga": 285107,
+          "division": "RPA",
+          "place": 13,
+          "score": "-4",
+          "round_ratings": [
+            985,
+            883
+          ]
+        },
+        {
+          "player_name": "Richard Kurečka",
+          "cadg": 7983,
+          "pdga": 300253,
+          "division": "RPA",
+          "place": 13,
+          "score": "+4",
+          "round_ratings": [
+            860,
+            916
+          ]
+        },
+        {
+          "player_name": "Martin Hollas",
+          "cadg": 8299,
+          "pdga": 310651,
+          "division": "RPA",
+          "place": 21,
+          "score": "+11",
+          "round_ratings": [
+            826,
+            872
+          ]
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "RPA",
+          "place": 12,
+          "score": "+20",
+          "round_ratings": [
+            781,
+            817
+          ]
+        }
+      ]
     }
   ],
   "ratings": {
