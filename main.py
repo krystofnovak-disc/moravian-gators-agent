@@ -104,26 +104,55 @@ def _norm_name(name: str) -> str:
 _PDGA_TIERS = {"PCT", "PDGA", "MČR", "MCR", "A-TIER", "B-TIER", "C-TIER", "MAJOR", "ELITE"}
 
 
+def _player_key(p: dict):
+    """Klíč hráče pro deduplikaci napříč zdroji (cadg > pdga > jméno)."""
+    if p.get("cadg"):
+        return ("cadg", str(p["cadg"]))
+    if p.get("pdga"):
+        return ("pdga", str(p["pdga"]))
+    return ("name", f"{p.get('first_name','')} {p.get('last_name','')}".lower())
+
+
 def merge_results(idg: list, pdga: list) -> list:
     """
     Sloučí výsledky z obou zdrojů. PDGA je primární – pokud má stejný
-    turnaj, jeho verze vítězí (má round ratingy, přesnější výsledky,
-    spolehlivé indexování).
+    turnaj, jeho data (place, round ratingy) vítězí.
 
-    idg verze se použije jen pokud:
-      a) turnaj NENÍ v PDGA výstupu (typicky lokální ADGL/NJDGT/HDGT/atd.)
-      b) NEBO (PDGA-tier turnaj, ale PDGA ho ještě neindexoval) – v tom
-         případě filtrujeme níž, viz vyřazení incomplete PDGA-tier turnajů.
+    Pokud je turnaj v OBOU zdrojích, sloučíme i seznam hráčů: PDGA verze
+    je základ, z iDG doplníme hráče, které PDGA nemá (typicky členové bez
+    PDGA čísla – přesně ty, kvůli kterým iDG scrapujeme). Tím se u smíšených
+    turnajů (např. HDGT s PDGA sankcí) neztratí nečlenové PDGA.
 
-    Porovnání jmen: lowercase + bez diakritiky (aby "PCT: Budišov" matchlo
-    "PCT: Budisov" pokud by se zápis lišil).
+    Turnaje jen v iDG (lokální ADGL/NJDGT/… bez PDGA) se přidají celé.
+
+    Porovnání jmen: lowercase + bez diakritiky + strip tier prefixu
+    (aby "PCT: Budišov" matchlo "Budišov").
     """
-    merged = list(pdga)  # PDGA jako základ
-    pdga_names = {_norm_name(t["name"]) for t in pdga}
+    merged = []
+    idg_by_name = {_norm_name(t["name"]): t for t in idg}
 
-    for t in idg:
-        if _norm_name(t["name"]) not in pdga_names:
-            merged.append(t)
+    for pt in pdga:
+        name_key = _norm_name(pt["name"])
+        it = idg_by_name.get(name_key)
+        if it:
+            # Union hráčů: PDGA základ + iDG hráči, které PDGA nemá
+            have = {_player_key(p) for p in pt.get("our_players", [])}
+            extra = [
+                p for p in it.get("our_players", [])
+                if _player_key(p) not in have
+            ]
+            if extra:
+                pt = {**pt, "our_players": pt.get("our_players", []) + extra}
+                logger.info(
+                    f"  Turnaj '{pt['name']}': doplněno {len(extra)} hráčů "
+                    f"z iDG, které PDGA nemá (nečlenové PDGA)."
+                )
+        merged.append(pt)
+
+    pdga_names = {_norm_name(t["name"]) for t in pdga}
+    for it in idg:
+        if _norm_name(it["name"]) not in pdga_names:
+            merged.append(it)
 
     return merged
 
