@@ -4817,11 +4817,21 @@
           "place": 18,
           "score": "-15",
           "round_ratings": [
-            1053,
-            999,
-            1036
+            1052,
+            998,
+            1037
           ]
-        },
+        }
+      ]
+    },
+    {
+      "name": "DGPT EuroTour - Heinola Open 2026 presented by MVP",
+      "date": "2026-07-10",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/106208",
+      "tier": "DGPT EuroTour",
+      "source": "pdga",
+      "results": [
         {
           "player_name": "Kristýna Jurčíková",
           "cadg": 4362,
@@ -4830,9 +4840,9 @@
           "place": 4,
           "score": "-3",
           "round_ratings": [
-            984,
-            953,
-            925
+            978,
+            962,
+            922
           ]
         },
         {
@@ -4843,10 +4853,101 @@
           "place": 18,
           "score": "+17",
           "round_ratings": [
-            913,
-            904,
-            886
+            906,
+            914,
+            882
           ]
+        }
+      ]
+    },
+    {
+      "name": "Rekovická Letní Discgolfová Liga 2026 #2",
+      "date": "2026-07-10",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/5c7d1e76-a941-4da1-b38e-2662c14449ae",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Eliška Bártková",
+          "cadg": 1737,
+          "pdga": 86224,
+          "division": "FA1",
+          "place": 1,
+          "score": "-1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "FA1",
+          "place": 5,
+          "score": "+14",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MA1",
+          "place": 1,
+          "score": "-11",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Pavel Žeravík",
+          "cadg": 6268,
+          "pdga": null,
+          "division": "MA1",
+          "place": 2,
+          "score": "-10",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jan Bártek",
+          "cadg": 1739,
+          "pdga": 96640,
+          "division": "MA1",
+          "place": 6,
+          "score": "-6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "MA1",
+          "place": 16,
+          "score": "+2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Ryšánek",
+          "cadg": 3333,
+          "pdga": 117293,
+          "division": "MA40",
+          "place": 12,
+          "score": "+8",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 743,
+          "pdga": null,
+          "division": "MA40",
+          "place": 15,
+          "score": "+14",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Michal Sviták",
+          "cadg": 1808,
+          "pdga": 122508,
+          "division": "MA40",
+          "place": 16,
+          "score": "+22",
+          "round_ratings": []
         }
       ]
     },
@@ -4866,9 +4967,9 @@
           "place": 2,
           "score": "-7",
           "round_ratings": [
-            1003,
-            959,
-            984
+            1001,
+            966,
+            980
           ]
         },
         {
@@ -4879,10 +4980,74 @@
           "place": 4,
           "score": "-5",
           "round_ratings": [
-            974,
-            995,
-            963
+            973,
+            1001,
+            958
           ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Šumperk powered by Discmania",
+      "date": "2026-07-11",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/ed59f80d-d803-4a19-80b4-dd97bfdda9e1",
+      "url_pdga": null,
+      "tier": "HDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Pavel Žeravík",
+          "cadg": 6268,
+          "pdga": null,
+          "division": "Gold",
+          "place": 1,
+          "score": "-8",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "Gold",
+          "place": 7,
+          "score": "E",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "Green",
+          "place": 1,
+          "score": "-2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "Green",
+          "place": 3,
+          "score": "+6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "Purple",
+          "place": 9,
+          "score": "+22",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Štěpán Jančík",
+          "cadg": 8880,
+          "pdga": null,
+          "division": "Purple",
+          "place": 14,
+          "score": "+32",
+          "round_ratings": []
         }
       ]
     },
@@ -4906,6 +5071,79 @@
             1021,
             999
           ]
+        }
+      ]
+    },
+    {
+      "name": "Rekovická Letní Discgolfová Liga 2026 #3",
+      "date": "2026-07-17",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/f8db8b85-b3a6-4a3d-92b2-68b70325a258",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "FA1",
+          "place": 2,
+          "score": "+4",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Pavel Žeravík",
+          "cadg": 6268,
+          "pdga": null,
+          "division": "MA1",
+          "place": 2,
+          "score": "-9",
+          "round_ratings": []
+        },
+        {
+          "player_name": "David Žeravík",
+          "cadg": 7985,
+          "pdga": null,
+          "division": "MA1",
+          "place": 13,
+          "score": "-3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "MA1",
+          "place": 18,
+          "score": "+2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jindřich Závodný",
+          "cadg": 5041,
+          "pdga": null,
+          "division": "MA40",
+          "place": 2,
+          "score": "-6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Ryšánek",
+          "cadg": 3333,
+          "pdga": 117293,
+          "division": "MA40",
+          "place": 15,
+          "score": "+8",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 743,
+          "pdga": null,
+          "division": "MA40",
+          "place": 18,
+          "score": "+12",
+          "round_ratings": []
         }
       ]
     },
@@ -4958,7 +5196,7 @@
           "cadg": 7983,
           "pdga": 300253,
           "division": "RPA",
-          "place": 13,
+          "place": 12,
           "score": "+4",
           "round_ratings": [
             860,
@@ -4970,7 +5208,7 @@
           "cadg": 8299,
           "pdga": 310651,
           "division": "RPA",
-          "place": 21,
+          "place": 20,
           "score": "+11",
           "round_ratings": [
             826,
@@ -4982,12 +5220,49 @@
           "cadg": 6260,
           "pdga": 269133,
           "division": "RPA",
-          "place": 12,
+          "place": 11,
           "score": "+20",
           "round_ratings": [
             781,
             817
           ]
+        },
+        {
+          "player_name": "David Žeravík",
+          "cadg": 7985,
+          "pdga": null,
+          "division": "Gold",
+          "place": 10,
+          "score": "-5",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Pavel Žeravík",
+          "cadg": 6268,
+          "pdga": null,
+          "division": "Gold",
+          "place": 18,
+          "score": "+1",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Doubles Datyně vol. 2",
+      "date": "2026-07-19",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/54bb009a-bcd9-45a7-99b9-80a03e04642b",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jindřich Závodný",
+          "cadg": 5041,
+          "pdga": null,
+          "division": "MA4",
+          "place": 6,
+          "score": "+1",
+          "round_ratings": []
         }
       ]
     }
