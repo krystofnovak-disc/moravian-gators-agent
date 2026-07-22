@@ -29,8 +29,14 @@ class EmailSender:
         self.recipient = os.getenv("RECIPIENT_EMAIL", "vybor@moraviangators.cz")
 
     def send(self, post_text: str, saturday: date, sunday: date,
-             tournament_results: list | None = None) -> None:
-        """Odešle příspěvek jako e-mail ke schválení."""
+             tournament_results: list | None = None,
+             warnings: list | None = None) -> None:
+        """Odešle příspěvek jako e-mail ke schválení.
+
+        warnings: seznam varování o neúplných datech (selhání scraperů).
+        Pokud je neprázdný, e-mail dostane výrazný banner nahoře a značku
+        v předmětu.
+        """
         if not self.gmail_address or not self.app_password:
             raise ValueError(
                 "Chybí Gmail přihlašovací údaje. "
@@ -40,17 +46,19 @@ class EmailSender:
         sat = saturday.strftime("%-d. %-m.")
         sun = sunday.strftime("%-d. %-m. %Y")
         subject = f"🥏 Moravian Gators – příspěvek víkendu {sat}–{sun} [ke schválení]"
+        if warnings:
+            subject = f"⚠️ NEÚPLNÁ DATA – {subject}"
 
         msg = MIMEMultipart("alternative")
         msg["Subject"] = subject
         msg["From"] = self.gmail_address
         msg["To"] = self.recipient
 
-        # Čistý text (tabulka + příspěvek)
-        plain = self._build_plain(post_text, tournament_results)
+        # Čistý text (banner + tabulka + příspěvek)
+        plain = self._build_plain(post_text, tournament_results, warnings)
         msg.attach(MIMEText(plain, "plain", "utf-8"))
         # HTML verze
-        html = self._to_html(post_text, saturday, sunday, tournament_results)
+        html = self._to_html(post_text, saturday, sunday, tournament_results, warnings)
         msg.attach(MIMEText(html, "html", "utf-8"))
 
         try:
@@ -69,9 +77,18 @@ class EmailSender:
     # ------------------------------------------------------------------
 
     def _build_plain(self, post_text: str,
-                     tournament_results: list | None) -> str:
-        """Sestaví plaintext verzi e-mailu (tabulka + příspěvek)."""
+                     tournament_results: list | None,
+                     warnings: list | None = None) -> str:
+        """Sestaví plaintext verzi e-mailu (banner + tabulka + příspěvek)."""
         parts = []
+        if warnings:
+            parts.append("!" * 56)
+            parts.append("!!  POZOR: NEPODAŘILO SE NAČÍST VŠECHNA DATA")
+            parts.append("!!  Výsledky níže NEMUSÍ být kompletní:")
+            for w in warnings:
+                parts.append(f"!!    • {w}")
+            parts.append("!" * 56)
+            parts.append("")
         if tournament_results:
             parts.append("PŘEHLED VÝSLEDKŮ ČLENŮ MGNJ")
             parts.append("=" * 40)
@@ -155,8 +172,27 @@ class EmailSender:
             + "\n</table>"
         )
 
+    def _warning_banner_html(self, warnings: list | None) -> str:
+        """Výrazný červený banner nahoře e-mailu při neúplných datech."""
+        if not warnings:
+            return ""
+        items = "\n".join(
+            f'<li style="margin: 2px 0;">{w}</li>' for w in warnings
+        )
+        return (
+            '<div style="background: #b71c1c; border: 2px solid #7f0000; '
+            'padding: 14px 20px; border-radius: 8px; margin-bottom: 16px; color: #fff;">\n'
+            '  <div style="font-size: 17px; font-weight: bold; margin-bottom: 6px;">'
+            '⚠️ POZOR: nepodařilo se načíst všechna data</div>\n'
+            '  <div style="font-size: 14px; margin-bottom: 6px;">'
+            'Výsledky níže <strong>nemusí být kompletní</strong>:</div>\n'
+            f'  <ul style="margin: 0; padding-left: 20px; font-size: 14px;">\n{items}\n  </ul>\n'
+            '</div>'
+        )
+
     def _to_html(self, post_text: str, saturday: date, sunday: date,
-                 tournament_results: list | None = None) -> str:
+                 tournament_results: list | None = None,
+                 warnings: list | None = None) -> str:
         """Přeformátuje příspěvek jako HTML e-mail."""
         sat = saturday.strftime("%-d. %-m.")
         sun = sunday.strftime("%-d. %-m. %Y")
@@ -190,6 +226,8 @@ class EmailSender:
       🥏 Moravian Gators – výsledky víkendu {sat}–{sun}
     </h2>
   </div>
+
+  {self._warning_banner_html(warnings)}
 
   <div style="background: #fff8e1; border-left: 4px solid #f9a825; padding: 10px 16px;
               border-radius: 4px; margin-bottom: 16px; font-size: 13px; color: #555;">

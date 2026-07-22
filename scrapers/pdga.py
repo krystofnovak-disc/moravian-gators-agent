@@ -51,6 +51,9 @@ class PDGAScraper:
             key = normalize(f"{p['first_name']} {p['last_name']}")
             self.norm_name_to_player[key] = p
 
+        # Chyby, které mohou znamenat neúplná data (surfují se do e-mailu).
+        self.errors: list[str] = []
+
         self.session = requests.Session()
         self.session.headers.update({
             "User-Agent": (
@@ -113,6 +116,7 @@ class PDGAScraper:
         # ID → datum z eventu (pro sidebar eventy bez data v profilu)
         sidebar_event_ids = set()
         checked = 0
+        profile_failures = 0
 
         for p in self.players_with_pdga:
             try:
@@ -132,6 +136,7 @@ class PDGAScraper:
                             logger.info(f"  PDGA event nalezen přes hráče {p['first_name']} {p['last_name']}: {ev['name']}")
                 checked += 1
             except Exception as e:
+                profile_failures += 1
                 logger.warning(f"Profil PDGA #{p['pdga']}: {e}")
 
         # Sidebar: stáhni datum z event page a filtruj víkend
@@ -158,6 +163,19 @@ class PDGAScraper:
                 logger.warning(f"Sidebar event #{ev_id}: {e}")
 
         logger.info(f"Zkontrolováno {checked} PDGA profilů, nalezeno {len(found)} eventů")
+
+        total = len(self.players_with_pdga)
+        if profile_failures and total:
+            if profile_failures >= total:
+                self.errors.append(
+                    "PDGA: nepodařilo se načíst žádný profil hráče "
+                    "(pdga.com asi nedostupné) – PDGA turnaje mohou zcela chybět."
+                )
+            else:
+                self.errors.append(
+                    f"PDGA: {profile_failures} z {total} profilů hráčů se "
+                    f"nepodařilo načíst – některé turnaje mohly uniknout."
+                )
         return list(found.values())
 
     def _fetch_event_date(self, event_id: int) -> str:
@@ -270,8 +288,10 @@ class PDGAScraper:
 
             return events
         except Exception as e:
+            # Propagujeme dál – volající (_find_weekend_events) selhání
+            # započítá do profile_failures kvůli varování v e-mailu.
             logger.warning(f"_player_recent_events PDGA #{pdga_number}: {e}")
-            return []
+            raise
 
     # ------------------------------------------------------------------
     # Parsování výsledků eventu
@@ -289,6 +309,10 @@ class PDGAScraper:
             return players, tier
         except Exception as e:
             logger.error(f"Nepodařilo se načíst PDGA event #{event_id}: {e}")
+            self.errors.append(
+                f"PDGA: nepodařilo se načíst výsledky eventu "
+                f"'{event_name or event_id}'."
+            )
             return [], "PDGA"
 
     def _parse_event_results(self, soup: BeautifulSoup) -> list:

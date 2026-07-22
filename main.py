@@ -257,21 +257,40 @@ def run(saturday: date, sunday: date, dry_run: bool = False) -> None:
     players = load_players()
     logger.info(f"Načteno {len(players)} členů klubu")
 
+    # Varování o neúplných datech (selhání scraperů) → surfujeme do e-mailu.
+    warnings: list[str] = []
+
     # 2. Scraping pdga.com (PRIMÁRNÍ – spolehlivější, má round ratingy)
     logger.info("--- pdga.com ---")
+    pdga_scraper = PDGAScraper(players)
     try:
-        pdga = PDGAScraper(players).get_weekend_results(saturday, sunday)
+        pdga = pdga_scraper.get_weekend_results(saturday, sunday)
     except Exception as e:
         logger.error(f"PDGA scraper selhal: {e}", exc_info=True)
         pdga = []
+        warnings.append(
+            "PDGA: scraper zcela selhal (pdga.com nedostupné) – "
+            "PDGA turnaje v přehledu chybí."
+        )
+    warnings.extend(pdga_scraper.errors)
 
-    # 3. Scraping idiscgolf.cz (DOPLŇUJÍCÍ – jen co PDGA nemá)
+    # 3. Scraping idiscgolf.cz / ceskydiscgolf.cz (DOPLŇUJÍCÍ – jen co PDGA nemá)
     logger.info("--- idiscgolf.cz ---")
+    idg_scraper = IDGScraper(players)
     try:
-        idg = IDGScraper(players).get_weekend_results(saturday, sunday)
+        idg = idg_scraper.get_weekend_results(saturday, sunday)
     except Exception as e:
         logger.error(f"idiscgolf scraper selhal: {e}", exc_info=True)
         idg = []
+        warnings.append(
+            "iDG: scraper zcela selhal (ceskydiscgolf.cz nedostupné) – "
+            "iDG turnaje v přehledu chybí."
+        )
+    warnings.extend(idg_scraper.errors)
+
+    if warnings:
+        for w in warnings:
+            logger.warning(f"⚠️  {w}")
 
     # 4. Merge + filtr PDGA-tier registrací
     results = merge_results(idg, pdga)
@@ -349,7 +368,9 @@ def run(saturday: date, sunday: date, dry_run: bool = False) -> None:
     # 6. Odeslání e-mailem
     logger.info("--- Odeslání e-mailem ---")
     try:
-        EmailSender().send(post, saturday, sunday, tournament_results=tournaments_with_us)
+        EmailSender().send(post, saturday, sunday,
+                           tournament_results=tournaments_with_us,
+                           warnings=warnings)
     except Exception as e:
         logger.error(f"Odeslání e-mailu selhalo: {e}", exc_info=True)
         logger.info("Příspěvek byl uložen lokálně v output/")

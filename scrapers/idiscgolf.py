@@ -49,6 +49,9 @@ class IDGScraper:
             str(p["pdga"]): p for p in players if p.get("pdga")
         }
 
+        # Chyby, které mohou znamenat neúplná data (surfují se do e-mailu).
+        self.errors: list[str] = []
+
         self.session = requests.Session()
         self.session.headers.update({
             "User-Agent": (
@@ -96,10 +99,14 @@ class IDGScraper:
         )
 
         results = []
+        failed = []
         for t in tournaments:
             time.sleep(0.5)  # netlačíme API
             logger.info(f"  Kontroluji turnaj {t['id']}: {t['name']}")
             our_players = self._get_our_players(t["id"])
+            if our_players is None:  # tvrdá chyba načtení výsledků
+                failed.append(t["name"])
+                continue
             if our_players:
                 results.append({
                     "name": t["name"],
@@ -110,6 +117,12 @@ class IDGScraper:
                     "tier": self._extract_tier(t),
                     "source": "idiscgolf",
                 })
+
+        if failed:
+            self.errors.append(
+                f"iDG: u {len(failed)} turnajů se nepodařilo načíst výsledky "
+                f"({', '.join(failed[:3])}{'…' if len(failed) > 3 else ''})."
+            )
         return results
 
     # ------------------------------------------------------------------
@@ -127,6 +140,10 @@ class IDGScraper:
             data = self._get_json(f"{API_BASE}/tournaments/")
         except Exception as e:
             logger.error(f"Nepodařilo se načíst seznam turnajů: {e}")
+            self.errors.append(
+                "iDG: nepodařilo se načíst seznam turnajů z ceskydiscgolf.cz "
+                "– iDG turnaje mohou v přehledu zcela chybět."
+            )
             return []
 
         found = []
@@ -156,19 +173,21 @@ class IDGScraper:
     # Výsledky konkrétního turnaje
     # ------------------------------------------------------------------
 
-    def _get_our_players(self, tid: str) -> list:
+    def _get_our_players(self, tid: str) -> list | None:
         """Stáhne výsledky turnaje a vrátí naše hráče s umístěním.
 
         Prochází divize → řádky, páruje na naše hráče přes pdga_number
         nebo user_id (idg_id). Hráči, kteří jsou jen registrovaní bez
         odehraného kola, dostanou place=None (řeší kontrola úplnosti v main).
+
+        Vrací None při tvrdé chybě načtení (odlišení od "žádní naši hráči").
         """
         url = f"{API_BASE}/tournaments/{tid}/results/"
         try:
             data = self._get_json(url)
         except Exception as e:
             logger.error(f"Nepodařilo se načíst výsledky turnaje {tid}: {e}")
-            return []
+            return None
 
         our_players = []
         for division in data.get("divisions", []):
