@@ -1,2 +1,20 @@
 [
+  {"first_name": "Kryštof", "last_name": "Novák", "cadg": 319, "pdga": 55426, "idg_id": 458},
+  {"first_name": "Daniel", "last_name": "Konečný", "cadg": 1085, "pdga": 77759, "idg_id": 626},
+  {"first_name": "Eva", "last_name": "Bínová", "cadg": 1104, "pdga": 69385, "idg_id": 633},
+  {"first_name": "Tomáš", "last_name": "Mozola", "cadg": 2805, "pdga": 103693, "idg_id": 1907},
+  {"first_name": "Samuel", "last_name": "Kšiňan", "cadg": 5639, "pdga": 226769, "idg_id": 2781},
+  {"first_name": "Martin", "last_name": "Opršal", "cadg": 2524, "pdga": 103677, "idg_id": 1864},
+  {"first_name": "Nicolas", "last_name": "Turina", "cadg": 8471, "pdga": 323634, "idg_id": 3747},
+  {"first_name": "Karolína", "last_name": "Jurčíková", "cadg": 4363, "pdga": 285033, "idg_id": 5059},
+  {"first_name": "Kristýna", "last_name": "Jurčíková", "cadg": 4362, "pdga": 210972, "idg_id": 5058},
+  {"first_name": "Jakub", "last_name": "Knápek", "cadg": 3689, "pdga": 68237, "idg_id": 87},
+  {"first_name": "Bohdan", "last_name": "Bílek", "cadg": 692, "pdga": 80134, "idg_id": 554},
+  {"first_name": "Petr", "last_name": "Striegler", "cadg": 3762, "pdga": 89634, "idg_id": 144},
+  {"first_name": "Nikola", "last_name": "Moravcová", "cadg": 3745, "pdga": 125069, "idg_id": 128},
+  {"first_name": "Michael", "last_name": "Studnička", "cadg": 3877, "pdga": 162117, "idg_id": 237},
+  {"first_name": "Eliška", "last_name": "Bártková", "cadg": 1737, "pdga": 86224, "idg_id": 1755},
+  {"first_name": "Petr", "last_name": "Mrázek", "cadg": 3758, "pdga": 114642, "idg_id": 140},
+  {"first_name": "Jakub", "last_name": "Semerád", "cadg": 2286, "pdga": 91925, "idg_id": 1833},
+  {"first_name": "Ondřej", "last_name": "Mazoch", "cadg": 7810, "pdga": 286033, "idg_id": 4160}
 ]
