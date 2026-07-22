@@ -45,10 +45,7 @@ logging.basicConfig(
 logger = logging.getLogger("update_ratings")
 
 
-def load_players() -> list:
-    path = Path(__file__).parent / "config" / "players.json"
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
+from clubs import get_club, load_players as load_club_players
 
 
 def extract_event_id(url_pdga: str) -> int | None:
@@ -105,15 +102,17 @@ def update_tournament_round_ratings(
     return updated, len(tournament.get("results", []))
 
 
-def run(year: int, dry_run: bool = False) -> None:
+def run(year: int, dry_run: bool = False, club: dict | None = None) -> None:
+    if club is None:
+        club = get_club()
     logger.info("=" * 60)
-    logger.info(f"Moravian Gators – aktualizace PDGA ratingů pro rok {year}")
+    logger.info(f"{club['name']} – aktualizace PDGA ratingů pro rok {year}")
     logger.info("=" * 60)
 
-    players = load_players()
+    players = load_club_players(club)
     logger.info(f"Načteno {len(players)} členů klubu")
 
-    acc = Accumulator(year=year)
+    acc = Accumulator(year=year, data_dir=club["data_path"])
     data = acc.load()
 
     if not data.get("tournaments"):
@@ -186,9 +185,14 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Neukládat změny do data/{year}.json",
     )
+    parser.add_argument(
+        "--club",
+        default="mgnj",
+        help="Klub z config/clubs.json (default: mgnj)",
+    )
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     args = parse_args()
-    run(year=args.year, dry_run=args.dry_run)
+    run(year=args.year, dry_run=args.dry_run, club=get_club(args.club))

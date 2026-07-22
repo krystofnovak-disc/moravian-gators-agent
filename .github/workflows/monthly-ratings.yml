@@ -32,10 +32,17 @@ jobs:
   update-ratings:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        club: [mgnj, prodiscgolf]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Check if 2nd Wednesday of month
         id: check-day
@@ -71,9 +78,9 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           if [ -n "${{ github.event.inputs.year }}" ]; then
-            python update_ratings.py --year "${{ github.event.inputs.year }}"
+            python update_ratings.py --club "${{ matrix.club }}" --year "${{ github.event.inputs.year }}"
           else
-            python update_ratings.py
+            python update_ratings.py --club "${{ matrix.club }}"
           fi
 
       - name: Commit updated data
@@ -85,6 +92,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "Žádné změny k commitnutí."
           else
-            git commit -m "data: monthly PDGA ratings update $(date +%Y-%m-%d)"
+            git commit -m "data(${{ matrix.club }}): monthly PDGA ratings update $(date +%Y-%m-%d)"
+            git pull --rebase origin main
             git push
           fi
