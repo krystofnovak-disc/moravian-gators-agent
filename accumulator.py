@@ -121,11 +121,15 @@ def _empty_data() -> dict:
 class Accumulator:
     """Manages cumulative yearly tournament results stored as JSON."""
 
-    def __init__(self, year: int | None = None):
+    def __init__(self, year: int | None = None, data_dir=None):
         if year is None:
             year = date.today().year
         self.year = year
-        self.data_dir = Path(__file__).parent / "data"
+        # data_dir umožňuje per-klub oddělení (data/, data/prodiscgolf/, …).
+        # Výchozí "data" zachovává původní chování (MGNJ).
+        if data_dir is None:
+            data_dir = Path(__file__).parent / "data"
+        self.data_dir = Path(data_dir)
         self.file = self.data_dir / f"{year}.json"
 
     # ------------------------------------------------------------------

@@ -1,12 +1,10 @@
-# Moravian Gators – týdenní výsledky
+# Týdenní výsledky – pro všechny kluby v config/clubs.json
 # Každé pondělí 4 pokusy: 9:00, 12:00, 15:00, 18:00 Europe/Prague.
 #
-# První úspěšný běh pushne commit `data: update results YYYY-MM-DD`
-# (i empty commit, pokud žádné nové turnaje). Všechny pozdější pokusy
-# téhož dne tento marker vidí a skipnou. Tím se ošetří:
-#   – předčasný běh, kdy PDGA ještě nezindexovala (selhání → další pokus)
-#   – víkend bez turnajů (empty commit zachytí marker, e-mail se pošle 1x)
-#   – GHA cron lag (~30 min) bez křehkého TZ-checku
+# Běží jako matice přes kluby (mgnj, prodiscgolf, …), sekvenčně
+# (max-parallel: 1), aby se nezávodily pushe. Každý klub má vlastní
+# marker `data(<klub>): update results YYYY-MM-DD` – první úspěšný běh
+# dne ho pushne, pozdější pokusy téhož dne pro DANÝ klub skipnou.
 #
 # Schedule pokrývá obě DST varianty každého času:
 #   CEST (letní, UTC+2):  9 / 12 / 15 / 18 Praha = 7 / 10 / 13 / 16 UTC
@@ -16,22 +14,22 @@ name: Weekly Results
 
 on:
   schedule:
-    # 09:00 Praha
-    - cron: "0 7 * * 1"   # CEST
-    - cron: "0 8 * * 1"   # CET
-    # 12:00 Praha
-    - cron: "0 10 * * 1"  # CEST
-    - cron: "0 11 * * 1"  # CET
-    # 15:00 Praha
-    - cron: "0 13 * * 1"  # CEST
-    - cron: "0 14 * * 1"  # CET
-    # 18:00 Praha
-    - cron: "0 16 * * 1"  # CEST
-    - cron: "0 17 * * 1"  # CET
+    - cron: "0 7 * * 1"   # 09:00 CEST
+    - cron: "0 8 * * 1"   # 09:00 CET
+    - cron: "0 10 * * 1"  # 12:00 CEST
+    - cron: "0 11 * * 1"  # 12:00 CET
+    - cron: "0 13 * * 1"  # 15:00 CEST
+    - cron: "0 14 * * 1"  # 15:00 CET
+    - cron: "0 16 * * 1"  # 18:00 CEST
+    - cron: "0 17 * * 1"  # 18:00 CET
   workflow_dispatch:
     inputs:
       date:
         description: "Datum soboty víkendu (YYYY-MM-DD), prázdné = minulý víkend"
+        required: false
+        default: ""
+      club:
+        description: "Jen jeden klub (mgnj / prodiscgolf), prázdné = všechny"
         required: false
         default: ""
 
@@ -42,58 +40,69 @@ jobs:
   send-results:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    strategy:
+      max-parallel: 1        # sekvenčně – ať se nezávodí git push
+      fail-fast: false       # selhání jednoho klubu neshodí ostatní
+      matrix:
+        club: [mgnj, prodiscgolf]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0     # plná historie kvůli spolehlivému guardu
 
-      - name: Check if already sent today
-        id: check-sent
-        # Pokud už dnes (Praha čas) existuje commit `data: update results …`,
-        # další pokus tohoto dne skipne. Manuální spuštění (workflow_dispatch)
-        # běží vždy.
+      - name: Rozhodni, zda tento klub běží
+        id: gate
+        # Přeskočí klub, pokud (a) dispatch cílí na jiný klub, nebo
+        # (b) marker `data(<klub>): update results` už dnes (Praha) existuje.
         run: |
+          CLUB="${{ matrix.club }}"
+          WANT="${{ github.event.inputs.club }}"
+          if [ -n "$WANT" ] && [ "$WANT" != "$CLUB" ]; then
+            echo "Dispatch cílí na '$WANT', přeskakuji '$CLUB'."
+            echo "run=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "Manual run – proceeding."
-            echo "already_sent=false" >> "$GITHUB_OUTPUT"
-            exit 0
+            echo "run=true" >> "$GITHUB_OUTPUT"; exit 0
           fi
-          if git log --oneline --since="$(TZ=Europe/Prague date +%Y-%m-%dT00:00:00)" --grep="data: update results" | grep -q .; then
-            echo "Výsledky už byly dnes (Praha čas) odeslány, přeskakuji."
-            echo "already_sent=true" >> "$GITHUB_OUTPUT"
+          SINCE="$(TZ=Europe/Prague date +%Y-%m-%dT00:00:00)"
+          if git log --oneline --since="$SINCE" --grep="data(${CLUB}): update results" | grep -q .; then
+            echo "Klub '$CLUB' už dnes (Praha) odeslán, přeskakuji."
+            echo "run=false" >> "$GITHUB_OUTPUT"
           else
-            echo "already_sent=false" >> "$GITHUB_OUTPUT"
+            echo "run=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Setup Python
-        if: steps.check-sent.outputs.already_sent == 'false'
+        if: steps.gate.outputs.run == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: "pip"
 
       - name: Install dependencies
-        if: steps.check-sent.outputs.already_sent == 'false'
+        if: steps.gate.outputs.run == 'true'
         run: pip install -r requirements.txt
 
       - name: Run agent
-        if: steps.check-sent.outputs.already_sent == 'false'
+        if: steps.gate.outputs.run == 'true'
         id: run-agent
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
         run: |
           set +e
           if [ -n "${{ github.event.inputs.date }}" ]; then
-            python main.py --date "${{ github.event.inputs.date }}"
+            python main.py --club "${{ matrix.club }}" --date "${{ github.event.inputs.date }}"
           else
-            python main.py
+            python main.py --club "${{ matrix.club }}"
           fi
           EXIT_CODE=$?
           if [ $EXIT_CODE -eq 75 ]; then
-            echo "⏳ Výsledky nejsou finalizovány (PDGA ještě neindexovala?). Další pokus proběhne automaticky."
+            echo "⏳ Výsledky nejsou finalizovány. Další pokus proběhne automaticky."
             echo "incomplete=true" >> "$GITHUB_OUTPUT"
             exit 0
           elif [ $EXIT_CODE -ne 0 ]; then
@@ -102,25 +111,26 @@ jobs:
           echo "incomplete=false" >> "$GITHUB_OUTPUT"
 
       - name: Commit results marker
-        if: steps.check-sent.outputs.already_sent == 'false' && steps.run-agent.outputs.incomplete != 'true'
-        # Vždy vytvoříme commit (i prázdný), aby `already_sent` guard
-        # zachytil i víkendy bez turnajů a další cron toho dne skipnul.
+        if: steps.gate.outputs.run == 'true' && steps.run-agent.outputs.incomplete != 'true'
+        # Vždy commit (i prázdný) – marker pro guard daného klubu.
         run: |
           git config user.name "Gators Bot"
           git config user.email "bot@moraviangators.cz"
+          CLUB="${{ matrix.club }}"
           DATE_TAG="$(TZ=Europe/Prague date +%Y-%m-%d)"
           git add data/
           if git diff --staged --quiet; then
-            git commit --allow-empty -m "data: update results $DATE_TAG (no new data)"
+            git commit --allow-empty -m "data(${CLUB}): update results $DATE_TAG (no new data)"
           else
-            git commit -m "data: update results $DATE_TAG"
+            git commit -m "data(${CLUB}): update results $DATE_TAG"
           fi
+          git pull --rebase origin main
           git push
 
       - name: Upload results artifact
-        if: always() && steps.check-sent.outputs.already_sent == 'false'
+        if: always() && steps.gate.outputs.run == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: results-${{ github.run_id }}
+          name: results-${{ matrix.club }}-${{ github.run_id }}
           path: output/
           retention-days: 30

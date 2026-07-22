@@ -20,6 +20,15 @@ from typing import Optional
 logger = logging.getLogger(__name__)
 
 
+def _hraci(n: int) -> str:
+    """České skloňování: 1 hráč / 2–4 hráči / 5+ hráčů."""
+    if n == 1:
+        return "hráč"
+    if 2 <= n <= 4:
+        return "hráči"
+    return "hráčů"
+
+
 class EmailSender:
     def __init__(self):
         self.smtp_server = os.getenv("SMTP_SERVER", "smtp.gmail.com")
@@ -28,15 +37,25 @@ class EmailSender:
         self.app_password = os.getenv("GMAIL_APP_PASSWORD")
         self.recipient = os.getenv("RECIPIENT_EMAIL", "vybor@moraviangators.cz")
 
-    def send(self, post_text: str, saturday: date, sunday: date,
+    def send(self, post_text: str | None, saturday: date, sunday: date,
              tournament_results: list | None = None,
-             warnings: list | None = None) -> None:
-        """Odešle příspěvek jako e-mail ke schválení.
+             warnings: list | None = None,
+             club: dict | None = None) -> None:
+        """Odešle e-mail s výsledky víkendu.
 
-        warnings: seznam varování o neúplných datech (selhání scraperů).
-        Pokud je neprázdný, e-mail dostane výrazný banner nahoře a značku
-        v předmětu.
+        post_text None → summary-only režim (jen tabulka výsledků, bez
+        návrhu příspěvku, předmět bez "ke schválení").
+        club: konfigurace klubu (name, recipient_email, dashboard_url, …).
+              Určuje příjemce a branding. None → výchozí (mgnj).
+        warnings: varování o neúplných datech (banner + značka v předmětu).
         """
+        if club is None:
+            from clubs import get_club
+            club = get_club()
+        recipient = club.get("recipient_email") or self.recipient
+        short = club.get("short_name") or club.get("name", "")
+        emoji = club.get("emoji", "🥏")
+
         if not self.gmail_address or not self.app_password:
             raise ValueError(
                 "Chybí Gmail přihlašovací údaje. "
@@ -45,20 +64,23 @@ class EmailSender:
 
         sat = saturday.strftime("%-d. %-m.")
         sun = sunday.strftime("%-d. %-m. %Y")
-        subject = f"🥏 Moravian Gators – příspěvek víkendu {sat}–{sun} [ke schválení]"
+        if post_text:
+            subject = f"{emoji} {short} – příspěvek víkendu {sat}–{sun} [ke schválení]"
+        else:
+            subject = f"{emoji} {short} – souhrn výsledků víkendu {sat}–{sun}"
         if warnings:
             subject = f"⚠️ NEÚPLNÁ DATA – {subject}"
 
         msg = MIMEMultipart("alternative")
         msg["Subject"] = subject
         msg["From"] = self.gmail_address
-        msg["To"] = self.recipient
+        msg["To"] = recipient
 
         # Čistý text (banner + tabulka + příspěvek)
-        plain = self._build_plain(post_text, tournament_results, warnings)
+        plain = self._build_plain(post_text, tournament_results, warnings, club)
         msg.attach(MIMEText(plain, "plain", "utf-8"))
         # HTML verze
-        html = self._to_html(post_text, saturday, sunday, tournament_results, warnings)
+        html = self._to_html(post_text, saturday, sunday, tournament_results, warnings, club)
         msg.attach(MIMEText(html, "html", "utf-8"))
 
         try:
@@ -66,8 +88,8 @@ class EmailSender:
                 server.ehlo()
                 server.starttls()
                 server.login(self.gmail_address, self.app_password)
-                server.sendmail(self.gmail_address, self.recipient, msg.as_string())
-            logger.info(f"E-mail odeslán na {self.recipient}")
+                server.sendmail(self.gmail_address, recipient, msg.as_string())
+            logger.info(f"E-mail odeslán na {recipient}")
         except Exception as e:
             logger.error(f"Odeslání e-mailu selhalo: {e}")
             raise
@@ -76,10 +98,12 @@ class EmailSender:
     # Plaintext verze
     # ------------------------------------------------------------------
 
-    def _build_plain(self, post_text: str,
+    def _build_plain(self, post_text: str | None,
                      tournament_results: list | None,
-                     warnings: list | None = None) -> str:
-        """Sestaví plaintext verzi e-mailu (banner + tabulka + příspěvek)."""
+                     warnings: list | None = None,
+                     club: dict | None = None) -> str:
+        """Sestaví plaintext verzi e-mailu (banner + tabulka + [příspěvek])."""
+        short = (club or {}).get("short_name") or "klubu"
         parts = []
         if warnings:
             parts.append("!" * 56)
@@ -90,13 +114,13 @@ class EmailSender:
             parts.append("!" * 56)
             parts.append("")
         if tournament_results:
-            parts.append("PŘEHLED VÝSLEDKŮ ČLENŮ MGNJ")
+            parts.append(f"PŘEHLED VÝSLEDKŮ – {short}")
             parts.append("=" * 40)
             for t in tournament_results:
                 players = t.get("our_players", [])
                 parts.append(
                     f"\n{t['name']} ({t.get('date', '')}) "
-                    f"– {len(players)} Gator{'ů' if len(players) != 1 else ''}"
+                    f"– {len(players)} {_hraci(len(players))}"
                 )
                 parts.append(t.get("url", ""))
                 for p in sorted(players, key=lambda x: (x.get("place") or 999)):
@@ -105,8 +129,9 @@ class EmailSender:
                     place = f"{p['place']}." if p.get("place") else "–"
                     parts.append(f"  {name:<25} {div:<8} {place}")
             parts.append("\n" + "=" * 40)
+        if post_text:
             parts.append("\nNÁVRH PŘÍSPĚVKU NA FB/INSTAGRAM:\n")
-        parts.append(post_text)
+            parts.append(post_text)
         return "\n".join(parts)
 
     # ------------------------------------------------------------------
@@ -131,7 +156,7 @@ class EmailSender:
                 f'padding: 8px 12px; font-weight: bold; font-size: 14px;">'
                 f'{link} ({date_str}) '
                 f'<span style="font-weight: normal; opacity: 0.85;">'
-                f'– {count} Gator{"ů" if count != 1 else ""}</span>'
+                f'– {count} {_hraci(count)}</span>'
                 f'</td>'
                 f'</tr>'
             )
@@ -190,30 +215,58 @@ class EmailSender:
             '</div>'
         )
 
-    def _to_html(self, post_text: str, saturday: date, sunday: date,
+    def _to_html(self, post_text: str | None, saturday: date, sunday: date,
                  tournament_results: list | None = None,
-                 warnings: list | None = None) -> str:
-        """Přeformátuje příspěvek jako HTML e-mail."""
+                 warnings: list | None = None,
+                 club: dict | None = None) -> str:
+        """Přeformátuje výsledky (a volitelně příspěvek) jako HTML e-mail."""
+        club = club or {}
+        short = club.get("short_name") or club.get("name", "")
+        emoji = club.get("emoji", "🥏")
+        dashboard_url = club.get("dashboard_url")
+
         sat = saturday.strftime("%-d. %-m.")
         sun = sunday.strftime("%-d. %-m. %Y")
 
-        # Převod textu příspěvku na HTML – nahradíme prázdné řádky za
-        # odstavcový oddělovač, ostatní \n za <br>
-        paragraphs = post_text.split("\n\n")
-        body_html = "</p>\n<p style=\"margin: 0 0 10px 0;\">".join(
-            p.replace("\n", "<br>") for p in paragraphs
-        )
-        body_html = f'<p style="margin: 0 0 10px 0;">{body_html}</p>'
+        # Blok návrhu příspěvku – jen kluby, které ho generují
+        post_block = ""
+        intro_note = ""
+        if post_text:
+            paragraphs = post_text.split("\n\n")
+            body_html = "</p>\n<p style=\"margin: 0 0 10px 0;\">".join(
+                p.replace("\n", "<br>") for p in paragraphs
+            )
+            body_html = f'<p style="margin: 0 0 10px 0;">{body_html}</p>'
+            post_block = (
+                '<h3 style="margin: 0 0 10px 0; font-size: 16px; color: #1b5e20;">'
+                'Návrh příspěvku na FB/Instagram</h3>\n'
+                f'<div style="line-height: 1.5; font-size: 15px;">\n{body_html}\n</div>'
+            )
+            intro_note = (
+                '<div style="background: #fff8e1; border-left: 4px solid #f9a825; '
+                'padding: 10px 16px; border-radius: 4px; margin-bottom: 16px; '
+                'font-size: 13px; color: #555;">\n'
+                '<strong>Automaticky vygenerováno</strong> – zkontroluj text a '
+                'případně uprav před zveřejněním na FB/Instagramu.\n</div>'
+            )
 
-        # Tabulka výsledků (pokud existují data)
+        # Tabulka výsledků
         table_html = ""
         if tournament_results:
             table_html = (
-                '<h3 style="margin: 0 0 10px 0; font-size: 16px; color: #1b5e20;">'
-                'Přehled výsledků členů MGNJ</h3>\n'
+                f'<h3 style="margin: 0 0 10px 0; font-size: 16px; color: #1b5e20;">'
+                f'Přehled výsledků – {short}</h3>\n'
                 + self._results_table_html(tournament_results)
-                + '\n<h3 style="margin: 0 0 10px 0; font-size: 16px; color: #1b5e20;">'
-                'Návrh příspěvku na FB/Instagram</h3>\n'
+            )
+
+        dashboard_block = ""
+        if dashboard_url:
+            dashboard_block = (
+                '<div style="background: #e8edf7; padding: 12px 16px; border-radius: 6px; '
+                'margin-top: 16px; text-align: center;">\n'
+                f'  <a href="{dashboard_url}" style="color: #192f6b; font-weight: bold; '
+                'font-size: 14px; text-decoration: none;">📊 Online databáze výsledků</a>\n'
+                '</div>'
             )
 
         return f"""<!DOCTYPE html>
@@ -223,32 +276,23 @@ class EmailSender:
 
   <div style="background: #1b5e20; padding: 16px 24px; border-radius: 8px; margin-bottom: 16px;">
     <h2 style="color: #fff; margin: 0; font-size: 18px;">
-      🥏 Moravian Gators – výsledky víkendu {sat}–{sun}
+      {emoji} {short} – výsledky víkendu {sat}–{sun}
     </h2>
   </div>
 
   {self._warning_banner_html(warnings)}
 
-  <div style="background: #fff8e1; border-left: 4px solid #f9a825; padding: 10px 16px;
-              border-radius: 4px; margin-bottom: 16px; font-size: 13px; color: #555;">
-    <strong>Automaticky vygenerováno</strong> – zkontroluj text a případně uprav před zveřejněním na FB/Instagramu.
-  </div>
+  {intro_note}
 
   {table_html}
 
-  <div style="line-height: 1.5; font-size: 15px;">
-{body_html}
-  </div>
+  {post_block}
 
-  <div style="background: #e8edf7; padding: 12px 16px; border-radius: 6px; margin-top: 16px; text-align: center;">
-    <a href="https://krystofnovak-disc.github.io/moravian-gators-agent/" style="color: #192f6b; font-weight: bold; font-size: 14px; text-decoration: none;">
-      📊 Online databáze výsledků
-    </a>
-  </div>
+  {dashboard_block}
 
   <hr style="margin: 24px 0; border: none; border-top: 1px solid #eee;">
   <p style="color: #aaa; font-size: 12px; margin: 0;">
-    Vygeneroval Moravian Gators Agent · každé pondělí v 8:00
+    Vygeneroval {short} Agent · každé pondělí
   </p>
 
 </body>

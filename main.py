@@ -71,11 +71,7 @@ def get_last_weekend(reference: date | None = None) -> tuple[date, date]:
     return last_saturday, last_sunday
 
 
-def load_players() -> list:
-    """Načte databázi hráčů ze souboru config/players.json."""
-    path = Path(__file__).parent / "config" / "players.json"
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
+from clubs import get_club, load_players as load_club_players
 
 
 import re as _re_norm
@@ -247,14 +243,17 @@ def check_results_completeness(results: list) -> list:
     return incomplete
 
 
-def run(saturday: date, sunday: date, dry_run: bool = False) -> None:
+def run(saturday: date, sunday: date, dry_run: bool = False,
+        club: dict | None = None) -> None:
+    if club is None:
+        club = get_club()  # výchozí (mgnj) – zpětná kompatibilita
     logger.info("=" * 60)
-    logger.info("Moravian Gators Agent – start")
+    logger.info(f"{club['name']} Agent – start (klub: {club['id']})")
     logger.info(f"Víkend: {saturday} (So) – {sunday} (Ne)")
     logger.info("=" * 60)
 
     # 1. Načti hráče
-    players = load_players()
+    players = load_club_players(club)
     logger.info(f"Načteno {len(players)} členů klubu")
 
     # Varování o neúplných datech (selhání scraperů) → surfujeme do e-mailu.
@@ -353,32 +352,35 @@ def run(saturday: date, sunday: date, dry_run: bool = False) -> None:
             print(f"  • {t['name']} ({t.get('date','')}) – {len(t['our_players'])} hráčů")
         return
 
-    # 5. Generování příspěvku
-    logger.info("--- Generování příspěvku ---")
-    generator = PostGenerator()
-    post = generator.generate(tournaments_with_us, saturday, sunday)
-    save_post_txt(post, saturday, sunday)
+    # 5. Generování příspěvku (jen kluby, které ho chtějí)
+    post = None
+    if club.get("generate_post", True):
+        logger.info("--- Generování příspěvku ---")
+        generator = PostGenerator()
+        post = generator.generate(tournaments_with_us, saturday, sunday)
+        save_post_txt(post, saturday, sunday)
+        print("\n" + "=" * 60)
+        print("VYGENEROVANÝ PŘÍSPĚVEK:")
+        print("=" * 60)
+        print(post)
+        print("=" * 60 + "\n")
+    else:
+        logger.info("--- Klub bez generování příspěvku – posílám jen souhrn ---")
 
-    print("\n" + "=" * 60)
-    print("VYGENEROVANÝ PŘÍSPĚVEK:")
-    print("=" * 60)
-    print(post)
-    print("=" * 60 + "\n")
-
-    # 6. Odeslání e-mailem
+    # 6. Odeslání e-mailem (post=None → jen souhrn výsledků)
     logger.info("--- Odeslání e-mailem ---")
     try:
         EmailSender().send(post, saturday, sunday,
                            tournament_results=tournaments_with_us,
-                           warnings=warnings)
+                           warnings=warnings, club=club)
     except Exception as e:
         logger.error(f"Odeslání e-mailu selhalo: {e}", exc_info=True)
-        logger.info("Příspěvek byl uložen lokálně v output/")
+        logger.info("Výsledky byly uloženy lokálně v output/")
 
     # 7. Kumulativní ukládání výsledků do data/{year}.json
     logger.info("--- Akumulace výsledků ---")
     try:
-        acc = Accumulator(year=saturday.year)
+        acc = Accumulator(year=saturday.year, data_dir=club["data_path"])
         data = acc.load()
         data = acc.add_tournaments(tournaments_with_us, data)
 
@@ -418,11 +420,18 @@ def parse_args() -> argparse.Namespace:
         metavar="YYYY-MM-DD",
         help="Datum soboty konkrétního víkendu (default: minulý víkend)",
     )
+    parser.add_argument(
+        "--club",
+        default="mgnj",
+        help="Klub z config/clubs.json (default: mgnj)",
+    )
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     args = parse_args()
+
+    club = get_club(args.club)
 
     if args.date:
         try:
@@ -435,7 +444,7 @@ if __name__ == "__main__":
         saturday, sunday = get_last_weekend()
 
     try:
-        run(saturday, sunday, dry_run=args.dry_run)
+        run(saturday, sunday, dry_run=args.dry_run, club=club)
     except IncompleteResultsError as e:
         logger.error(f"NEÚPLNÉ VÝSLEDKY: {e}")
         sys.exit(75)  # EX_TEMPFAIL – spustit znovu později

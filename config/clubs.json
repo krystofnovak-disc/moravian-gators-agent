@@ -1,0 +1,22 @@
+{
+  "mgnj": {
+    "name": "Moravian Gators Nový Jičín",
+    "short_name": "Moravian Gators",
+    "emoji": "🥏",
+    "players_file": "config/players.json",
+    "data_dir": "data",
+    "recipient_email": "vybor@moraviangators.cz",
+    "generate_post": true,
+    "dashboard_url": "https://krystofnovak-disc.github.io/moravian-gators-agent/"
+  },
+  "prodiscgolf": {
+    "name": "proDiscgolf.cz",
+    "short_name": "proDiscgolf.cz",
+    "emoji": "🥏",
+    "players_file": "config/prodiscgolf/players.json",
+    "data_dir": "data/prodiscgolf",
+    "recipient_email": "tom@prodiscgolf.cz",
+    "generate_post": false,
+    "dashboard_url": null
+  }
+}

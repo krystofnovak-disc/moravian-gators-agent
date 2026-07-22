@@ -25,7 +25,6 @@ import urllib.request
 from pathlib import Path
 
 API_USERS = "https://api.ceskydiscgolf.cz/api/user/users/"
-PLAYERS_PATH = Path(__file__).parent / "config" / "players.json"
 KEY_ORDER = ["first_name", "last_name", "cadg", "pdga", "idg_id", "role", "note"]
 
 
@@ -60,11 +59,15 @@ def dump_compact(players: list) -> str:
 
 def main():
     ap = argparse.ArgumentParser(description="Doplní idg_id do players.json")
+    ap.add_argument("--club", default="mgnj", help="Klub z config/clubs.json (default: mgnj)")
     ap.add_argument("--all", action="store_true", help="Přeověřit i hráče, kteří idg_id už mají")
     ap.add_argument("--dry-run", action="store_true", help="Jen vypsat, nezapisovat")
     args = ap.parse_args()
 
-    players = json.loads(PLAYERS_PATH.read_text(encoding="utf-8"))
+    from clubs import get_club
+    players_path = get_club(args.club)["players_path"]
+
+    players = json.loads(players_path.read_text(encoding="utf-8"))
 
     todo = [p for p in players if args.all or not p.get("idg_id")]
     if not todo:
@@ -97,8 +100,8 @@ def main():
     if args.dry_run:
         print("\n--dry-run: nezapisuji.")
         return
-    PLAYERS_PATH.write_text(dump_compact(players), encoding="utf-8")
-    print(f"\nZapsáno do {PLAYERS_PATH}.")
+    players_path.write_text(dump_compact(players), encoding="utf-8")
+    print(f"\nZapsáno do {players_path}.")
 
 
 if __name__ == "__main__":
