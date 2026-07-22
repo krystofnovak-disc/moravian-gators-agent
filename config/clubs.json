@@ -17,6 +17,6 @@
     "data_dir": "data/prodiscgolf",
     "recipient_email": ["tom@prodiscgolf.cz", "krystof@prodiscgolf.cz"],
     "generate_post": false,
-    "dashboard_url": null
+    "dashboard_url": "https://krystofnovak-disc.github.io/moravian-gators-agent/prodiscgolf/"
   }
 }

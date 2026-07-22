@@ -1,4 +1,2511 @@
 {
-  "tournaments": [],
-  "ratings": {}
+  "tournaments": [
+    {
+      "name": "Novojičínská zimní puttovací liga 25/26 - #4",
+      "date": "2026-01-09",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/89db6c79-2b0c-4f26-9ab3-654d343f6bb7",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 1,
+          "score": "-67",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "MPO",
+          "place": 2,
+          "score": "-65",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 2,
+          "score": "-65",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 4,
+          "score": "-63",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 4,
+          "score": "-63",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "MPO",
+          "place": 8,
+          "score": "-54",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Novojičínská zimní puttovací liga 25/26 - #5",
+      "date": "2026-01-23",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/849f0e5d-da9f-4fd1-8963-5055489e15a5",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "MPO",
+          "place": 1,
+          "score": "-71",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 2,
+          "score": "-70",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "MPO",
+          "place": 4,
+          "score": "-64",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Samui Swine Classic XIII - Pros. Presented by Latitude64 - PDGA Asia Tour Event #3",
+      "date": "2026-01-30",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/95859",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 5,
+          "score": "-34",
+          "round_ratings": [
+            1041,
+            991,
+            951
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chiang Mai Open IV - PDGA Asia Tour Event #4",
+      "date": "2026-02-06",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/97037",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 2,
+          "score": "-40",
+          "round_ratings": [
+            1053,
+            1061,
+            1078
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Novojičínská zimní puttovací liga 25/26 - #6",
+      "date": "2026-02-06",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/e182d605-89ba-4fbc-9f92-7b3a5066bf4c",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 1,
+          "score": "-78",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "MPO",
+          "place": 2,
+          "score": "-77",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 3,
+          "score": "-74",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "MPO",
+          "place": 6,
+          "score": "-53",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "5 Ročník Mikulofffff open Ostrava Raketa",
+      "date": "2026-02-08",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/6f0295d8-68b7-4247-b165-3900e8ac6334",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 1,
+          "score": "-22",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 2,
+          "score": "-21",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 1,
+          "score": "-1",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "DGPT - Discraft’s Supreme Flight Open Presented by Florida’s Adventure Coast",
+      "date": "2026-02-27",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/96401",
+      "tier": "DGPT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 39,
+          "score": "-5",
+          "round_ratings": [
+            1034,
+            1009,
+            1034
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Discgolf Tour Mladá Boleslav presented by Discgolf-Shop.com",
+      "date": "2026-02-28",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/5bd4a35a-8509-47c1-a691-2ad9d1bd7474",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "Green",
+          "place": 10,
+          "score": "+20",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "NJDGT #1: Bedřich Smetana Memoriál",
+      "date": "2026-03-01",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/94c5ea37-fc8f-474d-ba3a-785422d1e7df",
+      "url_pdga": null,
+      "tier": "NJDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 1,
+          "score": "-29",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 6,
+          "score": "-24",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 2,
+          "score": "-18",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 3,
+          "score": "-17",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "PCT: STP Open 2026",
+      "date": "2026-03-06",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/101196",
+      "tier": "PCT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Tomáš Mozola",
+          "cadg": 2805,
+          "pdga": 103693,
+          "division": "MPO",
+          "place": 1,
+          "score": "-14",
+          "round_ratings": [
+            998,
+            1035,
+            1020
+          ]
+        },
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 2,
+          "score": "-11",
+          "round_ratings": [
+            1050,
+            983,
+            998
+          ]
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 5,
+          "score": "-9",
+          "round_ratings": [
+            983,
+            1043,
+            990
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 1,
+          "score": "-20",
+          "round_ratings": [
+            997,
+            926,
+            979
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 2,
+          "score": "-5",
+          "round_ratings": [
+            926,
+            926,
+            917
+          ]
+        },
+        {
+          "player_name": "Nikola Moravcová",
+          "cadg": 3745,
+          "pdga": 125069,
+          "division": "FPO",
+          "place": 3,
+          "score": "-2",
+          "round_ratings": [
+            926,
+            944,
+            873
+          ]
+        }
+      ]
+    },
+    {
+      "name": "33rd Annual City of Mobile Championships Presented by Saraland Pharmacy",
+      "date": "2026-03-06",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/98619",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 14,
+          "score": "-19",
+          "round_ratings": [
+            1023,
+            1005,
+            1038
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DGPT - MVP Big Easy Open presented by Flight Factory",
+      "date": "2026-03-13",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/96402",
+      "tier": "DGPT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 15,
+          "score": "+2",
+          "round_ratings": [
+            1024,
+            1033,
+            1025
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Discgolf Tour Choltice presented by Discgolf-Shop.com",
+      "date": "2026-03-14",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/c9cf7c46-795a-4f97-b7d3-824b4286548b",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "Green",
+          "place": 2,
+          "score": "+6",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "HDGT Kopřivnice powered by Discmania",
+      "date": "2026-03-14",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/ef3845c0-5333-458b-8f57-c4ca158715c3",
+      "url_pdga": null,
+      "tier": "HDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "Gold",
+          "place": 1,
+          "score": "-15",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "Gold",
+          "place": 13,
+          "score": "-3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "Red",
+          "place": 4,
+          "score": "-1",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Pražská Doubles Liga #1 - Ladronka",
+      "date": "2026-03-15",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/1718a53e-bdae-4322-8cd7-99d95850200f",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Michael Studnička",
+          "cadg": 3877,
+          "pdga": 162117,
+          "division": "Gold",
+          "place": 3,
+          "score": "-31",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "2026 Pot of Gold sponsored by MVP Disc Sports",
+      "date": "2026-03-20",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/98632",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 3,
+          "score": "-20",
+          "round_ratings": [
+            1060,
+            1023,
+            1030
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Novojičínská zimní puttovací liga 25/26 - #8",
+      "date": "2026-03-20",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/e6dae6a8-1fab-4995-b1c7-c657bb216e37",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "MPO",
+          "place": 1,
+          "score": "-65",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 3,
+          "score": "-60",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "MPO",
+          "place": 4,
+          "score": "-51",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Stork Manor Open – Voderady",
+      "date": "2026-03-21",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/102247",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Tomáš Mozola",
+          "cadg": 2805,
+          "pdga": 103693,
+          "division": "MPO",
+          "place": 1,
+          "score": "-29",
+          "round_ratings": [
+            1006,
+            992
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Moravský Krumlov powered by Discmania",
+      "date": "2026-03-22",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/100988",
+      "tier": "HDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Daniel Konečný",
+          "cadg": 1085,
+          "pdga": 77759,
+          "division": "RPA",
+          "place": 1,
+          "score": "-24",
+          "round_ratings": [
+            1029,
+            1007
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PDGL 2026 #1 - Asuán",
+      "date": "2026-03-22",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/102487",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Michael Studnička",
+          "cadg": 3877,
+          "pdga": 162117,
+          "division": "RPA",
+          "place": 3,
+          "score": "-20",
+          "round_ratings": [
+            978,
+            1002
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ODPK 1. Seč",
+      "date": "2026-03-22",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/a931d49d-8a38-457b-9811-855f8e912662",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "MJ15",
+          "place": 1,
+          "score": "+7",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Jarní turnaj dvojic 2026",
+      "date": "2026-03-22",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/b68cf6b8-3bb2-4282-8459-34bcc2d02510",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MA1",
+          "place": 1,
+          "score": "-22",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MA1",
+          "place": 12,
+          "score": "-5",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "MA2",
+          "place": 4,
+          "score": "+10",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "DGPT - Queen City Classic presented by Another Round",
+      "date": "2026-03-27",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/96403",
+      "tier": "DGPT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 47,
+          "score": "-1",
+          "round_ratings": [
+            1022,
+            1023,
+            1015
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CDGT: FALCON open 2026",
+      "date": "2026-04-03",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/100362",
+      "tier": "CDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 1,
+          "score": "-28",
+          "round_ratings": [
+            1037,
+            1037,
+            1020
+          ]
+        },
+        {
+          "player_name": "Petr Striegler",
+          "cadg": 3762,
+          "pdga": 89634,
+          "division": "MPO",
+          "place": 3,
+          "score": "-20",
+          "round_ratings": [
+            1020,
+            996,
+            1012
+          ]
+        },
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 3,
+          "score": "-20",
+          "round_ratings": [
+            1029,
+            988,
+            1012
+          ]
+        },
+        {
+          "player_name": "Tomáš Mozola",
+          "cadg": 2805,
+          "pdga": 103693,
+          "division": "MPO",
+          "place": 5,
+          "score": "-17",
+          "round_ratings": [
+            939,
+            1037,
+            1029
+          ]
+        },
+        {
+          "player_name": "Daniel Konečný",
+          "cadg": 1085,
+          "pdga": 77759,
+          "division": "MPO",
+          "place": 5,
+          "score": "-17",
+          "round_ratings": [
+            1004,
+            1020,
+            980
+          ]
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 15,
+          "score": "-6",
+          "round_ratings": [
+            1012,
+            963,
+            939
+          ]
+        },
+        {
+          "player_name": "Martin Opršal",
+          "cadg": 2524,
+          "pdga": 103677,
+          "division": "MPO",
+          "place": 20,
+          "score": "E",
+          "round_ratings": [
+            955,
+            1004,
+            906
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 1,
+          "score": "-10",
+          "round_ratings": [
+            933,
+            970,
+            933
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 3,
+          "score": "+8",
+          "round_ratings": [
+            879,
+            906,
+            888
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Blue Ridge Championship Generated By Grit Discs",
+      "date": "2026-04-03",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/99553",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 8,
+          "score": "-23",
+          "round_ratings": [
+            1047,
+            1043,
+            1044
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Budweis Liga #2",
+      "date": "2026-04-03",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/252208ce-360c-40b6-ab3d-b144b06cea2e",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Eva Bínová",
+          "cadg": 1104,
+          "pdga": 69385,
+          "division": "FPO",
+          "place": 1,
+          "score": "-1",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "MMMASO! JDL 2026 - Konopišťský medvěd",
+      "date": "2026-04-04",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/102669",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Michael Studnička",
+          "cadg": 3877,
+          "pdga": 162117,
+          "division": "MPO",
+          "place": 8,
+          "score": "+1",
+          "round_ratings": [
+            929,
+            938
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Velikonoční Turnaj Juniorů 2026",
+      "date": "2026-04-04",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/16a7b8c4-d67d-4c1f-86f8-ae89ab97055c",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "MJ10",
+          "place": 1,
+          "score": "+12",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "2026 PDGA Champions Cup Presented by Vessi",
+      "date": "2026-04-09",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/97336",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 61,
+          "score": "+10",
+          "round_ratings": [
+            1011,
+            1015,
+            1001
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jarní Šumperský KOTEL",
+      "date": "2026-04-11",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/8db1ee28-d4c8-4675-9f89-6a8dcbc5ed76",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "MJ18",
+          "place": 4,
+          "score": "+18",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "PCT: Świerklaniec Open 2026 powered by Ledgestone",
+      "date": "2026-04-17",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/102777",
+      "tier": "PCT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 1,
+          "score": "-20",
+          "round_ratings": [
+            991,
+            1043,
+            1059
+          ]
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 3,
+          "score": "-10",
+          "round_ratings": [
+            998,
+            979,
+            1035
+          ]
+        },
+        {
+          "player_name": "Tomáš Mozola",
+          "cadg": 2805,
+          "pdga": 103693,
+          "division": "MPO",
+          "place": 4,
+          "score": "-9",
+          "round_ratings": [
+            991,
+            979,
+            1035
+          ]
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 5,
+          "score": "-7",
+          "round_ratings": [
+            1013,
+            979,
+            995
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 1,
+          "score": "-18",
+          "round_ratings": [
+            999,
+            965,
+            991
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 2,
+          "score": "+3",
+          "round_ratings": [
+            947,
+            921,
+            903
+          ]
+        },
+        {
+          "player_name": "Nikola Moravcová",
+          "cadg": 3745,
+          "pdga": 125069,
+          "division": "FPO",
+          "place": 3,
+          "score": "+7",
+          "round_ratings": [
+            947,
+            877,
+            912
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DGPT - Play it Again Sports Jonesboro Open presented by Westside Discs",
+      "date": "2026-04-17",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/96404",
+      "tier": "DGPT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 34,
+          "score": "-13",
+          "round_ratings": [
+            1074,
+            1017,
+            997
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stromovka Open 2026",
+      "date": "2026-04-18",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/103461",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Michael Studnička",
+          "cadg": 3877,
+          "pdga": 162117,
+          "division": "MA1",
+          "place": 3,
+          "score": "-17",
+          "round_ratings": [
+            939,
+            957,
+            993
+          ]
+        },
+        {
+          "player_name": "Eva Bínová",
+          "cadg": 1104,
+          "pdga": 69385,
+          "division": "FA1",
+          "place": 1,
+          "score": "+3",
+          "round_ratings": [
+            879,
+            859,
+            869
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Heřmanův Městec powered by Discmania",
+      "date": "2026-04-18",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/0143d7fe-712f-4739-8de2-59a0c0c0fa63",
+      "url_pdga": null,
+      "tier": "HDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "Purple",
+          "place": 1,
+          "score": "-7",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "HOSTAČOV 2026 | MOVit Spring Tour",
+      "date": "2026-04-25",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/103821",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 1,
+          "score": "-37",
+          "round_ratings": [
+            1033,
+            1033,
+            1013
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HOSTAČOV | Movit Spring Tour 2026",
+      "date": "2026-04-25",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/104ddada-5961-41de-90b8-bd70c2948c3a",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 1,
+          "score": "-37",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Deset let Rekovic",
+      "date": "2026-04-25",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/4528173d-2466-4eb8-a47d-b20477f741a3",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 1,
+          "score": "-15",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "ODPK 2. Heřmanův Městec",
+      "date": "2026-04-25",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/f34cac19-a603-4f19-bbc8-cc8b35681839",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "MJ15",
+          "place": 1,
+          "score": "-2",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Budweis Liga #3",
+      "date": "2026-05-01",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/8f3ba507-e82e-4ab1-9546-4275949e9c6b",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Eva Bínová",
+          "cadg": 1104,
+          "pdga": 69385,
+          "division": "FPO",
+          "place": 1,
+          "score": "+3",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "MMMASO! JDL 2026 - Jindřichův Hradec",
+      "date": "2026-05-02",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/103906",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Eva Bínová",
+          "cadg": 1104,
+          "pdga": 69385,
+          "division": "FPO",
+          "place": 2,
+          "score": "+3",
+          "round_ratings": [
+            911,
+            838
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2026 BTS Urban Mayday",
+      "date": "2026-05-02",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/102659",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Tomáš Mozola",
+          "cadg": 2805,
+          "pdga": 103693,
+          "division": "MPO",
+          "place": 1,
+          "score": "-15",
+          "round_ratings": [
+            1008,
+            972,
+            990
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Krnov presented by Discmania",
+      "date": "2026-05-02",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/a6cbc171-5d62-4b61-87cc-15ba9f9df663",
+      "url_pdga": null,
+      "tier": "HDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "Gold",
+          "place": 1,
+          "score": "-24",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "Red",
+          "place": 9,
+          "score": "-2",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "DGPT+ Barbasol Open at Austin presented by Hampton Inn/Home2 Suites Austin East",
+      "date": "2026-05-07",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/96408",
+      "tier": "DGPT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 17,
+          "score": "-27",
+          "round_ratings": [
+            1041,
+            1041,
+            1025,
+            1047
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Poličná powered by Discmania",
+      "date": "2026-05-09",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/5314681e-f9c8-410b-a458-60b3699f17e4",
+      "url_pdga": null,
+      "tier": "HDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "Gold",
+          "place": 1,
+          "score": "-21",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "Gold",
+          "place": 2,
+          "score": "-19",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "Gold",
+          "place": 4,
+          "score": "-13",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "Red",
+          "place": 1,
+          "score": "-10",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "ODPK 3. Rokytno",
+      "date": "2026-05-09",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/009b9447-35cb-4861-a7db-a04ff0af1844",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "MJ15",
+          "place": 1,
+          "score": "+1",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "ADGL 11. Kobylí Open",
+      "date": "2026-05-16",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/101481",
+      "tier": "ADGL",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Daniel Konečný",
+          "cadg": 1085,
+          "pdga": 77759,
+          "division": "MPO",
+          "place": 2,
+          "score": "-23",
+          "round_ratings": [
+            998,
+            968,
+            1019
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pražská Doubles Liga #2 - Běchovice",
+      "date": "2026-05-16",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/68b8debd-9a1a-407b-a08b-96b5fa1306dc",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Michael Studnička",
+          "cadg": 3877,
+          "pdga": 162117,
+          "division": "Gold",
+          "place": 5,
+          "score": "-7",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "DGPT+ / WGE - OTB Open by MVP Disc Sports",
+      "date": "2026-05-21",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/96409",
+      "tier": "DGPT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 20,
+          "score": "-16",
+          "round_ratings": [
+            1044,
+            1025,
+            1013,
+            1049
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LADIES FIRST vol. 4 - WGE",
+      "date": "2026-05-22",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/104127",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Nikola Moravcová",
+          "cadg": 3745,
+          "pdga": 125069,
+          "division": "FPO",
+          "place": 1,
+          "score": "-15",
+          "round_ratings": [
+            958,
+            886,
+            886
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ODPK 4. Hrochův Týnec",
+      "date": "2026-05-23",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/2d284990-51ff-4147-acb9-33d9e1859f2f",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "MJ15",
+          "place": 1,
+          "score": "E",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "PCT: Budišov Open 2026",
+      "date": "2026-05-29",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/104647",
+      "tier": "PCT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 1,
+          "score": "-22",
+          "round_ratings": [
+            1023,
+            1023,
+            1032
+          ]
+        },
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 2,
+          "score": "-19",
+          "round_ratings": [
+            1023,
+            1023,
+            1006
+          ]
+        },
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 3,
+          "score": "-17",
+          "round_ratings": [
+            1015,
+            1015,
+            1006
+          ]
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 18,
+          "score": "E",
+          "round_ratings": [
+            979,
+            944,
+            962
+          ]
+        },
+        {
+          "player_name": "Tomáš Mozola",
+          "cadg": 2805,
+          "pdga": 103693,
+          "division": "MPO",
+          "place": 23,
+          "score": "+3",
+          "round_ratings": [
+            917,
+            988,
+            953
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 1,
+          "score": "-22",
+          "round_ratings": [
+            1016,
+            976,
+            946
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 5,
+          "score": "+18",
+          "round_ratings": [
+            847,
+            767,
+            926
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DGPT JomezPro - Discraft Cascade Challenge",
+      "date": "2026-05-29",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/98193",
+      "tier": "DGPT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 23,
+          "score": "-8",
+          "round_ratings": [
+            1015,
+            1028,
+            1035
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GLOW PCT: Budišov Open 2026",
+      "date": "2026-05-29",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/71907999-8bbe-49a2-b797-75c9d95fa959",
+      "url_pdga": null,
+      "tier": "PCT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 2,
+          "score": "-4",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "DGPT+ Northwest Championship Presented by Latitude 64°",
+      "date": "2026-06-04",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/96410",
+      "tier": "DGPT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 85,
+          "score": "+6",
+          "round_ratings": [
+            993,
+            1038,
+            968
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Grabštejn Open 2026",
+      "date": "2026-06-05",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/102640",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Tomáš Mozola",
+          "cadg": 2805,
+          "pdga": 103693,
+          "division": "MPO",
+          "place": 2,
+          "score": "-18",
+          "round_ratings": [
+            997,
+            984,
+            1029
+          ]
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 8,
+          "score": "-15",
+          "round_ratings": [
+            1003,
+            1003,
+            984
+          ]
+        },
+        {
+          "player_name": "Daniel Konečný",
+          "cadg": 1085,
+          "pdga": 77759,
+          "division": "MPO",
+          "place": 9,
+          "score": "-14",
+          "round_ratings": [
+            1010,
+            1016,
+            958
+          ]
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 10,
+          "score": "-11",
+          "round_ratings": [
+            978,
+            984,
+            1003
+          ]
+        },
+        {
+          "player_name": "Michael Studnička",
+          "cadg": 3877,
+          "pdga": 162117,
+          "division": "MPO",
+          "place": 23,
+          "score": "+5",
+          "round_ratings": [
+            952,
+            946,
+            965
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 1,
+          "score": "-31",
+          "round_ratings": [
+            984,
+            968,
+            984
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 5,
+          "score": "+6",
+          "round_ratings": [
+            874,
+            921,
+            850
+          ]
+        },
+        {
+          "player_name": "Nikola Moravcová",
+          "cadg": 3745,
+          "pdga": 125069,
+          "division": "FPO",
+          "place": 7,
+          "score": "",
+          "round_ratings": [
+            999
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Budweis Liga #4",
+      "date": "2026-06-05",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/cf06f522-30b1-49e8-871d-be5a232c304b",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Eva Bínová",
+          "cadg": 1104,
+          "pdga": 69385,
+          "division": "FPO",
+          "place": 1,
+          "score": "+1",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "18 ⛳ jamek v Zamilci – otevření a turnaj",
+      "date": "2026-06-06",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/202ebea9-fda1-47a7-8de6-d423da8aea1d",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Martin Opršal",
+          "cadg": 2524,
+          "pdga": 103677,
+          "division": "Gold",
+          "place": 1,
+          "score": "-8",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "DGPT EuroTour - Pärnu Open presented by Latitude 64",
+      "date": "2026-06-12",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/101074",
+      "tier": "DGPT EuroTour",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 17,
+          "score": "-24",
+          "round_ratings": [
+            1005,
+            1037,
+            1021
+          ]
+        },
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 21,
+          "score": "-22",
+          "round_ratings": [
+            1021,
+            1021,
+            1005
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2026 Moravský Krumlov Open",
+      "date": "2026-06-13",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/104361",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Daniel Konečný",
+          "cadg": 1085,
+          "pdga": 77759,
+          "division": "MPO",
+          "place": 2,
+          "score": "-23",
+          "round_ratings": [
+            981,
+            1058,
+            1010
+          ]
+        },
+        {
+          "player_name": "Martin Opršal",
+          "cadg": 2524,
+          "pdga": 103677,
+          "division": "MPO",
+          "place": 5,
+          "score": "+2",
+          "round_ratings": [
+            952,
+            933,
+            923
+          ]
+        },
+        {
+          "player_name": "Michael Studnička",
+          "cadg": 3877,
+          "pdga": 162117,
+          "division": "MA1",
+          "place": 2,
+          "score": "-8",
+          "round_ratings": [
+            962,
+            971,
+            971
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2026 PDGA European Open",
+      "date": "2026-06-18",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/97339",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 24,
+          "score": "-6",
+          "round_ratings": [
+            1028,
+            1022,
+            1034,
+            1041
+          ]
+        },
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 79,
+          "score": "+11",
+          "round_ratings": [
+            1035,
+            958,
+            1002
+          ]
+        },
+        {
+          "player_name": "Tomáš Mozola",
+          "cadg": 2805,
+          "pdga": 103693,
+          "division": "MPO",
+          "place": 101,
+          "score": "+27",
+          "round_ratings": [
+            926,
+            983,
+            983
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 3,
+          "score": "-14",
+          "round_ratings": [
+            1007,
+            992,
+            996,
+            981
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MČR juniorů 2026",
+      "date": "2026-06-20",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/105306",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FJ18",
+          "place": 3,
+          "score": "+4",
+          "round_ratings": [
+            859,
+            849,
+            829
+          ]
+        },
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "MJ10",
+          "place": 1,
+          "score": "-18",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MJ18",
+          "place": 19,
+          "score": "E",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "DGPT - Swedish Open presented by Kastaplast",
+      "date": "2026-06-26",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/96411",
+      "tier": "DGPT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 10,
+          "score": "-19",
+          "round_ratings": [
+            1066,
+            1020,
+            1050
+          ]
+        },
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 49,
+          "score": "-7",
+          "round_ratings": [
+            1020,
+            1035,
+            989
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 4,
+          "score": "-10",
+          "round_ratings": [
+            1012,
+            968,
+            959
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Vacenovice powered by Discmania",
+      "date": "2026-06-27",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/105564",
+      "tier": "HDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Tomáš Mozola",
+          "cadg": 2805,
+          "pdga": 103693,
+          "division": "RPA",
+          "place": 3,
+          "score": "-16",
+          "round_ratings": [
+            943,
+            964
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Choltice presented by Discmania",
+      "date": "2026-06-28",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/105682",
+      "tier": "HDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "RPA",
+          "place": 2,
+          "score": "+2",
+          "round_ratings": [
+            916,
+            882
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NJDGT #3: Skalky Open",
+      "date": "2026-06-28",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/61dbed8e-03bb-4cff-bb4d-f2ff336d158a",
+      "url_pdga": null,
+      "tier": "NJDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "Jestřáb",
+          "place": 7,
+          "score": "+10",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "Orel",
+          "place": 1,
+          "score": "-17",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "DGPT - Ale Open presented by Discraft",
+      "date": "2026-07-03",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/96412",
+      "tier": "DGPT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 17,
+          "score": "-18",
+          "round_ratings": [
+            1052,
+            1037,
+            1022
+          ]
+        },
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 88,
+          "score": "+1",
+          "round_ratings": [
+            1008,
+            985,
+            978
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Budweis Liga #5",
+      "date": "2026-07-03",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/91ff2a2b-7005-4630-a6e2-c3e2f391c575",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Eva Bínová",
+          "cadg": 1104,
+          "pdga": 69385,
+          "division": "FPO",
+          "place": 1,
+          "score": "+8",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "DGPT - Heinola Open presented by MVP",
+      "date": "2026-07-10",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/96413",
+      "tier": "DGPT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 15,
+          "score": "-16",
+          "round_ratings": [
+            1068,
+            1006,
+            1021
+          ]
+        },
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 18,
+          "score": "-15",
+          "round_ratings": [
+            1052,
+            998,
+            1037
+          ]
+        },
+        {
+          "player_name": "Tomáš Mozola",
+          "cadg": 2805,
+          "pdga": 103693,
+          "division": "MPO",
+          "place": 87,
+          "score": "+6",
+          "round_ratings": [
+            1014,
+            968,
+            945
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DGPT EuroTour - Heinola Open 2026 presented by MVP",
+      "date": "2026-07-10",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/106208",
+      "tier": "DGPT EuroTour",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 4,
+          "score": "-3",
+          "round_ratings": [
+            978,
+            962,
+            922
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 18,
+          "score": "+17",
+          "round_ratings": [
+            906,
+            914,
+            882
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rekovická Letní Discgolfová Liga 2026 #2",
+      "date": "2026-07-10",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/5c7d1e76-a941-4da1-b38e-2662c14449ae",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Eliška Bártková",
+          "cadg": 1737,
+          "pdga": 86224,
+          "division": "FA1",
+          "place": 1,
+          "score": "-1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MA1",
+          "place": 1,
+          "score": "-11",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Majstrovstvá Slovenskej republiky v discgolfe 2026 – Smolenice",
+      "date": "2026-07-11",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/105288",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 4,
+          "score": "-5",
+          "round_ratings": [
+            973,
+            1001,
+            958
+          ]
+        },
+        {
+          "player_name": "Daniel Konečný",
+          "cadg": 1085,
+          "pdga": 77759,
+          "division": "MPO",
+          "place": 6,
+          "score": "-1",
+          "round_ratings": [
+            966,
+            973,
+            966
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Discgolf Tour Poděbrady presented by Discgolf-Shop.com - Přeházený layout :-D",
+      "date": "2026-07-12",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/addf3b27-77dc-41fc-bc68-fd9fbef3ac27",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "Green",
+          "place": 2,
+          "score": "+2",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "SFL Powergrip Pro Tour - #3 Turku",
+      "date": "2026-07-17",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/101035",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 23,
+          "score": "-6",
+          "round_ratings": [
+            1044,
+            1000,
+            977
+          ]
+        },
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 30,
+          "score": "-4",
+          "round_ratings": [
+            987,
+            1021,
+            999
+          ]
+        }
+      ]
+    }
+  ],
+  "ratings": {
+    "2026-07": {
+      "319": {
+        "name": "Kryštof Novák",
+        "pdga_rating": 981,
+        "idg_rating": null
+      },
+      "1085": {
+        "name": "Daniel Konečný",
+        "pdga_rating": 993,
+        "idg_rating": null
+      },
+      "1104": {
+        "name": "Eva Bínová",
+        "pdga_rating": 867,
+        "idg_rating": null
+      },
+      "2805": {
+        "name": "Tomáš Mozola",
+        "pdga_rating": 993,
+        "idg_rating": null
+      },
+      "5639": {
+        "name": "Samuel Kšiňan",
+        "pdga_rating": 965,
+        "idg_rating": null
+      },
+      "2524": {
+        "name": "Martin Opršal",
+        "pdga_rating": 951,
+        "idg_rating": null
+      },
+      "8471": {
+        "name": "Nicolas Turina",
+        "pdga_rating": 900,
+        "idg_rating": null
+      },
+      "4363": {
+        "name": "Karolína Jurčíková",
+        "pdga_rating": 892,
+        "idg_rating": null
+      },
+      "4362": {
+        "name": "Kristýna Jurčíková",
+        "pdga_rating": 970,
+        "idg_rating": null
+      },
+      "3689": {
+        "name": "Jakub Knápek",
+        "pdga_rating": 1023,
+        "idg_rating": null
+      },
+      "692": {
+        "name": "Bohdan Bílek",
+        "pdga_rating": 1012,
+        "idg_rating": null
+      },
+      "3762": {
+        "name": "Petr Striegler",
+        "pdga_rating": 995,
+        "idg_rating": null
+      },
+      "3745": {
+        "name": "Nikola Moravcová",
+        "pdga_rating": 918,
+        "idg_rating": null
+      },
+      "3877": {
+        "name": "Michael Studnička",
+        "pdga_rating": 962,
+        "idg_rating": null
+      },
+      "1737": {
+        "name": "Eliška Bártková",
+        "pdga_rating": 865,
+        "idg_rating": null
+      },
+      "2286": {
+        "name": "Jakub Semerád",
+        "pdga_rating": 1028,
+        "idg_rating": null
+      },
+      "7810": {
+        "name": "Ondřej Mazoch",
+        "pdga_rating": 1000,
+        "idg_rating": null
+      }
+    }
+  }
 }
