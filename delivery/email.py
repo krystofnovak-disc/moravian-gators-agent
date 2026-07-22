@@ -52,7 +52,9 @@ class EmailSender:
         if club is None:
             from clubs import get_club
             club = get_club()
-        recipient = club.get("recipient_email") or self.recipient
+        # recipient_email může být string nebo seznam adres.
+        raw_recipient = club.get("recipient_email") or self.recipient
+        recipients = [raw_recipient] if isinstance(raw_recipient, str) else list(raw_recipient)
         short = club.get("short_name") or club.get("name", "")
         emoji = club.get("emoji", "🥏")
 
@@ -74,7 +76,7 @@ class EmailSender:
         msg = MIMEMultipart("alternative")
         msg["Subject"] = subject
         msg["From"] = self.gmail_address
-        msg["To"] = recipient
+        msg["To"] = ", ".join(recipients)
 
         # Čistý text (banner + tabulka + příspěvek)
         plain = self._build_plain(post_text, tournament_results, warnings, club)
@@ -88,8 +90,8 @@ class EmailSender:
                 server.ehlo()
                 server.starttls()
                 server.login(self.gmail_address, self.app_password)
-                server.sendmail(self.gmail_address, recipient, msg.as_string())
-            logger.info(f"E-mail odeslán na {recipient}")
+                server.sendmail(self.gmail_address, recipients, msg.as_string())
+            logger.info(f"E-mail odeslán na {', '.join(recipients)}")
         except Exception as e:
             logger.error(f"Odeslání e-mailu selhalo: {e}")
             raise

@@ -15,7 +15,7 @@
     "emoji": "🥏",
     "players_file": "config/prodiscgolf/players.json",
     "data_dir": "data/prodiscgolf",
-    "recipient_email": "tom@prodiscgolf.cz",
+    "recipient_email": ["tom@prodiscgolf.cz", "krystof@prodiscgolf.cz"],
     "generate_post": false,
     "dashboard_url": null
   }
