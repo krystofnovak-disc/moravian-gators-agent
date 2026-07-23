@@ -3918,6 +3918,34 @@
       ]
     },
     {
+      "name": "18 ⛳ jamek v Zamilci – otevření a turnaj",
+      "date": "2026-06-06",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/202ebea9-fda1-47a7-8de6-d423da8aea1d",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Tomáš Valík",
+          "cadg": 3621,
+          "pdga": 113212,
+          "division": "Red",
+          "place": 19,
+          "score": "+18",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "Green",
+          "place": 13,
+          "score": "+19",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
       "name": "Discgolf Tour Kamýk presented by Discgolf-Shop.com",
       "date": "2026-06-07",
       "url_idg": "https://idiscgolf.cz/turnaje/2651",
