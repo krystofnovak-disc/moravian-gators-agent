@@ -5293,6 +5293,345 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "Rekovická Letní Discgolfová Liga 2026 #4",
+      "date": "2026-07-24",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/872efa68-727b-442f-953f-3c5961230644",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Eliška Bártková",
+          "cadg": 1737,
+          "pdga": 86224,
+          "division": "FA1",
+          "place": 1,
+          "score": "-4",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "FA1",
+          "place": 5,
+          "score": "+12",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MA1",
+          "place": 1,
+          "score": "-13",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
+          "division": "MA1",
+          "place": 3,
+          "score": "-11",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Pavel Žeravík",
+          "cadg": 6268,
+          "pdga": null,
+          "division": "MA1",
+          "place": 9,
+          "score": "-4",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "MA1",
+          "place": 16,
+          "score": "+4",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jindřich Závodný",
+          "cadg": 5041,
+          "pdga": null,
+          "division": "MA40",
+          "place": 5,
+          "score": "E",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Ryšánek",
+          "cadg": 3333,
+          "pdga": 117293,
+          "division": "MA40",
+          "place": 9,
+          "score": "+3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Michal Sviták",
+          "cadg": 1808,
+          "pdga": 122508,
+          "division": "MA40",
+          "place": 13,
+          "score": "+13",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Nad Budišovem Open - junior",
+      "date": "2026-07-25",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/c176a8bc-e2c3-48cb-a933-4c7bb61731b2",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Ondřej Grepl",
+          "cadg": 8016,
+          "pdga": null,
+          "division": "MJ08",
+          "place": 1,
+          "score": "+4",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "HDGT Budišov nad Budišovkou powered by Discmania",
+      "date": "2026-07-26",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/106503",
+      "tier": "HDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Lukáš Novobilský",
+          "cadg": 4358,
+          "pdga": 285107,
+          "division": "RPA",
+          "place": 1,
+          "score": "-16",
+          "round_ratings": [
+            976,
+            1032
+          ]
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "RPA",
+          "place": 1,
+          "score": "-16",
+          "round_ratings": [
+            1000,
+            1007
+          ]
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "RPA",
+          "place": 3,
+          "score": "-15",
+          "round_ratings": [
+            976,
+            1024
+          ]
+        },
+        {
+          "player_name": "Jakub Dostál",
+          "cadg": 3575,
+          "pdga": 78064,
+          "division": "RPA",
+          "place": 3,
+          "score": "-15",
+          "round_ratings": [
+            992,
+            1007
+          ]
+        },
+        {
+          "player_name": "Lukáš Vyvial",
+          "cadg": 6195,
+          "pdga": 283489,
+          "division": "RPA",
+          "place": 19,
+          "score": "+3",
+          "round_ratings": [
+            903,
+            950
+          ]
+        },
+        {
+          "player_name": "Radek Dostál",
+          "cadg": 3672,
+          "pdga": 78063,
+          "division": "RPA",
+          "place": 20,
+          "score": "+4",
+          "round_ratings": [
+            911,
+            933
+          ]
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "RPA",
+          "place": 42,
+          "score": "",
+          "round_ratings": [
+            1016,
+            999
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "RPA",
+          "place": 10,
+          "score": "E",
+          "round_ratings": [
+            920,
+            853
+          ]
+        },
+        {
+          "player_name": "Martin Hollas",
+          "cadg": 8299,
+          "pdga": 310651,
+          "division": "RPA",
+          "place": 14,
+          "score": "+3",
+          "round_ratings": [
+            874,
+            871
+          ]
+        },
+        {
+          "player_name": "Radek Jurčík",
+          "cadg": 3727,
+          "pdga": 137576,
+          "division": "RPA",
+          "place": 15,
+          "score": "+4",
+          "round_ratings": [
+            874,
+            862
+          ]
+        },
+        {
+          "player_name": "Eliška Bártková",
+          "cadg": 1737,
+          "pdga": 86224,
+          "division": "RPA",
+          "place": 18,
+          "score": "+11",
+          "round_ratings": [
+            856,
+            817
+          ]
+        },
+        {
+          "player_name": "Tomáš Valík",
+          "cadg": 3621,
+          "pdga": 113212,
+          "division": "RPA",
+          "place": 24,
+          "score": "+34",
+          "round_ratings": [
+            672,
+            790
+          ]
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "RPA",
+          "place": 11,
+          "score": "+14",
+          "round_ratings": [
+            819,
+            826
+          ]
+        },
+        {
+          "player_name": "Petr Ryšánek",
+          "cadg": 3333,
+          "pdga": 117293,
+          "division": "RPA",
+          "place": 9,
+          "score": "+27",
+          "round_ratings": [
+            727,
+            799
+          ]
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "RPA",
+          "place": 12,
+          "score": "+30",
+          "round_ratings": [
+            764,
+            736
+          ]
+        },
+        {
+          "player_name": "Michal Sviták",
+          "cadg": 1808,
+          "pdga": 122508,
+          "division": "RPA",
+          "place": 20,
+          "score": "+59",
+          "round_ratings": [
+            635,
+            601
+          ]
+        },
+        {
+          "player_name": "Pavel Žeravík",
+          "cadg": 6268,
+          "pdga": null,
+          "division": "Gold",
+          "place": 14,
+          "score": "-1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Janíček",
+          "cadg": 6281,
+          "pdga": null,
+          "division": "Green",
+          "place": 3,
+          "score": "+10",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Robert Novobilský",
+          "cadg": 5781,
+          "pdga": null,
+          "division": "Purple",
+          "place": 5,
+          "score": "+22",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
