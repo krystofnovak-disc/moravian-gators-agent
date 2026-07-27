@@ -2417,6 +2417,92 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Rekovická Letní Discgolfová Liga 2026 #4",
+      "date": "2026-07-24",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/872efa68-727b-442f-953f-3c5961230644",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Eliška Bártková",
+          "cadg": 1737,
+          "pdga": 86224,
+          "division": "FA1",
+          "place": 1,
+          "score": "-4",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MA1",
+          "place": 1,
+          "score": "-13",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "HDGT Budišov nad Budišovkou powered by Discmania",
+      "date": "2026-07-26",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/106503",
+      "tier": "HDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "RPA",
+          "place": 3,
+          "score": "-15",
+          "round_ratings": [
+            976,
+            1024
+          ]
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "RPA",
+          "place": 42,
+          "score": "",
+          "round_ratings": [
+            1016,
+            999
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "RPA",
+          "place": 10,
+          "score": "E",
+          "round_ratings": [
+            920,
+            853
+          ]
+        },
+        {
+          "player_name": "Eliška Bártková",
+          "cadg": 1737,
+          "pdga": 86224,
+          "division": "RPA",
+          "place": 18,
+          "score": "+11",
+          "round_ratings": [
+            856,
+            817
+          ]
+        }
+      ]
     }
   ],
   "ratings": {
