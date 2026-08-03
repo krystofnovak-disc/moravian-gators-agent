@@ -5632,6 +5632,258 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "DGPT EuroTour - Sieravuori Challenge 2026",
+      "date": "2026-07-31",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/101076",
+      "tier": "DGPT EuroTour",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 50,
+          "score": "-5",
+          "round_ratings": [
+            972,
+            994,
+            1029
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 2,
+          "score": "-3",
+          "round_ratings": [
+            1003,
+            917,
+            997
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rekovická Letní Discgolfová Liga 2026 #5",
+      "date": "2026-07-31",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/96858ad3-6815-423b-8b24-a8909f3f6316",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 1,
+          "score": "-13",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
+          "division": "MPO",
+          "place": 2,
+          "score": "-11",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Novobilský",
+          "cadg": 4358,
+          "pdga": 285107,
+          "division": "MPO",
+          "place": 5,
+          "score": "-9",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Pavel Žeravík",
+          "cadg": 6268,
+          "pdga": null,
+          "division": "MPO",
+          "place": 7,
+          "score": "-7",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Dominik Janek",
+          "cadg": 8007,
+          "pdga": 290093,
+          "division": "MPO",
+          "place": 19,
+          "score": "+3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Ryšánek",
+          "cadg": 3333,
+          "pdga": 117293,
+          "division": "MP40",
+          "place": 13,
+          "score": "+12",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "ADGL O slovácký košᵗ 2026",
+      "date": "2026-08-01",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/106519",
+      "tier": "ADGL",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Lukáš Vyvial",
+          "cadg": 6195,
+          "pdga": 283489,
+          "division": "MA1",
+          "place": 4,
+          "score": "-2",
+          "round_ratings": [
+            963,
+            950,
+            954
+          ]
+        },
+        {
+          "player_name": "Jakub Urbiš",
+          "cadg": 3772,
+          "pdga": 122423,
+          "division": "MA1",
+          "place": 15,
+          "score": "+23",
+          "round_ratings": [
+            902,
+            883,
+            894
+          ]
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "MA3",
+          "place": 1,
+          "score": "+14",
+          "round_ratings": [
+            925,
+            928,
+            894
+          ]
+        },
+        {
+          "player_name": "Julius Nadberežný",
+          "cadg": 4292,
+          "pdga": 240173,
+          "division": "MA3",
+          "place": 3,
+          "score": "+15",
+          "round_ratings": [
+            963,
+            920,
+            857
+          ]
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "FA3",
+          "place": 3,
+          "score": "+39",
+          "round_ratings": [
+            776,
+            770,
+            749
+          ]
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "MA4",
+          "place": 1,
+          "score": "+7",
+          "round_ratings": [
+            847,
+            857,
+            872
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ADGL O slovácký košt",
+      "date": "2026-08-01",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/a555e145-8c62-4b88-b7d2-6687c55350ba",
+      "url_pdga": null,
+      "tier": "ADGL",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "MA4",
+          "place": 1,
+          "score": "+7",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "FA3",
+          "place": 3,
+          "score": "+39",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Vyvial",
+          "cadg": 6195,
+          "pdga": 283489,
+          "division": "MA1",
+          "place": 4,
+          "score": "-2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Urbiš",
+          "cadg": 3772,
+          "pdga": 122423,
+          "division": "MA1",
+          "place": 15,
+          "score": "+23",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "MA3",
+          "place": 1,
+          "score": "+14",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Julius Nadberežný",
+          "cadg": 4292,
+          "pdga": 240173,
+          "division": "MA3",
+          "place": 3,
+          "score": "+15",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
@@ -6492,6 +6744,188 @@
       "8321": {
         "name": "Lukáš Zacpal",
         "pdga_rating": 854,
+        "idg_rating": null
+      }
+    },
+    "2026-08": {
+      "319": {
+        "name": "Kryštof Novák",
+        "pdga_rating": 981,
+        "idg_rating": null
+      },
+      "349": {
+        "name": "Michal Grepl",
+        "pdga_rating": 928,
+        "idg_rating": null
+      },
+      "692": {
+        "name": "Bohdan Bílek",
+        "pdga_rating": 1012,
+        "idg_rating": null
+      },
+      "696": {
+        "name": "František Trenz",
+        "pdga_rating": 960,
+        "idg_rating": null
+      },
+      "818": {
+        "name": "Petr Masník",
+        "pdga_rating": 937,
+        "idg_rating": null
+      },
+      "839": {
+        "name": "Jiří Šebek",
+        "pdga_rating": 867,
+        "idg_rating": null
+      },
+      "1055": {
+        "name": "Šimon Galia",
+        "pdga_rating": 926,
+        "idg_rating": null
+      },
+      "1737": {
+        "name": "Eliška Bártková",
+        "pdga_rating": 865,
+        "idg_rating": null
+      },
+      "1808": {
+        "name": "Michal Sviták",
+        "pdga_rating": 666,
+        "idg_rating": null
+      },
+      "2293": {
+        "name": "Jakub Veselý",
+        "pdga_rating": 975,
+        "idg_rating": null
+      },
+      "3333": {
+        "name": "Petr Ryšánek",
+        "pdga_rating": 723,
+        "idg_rating": null
+      },
+      "3575": {
+        "name": "Jakub Dostál",
+        "pdga_rating": 983,
+        "idg_rating": null
+      },
+      "3608": {
+        "name": "Vladimír Kříž",
+        "pdga_rating": 835,
+        "idg_rating": null
+      },
+      "3672": {
+        "name": "Radek Dostál",
+        "pdga_rating": 968,
+        "idg_rating": null
+      },
+      "3685": {
+        "name": "Kristián Kvita",
+        "pdga_rating": 983,
+        "idg_rating": null
+      },
+      "3689": {
+        "name": "Jakub Knápek",
+        "pdga_rating": 1023,
+        "idg_rating": null
+      },
+      "3727": {
+        "name": "Radek Jurčík",
+        "pdga_rating": 846,
+        "idg_rating": null
+      },
+      "3772": {
+        "name": "Jakub Urbiš",
+        "pdga_rating": 929,
+        "idg_rating": null
+      },
+      "4292": {
+        "name": "Julius Nadberežný",
+        "pdga_rating": 863,
+        "idg_rating": null
+      },
+      "4358": {
+        "name": "Lukáš Novobilský",
+        "pdga_rating": 960,
+        "idg_rating": null
+      },
+      "4362": {
+        "name": "Kristýna Jurčíková",
+        "pdga_rating": 970,
+        "idg_rating": null
+      },
+      "4363": {
+        "name": "Karolína Jurčíková",
+        "pdga_rating": 892,
+        "idg_rating": null
+      },
+      "5484": {
+        "name": "Jakub Moj",
+        "pdga_rating": 819,
+        "idg_rating": null
+      },
+      "5493": {
+        "name": "Filip Plíhal",
+        "pdga_rating": 862,
+        "idg_rating": null
+      },
+      "5508": {
+        "name": "Tomáš Ráček",
+        "pdga_rating": 984,
+        "idg_rating": null
+      },
+      "5648": {
+        "name": "Barbara Ráčková",
+        "pdga_rating": 905,
+        "idg_rating": null
+      },
+      "6136": {
+        "name": "Maxmilián Jakeš",
+        "pdga_rating": 957,
+        "idg_rating": null
+      },
+      "6195": {
+        "name": "Lukáš Vyvial",
+        "pdga_rating": 954,
+        "idg_rating": null
+      },
+      "6222": {
+        "name": "Jana Vinklárková",
+        "pdga_rating": 743,
+        "idg_rating": null
+      },
+      "6260": {
+        "name": "Jaroslav Randus",
+        "pdga_rating": 837,
+        "idg_rating": null
+      },
+      "6694": {
+        "name": "Jan Šebek",
+        "pdga_rating": 935,
+        "idg_rating": null
+      },
+      "7810": {
+        "name": "Ondřej Mazoch",
+        "pdga_rating": 1000,
+        "idg_rating": null
+      },
+      "7983": {
+        "name": "Richard Kurečka",
+        "pdga_rating": 864,
+        "idg_rating": null
+      },
+      "8007": {
+        "name": "Dominik Janek",
+        "pdga_rating": 823,
+        "idg_rating": null
+      },
+      "8299": {
+        "name": "Martin Hollas",
+        "pdga_rating": 847,
+        "idg_rating": null
+      },
+      "8321": {
+        "name": "Lukáš Zacpal",
+        "pdga_rating": 867,
         "idg_rating": null
       }
     }
