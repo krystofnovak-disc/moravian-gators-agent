@@ -2503,10 +2503,242 @@
           ]
         }
       ]
+    },
+    {
+      "name": "DGPT EuroTour - Sieravuori Challenge 2026",
+      "date": "2026-07-31",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/101076",
+      "tier": "DGPT EuroTour",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 2,
+          "score": "-28",
+          "round_ratings": [
+            1070,
+            1076,
+            1037
+          ]
+        },
+        {
+          "player_name": "Daniel Konečný",
+          "cadg": 1085,
+          "pdga": 77759,
+          "division": "MPO",
+          "place": 40,
+          "score": "-7",
+          "round_ratings": [
+            980,
+            1002,
+            1029
+          ]
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 50,
+          "score": "-5",
+          "round_ratings": [
+            972,
+            994,
+            1029
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 2,
+          "score": "-3",
+          "round_ratings": [
+            1003,
+            917,
+            997
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rekovická Letní Discgolfová Liga 2026 #5",
+      "date": "2026-07-31",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/96858ad3-6815-423b-8b24-a8909f3f6316",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 1,
+          "score": "-13",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "ADGL O slovácký košᵗ 2026",
+      "date": "2026-08-01",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/106519",
+      "tier": "ADGL",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Petr Striegler",
+          "cadg": 3762,
+          "pdga": 89634,
+          "division": "MPO",
+          "place": 1,
+          "score": "-30",
+          "round_ratings": [
+            1008,
+            1032,
+            1035
+          ]
+        },
+        {
+          "player_name": "Michael Studnička",
+          "cadg": 3877,
+          "pdga": 162117,
+          "division": "MA1",
+          "place": 8,
+          "score": "+5",
+          "round_ratings": [
+            947,
+            950,
+            917
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ADGL O slovácký košt",
+      "date": "2026-08-01",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/a555e145-8c62-4b88-b7d2-6687c55350ba",
+      "url_pdga": null,
+      "tier": "ADGL",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Petr Striegler",
+          "cadg": 3762,
+          "pdga": 89634,
+          "division": "MPO",
+          "place": 1,
+          "score": "-30",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Michael Studnička",
+          "cadg": 3877,
+          "pdga": 162117,
+          "division": "MA1",
+          "place": 8,
+          "score": "+5",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
     "2026-07": {
+      "319": {
+        "name": "Kryštof Novák",
+        "pdga_rating": 981,
+        "idg_rating": null
+      },
+      "1085": {
+        "name": "Daniel Konečný",
+        "pdga_rating": 993,
+        "idg_rating": null
+      },
+      "1104": {
+        "name": "Eva Bínová",
+        "pdga_rating": 867,
+        "idg_rating": null
+      },
+      "2805": {
+        "name": "Tomáš Mozola",
+        "pdga_rating": 993,
+        "idg_rating": null
+      },
+      "5639": {
+        "name": "Samuel Kšiňan",
+        "pdga_rating": 965,
+        "idg_rating": null
+      },
+      "2524": {
+        "name": "Martin Opršal",
+        "pdga_rating": 951,
+        "idg_rating": null
+      },
+      "8471": {
+        "name": "Nicolas Turina",
+        "pdga_rating": 900,
+        "idg_rating": null
+      },
+      "4363": {
+        "name": "Karolína Jurčíková",
+        "pdga_rating": 892,
+        "idg_rating": null
+      },
+      "4362": {
+        "name": "Kristýna Jurčíková",
+        "pdga_rating": 970,
+        "idg_rating": null
+      },
+      "3689": {
+        "name": "Jakub Knápek",
+        "pdga_rating": 1023,
+        "idg_rating": null
+      },
+      "692": {
+        "name": "Bohdan Bílek",
+        "pdga_rating": 1012,
+        "idg_rating": null
+      },
+      "3762": {
+        "name": "Petr Striegler",
+        "pdga_rating": 995,
+        "idg_rating": null
+      },
+      "3745": {
+        "name": "Nikola Moravcová",
+        "pdga_rating": 918,
+        "idg_rating": null
+      },
+      "3877": {
+        "name": "Michael Studnička",
+        "pdga_rating": 962,
+        "idg_rating": null
+      },
+      "1737": {
+        "name": "Eliška Bártková",
+        "pdga_rating": 865,
+        "idg_rating": null
+      },
+      "2286": {
+        "name": "Jakub Semerád",
+        "pdga_rating": 1028,
+        "idg_rating": null
+      },
+      "7810": {
+        "name": "Ondřej Mazoch",
+        "pdga_rating": 1000,
+        "idg_rating": null
+      }
+    },
+    "2026-08": {
       "319": {
         "name": "Kryštof Novák",
         "pdga_rating": 981,
