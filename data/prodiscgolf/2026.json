@@ -2648,6 +2648,47 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "Rekovická Letní Discgolfová Liga 2026 #6",
+      "date": "2026-08-07",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/ddea9f73-a57a-4888-bb36-5bc9b2a262e6",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Eliška Bártková",
+          "cadg": 1737,
+          "pdga": 86224,
+          "division": "FA1",
+          "place": 1,
+          "score": "-4",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "HDGT Běchovice presented by Discmania",
+      "date": "2026-08-09",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/106905",
+      "tier": "HDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Michael Studnička",
+          "cadg": 3877,
+          "pdga": 162117,
+          "division": "RPA",
+          "place": 5,
+          "score": "+5",
+          "round_ratings": [
+            968,
+            938
+          ]
+        }
+      ]
     }
   ],
   "ratings": {
