@@ -5884,6 +5884,123 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "Rekovická Letní Discgolfová Liga 2026 #6",
+      "date": "2026-08-07",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/ddea9f73-a57a-4888-bb36-5bc9b2a262e6",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Eliška Bártková",
+          "cadg": 1737,
+          "pdga": 86224,
+          "division": "FA1",
+          "place": 1,
+          "score": "-4",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Pavel Žeravík",
+          "cadg": 6268,
+          "pdga": null,
+          "division": "MPO",
+          "place": 6,
+          "score": "-7",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jan Bártek",
+          "cadg": 1739,
+          "pdga": 96640,
+          "division": "MPO",
+          "place": 12,
+          "score": "-4",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Martin Hollas",
+          "cadg": 8299,
+          "pdga": 310651,
+          "division": "MPO",
+          "place": 14,
+          "score": "-1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Podhajský",
+          "cadg": 6433,
+          "pdga": 290618,
+          "division": "MP40",
+          "place": 5,
+          "score": "E",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 743,
+          "pdga": null,
+          "division": "MP40",
+          "place": 9,
+          "score": "+6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Michal Sviták",
+          "cadg": 1808,
+          "pdga": 122508,
+          "division": "MP40",
+          "place": 11,
+          "score": "+11",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "HDGT Brno - Zamilec presented by Discmania",
+      "date": "2026-08-08",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/106853",
+      "tier": "HDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "RPA",
+          "place": 5,
+          "score": "+15",
+          "round_ratings": [
+            848,
+            861
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Běchovice presented by Discmania",
+      "date": "2026-08-09",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/106905",
+      "tier": "HDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "RPA",
+          "place": 7,
+          "score": "+6",
+          "round_ratings": [
+            864,
+            845
+          ]
+        }
+      ]
     }
   ],
   "ratings": {
