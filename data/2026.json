@@ -3980,9 +3980,9 @@
           "place": 21,
           "score": "-22",
           "round_ratings": [
-            1026,
-            1014,
-            1007
+            1021,
+            1021,
+            1005
           ]
         }
       ]
@@ -4003,9 +4003,9 @@
           "place": 3,
           "score": "-16",
           "round_ratings": [
-            1030,
-            972,
-            979
+            1029,
+            971,
+            981
           ]
         },
         {
@@ -4016,8 +4016,8 @@
           "place": 1,
           "score": "-11",
           "round_ratings": [
-            897,
-            927,
+            901,
+            923,
             901
           ]
         },
@@ -4029,9 +4029,9 @@
           "place": 6,
           "score": "+5",
           "round_ratings": [
-            944,
-            924,
-            911
+            942,
+            923,
+            914
           ]
         },
         {
@@ -4042,9 +4042,9 @@
           "place": 2,
           "score": "+9",
           "round_ratings": [
-            886,
-            886,
-            969
+            885,
+            885,
+            971
           ]
         },
         {
@@ -4055,8 +4055,8 @@
           "place": 3,
           "score": "+29",
           "round_ratings": [
-            739,
-            783,
+            745,
+            778,
             756
           ]
         },
@@ -4068,8 +4068,8 @@
           "place": 2,
           "score": "+7",
           "round_ratings": [
-            830,
-            872,
+            834,
+            868,
             823
           ]
         },
@@ -4081,8 +4081,8 @@
           "place": 2,
           "score": "+6",
           "round_ratings": [
-            875,
-            827,
+            879,
+            823,
             834
           ]
         }
@@ -4104,8 +4104,8 @@
           "place": 79,
           "score": "+11",
           "round_ratings": [
-            1036,
-            956,
+            1035,
+            958,
             1002
           ]
         },
@@ -4118,9 +4118,9 @@
           "score": "-14",
           "round_ratings": [
             1007,
-            991,
+            992,
             996,
-            977
+            981
           ]
         }
       ]
@@ -4141,8 +4141,8 @@
           "place": 13,
           "score": "+24",
           "round_ratings": [
-            816,
-            754
+            805,
+            768
           ]
         }
       ]
@@ -4163,9 +4163,9 @@
           "place": 1,
           "score": "-11",
           "round_ratings": [
-            955,
-            946,
-            1000
+            951,
+            942,
+            1007
           ]
         },
         {
@@ -4176,9 +4176,9 @@
           "place": 3,
           "score": "-8",
           "round_ratings": [
-            909,
-            1019,
-            944
+            905,
+            1016,
+            951
           ]
         },
         {
@@ -4189,9 +4189,9 @@
           "place": 5,
           "score": "-3",
           "round_ratings": [
-            964,
-            955,
-            906
+            960,
+            951,
+            914
           ]
         },
         {
@@ -4202,9 +4202,9 @@
           "place": 9,
           "score": "+7",
           "round_ratings": [
-            872,
-            927,
-            934
+            868,
+            923,
+            942
           ]
         },
         {
@@ -4215,9 +4215,9 @@
           "place": 3,
           "score": "+4",
           "round_ratings": [
-            877,
-            843,
-            811
+            859,
+            849,
+            829
           ]
         },
         {
@@ -4228,9 +4228,9 @@
           "place": 7,
           "score": "-10",
           "round_ratings": [
-            925,
-            913,
-            831
+            908,
+            918,
+            849
           ]
         }
       ]
@@ -4343,9 +4343,9 @@
           "place": 10,
           "score": "-19",
           "round_ratings": [
-            1070,
-            1018,
-            1046
+            1066,
+            1020,
+            1050
           ]
         },
         {
@@ -4356,9 +4356,9 @@
           "place": 4,
           "score": "-10",
           "round_ratings": [
-            1011,
-            964,
-            962
+            1012,
+            968,
+            959
           ]
         }
       ]
@@ -4379,8 +4379,8 @@
           "place": 11,
           "score": "-9",
           "round_ratings": [
-            907,
-            930
+            902,
+            933
           ]
         },
         {
@@ -4391,8 +4391,8 @@
           "place": 6,
           "score": "-6",
           "round_ratings": [
-            856,
-            951
+            850,
+            954
           ]
         },
         {
@@ -4403,8 +4403,8 @@
           "place": 24,
           "score": "+6",
           "round_ratings": [
-            815,
-            866
+            808,
+            871
           ]
         },
         {
@@ -4415,8 +4415,8 @@
           "place": 12,
           "score": "+12",
           "round_ratings": [
-            815,
-            803
+            808,
+            808
           ]
         },
         {
@@ -4427,8 +4427,8 @@
           "place": 14,
           "score": "+15",
           "round_ratings": [
-            805,
-            782
+            798,
+            788
           ]
         },
         {
@@ -4439,8 +4439,8 @@
           "place": 20,
           "score": "+26",
           "round_ratings": [
-            692,
-            782
+            684,
+            788
           ]
         }
       ]
@@ -4461,8 +4461,8 @@
           "place": 20,
           "score": "+19",
           "round_ratings": [
-            807,
-            850
+            808,
+            849
           ]
         },
         {
@@ -4473,8 +4473,8 @@
           "place": 11,
           "score": "+29",
           "round_ratings": [
-            782,
-            792
+            783,
+            791
           ]
         }
       ]
@@ -4676,9 +4676,9 @@
           "place": 88,
           "score": "+1",
           "round_ratings": [
-            1009,
-            977,
-            984
+            1008,
+            985,
+            978
           ]
         }
       ]
@@ -4699,9 +4699,9 @@
           "place": 20,
           "score": "-6",
           "round_ratings": [
-            941,
+            936,
             900,
-            940
+            945
           ]
         },
         {
@@ -4712,7 +4712,7 @@
           "place": 44,
           "score": "+2",
           "round_ratings": [
-            888,
+            882,
             918,
             999
           ]
@@ -4725,9 +4725,9 @@
           "place": 57,
           "score": "+15",
           "round_ratings": [
-            879,
+            873,
             882,
-            831
+            837
           ]
         },
         {
@@ -4738,9 +4738,9 @@
           "place": 64,
           "score": "+20",
           "round_ratings": [
-            861,
+            855,
             828,
-            858
+            864
           ]
         },
         {
@@ -4751,9 +4751,9 @@
           "place": 10,
           "score": "+13",
           "round_ratings": [
-            870,
+            864,
             846,
-            894
+            900
           ]
         },
         {
@@ -4764,7 +4764,7 @@
           "place": 43,
           "score": "+87",
           "round_ratings": [
-            665,
+            657,
             693
           ]
         },
@@ -4776,9 +4776,9 @@
           "place": 16,
           "score": "+46",
           "round_ratings": [
-            739,
-            746,
-            713
+            745,
+            745,
+            708
           ]
         }
       ]
@@ -5095,9 +5095,9 @@
           "place": 30,
           "score": "-4",
           "round_ratings": [
-            987,
-            1021,
-            999
+            986,
+            1015,
+            1007
           ]
         }
       ]
@@ -5420,8 +5420,8 @@
           "place": 1,
           "score": "-16",
           "round_ratings": [
-            976,
-            1032
+            971,
+            1036
           ]
         },
         {
@@ -5432,8 +5432,8 @@
           "place": 1,
           "score": "-16",
           "round_ratings": [
-            1000,
-            1007
+            995,
+            1012
           ]
         },
         {
@@ -5444,8 +5444,8 @@
           "place": 3,
           "score": "-15",
           "round_ratings": [
-            976,
-            1024
+            971,
+            1028
           ]
         },
         {
@@ -5456,8 +5456,8 @@
           "place": 3,
           "score": "-15",
           "round_ratings": [
-            992,
-            1007
+            987,
+            1012
           ]
         },
         {
@@ -5468,8 +5468,8 @@
           "place": 19,
           "score": "+3",
           "round_ratings": [
-            903,
-            950
+            898,
+            955
           ]
         },
         {
@@ -5480,8 +5480,8 @@
           "place": 20,
           "score": "+4",
           "round_ratings": [
-            911,
-            933
+            906,
+            938
           ]
         },
         {
@@ -5492,7 +5492,7 @@
           "place": 42,
           "score": "",
           "round_ratings": [
-            1016,
+            1012,
             999
           ]
         },
@@ -5504,8 +5504,8 @@
           "place": 10,
           "score": "E",
           "round_ratings": [
-            920,
-            853
+            923,
+            850
           ]
         },
         {
@@ -5516,8 +5516,8 @@
           "place": 14,
           "score": "+3",
           "round_ratings": [
-            874,
-            871
+            877,
+            868
           ]
         },
         {
@@ -5528,8 +5528,8 @@
           "place": 15,
           "score": "+4",
           "round_ratings": [
-            874,
-            862
+            877,
+            859
           ]
         },
         {
@@ -5540,8 +5540,8 @@
           "place": 18,
           "score": "+11",
           "round_ratings": [
-            856,
-            817
+            859,
+            813
           ]
         },
         {
@@ -5552,8 +5552,8 @@
           "place": 24,
           "score": "+34",
           "round_ratings": [
-            672,
-            790
+            677,
+            786
           ]
         },
         {
@@ -5564,8 +5564,8 @@
           "place": 11,
           "score": "+14",
           "round_ratings": [
-            819,
-            826
+            822,
+            822
           ]
         },
         {
@@ -5576,8 +5576,8 @@
           "place": 9,
           "score": "+27",
           "round_ratings": [
-            727,
-            799
+            731,
+            795
           ]
         },
         {
@@ -5588,8 +5588,8 @@
           "place": 12,
           "score": "+30",
           "round_ratings": [
-            764,
-            736
+            768,
+            731
           ]
         },
         {
@@ -5600,8 +5600,7 @@
           "place": 20,
           "score": "+59",
           "round_ratings": [
-            635,
-            601
+            640
           ]
         },
         {
@@ -6867,7 +6866,7 @@
     "2026-08": {
       "319": {
         "name": "Kryštof Novák",
-        "pdga_rating": 981,
+        "pdga_rating": 984,
         "idg_rating": null
       },
       "349": {
@@ -6882,7 +6881,7 @@
       },
       "696": {
         "name": "František Trenz",
-        "pdga_rating": 960,
+        "pdga_rating": 965,
         "idg_rating": null
       },
       "818": {
@@ -6902,12 +6901,12 @@
       },
       "1737": {
         "name": "Eliška Bártková",
-        "pdga_rating": 865,
+        "pdga_rating": 846,
         "idg_rating": null
       },
       "1808": {
         "name": "Michal Sviták",
-        "pdga_rating": 666,
+        "pdga_rating": 652,
         "idg_rating": null
       },
       "2293": {
@@ -6917,12 +6916,12 @@
       },
       "3333": {
         "name": "Petr Ryšánek",
-        "pdga_rating": 723,
+        "pdga_rating": 735,
         "idg_rating": null
       },
       "3575": {
         "name": "Jakub Dostál",
-        "pdga_rating": 983,
+        "pdga_rating": 989,
         "idg_rating": null
       },
       "3608": {
@@ -6932,47 +6931,47 @@
       },
       "3672": {
         "name": "Radek Dostál",
-        "pdga_rating": 968,
+        "pdga_rating": 948,
         "idg_rating": null
       },
       "3685": {
         "name": "Kristián Kvita",
-        "pdga_rating": 983,
+        "pdga_rating": 984,
         "idg_rating": null
       },
       "3689": {
         "name": "Jakub Knápek",
-        "pdga_rating": 1023,
+        "pdga_rating": 1022,
         "idg_rating": null
       },
       "3727": {
         "name": "Radek Jurčík",
-        "pdga_rating": 846,
+        "pdga_rating": 834,
         "idg_rating": null
       },
       "3772": {
         "name": "Jakub Urbiš",
-        "pdga_rating": 929,
+        "pdga_rating": 921,
         "idg_rating": null
       },
       "4292": {
         "name": "Julius Nadberežný",
-        "pdga_rating": 863,
+        "pdga_rating": 871,
         "idg_rating": null
       },
       "4358": {
         "name": "Lukáš Novobilský",
-        "pdga_rating": 960,
+        "pdga_rating": 962,
         "idg_rating": null
       },
       "4362": {
         "name": "Kristýna Jurčíková",
-        "pdga_rating": 970,
+        "pdga_rating": 968,
         "idg_rating": null
       },
       "4363": {
         "name": "Karolína Jurčíková",
-        "pdga_rating": 892,
+        "pdga_rating": 891,
         "idg_rating": null
       },
       "5484": {
@@ -7002,17 +7001,17 @@
       },
       "6195": {
         "name": "Lukáš Vyvial",
-        "pdga_rating": 954,
+        "pdga_rating": 949,
         "idg_rating": null
       },
       "6222": {
         "name": "Jana Vinklárková",
-        "pdga_rating": 743,
+        "pdga_rating": 747,
         "idg_rating": null
       },
       "6260": {
         "name": "Jaroslav Randus",
-        "pdga_rating": 837,
+        "pdga_rating": 840,
         "idg_rating": null
       },
       "6694": {
@@ -7022,12 +7021,12 @@
       },
       "7810": {
         "name": "Ondřej Mazoch",
-        "pdga_rating": 1000,
+        "pdga_rating": 1003,
         "idg_rating": null
       },
       "7983": {
         "name": "Richard Kurečka",
-        "pdga_rating": 864,
+        "pdga_rating": 869,
         "idg_rating": null
       },
       "8007": {
@@ -7037,12 +7036,12 @@
       },
       "8299": {
         "name": "Martin Hollas",
-        "pdga_rating": 847,
+        "pdga_rating": 853,
         "idg_rating": null
       },
       "8321": {
         "name": "Lukáš Zacpal",
-        "pdga_rating": 867,
+        "pdga_rating": 878,
         "idg_rating": null
       }
     }
