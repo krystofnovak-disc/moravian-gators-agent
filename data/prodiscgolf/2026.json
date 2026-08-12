@@ -2398,9 +2398,9 @@
           "place": 23,
           "score": "-6",
           "round_ratings": [
-            1044,
-            1000,
-            977
+            1043,
+            993,
+            986
           ]
         },
         {
@@ -2411,9 +2411,9 @@
           "place": 30,
           "score": "-4",
           "round_ratings": [
-            987,
-            1021,
-            999
+            986,
+            1015,
+            1007
           ]
         }
       ]
@@ -2462,8 +2462,8 @@
           "place": 3,
           "score": "-15",
           "round_ratings": [
-            976,
-            1024
+            971,
+            1028
           ]
         },
         {
@@ -2474,7 +2474,7 @@
           "place": 42,
           "score": "",
           "round_ratings": [
-            1016,
+            1012,
             999
           ]
         },
@@ -2486,8 +2486,8 @@
           "place": 10,
           "score": "E",
           "round_ratings": [
-            920,
-            853
+            923,
+            850
           ]
         },
         {
@@ -2498,8 +2498,8 @@
           "place": 18,
           "score": "+11",
           "round_ratings": [
-            856,
-            817
+            859,
+            813
           ]
         }
       ]
@@ -2782,7 +2782,7 @@
     "2026-08": {
       "319": {
         "name": "Kryštof Novák",
-        "pdga_rating": 981,
+        "pdga_rating": 984,
         "idg_rating": null
       },
       "1085": {
@@ -2817,17 +2817,17 @@
       },
       "4363": {
         "name": "Karolína Jurčíková",
-        "pdga_rating": 892,
+        "pdga_rating": 891,
         "idg_rating": null
       },
       "4362": {
         "name": "Kristýna Jurčíková",
-        "pdga_rating": 970,
+        "pdga_rating": 968,
         "idg_rating": null
       },
       "3689": {
         "name": "Jakub Knápek",
-        "pdga_rating": 1023,
+        "pdga_rating": 1022,
         "idg_rating": null
       },
       "692": {
@@ -2837,7 +2837,7 @@
       },
       "3762": {
         "name": "Petr Striegler",
-        "pdga_rating": 995,
+        "pdga_rating": 1012,
         "idg_rating": null
       },
       "3745": {
@@ -2847,12 +2847,12 @@
       },
       "3877": {
         "name": "Michael Studnička",
-        "pdga_rating": 962,
+        "pdga_rating": 957,
         "idg_rating": null
       },
       "1737": {
         "name": "Eliška Bártková",
-        "pdga_rating": 865,
+        "pdga_rating": 846,
         "idg_rating": null
       },
       "2286": {
@@ -2862,7 +2862,7 @@
       },
       "7810": {
         "name": "Ondřej Mazoch",
-        "pdga_rating": 1000,
+        "pdga_rating": 1003,
         "idg_rating": null
       }
     }
