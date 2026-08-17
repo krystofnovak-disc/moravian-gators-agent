@@ -2689,6 +2689,67 @@
           ]
         }
       ]
+    },
+    {
+      "name": "AMČR 2026 Běchovický Trn presented by Kastaplast",
+      "date": "2026-08-14",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/107101",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Michael Studnička",
+          "cadg": 3877,
+          "pdga": 162117,
+          "division": "MA4",
+          "place": 5,
+          "score": "-1",
+          "round_ratings": [
+            968,
+            958,
+            1002
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rekovická Letní Discgolfová Liga 2026 #7",
+      "date": "2026-08-14",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/9f1a2fcc-8e96-48ad-bd47-852cc6339ab3",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 1,
+          "score": "-15",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Amatérské MČR - Běchovický TRN 2026 powered by Kastaplast",
+      "date": "2026-08-14",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/4dad4348-71aa-4093-a59e-2a8d09d8f4bc",
+      "url_pdga": null,
+      "tier": "MČR",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Michael Studnička",
+          "cadg": 3877,
+          "pdga": 162117,
+          "division": "Blue",
+          "place": 5,
+          "score": "-1",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
