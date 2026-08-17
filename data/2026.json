@@ -6000,6 +6000,169 @@
           ]
         }
       ]
+    },
+    {
+      "name": "AMČR 2026 Běchovický Trn presented by Kastaplast",
+      "date": "2026-08-14",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/107101",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "FA3",
+          "place": 4,
+          "score": "+35",
+          "round_ratings": [
+            732,
+            766,
+            728
+          ]
+        },
+        {
+          "player_name": "Julius Nadberežný",
+          "cadg": 4292,
+          "pdga": 240173,
+          "division": "MA4",
+          "place": 18,
+          "score": "+12",
+          "round_ratings": [
+            875,
+            898,
+            928
+          ]
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "MA4",
+          "place": 24,
+          "score": "+13",
+          "round_ratings": [
+            792,
+            830,
+            828
+          ]
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "MA4",
+          "place": 26,
+          "score": "+15",
+          "round_ratings": [
+            792,
+            756,
+            878
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rekovická Letní Discgolfová Liga 2026 #7",
+      "date": "2026-08-14",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/9f1a2fcc-8e96-48ad-bd47-852cc6339ab3",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 1,
+          "score": "-15",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Pavel Žeravík",
+          "cadg": 6268,
+          "pdga": null,
+          "division": "MPO",
+          "place": 9,
+          "score": "-4",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Janíček",
+          "cadg": 6281,
+          "pdga": null,
+          "division": "MP40",
+          "place": 5,
+          "score": "-2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jindřich Závodný",
+          "cadg": 5041,
+          "pdga": null,
+          "division": "MP40",
+          "place": 7,
+          "score": "-1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Ryšánek",
+          "cadg": 3333,
+          "pdga": 117293,
+          "division": "MP40",
+          "place": 16,
+          "score": "+12",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Amatérské MČR - Běchovický TRN 2026 powered by Kastaplast",
+      "date": "2026-08-14",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/4dad4348-71aa-4093-a59e-2a8d09d8f4bc",
+      "url_pdga": null,
+      "tier": "MČR",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "Yellow (F)",
+          "place": 4,
+          "score": "+35",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "Green",
+          "place": 24,
+          "score": "+13",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "Green",
+          "place": 26,
+          "score": "+15",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Julius Nadberežný",
+          "cadg": 4292,
+          "pdga": 240173,
+          "division": "Red",
+          "place": 18,
+          "score": "+12",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
