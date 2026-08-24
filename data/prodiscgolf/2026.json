@@ -2750,6 +2750,133 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "Rekovická Letní Discgolfová Liga 2026 #8",
+      "date": "2026-08-21",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/a1026ee3-0b50-4ab3-b15f-302b0ed4aba6",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 2,
+          "score": "-9",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "MMMASO! JDL 2026 - Jemnice",
+      "date": "2026-08-22",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/106531",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "MPO",
+          "place": 18,
+          "score": "+7",
+          "round_ratings": [
+            848,
+            904
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pojedenácté o pohár starosty Kobylí",
+      "date": "2026-08-22",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/107015",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Martin Opršal",
+          "cadg": 2524,
+          "pdga": 103677,
+          "division": "MPO",
+          "place": 2,
+          "score": "-9",
+          "round_ratings": [
+            990,
+            959
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 2,
+          "score": "+8",
+          "round_ratings": [
+            897,
+            863
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Ostrava - Raketa powered by Discmania",
+      "date": "2026-08-22",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/2487356e-a320-42b9-92e0-e8929a0af998",
+      "url_pdga": null,
+      "tier": "HDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "Gold",
+          "place": 4,
+          "score": "-13",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Letní Rekovice Open 2026",
+      "date": "2026-08-23",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/107274",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Eliška Bártková",
+          "cadg": 1737,
+          "pdga": 86224,
+          "division": "FPO",
+          "place": 1,
+          "score": "-15",
+          "round_ratings": [
+            922
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 4,
+          "score": "",
+          "round_ratings": [
+            749,
+            999
+          ]
+        }
+      ]
     }
   ],
   "ratings": {
