@@ -6533,6 +6533,313 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "2026 PDGA Professional Disc Golf World Championships presented by 1st Phorm",
+      "date": "2026-08-26",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/97344",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 119,
+          "score": "+9",
+          "round_ratings": [
+            1002,
+            1030,
+            983,
+            987
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 13,
+          "score": "-2",
+          "round_ratings": [
+            980,
+            948,
+            958,
+            943,
+            995
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Uherské Hradiště powered by Discmania",
+      "date": "2026-08-29",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/107502",
+      "tier": "HDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "RPA",
+          "place": 8,
+          "score": "-7",
+          "round_ratings": [
+            869,
+            930
+          ]
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "RPA",
+          "place": 5,
+          "score": "-6",
+          "round_ratings": [
+            882,
+            903
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "RPA",
+          "place": 7,
+          "score": "-5",
+          "round_ratings": [
+            882,
+            890
+          ]
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "RPA",
+          "place": 3,
+          "score": "+1",
+          "round_ratings": [
+            842,
+            850
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NJDGT #5: Zahrádka Open",
+      "date": "2026-08-29",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/f2cc0823-6eae-4c93-968e-5156431839f0",
+      "url_pdga": null,
+      "tier": "NJDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Eliška Bártková",
+          "cadg": 1737,
+          "pdga": 86224,
+          "division": "Jestřáb",
+          "place": 1,
+          "score": "-3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Václav Valentík",
+          "cadg": 8453,
+          "pdga": null,
+          "division": "Jestřáb",
+          "place": 3,
+          "score": "-1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Podhajský",
+          "cadg": 6433,
+          "pdga": 290618,
+          "division": "Jestřáb",
+          "place": 5,
+          "score": "+2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jindřich Závodný",
+          "cadg": 5041,
+          "pdga": null,
+          "division": "Jestřáb",
+          "place": 7,
+          "score": "+8",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Dominik Janek",
+          "cadg": 8007,
+          "pdga": 290093,
+          "division": "Jestřáb",
+          "place": 8,
+          "score": "+11",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "Orel",
+          "place": 1,
+          "score": "-15",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Novobilský",
+          "cadg": 4358,
+          "pdga": 285107,
+          "division": "Orel",
+          "place": 3,
+          "score": "-15",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Michal Grepl",
+          "cadg": 349,
+          "pdga": 59727,
+          "division": "Orel",
+          "place": 4,
+          "score": "-8",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Masník",
+          "cadg": 818,
+          "pdga": 89187,
+          "division": "Orel",
+          "place": 6,
+          "score": "-4",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Dominik Chrustawczuk",
+          "cadg": 8869,
+          "pdga": null,
+          "division": "Poštolka",
+          "place": 3,
+          "score": "+1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Janíček",
+          "cadg": 6281,
+          "pdga": null,
+          "division": "Poštolka",
+          "place": 4,
+          "score": "+2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Březina",
+          "cadg": 1217,
+          "pdga": 92091,
+          "division": "Poštolka",
+          "place": 7,
+          "score": "+7",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jan Šajnar",
+          "cadg": 6345,
+          "pdga": null,
+          "division": "Poštolka",
+          "place": 9,
+          "score": "+11",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Robert Novobilský",
+          "cadg": 5781,
+          "pdga": null,
+          "division": "Vrabec",
+          "place": 6,
+          "score": "+9",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Ryšánek",
+          "cadg": 3333,
+          "pdga": 117293,
+          "division": "Vrabec",
+          "place": 8,
+          "score": "+12",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Tomáš Březina",
+          "cadg": 8780,
+          "pdga": null,
+          "division": "Vrabec",
+          "place": 10,
+          "score": "+30",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Michal Sviták",
+          "cadg": 1808,
+          "pdga": 122508,
+          "division": "Vrabec",
+          "place": 12,
+          "score": "+32",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Ondřej Grepl",
+          "cadg": 8016,
+          "pdga": null,
+          "division": "Vrabec",
+          "place": 13,
+          "score": "+48",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Prachatice 2026 powered by I&C Energo",
+      "date": "2026-08-29",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/f3fc72b7-c539-4296-a746-1d3ebd3972b5",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Julius Nadberežný",
+          "cadg": 4292,
+          "pdga": 240173,
+          "division": "MPO",
+          "place": 7,
+          "score": "-18",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "PvDGT #4: Bzenec",
+      "date": "2026-08-30",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/059887a9-53a1-44dd-8443-8955812e3c72",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "MPO",
+          "place": 19,
+          "score": "E",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
