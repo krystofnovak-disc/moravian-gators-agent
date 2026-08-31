@@ -2877,6 +2877,124 @@
           ]
         }
       ]
+    },
+    {
+      "name": "2026 PDGA Professional Disc Golf World Championships presented by 1st Phorm",
+      "date": "2026-08-26",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/97344",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 55,
+          "score": "-7",
+          "round_ratings": [
+            1031,
+            999,
+            1039,
+            1025,
+            1009
+          ]
+        },
+        {
+          "player_name": "Tomáš Mozola",
+          "cadg": 2805,
+          "pdga": 103693,
+          "division": "MPO",
+          "place": 111,
+          "score": "+7",
+          "round_ratings": [
+            1008,
+            1008,
+            1016,
+            1011
+          ]
+        },
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 119,
+          "score": "+9",
+          "round_ratings": [
+            1002,
+            1030,
+            983,
+            987
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 13,
+          "score": "-2",
+          "round_ratings": [
+            980,
+            948,
+            958,
+            943,
+            995
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Uherské Hradiště powered by Discmania",
+      "date": "2026-08-29",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/107502",
+      "tier": "HDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "RPA",
+          "place": 7,
+          "score": "-5",
+          "round_ratings": [
+            882,
+            890
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NJDGT #5: Zahrádka Open",
+      "date": "2026-08-29",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/f2cc0823-6eae-4c93-968e-5156431839f0",
+      "url_pdga": null,
+      "tier": "NJDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Eliška Bártková",
+          "cadg": 1737,
+          "pdga": 86224,
+          "division": "Jestřáb",
+          "place": 1,
+          "score": "-3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "Orel",
+          "place": 1,
+          "score": "-15",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
