@@ -2995,6 +2995,219 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "MČR Open Budišov nad Budišovkou",
+      "date": "2026-09-04",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/107556",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Petr Striegler",
+          "cadg": 3762,
+          "pdga": 89634,
+          "division": "MPO",
+          "place": 1,
+          "score": "-19",
+          "round_ratings": [
+            1042,
+            1004,
+            1045
+          ]
+        },
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 2,
+          "score": "-18",
+          "round_ratings": [
+            1049,
+            1020,
+            1013
+          ]
+        },
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 5,
+          "score": "-11",
+          "round_ratings": [
+            1034,
+            997,
+            997
+          ]
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 9,
+          "score": "-7",
+          "round_ratings": [
+            1012,
+            966,
+            1021
+          ]
+        },
+        {
+          "player_name": "Daniel Konečný",
+          "cadg": 1085,
+          "pdga": 77759,
+          "division": "MPO",
+          "place": 12,
+          "score": "-3",
+          "round_ratings": [
+            997,
+            981,
+            989
+          ]
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 13,
+          "score": "-2",
+          "round_ratings": [
+            982,
+            1028,
+            950
+          ]
+        },
+        {
+          "player_name": "Michael Studnička",
+          "cadg": 3877,
+          "pdga": 162117,
+          "division": "MPO",
+          "place": 27,
+          "score": "+12",
+          "round_ratings": [
+            974,
+            958,
+            918
+          ]
+        },
+        {
+          "player_name": "Martin Opršal",
+          "cadg": 2524,
+          "pdga": 103677,
+          "division": "MPO",
+          "place": 43,
+          "score": "+22",
+          "round_ratings": [
+            937,
+            896,
+            942
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 1,
+          "score": "-17",
+          "round_ratings": [
+            898,
+            962,
+            999
+          ]
+        },
+        {
+          "player_name": "Nikola Moravcová",
+          "cadg": 3745,
+          "pdga": 125069,
+          "division": "FPO",
+          "place": 5,
+          "score": "-2",
+          "round_ratings": [
+            889,
+            916,
+            914
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 6,
+          "score": "+1",
+          "round_ratings": [
+            889,
+            888,
+            914
+          ]
+        },
+        {
+          "player_name": "Eliška Bártková",
+          "cadg": 1737,
+          "pdga": 86224,
+          "division": "FPO",
+          "place": 9,
+          "score": "+12",
+          "round_ratings": [
+            845,
+            898,
+            848
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Glow Budišov - Doubles",
+      "date": "2026-09-05",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/fef80408-c09e-4cda-a479-2259dd529431",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO-D",
+          "place": 2,
+          "score": "-6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Daniel Konečný",
+          "cadg": 1085,
+          "pdga": 77759,
+          "division": "MPO-D",
+          "place": 3,
+          "score": "-4",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Lázně Bohdaneč Kofola OPEN 2026",
+      "date": "2026-09-06",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/de8d8929-13d7-4d6f-a19f-f9ee83be5eb9",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "MA4",
+          "place": 2,
+          "score": "-13",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
@@ -3086,6 +3299,93 @@
       }
     },
     "2026-08": {
+      "319": {
+        "name": "Kryštof Novák",
+        "pdga_rating": 984,
+        "idg_rating": null
+      },
+      "1085": {
+        "name": "Daniel Konečný",
+        "pdga_rating": 993,
+        "idg_rating": null
+      },
+      "1104": {
+        "name": "Eva Bínová",
+        "pdga_rating": 867,
+        "idg_rating": null
+      },
+      "2805": {
+        "name": "Tomáš Mozola",
+        "pdga_rating": 993,
+        "idg_rating": null
+      },
+      "5639": {
+        "name": "Samuel Kšiňan",
+        "pdga_rating": 965,
+        "idg_rating": null
+      },
+      "2524": {
+        "name": "Martin Opršal",
+        "pdga_rating": 951,
+        "idg_rating": null
+      },
+      "8471": {
+        "name": "Nicolas Turina",
+        "pdga_rating": 900,
+        "idg_rating": null
+      },
+      "4363": {
+        "name": "Karolína Jurčíková",
+        "pdga_rating": 891,
+        "idg_rating": null
+      },
+      "4362": {
+        "name": "Kristýna Jurčíková",
+        "pdga_rating": 968,
+        "idg_rating": null
+      },
+      "3689": {
+        "name": "Jakub Knápek",
+        "pdga_rating": 1022,
+        "idg_rating": null
+      },
+      "692": {
+        "name": "Bohdan Bílek",
+        "pdga_rating": 1012,
+        "idg_rating": null
+      },
+      "3762": {
+        "name": "Petr Striegler",
+        "pdga_rating": 1012,
+        "idg_rating": null
+      },
+      "3745": {
+        "name": "Nikola Moravcová",
+        "pdga_rating": 918,
+        "idg_rating": null
+      },
+      "3877": {
+        "name": "Michael Studnička",
+        "pdga_rating": 957,
+        "idg_rating": null
+      },
+      "1737": {
+        "name": "Eliška Bártková",
+        "pdga_rating": 846,
+        "idg_rating": null
+      },
+      "2286": {
+        "name": "Jakub Semerád",
+        "pdga_rating": 1028,
+        "idg_rating": null
+      },
+      "7810": {
+        "name": "Ondřej Mazoch",
+        "pdga_rating": 1003,
+        "idg_rating": null
+      }
+    },
+    "2026-09": {
       "319": {
         "name": "Kryštof Novák",
         "pdga_rating": 984,
