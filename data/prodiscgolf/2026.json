@@ -2520,9 +2520,9 @@
           "place": 2,
           "score": "-28",
           "round_ratings": [
-            1070,
-            1076,
-            1037
+            1067,
+            1075,
+            1042
           ]
         },
         {
@@ -2533,9 +2533,9 @@
           "place": 40,
           "score": "-7",
           "round_ratings": [
-            980,
-            1002,
-            1029
+            976,
+            1001,
+            1034
           ]
         },
         {
@@ -2546,9 +2546,9 @@
           "place": 50,
           "score": "-5",
           "round_ratings": [
-            972,
-            994,
-            1029
+            968,
+            993,
+            1034
           ]
         },
         {
@@ -2559,9 +2559,9 @@
           "place": 2,
           "score": "-3",
           "round_ratings": [
-            1003,
+            1004,
             917,
-            997
+            996
           ]
         }
       ]
@@ -2601,9 +2601,9 @@
           "place": 1,
           "score": "-30",
           "round_ratings": [
-            1008,
-            1032,
-            1035
+            1010,
+            1033,
+            1033
           ]
         },
         {
@@ -2614,9 +2614,9 @@
           "place": 8,
           "score": "+5",
           "round_ratings": [
-            947,
             950,
-            917
+            950,
+            913
           ]
         }
       ]
@@ -2684,8 +2684,8 @@
           "place": 5,
           "score": "+5",
           "round_ratings": [
-            968,
-            938
+            965,
+            941
           ]
         }
       ]
@@ -3388,12 +3388,12 @@
     "2026-09": {
       "319": {
         "name": "Kryštof Novák",
-        "pdga_rating": 984,
+        "pdga_rating": 985,
         "idg_rating": null
       },
       "1085": {
         "name": "Daniel Konečný",
-        "pdga_rating": 993,
+        "pdga_rating": 994,
         "idg_rating": null
       },
       "1104": {
@@ -3403,7 +3403,7 @@
       },
       "2805": {
         "name": "Tomáš Mozola",
-        "pdga_rating": 993,
+        "pdga_rating": 995,
         "idg_rating": null
       },
       "5639": {
@@ -3413,57 +3413,57 @@
       },
       "2524": {
         "name": "Martin Opršal",
-        "pdga_rating": 951,
+        "pdga_rating": 948,
         "idg_rating": null
       },
       "8471": {
         "name": "Nicolas Turina",
-        "pdga_rating": 900,
+        "pdga_rating": 889,
         "idg_rating": null
       },
       "4363": {
         "name": "Karolína Jurčíková",
-        "pdga_rating": 891,
+        "pdga_rating": 890,
         "idg_rating": null
       },
       "4362": {
         "name": "Kristýna Jurčíková",
-        "pdga_rating": 968,
+        "pdga_rating": 969,
         "idg_rating": null
       },
       "3689": {
         "name": "Jakub Knápek",
-        "pdga_rating": 1022,
+        "pdga_rating": 1020,
         "idg_rating": null
       },
       "692": {
         "name": "Bohdan Bílek",
-        "pdga_rating": 1012,
+        "pdga_rating": 1019,
         "idg_rating": null
       },
       "3762": {
         "name": "Petr Striegler",
-        "pdga_rating": 1012,
+        "pdga_rating": 1026,
         "idg_rating": null
       },
       "3745": {
         "name": "Nikola Moravcová",
-        "pdga_rating": 918,
+        "pdga_rating": 915,
         "idg_rating": null
       },
       "3877": {
         "name": "Michael Studnička",
-        "pdga_rating": 957,
+        "pdga_rating": 959,
         "idg_rating": null
       },
       "1737": {
         "name": "Eliška Bártková",
-        "pdga_rating": 846,
+        "pdga_rating": 859,
         "idg_rating": null
       },
       "2286": {
         "name": "Jakub Semerád",
-        "pdga_rating": 1028,
+        "pdga_rating": 1029,
         "idg_rating": null
       },
       "7810": {
