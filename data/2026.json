@@ -5648,9 +5648,9 @@
           "place": 50,
           "score": "-5",
           "round_ratings": [
-            972,
-            994,
-            1029
+            968,
+            993,
+            1034
           ]
         },
         {
@@ -5661,9 +5661,9 @@
           "place": 2,
           "score": "-3",
           "round_ratings": [
-            1003,
+            1004,
             917,
-            997
+            996
           ]
         }
       ]
@@ -5748,9 +5748,9 @@
           "place": 4,
           "score": "-2",
           "round_ratings": [
-            963,
+            965,
             950,
-            954
+            950
           ]
         },
         {
@@ -5761,9 +5761,9 @@
           "place": 15,
           "score": "+23",
           "round_ratings": [
-            902,
+            905,
             883,
-            894
+            891
           ]
         },
         {
@@ -5774,9 +5774,9 @@
           "place": 1,
           "score": "+14",
           "round_ratings": [
-            925,
             928,
-            894
+            928,
+            891
           ]
         },
         {
@@ -5787,9 +5787,9 @@
           "place": 3,
           "score": "+15",
           "round_ratings": [
-            963,
+            965,
             920,
-            857
+            853
           ]
         },
         {
@@ -5800,9 +5800,9 @@
           "place": 3,
           "score": "+39",
           "round_ratings": [
-            776,
-            770,
-            749
+            783,
+            765,
+            747
           ]
         },
         {
@@ -5813,9 +5813,9 @@
           "place": 1,
           "score": "+7",
           "round_ratings": [
-            847,
-            857,
-            872
+            853,
+            853,
+            870
           ]
         }
       ]
@@ -5973,8 +5973,8 @@
           "place": 5,
           "score": "+15",
           "round_ratings": [
-            848,
-            861
+            850,
+            859
           ]
         }
       ]
@@ -5995,8 +5995,8 @@
           "place": 7,
           "score": "+6",
           "round_ratings": [
-            864,
-            845
+            874,
+            835
           ]
         }
       ]
@@ -8270,22 +8270,22 @@
     "2026-09": {
       "319": {
         "name": "Kryštof Novák",
-        "pdga_rating": 984,
+        "pdga_rating": 985,
         "idg_rating": null
       },
       "349": {
         "name": "Michal Grepl",
-        "pdga_rating": 928,
+        "pdga_rating": 911,
         "idg_rating": null
       },
       "692": {
         "name": "Bohdan Bílek",
-        "pdga_rating": 1012,
+        "pdga_rating": 1019,
         "idg_rating": null
       },
       "696": {
         "name": "František Trenz",
-        "pdga_rating": 965,
+        "pdga_rating": 967,
         "idg_rating": null
       },
       "818": {
@@ -8305,12 +8305,12 @@
       },
       "1737": {
         "name": "Eliška Bártková",
-        "pdga_rating": 846,
+        "pdga_rating": 859,
         "idg_rating": null
       },
       "1808": {
         "name": "Michal Sviták",
-        "pdga_rating": 652,
+        "pdga_rating": 654,
         "idg_rating": null
       },
       "2293": {
@@ -8320,7 +8320,7 @@
       },
       "3333": {
         "name": "Petr Ryšánek",
-        "pdga_rating": 735,
+        "pdga_rating": 716,
         "idg_rating": null
       },
       "3575": {
@@ -8330,7 +8330,7 @@
       },
       "3608": {
         "name": "Vladimír Kříž",
-        "pdga_rating": 835,
+        "pdga_rating": 828,
         "idg_rating": null
       },
       "3672": {
@@ -8345,12 +8345,12 @@
       },
       "3689": {
         "name": "Jakub Knápek",
-        "pdga_rating": 1022,
+        "pdga_rating": 1020,
         "idg_rating": null
       },
       "3727": {
         "name": "Radek Jurčík",
-        "pdga_rating": 834,
+        "pdga_rating": 818,
         "idg_rating": null
       },
       "3772": {
@@ -8360,67 +8360,67 @@
       },
       "4292": {
         "name": "Julius Nadberežný",
-        "pdga_rating": 871,
+        "pdga_rating": 882,
         "idg_rating": null
       },
       "4358": {
         "name": "Lukáš Novobilský",
-        "pdga_rating": 962,
+        "pdga_rating": 976,
         "idg_rating": null
       },
       "4362": {
         "name": "Kristýna Jurčíková",
-        "pdga_rating": 968,
+        "pdga_rating": 969,
         "idg_rating": null
       },
       "4363": {
         "name": "Karolína Jurčíková",
-        "pdga_rating": 891,
+        "pdga_rating": 890,
         "idg_rating": null
       },
       "5484": {
         "name": "Jakub Moj",
-        "pdga_rating": 819,
+        "pdga_rating": 826,
         "idg_rating": null
       },
       "5493": {
         "name": "Filip Plíhal",
-        "pdga_rating": 862,
+        "pdga_rating": 867,
         "idg_rating": null
       },
       "5508": {
         "name": "Tomáš Ráček",
-        "pdga_rating": 984,
+        "pdga_rating": 973,
         "idg_rating": null
       },
       "5648": {
         "name": "Barbara Ráčková",
-        "pdga_rating": 905,
+        "pdga_rating": 908,
         "idg_rating": null
       },
       "6136": {
         "name": "Maxmilián Jakeš",
-        "pdga_rating": 957,
+        "pdga_rating": 963,
         "idg_rating": null
       },
       "6195": {
         "name": "Lukáš Vyvial",
-        "pdga_rating": 949,
+        "pdga_rating": 956,
         "idg_rating": null
       },
       "6222": {
         "name": "Jana Vinklárková",
-        "pdga_rating": 747,
+        "pdga_rating": 742,
         "idg_rating": null
       },
       "6260": {
         "name": "Jaroslav Randus",
-        "pdga_rating": 840,
+        "pdga_rating": 837,
         "idg_rating": null
       },
       "6694": {
         "name": "Jan Šebek",
-        "pdga_rating": 935,
+        "pdga_rating": 929,
         "idg_rating": null
       },
       "7810": {
@@ -8435,7 +8435,7 @@
       },
       "8007": {
         "name": "Dominik Janek",
-        "pdga_rating": 823,
+        "pdga_rating": 836,
         "idg_rating": null
       },
       "8299": {
@@ -8445,7 +8445,7 @@
       },
       "8321": {
         "name": "Lukáš Zacpal",
-        "pdga_rating": 878,
+        "pdga_rating": 880,
         "idg_rating": null
       }
     }
