@@ -3208,6 +3208,40 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "Moravian Amateur Open 2026",
+      "date": "2026-09-11",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/103581",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Martin Opršal",
+          "cadg": 2524,
+          "pdga": 103677,
+          "division": "MA1",
+          "place": 1,
+          "score": "+2",
+          "round_ratings": [
+            1009,
+            978
+          ]
+        },
+        {
+          "player_name": "Eliška Bártková",
+          "cadg": 1737,
+          "pdga": 86224,
+          "division": "FA1",
+          "place": 2,
+          "score": "+18",
+          "round_ratings": [
+            883,
+            859
+          ]
+        }
+      ]
     }
   ],
   "ratings": {
