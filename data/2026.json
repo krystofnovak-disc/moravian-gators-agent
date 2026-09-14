@@ -7222,6 +7222,253 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "WFDF World Team Disc Golf Championships - 2026 - Teams/Players",
+      "date": "2026-09-08",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/107894",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 80134,
+          "score": "",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 286033,
+          "score": "",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 210972,
+          "score": "",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 285033,
+          "score": "",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Moravian Amateur Open 2026",
+      "date": "2026-09-11",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/103581",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Lukáš Novobilský",
+          "cadg": 4358,
+          "pdga": 285107,
+          "division": "MA1",
+          "place": 2,
+          "score": "+3",
+          "round_ratings": [
+            1030,
+            950
+          ]
+        },
+        {
+          "player_name": "Maxmilián Jakeš",
+          "cadg": 6136,
+          "pdga": 273516,
+          "division": "MA1",
+          "place": 3,
+          "score": "+5",
+          "round_ratings": [
+            995,
+            971
+          ]
+        },
+        {
+          "player_name": "Petr Masník",
+          "cadg": 818,
+          "pdga": 89187,
+          "division": "MA1",
+          "place": 16,
+          "score": "+24",
+          "round_ratings": [
+            940,
+            894
+          ]
+        },
+        {
+          "player_name": "Eliška Bártková",
+          "cadg": 1737,
+          "pdga": 86224,
+          "division": "FA1",
+          "place": 2,
+          "score": "+18",
+          "round_ratings": [
+            883,
+            859
+          ]
+        },
+        {
+          "player_name": "Jiří Kvita",
+          "cadg": 3683,
+          "pdga": 116573,
+          "division": "FA1",
+          "place": 4,
+          "score": "+38",
+          "round_ratings": [
+            906,
+            831
+          ]
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "MA3",
+          "place": 4,
+          "score": "+8",
+          "round_ratings": [
+            913,
+            907
+          ]
+        },
+        {
+          "player_name": "Martin Hollas",
+          "cadg": 8299,
+          "pdga": 310651,
+          "division": "MA3",
+          "place": 8,
+          "score": "+17",
+          "round_ratings": [
+            845,
+            907
+          ]
+        },
+        {
+          "player_name": "Petr Březina",
+          "cadg": 1217,
+          "pdga": 92091,
+          "division": "MA3",
+          "place": 17,
+          "score": "+29",
+          "round_ratings": [
+            830,
+            827
+          ]
+        },
+        {
+          "player_name": "Dominik Janek",
+          "cadg": 8007,
+          "pdga": 290093,
+          "division": "MA3",
+          "place": 21,
+          "score": "+34",
+          "round_ratings": [
+            822,
+            795
+          ]
+        },
+        {
+          "player_name": "Petr Ryšánek",
+          "cadg": 3333,
+          "pdga": 117293,
+          "division": "MA3",
+          "place": 27,
+          "score": "+59",
+          "round_ratings": [
+            717,
+            708
+          ]
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "FA3",
+          "place": 1,
+          "score": "+51",
+          "round_ratings": [
+            762,
+            724
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Vyškov powered by Discmania",
+      "date": "2026-09-12",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/107832",
+      "tier": "HDGT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "RPA",
+          "place": 1,
+          "score": "-10",
+          "round_ratings": [
+            907,
+            930
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Moravian Amateur Open 2026 - GLOW",
+      "date": "2026-09-12",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/eae76bfa-1338-413a-a406-64c8ced42656",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "MPO",
+          "place": 1,
+          "score": "-5",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jindřich Závodný",
+          "cadg": 5041,
+          "pdga": null,
+          "division": "MPO",
+          "place": 3,
+          "score": "-2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "MPO",
+          "place": 6,
+          "score": "+1",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
