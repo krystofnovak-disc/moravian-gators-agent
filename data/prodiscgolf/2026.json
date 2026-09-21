@@ -3242,6 +3242,139 @@
           ]
         }
       ]
+    },
+    {
+      "name": "DGPT EuroTour - Moravian Open 2026",
+      "date": "2026-09-18",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/101077",
+      "tier": "DGPT EuroTour",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 9,
+          "score": "-13",
+          "round_ratings": [
+            1026,
+            1034,
+            1006
+          ]
+        },
+        {
+          "player_name": "Petr Striegler",
+          "cadg": 3762,
+          "pdga": 89634,
+          "division": "MPO",
+          "place": 14,
+          "score": "-9",
+          "round_ratings": [
+            968,
+            1041,
+            1028
+          ]
+        },
+        {
+          "player_name": "Tomáš Mozola",
+          "cadg": 2805,
+          "pdga": 103693,
+          "division": "MPO",
+          "place": 16,
+          "score": "-6",
+          "round_ratings": [
+            961,
+            1034,
+            1021
+          ]
+        },
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 18,
+          "score": "-5",
+          "round_ratings": [
+            997,
+            1019,
+            992
+          ]
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 25,
+          "score": "E",
+          "round_ratings": [
+            997,
+            925,
+            1049
+          ]
+        },
+        {
+          "player_name": "Daniel Konečný",
+          "cadg": 1085,
+          "pdga": 77759,
+          "division": "MPO",
+          "place": 27,
+          "score": "+1",
+          "round_ratings": [
+            1005,
+            976,
+            984
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 1,
+          "score": "-18",
+          "round_ratings": [
+            962,
+            958,
+            1014
+          ]
+        },
+        {
+          "player_name": "Nikola Moravcová",
+          "cadg": 3745,
+          "pdga": 125069,
+          "division": "FPO",
+          "place": 6,
+          "score": "+4",
+          "round_ratings": [
+            945,
+            910,
+            903
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HDGT Rokytno powered by Discmania",
+      "date": "2026-09-19",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/9dd7ebe4-ebf7-4a63-b7a0-430198e833c4",
+      "url_pdga": null,
+      "tier": "HDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "Green",
+          "place": 7,
+          "score": "+5",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
