@@ -7469,6 +7469,196 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "DGPT EuroTour - Moravian Open 2026",
+      "date": "2026-09-18",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/101077",
+      "tier": "DGPT EuroTour",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 9,
+          "score": "-13",
+          "round_ratings": [
+            1026,
+            1034,
+            1006
+          ]
+        },
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 18,
+          "score": "-5",
+          "round_ratings": [
+            997,
+            1019,
+            992
+          ]
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 25,
+          "score": "E",
+          "round_ratings": [
+            997,
+            925,
+            1049
+          ]
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "MPO",
+          "place": 28,
+          "score": "+2",
+          "round_ratings": [
+            990,
+            983,
+            984
+          ]
+        },
+        {
+          "player_name": "Jakub Dostál",
+          "cadg": 3575,
+          "pdga": 78064,
+          "division": "MPO",
+          "place": 35,
+          "score": "+11",
+          "round_ratings": [
+            954,
+            983,
+            956
+          ]
+        },
+        {
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
+          "division": "MPO",
+          "place": 37,
+          "score": "+12",
+          "round_ratings": [
+            983,
+            932,
+            970
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 1,
+          "score": "-18",
+          "round_ratings": [
+            962,
+            958,
+            1014
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PDGL 2026 # - Smečno",
+      "date": "2026-09-20",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/108095",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Šimon Galia",
+          "cadg": 1055,
+          "pdga": 77483,
+          "division": "RPA",
+          "place": 10,
+          "score": "-1",
+          "round_ratings": [
+            933,
+            904
+          ]
+        },
+        {
+          "player_name": "Vladimír Kříž",
+          "cadg": 3608,
+          "pdga": 78165,
+          "division": "RPA",
+          "place": 20,
+          "score": "+21",
+          "round_ratings": [
+            802,
+            829
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DOBRO open 2026",
+      "date": "2026-09-20",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/66cd28fb-4024-499d-8ddf-9d3b592aeb88",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Barbara Ráčková",
+          "cadg": 5648,
+          "pdga": 233444,
+          "division": "FPO",
+          "place": 1,
+          "score": "-16",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jindřich Závodný",
+          "cadg": 5041,
+          "pdga": null,
+          "division": "MA4",
+          "place": 1,
+          "score": "-8",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "MA4",
+          "place": 6,
+          "score": "-2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Moj",
+          "cadg": 5484,
+          "pdga": 208119,
+          "division": "MA4",
+          "place": 12,
+          "score": "+4",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Dominik Janek",
+          "cadg": 8007,
+          "pdga": 290093,
+          "division": "MA4",
+          "place": 18,
+          "score": "+13",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
