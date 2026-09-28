@@ -3377,6 +3377,29 @@
       ]
     },
     {
+      "name": "DGPT Playoffs - MVP Open x OTB",
+      "date": "2026-09-24",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/96419",
+      "tier": "DGPT",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "MPO",
+          "place": 25,
+          "score": "+2",
+          "round_ratings": [
+            1024,
+            1046,
+            1030
+          ]
+        }
+      ]
+    },
+    {
       "name": "DGPT EuroTour - Silesia Open 2026 presented by Latitude64",
       "date": "2026-09-25",
       "url_idg": null,
