@@ -3375,6 +3375,122 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "DGPT EuroTour - Silesia Open 2026 presented by Latitude64",
+      "date": "2026-09-25",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/101078",
+      "tier": "DGPT EuroTour",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 11,
+          "score": "-20",
+          "round_ratings": [
+            999,
+            1001,
+            1045
+          ]
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "MPO",
+          "place": 13,
+          "score": "-18",
+          "round_ratings": [
+            984,
+            1009,
+            1037
+          ]
+        },
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 14,
+          "score": "-17",
+          "round_ratings": [
+            1022,
+            985,
+            1013
+          ]
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 1,
+          "score": "-17",
+          "round_ratings": [
+            968,
+            962,
+            964
+          ]
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 4,
+          "score": "+1",
+          "round_ratings": [
+            918,
+            945,
+            880
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MMMASO! JDL 2026 - Červený Dvůr",
+      "date": "2026-09-26",
+      "url_idg": null,
+      "url_pdga": "https://www.pdga.com/tour/event/107918",
+      "tier": "PDGA",
+      "source": "pdga",
+      "results": [
+        {
+          "player_name": "Eva Bínová",
+          "cadg": 1104,
+          "pdga": 69385,
+          "division": "FPO",
+          "place": 2,
+          "score": "+3",
+          "round_ratings": [
+            892,
+            902
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ODPK 6. Choltice",
+      "date": "2026-09-26",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/ccb6baa8-88bd-4147-85c7-c30c7871d97e",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "MJ15",
+          "place": 1,
+          "score": "+3",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
