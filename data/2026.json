@@ -8246,6 +8246,99 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "ADGL Červenodvorské hody 2026",
+      "date": "2026-10-10",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/559437b4-8474-45c2-a5cd-6805600605d5",
+      "url_pdga": null,
+      "tier": "ADGL",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jakub Urbiš",
+          "cadg": 3772,
+          "pdga": 122423,
+          "division": "MA1",
+          "place": 15,
+          "score": "+13",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Julius Nadberežný",
+          "cadg": 4292,
+          "pdga": 240173,
+          "division": "MA3",
+          "place": 2,
+          "score": "+11",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "MA3",
+          "place": 8,
+          "score": "+16",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Vyškov Open 2026",
+      "date": "2026-10-10",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/132b0715-d90d-4f95-9acf-3034893c23d8",
+      "url_pdga": null,
+      "tier": "JMDGL",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "Green",
+          "place": 2,
+          "score": "E",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "O Putovní Pohár Starosty Města Šumperk 2026",
+      "date": "2026-10-11",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/3911e7d7-f736-4bcd-b17e-fb7deb1a5d3e",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Petr Masník",
+          "cadg": 818,
+          "pdga": 89187,
+          "division": "Gold",
+          "place": 3,
+          "score": "-10",
+          "round_ratings": []
+        },
+        {
+          "player_name": "David Žeravík",
+          "cadg": 7985,
+          "pdga": null,
+          "division": "Gold",
+          "place": 5,
+          "score": "-8",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "Green",
+          "place": 7,
+          "score": "+9",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
