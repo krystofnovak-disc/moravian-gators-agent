@@ -3636,6 +3636,44 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "ADGL Červenodvorské hody 2026",
+      "date": "2026-10-10",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/559437b4-8474-45c2-a5cd-6805600605d5",
+      "url_pdga": null,
+      "tier": "ADGL",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Michael Studnička",
+          "cadg": 3877,
+          "pdga": 162117,
+          "division": "MA1",
+          "place": 7,
+          "score": "-2",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "O Putovní Pohár Starosty Města Šumperk 2026",
+      "date": "2026-10-11",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/3911e7d7-f736-4bcd-b17e-fb7deb1a5d3e",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "Green",
+          "place": 1,
+          "score": "-4",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
