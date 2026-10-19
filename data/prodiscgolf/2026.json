@@ -3675,6 +3675,34 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "HDGT Rekovice powered by Discmania",
+      "date": "2026-10-18",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/fde57ae8-eb8a-4db8-82d7-2ffc7052ecc1",
+      "url_pdga": null,
+      "tier": "HDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "Red",
+          "place": 6,
+          "score": "-6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "Red",
+          "place": 10,
+          "score": "-2",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
