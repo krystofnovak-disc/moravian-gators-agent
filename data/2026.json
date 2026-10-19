@@ -8340,6 +8340,171 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "CZECH OPEN 2026 presented by Latitude 64°",
+      "date": "2026-10-17",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/aadafc97-fea9-4f9d-954e-ccb235a35fb9",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Vladimír Kříž",
+          "cadg": 3608,
+          "pdga": 78165,
+          "division": "MP40",
+          "place": 15,
+          "score": "+29",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "O lesní pohár Zamilec - finále JMDGL",
+      "date": "2026-10-17",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/69a4cd49-2624-45fc-afe3-742dd5a2581b",
+      "url_pdga": null,
+      "tier": "JMDGL",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "Green",
+          "place": 19,
+          "score": "+21",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "Yellow",
+          "place": 2,
+          "score": "+36",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "HDGT Rekovice powered by Discmania",
+      "date": "2026-10-18",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/fde57ae8-eb8a-4db8-82d7-2ffc7052ecc1",
+      "url_pdga": null,
+      "tier": "HDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Pavel Žeravík",
+          "cadg": 6268,
+          "pdga": null,
+          "division": "Gold",
+          "place": 1,
+          "score": "-26",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
+          "division": "Gold",
+          "place": 3,
+          "score": "-17",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Masník",
+          "cadg": 818,
+          "pdga": 89187,
+          "division": "Gold",
+          "place": 4,
+          "score": "-15",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 696,
+          "pdga": 75176,
+          "division": "Gold",
+          "place": 18,
+          "score": "E",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "Red",
+          "place": 6,
+          "score": "-6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Martin Hollas",
+          "cadg": 8299,
+          "pdga": 310651,
+          "division": "Red",
+          "place": 11,
+          "score": "-1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jindřich Závodný",
+          "cadg": 5041,
+          "pdga": null,
+          "division": "Red",
+          "place": 18,
+          "score": "+6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Podhajský",
+          "cadg": 6433,
+          "pdga": 290618,
+          "division": "Red",
+          "place": 18,
+          "score": "+6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jaroslav Randus",
+          "cadg": 6260,
+          "pdga": 269133,
+          "division": "Green",
+          "place": 2,
+          "score": "-5",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Dominik Janek",
+          "cadg": 8007,
+          "pdga": 290093,
+          "division": "Green",
+          "place": 3,
+          "score": "-3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Ryšánek",
+          "cadg": 3333,
+          "pdga": 117293,
+          "division": "Purple",
+          "place": 20,
+          "score": "+18",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "Purple",
+          "place": 34,
+          "score": "+40",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
