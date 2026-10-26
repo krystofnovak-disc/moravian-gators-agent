@@ -3703,6 +3703,81 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "Budišovský Dragon",
+      "date": "2026-10-24",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/a7d02f4d-5bd6-441c-83e1-cb392de50922",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 5,
+          "score": "-11",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "Red",
+          "place": 5,
+          "score": "E",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "NJDGT #6: DiscGolfPark Bocheta potmě",
+      "date": "2026-10-24",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/f713a4aa-59c7-418e-9d89-8f3cdd10eb25",
+      "url_pdga": null,
+      "tier": "NJDGT",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "Jestřáb",
+          "place": 7,
+          "score": "+2",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Ondřej Mazoch",
+          "cadg": 7810,
+          "pdga": 286033,
+          "division": "Orel",
+          "place": 1,
+          "score": "-14",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "PDGL 2026 #6 - Roztyly",
+      "date": "2026-10-24",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/eae06fb1-be8e-4edd-a133-0768bfd02e21",
+      "url_pdga": null,
+      "tier": "PDGL",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "Red",
+          "place": 2,
+          "score": "+5",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
