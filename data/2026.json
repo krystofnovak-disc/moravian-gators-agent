@@ -8824,6 +8824,99 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "Discgolf Tour Vesec Open 2026 presented by Discgolf-Shop.com",
+      "date": "2026-10-31",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/fba20bbe-4622-4718-8423-fc729b87b9e8",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Vladimír Kříž",
+          "cadg": 3608,
+          "pdga": 78165,
+          "division": "Green",
+          "place": 9,
+          "score": "+34",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Mistrovství České Republiky v discgolfu dvojic - JINDŘICHŮV HRADEC DOUBLES 2026",
+      "date": "2026-10-31",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/e84ba3b5-bc07-47b6-9cc1-c5df33b45a38",
+      "url_pdga": null,
+      "tier": "MČR",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "DOUBLES 2",
+          "place": 1,
+          "score": "-31",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Tomáš Ráček",
+          "cadg": 5508,
+          "pdga": 233423,
+          "division": "DOUBLES 2",
+          "place": 2,
+          "score": "-24",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "DOUBLES 2",
+          "place": 3,
+          "score": "-19",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Julius Nadberežný",
+          "cadg": 4292,
+          "pdga": 240173,
+          "division": "DOUBLES 4",
+          "place": 7,
+          "score": "-15",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Ryšánek",
+          "cadg": 3333,
+          "pdga": 117293,
+          "division": "DOUBLES 4",
+          "place": 12,
+          "score": "+47",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Datyně 2026 - Zavíračka sezóny",
+      "date": "2026-11-01",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/67369cde-4597-4909-bd4d-6c98473a98ee",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Filip Plíhal",
+          "cadg": 5493,
+          "pdga": 245751,
+          "division": "MPO",
+          "place": 15,
+          "score": "+4",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
