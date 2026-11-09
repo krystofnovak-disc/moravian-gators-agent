@@ -8917,6 +8917,126 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "Duobles Birdie Festival Uničov 2026",
+      "date": "2026-11-07",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/e5448af9-c19a-4cbe-8df6-46ea6665fce4",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Petr Masník",
+          "cadg": 818,
+          "pdga": 89187,
+          "division": "Mix",
+          "place": 7,
+          "score": "-20",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "Open",
+          "place": 9,
+          "score": "-15",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "💣Booocheta Survival by PTAKE🐦",
+      "date": "2026-11-07",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/0b8dab8a-e475-4621-9b76-452f7512d0f2",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "1BUHR",
+          "place": 1,
+          "score": "-24",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "1BUHR",
+          "place": 2,
+          "score": "-23",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Dostál",
+          "cadg": 3575,
+          "pdga": 78064,
+          "division": "1BUHR",
+          "place": 3,
+          "score": "-20",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Novobilský",
+          "cadg": 4358,
+          "pdga": 285107,
+          "division": "1BUHR",
+          "place": 4,
+          "score": "-10",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Richard Kurečka",
+          "cadg": 7983,
+          "pdga": 300253,
+          "division": "1BUHR",
+          "place": 7,
+          "score": "E",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Dominik Chrustawczuk",
+          "cadg": 8869,
+          "pdga": null,
+          "division": "2MCBETH",
+          "place": 1,
+          "score": "-3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Radek Knápek",
+          "cadg": 3671,
+          "pdga": null,
+          "division": "2MCBETH",
+          "place": 3,
+          "score": "+1",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Mohelnická 18",
+      "date": "2026-11-08",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/9c78b3ac-efd7-4888-af0d-6197cc7c3fb8",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "MJ18",
+          "place": 5,
+          "score": "+14",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
