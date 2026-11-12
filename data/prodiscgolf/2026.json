@@ -1164,6 +1164,25 @@
       ]
     },
     {
+      "name": "Otevírací turnaj DiscGolfParku Zahájené v Bystřici pod Hostýnem",
+      "date": "2026-04-21",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/ae123804-f0c8-48d4-be9f-c898a175b8c7",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 1,
+          "score": "-12",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
       "name": "HOSTAČOV 2026 | MOVit Spring Tour",
       "date": "2026-04-25",
       "url_idg": null,
@@ -1467,6 +1486,34 @@
       ]
     },
     {
+      "name": "Otevírací turnaj DiscGolfParku Šanov",
+      "date": "2026-05-20",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/f372adbe-1db9-4571-aa64-46c7df4f2cba",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 1,
+          "score": "-6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Daniel Konečný",
+          "cadg": 1085,
+          "pdga": 77759,
+          "division": "MPO",
+          "place": 5,
+          "score": "-4",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
       "name": "DGPT+ / WGE - OTB Open by MVP Disc Sports",
       "date": "2026-05-21",
       "url_idg": null,
@@ -1487,6 +1534,25 @@
             1013,
             1049
           ]
+        }
+      ]
+    },
+    {
+      "name": "Fun turnaj v Chrudimi pro každého",
+      "date": "2026-05-21",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/f78c395e-68b6-4931-b676-fd7fd14faa33",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Nicolas Turina",
+          "cadg": 8471,
+          "pdga": 323634,
+          "division": "MJ18",
+          "place": 1,
+          "score": "-4",
+          "round_ratings": []
         }
       ]
     },
@@ -2155,6 +2221,43 @@
           "division": "Orel",
           "place": 1,
           "score": "-17",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Gregg Barsby - Turnaj + Autogramiáda v Ostravě na Šporovnici",
+      "date": "2026-06-29",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/6be57ac7-826f-491f-b158-9f2afbedc816",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 3,
+          "score": "-6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 3,
+          "score": "-6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 1,
+          "score": "-2",
           "round_ratings": []
         }
       ]

@@ -107,6 +107,10 @@ def _names_match(name_a: str, name_b: str) -> bool:
         return True
     if na.startswith(nb) or nb.startswith(na):
         return True
+    # Stejná slova v jiném pořadí ("HOSTAČOV 2026 | MOVit Spring Tour"
+    # vs "HOSTAČOV | Movit Spring Tour 2026")
+    if na.split() and set(na.split()) == set(nb.split()):
+        return True
     # Jiné první slovo → jiný turnaj
     if na.split(" ", 1)[0] != nb.split(" ", 1)[0]:
         return False
@@ -190,6 +194,7 @@ class Accumulator:
 
         added = 0
         replaced = 0
+        players_added = 0
 
         for t in tournaments:
             t_name = t.get("name", "")
@@ -203,26 +208,29 @@ class Accumulator:
                 existing_t = existing[match_idx]
                 existing_source = existing_t.get("source") or self._infer_source(existing_t)
 
-                # PDGA is the preferred source (more detailed data, round ratings)
-                if existing_source == "pdga":
-                    logger.debug(
-                        "Turnaj '%s' (%s) již existuje z PDGA – přeskakuji.",
-                        t_name, t_date,
-                    )
-                    continue
-                if t_source == "pdga":
+                # PDGA nahrazuje ne-PDGA verzi (round ratingy), hráče z původní
+                # verze, které PDGA nemá (např. bez PDGA čísla), ale zachováme.
+                if t_source == "pdga" and existing_source != "pdga":
                     logger.info(
                         "Nahrazuji turnaj '%s' (%s) daty z PDGA.",
                         t_name, t_date,
                     )
+                    old_results = existing_t.get("results", [])
                     existing[match_idx] = self._convert_tournament(t)
+                    self._merge_missing_players(existing[match_idx], old_results)
                     replaced += 1
                     continue
-                # Both from same non-pdga source – skip duplicate
-                logger.debug(
-                    "Turnaj '%s' (%s) již existuje – přeskakuji.",
-                    t_name, t_date,
-                )
+
+                # Turnaj už existuje – doplníme jen hráče, kteří v něm chybí
+                # (typicky hráči bez PDGA čísla u turnajů stažených z PDGA).
+                new_results = self._convert_tournament(t)["results"]
+                n = self._merge_missing_players(existing_t, new_results)
+                if n:
+                    logger.info(
+                        "Turnaj '%s' (%s): doplněno %d chybějících hráčů.",
+                        t_name, t_date, n,
+                    )
+                    players_added += n
                 continue
 
             # No match – add new tournament
@@ -232,8 +240,35 @@ class Accumulator:
         # Sort tournaments by date
         existing.sort(key=lambda x: x.get("date", ""))
 
-        logger.info("Přidáno %d nových turnajů, nahrazeno %d.", added, replaced)
+        logger.info(
+            "Přidáno %d nových turnajů, nahrazeno %d, doplněno %d hráčů do existujících.",
+            added, replaced, players_added,
+        )
         return data
+
+    @staticmethod
+    def _result_key(r: dict):
+        """Identita hráče ve výsledcích: ČADG > PDGA > jméno."""
+        if r.get("cadg"):
+            return ("cadg", str(r["cadg"]))
+        if r.get("pdga"):
+            return ("pdga", str(r["pdga"]))
+        return ("name", (r.get("player_name") or "").strip().lower())
+
+    @classmethod
+    def _merge_missing_players(cls, tournament: dict, candidates: list) -> int:
+        """Přidá do turnaje výsledky hráčů, kteří v něm ještě nejsou. Vrací počet."""
+        results = tournament.setdefault("results", [])
+        have = {cls._result_key(r) for r in results}
+        n = 0
+        for r in candidates:
+            k = cls._result_key(r)
+            if k in have or r.get("place") in (None, 0):
+                continue
+            results.append(r)
+            have.add(k)
+            n += 1
+        return n
 
     # ------------------------------------------------------------------
     # Ratings
@@ -281,12 +316,36 @@ class Accumulator:
     # ------------------------------------------------------------------
 
     def _find_matching_tournament(self, existing: list, name: str, t_date: str) -> int | None:
-        """Return the index of a matching existing tournament, or None."""
+        """Return the index of a matching existing tournament, or None.
+
+        Datum se toleruje ±1 den – iDG a PDGA u vícedenních turnajů někdy
+        uvádějí jiný první den.
+        """
+        from datetime import date as _d
         norm_date = _normalize_date(t_date)
+        try:
+            d0 = _d.fromisoformat(norm_date)
+        except ValueError:
+            d0 = None
+        # 1) Stejný den – plné párování názvů (vč. podobnosti)
         for idx, et in enumerate(existing):
-            if _normalize_date(et.get("date", "")) != norm_date:
+            if _normalize_date(et.get("date", "")) == norm_date and _names_match(et.get("name", ""), name):
+                return idx
+        # 2) ±1 den – jen přísná shoda názvu (stejná slova / prefix), aby se
+        #    nespárovaly různé turnaje série "Discgolf Tour X presented by …"
+        if d0 is None:
+            return None
+        nb = _normalize_name(name)
+        for idx, et in enumerate(existing):
+            try:
+                diff = abs((_d.fromisoformat(_normalize_date(et.get("date", ""))) - d0).days)
+            except ValueError:
                 continue
-            if _names_match(et.get("name", ""), name):
+            if diff != 1:
+                continue
+            na = _normalize_name(et.get("name", ""))
+            if na and nb and (na == nb or na.startswith(nb) or nb.startswith(na)
+                              or set(na.split()) == set(nb.split())):
                 return idx
         return None
 

@@ -32,7 +32,7 @@ from dotenv import load_dotenv
 # Načteme .env ze složky skriptu
 load_dotenv(Path(__file__).parent / ".env", override=True)
 
-from scrapers.idiscgolf import IDGScraper
+from scrapers.idiscgolf import IDGScraper, is_putting_league
 from scrapers.pdga import PDGAScraper
 from generator.post import PostGenerator
 from delivery.email import EmailSender
@@ -294,6 +294,8 @@ def run(saturday: date, sunday: date, dry_run: bool = False,
     # 4. Merge + filtr PDGA-tier registrací
     results = merge_results(idg, pdga)
     results = filter_pending_pdga(results)
+    # Puttovací liga není turnaj – nezapočítáváme
+    results = [t for t in results if not is_putting_league(t.get("name", ""))]
     save_results_json(results, saturday, sunday)
 
     def _is_canceled(t):

@@ -27,6 +27,13 @@ import time
 logger = logging.getLogger(__name__)
 
 API_BASE = "https://api.ceskydiscgolf.cz/api"
+
+
+def is_putting_league(name: str) -> bool:
+    """Puttovací liga není turnaj – do výsledků ji nezapočítáváme."""
+    import unicodedata
+    n = unicodedata.normalize("NFD", name or "").encode("ascii", "ignore").decode().lower()
+    return "puttovaci lig" in n
 WEB_BASE = "https://ceskydiscgolf.cz/idg"
 
 # Známé ligové/tour tagy (první token z main_league_name). Pokud liga
@@ -131,10 +138,11 @@ class IDGScraper:
 
     def _find_weekend_tournaments(self, saturday: date, sunday: date) -> list:
         """Stáhne celý seznam turnajů a vyfiltruje ty, které se překrývají
-        s víkendem. Zahrnuje i pátek – vícedenní turnaje (PCT, MČR, CDGT)
-        často začínají v pátek nebo běží So–Po (státní svátky).
+        s celým týdnem Po–Ne končícím danou nedělí. Turnaje se hrají i ve
+        všední dny (otevírací turnaje, exhibice), nejen o víkendu.
+        Puttovací ligy se přeskakují – nejsou to turnaje.
         """
-        friday = saturday - timedelta(days=1)
+        week_start = saturday - timedelta(days=5)  # pondělí
 
         try:
             data = self._get_json(f"{API_BASE}/tournaments/")
@@ -154,8 +162,10 @@ class IDGScraper:
             end = self._parse_iso(t.get("end_date")) or start
             if not start:
                 continue
-            # Překryv intervalu turnaje [start, end] s [pátek, neděle]
-            if start <= sunday and end >= friday:
+            if is_putting_league(t.get("name", "")):
+                continue
+            # Překryv intervalu turnaje [start, end] s [pondělí, neděle]
+            if start <= sunday and end >= week_start:
                 found.append({
                     "id": t["id"],
                     "name": t.get("name", ""),
