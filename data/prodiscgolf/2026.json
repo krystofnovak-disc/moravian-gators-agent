@@ -3965,6 +3965,80 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "O Starojický měšec 2026",
+      "date": "2026-11-14",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/e6aa477d-afe2-4a07-a4a9-334e664e9e81",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 1,
+          "score": "-15",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 3,
+          "score": "-10",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 4,
+          "score": "-9",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 1,
+          "score": "-5",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 2,
+          "score": "-4",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Discgolf Tour Humpolec presented by Discgolf-Shop.com",
+      "date": "2026-11-15",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/6ca57fec-a1c6-4c8f-8243-6a9a58cd58d1",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "Blue",
+          "place": 1,
+          "score": "-8",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
