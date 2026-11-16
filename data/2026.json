@@ -11055,6 +11055,278 @@
         "pdga_rating": 880,
         "idg_rating": null
       }
+    },
+    "2026-11": {
+      "1739": {
+        "name": "Jan Bártek",
+        "pdga_rating": 911,
+        "idg_rating": 911
+      },
+      "1737": {
+        "name": "Eliška Bártková",
+        "pdga_rating": 869,
+        "idg_rating": 878
+      },
+      "1809": {
+        "name": "Petra Bártková",
+        "pdga_rating": 344,
+        "idg_rating": null
+      },
+      "692": {
+        "name": "Bohdan Bílek",
+        "pdga_rating": 1016,
+        "idg_rating": 988
+      },
+      "1217": {
+        "name": "Petr Březina",
+        "pdga_rating": 816,
+        "idg_rating": 832
+      },
+      "3575": {
+        "name": "Jakub Dostál",
+        "pdga_rating": 981,
+        "idg_rating": 995
+      },
+      "3536": {
+        "name": "Karel Dostál",
+        "pdga_rating": 868,
+        "idg_rating": 905
+      },
+      "3672": {
+        "name": "Radek Dostál",
+        "pdga_rating": 948,
+        "idg_rating": 950
+      },
+      "1055": {
+        "name": "Šimon Galia",
+        "pdga_rating": 939,
+        "idg_rating": 924
+      },
+      "349": {
+        "name": "Michal Grepl",
+        "pdga_rating": 911,
+        "idg_rating": 923
+      },
+      "453": {
+        "name": "Petra Greplová",
+        "pdga_rating": 828,
+        "idg_rating": 786
+      },
+      "8754": {
+        "name": "Rostislav Hegar",
+        "pdga_rating": 578,
+        "idg_rating": 615
+      },
+      "8299": {
+        "name": "Martin Hollas",
+        "pdga_rating": 866,
+        "idg_rating": 855
+      },
+      "6136": {
+        "name": "Maxmilián Jakeš",
+        "pdga_rating": 965,
+        "idg_rating": 956
+      },
+      "8007": {
+        "name": "Dominik Janek",
+        "pdga_rating": 851,
+        "idg_rating": 842
+      },
+      "3727": {
+        "name": "Radek Jurčík",
+        "pdga_rating": 818,
+        "idg_rating": 853
+      },
+      "4363": {
+        "name": "Karolína Jurčíková",
+        "pdga_rating": 900,
+        "idg_rating": 887
+      },
+      "4362": {
+        "name": "Kristýna Jurčíková",
+        "pdga_rating": 973,
+        "idg_rating": 951
+      },
+      "3665": {
+        "name": "Radim Kaděra",
+        "pdga_rating": 886,
+        "idg_rating": 871
+      },
+      "3689": {
+        "name": "Jakub Knápek",
+        "pdga_rating": 1016,
+        "idg_rating": 1026
+      },
+      "5823": {
+        "name": "Filip Košťal",
+        "pdga_rating": 863,
+        "idg_rating": 848
+      },
+      "7983": {
+        "name": "Richard Kurečka",
+        "pdga_rating": 869,
+        "idg_rating": 863
+      },
+      "3683": {
+        "name": "Jiří Kvita",
+        "pdga_rating": 901,
+        "idg_rating": 934
+      },
+      "3685": {
+        "name": "Kristián Kvita",
+        "pdga_rating": 983,
+        "idg_rating": 978
+      },
+      "3690": {
+        "name": "Dominik Luong",
+        "pdga_rating": 901,
+        "idg_rating": 977
+      },
+      "818": {
+        "name": "Petr Masník",
+        "pdga_rating": 947,
+        "idg_rating": 934
+      },
+      "7810": {
+        "name": "Ondřej Mazoch",
+        "pdga_rating": 1009,
+        "idg_rating": 1001
+      },
+      "5484": {
+        "name": "Jakub Moj",
+        "pdga_rating": 826,
+        "idg_rating": 826
+      },
+      "3758": {
+        "name": "Petr Mrázek",
+        "pdga_rating": 948,
+        "idg_rating": 899
+      },
+      "4292": {
+        "name": "Julius Nadberežný",
+        "pdga_rating": 894,
+        "idg_rating": 895
+      },
+      "4358": {
+        "name": "Lukáš Novobilský",
+        "pdga_rating": 972,
+        "idg_rating": 959
+      },
+      "3653": {
+        "name": "Tomáš Novobilský",
+        "pdga_rating": 933,
+        "idg_rating": 875
+      },
+      "319": {
+        "name": "Kryštof Novák",
+        "pdga_rating": 985,
+        "idg_rating": 989
+      },
+      "3625": {
+        "name": "Přemysl Novák",
+        "pdga_rating": 945,
+        "idg_rating": 912
+      },
+      "6433": {
+        "name": "Petr Podhajský",
+        "pdga_rating": 838,
+        "idg_rating": 853
+      },
+      "6260": {
+        "name": "Jaroslav Randus",
+        "pdga_rating": 850,
+        "idg_rating": 838
+      },
+      "857": {
+        "name": "Jakub Ryšánek",
+        "pdga_rating": 862,
+        "idg_rating": 801
+      },
+      "3333": {
+        "name": "Petr Ryšánek",
+        "pdga_rating": 738,
+        "idg_rating": 740
+      },
+      "5508": {
+        "name": "Tomáš Ráček",
+        "pdga_rating": 973,
+        "idg_rating": 976
+      },
+      "5648": {
+        "name": "Barbara Ráčková",
+        "pdga_rating": 908,
+        "idg_rating": 913
+      },
+      "1808": {
+        "name": "Michal Sviták",
+        "pdga_rating": 654,
+        "idg_rating": 640
+      },
+      "696": {
+        "name": "František Trenz",
+        "pdga_rating": 963,
+        "idg_rating": 934
+      },
+      "3772": {
+        "name": "Jakub Urbiš",
+        "pdga_rating": 915,
+        "idg_rating": 915
+      },
+      "3621": {
+        "name": "Tomáš Valík",
+        "pdga_rating": 732,
+        "idg_rating": 782
+      },
+      "2293": {
+        "name": "Jakub Veselý",
+        "pdga_rating": 975,
+        "idg_rating": 973
+      },
+      "6222": {
+        "name": "Jana Vinklárková",
+        "pdga_rating": 741,
+        "idg_rating": 743
+      },
+      "6195": {
+        "name": "Lukáš Vyvial",
+        "pdga_rating": 956,
+        "idg_rating": 949
+      },
+      "6134": {
+        "name": "Vojtěch Zavičák",
+        "pdga_rating": 893,
+        "idg_rating": 892
+      },
+      "6694": {
+        "name": "Jan Šebek",
+        "pdga_rating": 929,
+        "idg_rating": 922
+      },
+      "839": {
+        "name": "Jiří Šebek",
+        "pdga_rating": 867,
+        "idg_rating": 850
+      },
+      "5723": {
+        "name": "Lukáš Španihel",
+        "pdga_rating": 902,
+        "idg_rating": 810
+      },
+      "3608": {
+        "name": "Vladimír Kříž",
+        "pdga_rating": 823,
+        "idg_rating": 818
+      },
+      "5493": {
+        "name": "Filip Plíhal",
+        "pdga_rating": 867,
+        "idg_rating": 849
+      },
+      "8321": {
+        "name": "Lukáš Zacpal",
+        "pdga_rating": 896,
+        "idg_rating": 887
+      }
     }
   }
 }
