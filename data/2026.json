@@ -9647,6 +9647,225 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "O Starojický měšec 2026",
+      "date": "2026-11-14",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/e6aa477d-afe2-4a07-a4a9-334e664e9e81",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Jakub Knápek",
+          "cadg": 3689,
+          "pdga": 68237,
+          "division": "MPO",
+          "place": 1,
+          "score": "-15",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Pavel Žeravík",
+          "cadg": 6268,
+          "pdga": null,
+          "division": "MPO",
+          "place": 2,
+          "score": "-11",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kryštof Novák",
+          "cadg": 319,
+          "pdga": 55426,
+          "division": "MPO",
+          "place": 3,
+          "score": "-10",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Bohdan Bílek",
+          "cadg": 692,
+          "pdga": 80134,
+          "division": "MPO",
+          "place": 4,
+          "score": "-9",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Tomáš Ráček",
+          "cadg": 5508,
+          "pdga": 233423,
+          "division": "MPO",
+          "place": 11,
+          "score": "-3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Masník",
+          "cadg": 818,
+          "pdga": 89187,
+          "division": "MPO",
+          "place": 11,
+          "score": "-3",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Michal Grepl",
+          "cadg": 349,
+          "pdga": 59727,
+          "division": "MPO",
+          "place": 15,
+          "score": "-1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "David Žeravík",
+          "cadg": 7985,
+          "pdga": null,
+          "division": "MPO",
+          "place": 15,
+          "score": "-1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Lukáš Novobilský",
+          "cadg": 4358,
+          "pdga": 285107,
+          "division": "MPO",
+          "place": 18,
+          "score": "E",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petr Podhajský",
+          "cadg": 6433,
+          "pdga": 290618,
+          "division": "MPO",
+          "place": 18,
+          "score": "E",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristián Kvita",
+          "cadg": 3685,
+          "pdga": 116574,
+          "division": "MPO",
+          "place": 20,
+          "score": "+1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Dominik Janek",
+          "cadg": 8007,
+          "pdga": 290093,
+          "division": "MPO",
+          "place": 25,
+          "score": "+10",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jan Šajnar",
+          "cadg": 6345,
+          "pdga": null,
+          "division": "MPO",
+          "place": 28,
+          "score": "+12",
+          "round_ratings": []
+        },
+        {
+          "player_name": "František Trenz",
+          "cadg": 743,
+          "pdga": null,
+          "division": "MPO",
+          "place": 29,
+          "score": "+16",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Karolína Jurčíková",
+          "cadg": 4363,
+          "pdga": 285033,
+          "division": "FPO",
+          "place": 1,
+          "score": "-5",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Kristýna Jurčíková",
+          "cadg": 4362,
+          "pdga": 210972,
+          "division": "FPO",
+          "place": 2,
+          "score": "-4",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Barbara Ráčková",
+          "cadg": 5648,
+          "pdga": 233444,
+          "division": "FPO",
+          "place": 3,
+          "score": "+1",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Petra Greplová",
+          "cadg": 453,
+          "pdga": 62792,
+          "division": "FPO",
+          "place": 4,
+          "score": "+6",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jana Vinklárková",
+          "cadg": 6222,
+          "pdga": 265707,
+          "division": "FPO",
+          "place": 5,
+          "score": "+8",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "(P)ADD 2026",
+      "date": "2026-11-14",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/a77a0f32-2145-4108-9fb6-cfbde8b52524",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Vladimír Kříž",
+          "cadg": 3608,
+          "pdga": 78165,
+          "division": "MP40",
+          "place": 12,
+          "score": "+22",
+          "round_ratings": []
+        }
+      ]
+    },
+    {
+      "name": "Podzimní turnaj Úsov",
+      "date": "2026-11-15",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/1fbf3698-eab8-4c1e-8626-f054a0a86e59",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Lukáš Zacpal",
+          "cadg": 8321,
+          "pdga": 303287,
+          "division": "MJ18",
+          "place": 2,
+          "score": "+12",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
