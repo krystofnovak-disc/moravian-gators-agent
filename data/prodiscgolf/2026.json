@@ -4039,6 +4039,34 @@
           "round_ratings": []
         }
       ]
+    },
+    {
+      "name": "🛸 Noční Portal Doubles – Rickova pomsta v Zamilci",
+      "date": "2026-11-22",
+      "url_idg": "https://ceskydiscgolf.cz/idg/turnaje/6946428e-6871-450a-9d56-fb5675affcad",
+      "url_pdga": null,
+      "tier": "local",
+      "source": "idiscgolf",
+      "results": [
+        {
+          "player_name": "Daniel Konečný",
+          "cadg": 1085,
+          "pdga": 77759,
+          "division": "Doubles",
+          "place": 1,
+          "score": "-5",
+          "round_ratings": []
+        },
+        {
+          "player_name": "Jakub Semerád",
+          "cadg": 2286,
+          "pdga": 91925,
+          "division": "Doubles",
+          "place": 2,
+          "score": "-4",
+          "round_ratings": []
+        }
+      ]
     }
   ],
   "ratings": {
